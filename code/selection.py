@@ -11,7 +11,7 @@ def unit_scale(values):
     return (values - values.min()) / span if span > 1e-6 else np.zeros_like(values)
 
 
-def analyze(scores, idle, embeddings, vocabulary, duration):
+def analyze(scores, idle, embeddings, vocabulary, duration, smoothing=True):
     end = math.floor(duration * MILLISECONDS + 1e-6)
     step = FRAME_SECONDS * MILLISECONDS
     budget = end * 15 // 100
@@ -20,6 +20,8 @@ def analyze(scores, idle, embeddings, vocabulary, duration):
     before = np.maximum(np.arange(length) - 1, 0)
     after = np.minimum(np.arange(length) + 1, length - 1)
     smooth = 0.6 * scores + 0.2 * (scores[before] + scores[after])
+    if not smoothing:
+        smooth = scores
     labels = smooth.argmax(axis=1)
     margin = smooth.max(axis=1) - idle
     change = np.clip(1 - (embeddings[before] * embeddings[after]).sum(axis=1), 0, 1)
@@ -51,6 +53,30 @@ def analyze(scores, idle, embeddings, vocabulary, duration):
     if float(activity.max()) > 0.015:
         candidates.extend((i, min(i + 3, length), None) for i in range(0, length, 3)
                           if float(activity[i:i + 3].max()) > 0.015)
+    # Prefix sums make each candidate's retained-frame summary constant time.
+    embedding_prefix = np.vstack([np.zeros(embeddings.shape[1]), np.cumsum(embeddings, axis=0)])
+    activity_prefix = np.r_[0.0, np.cumsum(activity)]
+    summaries = {}
+
+    def summarize(start_index, stop_ms):
+        key = (start_index, stop_ms)
+        if key not in summaries:
+            full_end, tail_ms = divmod(stop_ms, step)
+            full_end = min(full_end, length)
+            count = full_end - start_index
+            vector = embedding_prefix[full_end] - embedding_prefix[start_index]
+            score = activity_prefix[full_end] - activity_prefix[start_index]
+            if tail_ms and full_end < length:
+                fraction = tail_ms / step
+                vector = vector + fraction * embeddings[full_end]
+                score += fraction * activity[full_end]
+                count += fraction
+            vector = vector / max(float(np.linalg.norm(vector)), 1e-8)
+            summaries[key] = (vector, float(score / max(count, 1e-8)))
+        return summaries[key]
+
+    for start_index, stop_index, _ in candidates:
+        summarize(start_index, min(stop_index * step, end))
     chosen = []
     covered = set()
     prototypes = []
@@ -62,12 +88,11 @@ def analyze(scores, idle, embeddings, vocabulary, duration):
             stop = min(j * step, end, start + remaining)
             if stop <= start or any(start < b and stop > a for a, b, _ in chosen):
                 continue
-            vector = embeddings[i:j].mean(axis=0)
-            vector /= max(float(np.linalg.norm(vector)), 1e-8)
+            vector, base = summarize(i, stop)
             repeat = max((float(vector @ other) for other in prototypes), default=0.0)
-            base = float(activity[i:j].mean())
             novel = pair is not None and pair not in covered
-            merit = base + 0.8 * novel + 0.08 * (pair is not None) - 0.22 * max(repeat, 0)
+            seconds = (stop - start) / MILLISECONDS
+            merit = (0.8 * novel + seconds * (base + 0.08 * (pair is not None) - 0.22 * max(repeat, 0))) / seconds
             if best is None or merit > best[0]:
                 best = (merit, start, stop, pair, vector, base)
         if best is None:

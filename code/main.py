@@ -9,6 +9,7 @@ from demo import build_demo
 from media import frames, probe, render
 from model import ROOT, Scorer
 from selection import FRAME_SECONDS, analyze
+from selection_baseline import analyze as baseline
 
 
 def main():
@@ -17,6 +18,8 @@ def main():
     parser.add_argument("output", type=Path)
     parser.add_argument("--vocabulary", type=Path, default=ROOT / "code" / "vocabulary.json")
     parser.add_argument("--threads", type=int, default=min(4, os.cpu_count() or 1))
+    parser.add_argument("--selector", choices=("baseline", "duration"), default="baseline")
+    parser.add_argument("--unsmoothed", action="store_true")
     parser.add_argument("--demo", type=Path, metavar="DIR")
     args = parser.parse_args()
     source, output = args.video.resolve(), args.output.resolve()
@@ -40,7 +43,9 @@ def main():
         scorer = Scorer(args.vocabulary, args.threads)
         raw = frames(source, FRAME_SECONDS)
         scores, idle, embeddings, label = scorer.predict(raw)
-        actions, highlights = analyze(scores, idle, embeddings, scorer.actions, duration)
+        actions, highlights = analyze(scores, idle, embeddings, scorer.actions, duration, smoothing=not args.unsmoothed)
+        if args.selector == "baseline":
+            _, highlights = baseline(scores, idle, embeddings, scorer.actions, duration)
         result = dict(video_id=source.stem, label=label, actions=actions, highlights=highlights)
         if args.demo:
             render(source, reel, highlights, audio)

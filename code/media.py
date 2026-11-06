@@ -26,8 +26,8 @@ def probe(path):
 
 def frames(path, step):
     filters = (
-        f"fps=1/{step}:start_time=0:round=up,"
-        f"scale={SIZE}:{SIZE}:force_original_aspect_ratio=increase,crop={SIZE}:{SIZE}"
+        f"setpts=PTS-STARTPTS,fps=1/{step}:start_time=0:round=up,"
+        f"scale={SIZE}:{SIZE}:force_original_aspect_ratio=decrease,pad={SIZE}:{SIZE}:(ow-iw)/2:(oh-ih)/2"
     )
     result = subprocess.run(
         ffmpeg("-loglevel", "error", "-i", path, "-map", "0:v:0",

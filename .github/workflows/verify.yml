@@ -1,0 +1,21 @@
+name: Verify CPU container
+on:
+  workflow_dispatch:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build CPU image and fetch pinned model
+        run: docker build --build-arg DOWNLOAD_WEIGHTS=1 -t track4 .
+      - name: Create fixture
+        run: |
+          mkdir -p smoke
+          docker run --rm --entrypoint python -v "$PWD/smoke:/smoke" track4 -c "import subprocess; from imageio_ffmpeg import get_ffmpeg_exe; subprocess.run([get_ffmpeg_exe(),'-v','error','-f','lavfi','-i','color=c=gray:s=320x240:r=12','-t','120','-c:v','libx264','/smoke/idle.mp4'],check=True)"
+      - name: Run offline through the contract and validate
+        run: |
+          docker run --rm --network none -v "$PWD/smoke:/smoke" track4 /smoke/idle.mp4 /smoke/idle.json
+          docker run --rm --network none --entrypoint python -v "$PWD/smoke:/smoke" track4 code/check_output.py /smoke/idle.mp4 /smoke/idle.json

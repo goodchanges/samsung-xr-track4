@@ -1,4 +1,6 @@
 import json
+import hashlib
+import os
 from pathlib import Path
 
 import numpy as np
@@ -56,6 +58,25 @@ class Scorer:
 
     @torch.inference_mode()
     def predict(self, raw):
+        key = hashlib.sha256(raw + self.text.numpy().tobytes()).hexdigest()
+        cache = ROOT / "work" / "cache"
+        cache.mkdir(parents=True, exist_ok=True)
+        path = cache / (key + ".npz")
+        if path.exists():
+            with np.load(path, allow_pickle=False) as saved:
+                return saved["scores"], saved["idle"], saved["embeddings"], str(saved["label"].item())
+        result = self._predict(raw)
+        temporary = path.with_name(f"{key}.{os.getpid()}.tmp")
+        try:
+            with temporary.open("wb") as handle:
+                np.savez_compressed(handle, scores=result[0], idle=result[1], embeddings=result[2], label=result[3])
+            temporary.replace(path)
+        finally:
+            temporary.unlink(missing_ok=True)
+        return result
+
+    @torch.inference_mode()
+    def _predict(self, raw):
         pixels = np.frombuffer(raw, dtype=np.uint8).reshape(-1, SIZE, SIZE, 3)
         vectors = []
         for offset in range(0, len(pixels), 16):
