@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+weights/*
+!weights/README.md
+outputs/*
+!outputs/.gitkeep
+work/
+*.mp4
+*.zip

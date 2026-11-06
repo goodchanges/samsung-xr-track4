@@ -1,0 +1,41 @@
+# Samsung XR Challenge 2026 · Track 4
+
+Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verb–noun predictions, a category, and chronological highlight intervals within 15% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.
+
+## Run on this Windows laptop
+
+Open PowerShell in this folder.
+
+    .\run.cmd "path\to\recording.mp4" "outputs\recording.json" --demo "work\recording-demo"
+    .\.venv\Scripts\python.exe code/check_output.py "path\to\recording.mp4" "outputs\recording.json"
+
+Open work/recording-demo/index.html in your browser. Keep the source and demo files in place so the page can find both videos. Omit the demo flag and its value for JSON only. The video ID comes from the filename without the extension.
+
+## Set up a fresh checkout
+
+Use Python 3.11–3.13. Initial setup downloads dependencies and approximately 600 MB of model weights. Inference then runs offline.
+
+    python -m venv .venv
+    .\.venv\Scripts\python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+    .\.venv\Scripts\python.exe code/setup_model.py
+
+On Linux, substitute .venv/bin/python for the Windows Python path, then run:
+
+    ./run.sh recording.mp4 outputs/recording.json
+
+## Method and limits
+
+CLIP ViT-B/32 scores one frame per second against prompts for each action and category. Neighboring samples smooth the scores. An idle prompt and visual change gate weak action predictions. The selector rewards coverage of distinct predicted verb–noun pairs and discounts visually similar clips. Importance scores are ranking signals.
+
+The provisional vocabulary lives in code/vocabulary.json. Pass --vocabulary PATH to use the same structure with a different label set. CLIP sees still images, so it can confuse similar motions, miss short actions, or predict the wrong verb for a visible object. Challenge accuracy is unmeasured. Use --threads N to tune CPU usage.
+
+## Local verification
+
+The prepared laptop demo is at work/epic-demo/index.html. Its input is an 18-second single-view crop from the EPIC-KITCHENS project site's public video wall. The prototype selected 2.70 seconds, and its output passed the local checker. A two-minute static video with a synthetic audio track exercised the idle fallback and audio render. Neither run measures challenge accuracy.
+
+## Official submission handoff
+
+The four top-level JSON keys follow the slides' example. The slides also mention six required keys. Use the student kit's validator and examples to resolve the final schema. Replace the provisional labels, map IDs through the manifest if needed, and run the official validator on all outputs. Package under the registered identifier. Include run.sh, code/, weights/, requirements.txt, outputs/ and this README. Keep the demo and deck separate as directed by the organizers. Git excludes large weights, local media and generated outputs.
+
+[OpenAI CLIP checkpoint](https://huggingface.co/openai/clip-vit-base-patch32) · [EPIC-KITCHENS project](https://epic-kitchens.github.io/)

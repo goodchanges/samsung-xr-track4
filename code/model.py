@@ -1,0 +1,71 @@
+import json
+from pathlib import Path
+
+import numpy as np
+import torch
+from huggingface_hub import snapshot_download
+from PIL import Image
+from transformers import CLIPModel, CLIPProcessor
+
+from media import SIZE
+
+ROOT = Path(__file__).resolve().parents[1]
+CHECKPOINT = ROOT / "weights" / "clip"
+MODEL_ID = "openai/clip-vit-base-patch32"
+
+
+def setup():
+    snapshot_download(
+        MODEL_ID, revision="3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+        local_dir=CHECKPOINT,
+        allow_patterns=["*.json", "merges.txt", "pytorch_model.bin"],
+    )
+
+
+class Scorer:
+    def __init__(self, vocabulary, threads):
+        torch.set_num_threads(threads)
+        vocab = json.loads(vocabulary.read_text(encoding="utf-8"))
+        self.actions = vocab["actions"]
+        self.categories = vocab["categories"]
+        if not self.actions or not self.categories:
+            raise ValueError("The vocabulary requires at least one action and category.")
+        if not (CHECKPOINT / "pytorch_model.bin").is_file():
+            raise ValueError("Model weights are missing. Run code/setup_model.py first.")
+        self.processor = CLIPProcessor.from_pretrained(CHECKPOINT, use_fast=False)
+        self.model = CLIPModel.from_pretrained(CHECKPOINT, use_safetensors=False, local_files_only=True).eval()
+        prompts = [
+            prompt
+            for item in self.actions
+            for prompt in (
+                f"First-person view of hands {item['description']}.",
+                f"A close-up photo of someone {item['description']}.",
+            )
+        ]
+        prompts += ["A first-person view with idle hands or no object interaction."]
+        prompts += [f"First-person footage of {x['description']}." for x in self.categories]
+        text_vectors = []
+        with torch.inference_mode():
+            for offset in range(0, len(prompts), 32):
+                tokens = self.processor(
+                    text=prompts[offset:offset + 32], padding=True, truncation=True,
+                    return_tensors="pt",
+                )
+                text_vectors.append(self.model.get_text_features(**tokens))
+            self.text = torch.nn.functional.normalize(torch.cat(text_vectors), dim=-1)
+
+    @torch.inference_mode()
+    def predict(self, raw):
+        pixels = np.frombuffer(raw, dtype=np.uint8).reshape(-1, SIZE, SIZE, 3)
+        vectors = []
+        for offset in range(0, len(pixels), 16):
+            images = [Image.fromarray(x) for x in pixels[offset:offset + 16]]
+            batch = self.processor(images=images, return_tensors="pt")
+            vectors.append(self.model.get_image_features(**batch))
+        embeddings = torch.nn.functional.normalize(torch.cat(vectors), dim=-1)
+        scores = (embeddings @ self.text.T).numpy()
+        stop = 2 * len(self.actions)
+        action = scores[:, :stop].reshape(len(scores), -1, 2).mean(axis=-1)
+        idle = scores[:, stop]
+        category = scores[:, stop + 1:].mean(axis=0).argmax()
+        return action, idle, embeddings.numpy(), self.categories[category]["label"]
