@@ -77,7 +77,15 @@ def main():
         if args.top_k > 1:
             actions = localize(scores, idle, embeddings, scorer.actions, duration,
                                top_k=args.top_k, smoothing=not args.unsmoothed)
+        kitchen, margin, fraction = scorer.kitchen_confidence(embeddings)
         if args.temporal_model:
+            print(f"Kitchen gate: accepted={kitchen} margin={margin:.4f} frame_fraction={fraction:.3f}", file=sys.stderr)
+        if args.temporal_model and not kitchen:
+            from temporal_selection import generic_select
+            highlights = generic_select(actions, scores, scorer.actions, embeddings, duration, highlights)
+            print("Route: generic CLIP + temporal selector", file=sys.stderr)
+        if args.temporal_model and kitchen:
+            print("Route: kitchen TSM", file=sys.stderr)
             try:
                 from temporal_model import TemporalRecognizer
             except ImportError as exc:

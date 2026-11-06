@@ -89,6 +89,8 @@ The adapter is off by default (strength `0`). Pass `--adapter-strength 0.1` to o
 
 ## Optional temporal recognizer
 
+**Final safety revision:** the historical TSM results below were measured before the confidence gate. They are not accuracy measurements of the final gated pipeline. TSM now runs only when the existing CLIP `cooking` category exceeds every other category by a mean cosine-similarity margin of at least 0.03 and wins at least half of sampled frames. This fixed, uncalibrated safety rule was not tuned. Otherwise the runner uses generic CLIP action predictions and the temporal selector; no kitchen-only decoding occurs. Generic pair scores are normalized ranking signals, not calibrated probabilities. With no detected actions, the existing budget-safe fallback highlight is retained.
+
 The subsequent [separate evaluation and coverage improvement](docs/recognition/refinement.md) found 9.69% local action F1 for four-second TSM versus 0.37% for CLIP on three new recordings. An optional `--selector temporal` profile raised local action coverage from 13.09% to 25.34%, with a recognition tradeoff described in that report. It uses two-second contexts and the same 14.5% budget. Neither recognizer is universal; the TSM model is kitchen-specific. Input filenames and annotations do not determine production predictions.
 
 A pretrained eight-frame TSM recognizer improved local macro action F1 from **1.80% to 4.82%** on three different public EPIC validation recordings (79 annotated actions). It matched 11 actions at tIoU 0.1 versus CLIP's 4. This is a small diagnostic with low absolute accuracy, not an official score or evidence of a competition ranking. See [results, provenance, runtime and limitations](docs/recognition/temporal.md).
@@ -101,3 +103,27 @@ python code/batch.py VIDEO_DIRECTORY OUTPUT_DIRECTORY --temporal-model weights/t
 ```
 
 Omit the flag to retain plain CLIP. By default the optional model replaces action predictions only; CLIP still chooses highlights and the video-level label. Add `--selector temporal` to use the tested temporal highlight selector as well. The four JSON keys and 14.5% budget are unchanged. No training is needed, and inference makes no model downloads. The current Dockerfile installs only the default CLIP dependencies and does not enable this optional model. Samsung model/data permissions and exact vocabulary remain pending.
+
+## Final verification round
+
+Video-level labels are data-driven: normalized CLIP frame embeddings are compared with category-text embeddings, similarities are averaged over frames, and the highest-scoring category is selected. The existing `categories` list in `code/vocabulary.json` is the **provisional category list**, not Samsung's vocabulary. No categories were added in this round. Exact kit mapping remains pending.
+
+Historical development results: four-second TSM action F1 4.82%, selected two-second candidate 6.52%; preserved highlight coverage 20.37%, temporal selector 24.07%. Reserved three-video results: CLIP F1 0.37%, four-second TSM 9.69%, two-second TSM 7.58%; preserved coverage 13.09%, two-second temporal selection 25.34%, uniform coverage 15.22%. The shorter context was rejected as the recognition default. These are small, kitchen-specific, three-video local splits, using local metrics—not Samsung scores. Human highlight agreement and real non-kitchen accuracy remain unmeasured. See `docs/recognition/refinement.md` for definitions and frozen-selection evidence. Do not infer final gated accuracy from these historical ungated results.
+
+Actual final-settings edge tests all exited zero: 2-second clip, 600-second synthetic color video, no-audio clip, 160x120/12-fps clip, physically rotated 240x426 clip, and corrupt input. Readable cases stayed within 14.5%; corrupt input wrote empty actions/highlights and an empty label. Raw results and stderr are in [final-audit.json](docs/final-audit.json). The ten-minute synthetic run took 76.787 seconds wall time with a sampled peak summed process-tree RSS of 854.531 MiB (50-ms sampling, not unique physical memory). It used the generic route and is not a ten-minute TSM or real-world accuracy benchmark. No real non-kitchen recording was available. All 14 unit tests passed.
+
+`run.sh` and `run.cmd` contain inference/import failures, log the reason to stderr, write the current four-key fallback JSON and exit zero. Empty label means classification was unavailable. This passes the existing provisional format checker, but official vocabulary/schema validity cannot be guaranteed before the kit arrives. A killed process, missing Python interpreter, absent output argument, unwritable output path, or a request to overwrite the input cannot be guaranteed to produce JSON. Downstream users must inspect stderr and empty outputs rather than treating exit zero as inference success.
+
+Exact PowerShell run commands, from the repository root:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-temporal.txt
+.\.venv\Scripts\python.exe code/setup_temporal.py
+& 'C:\Program Files\Git\bin\bash.exe' ./run.sh 'input.mp4' 'outputs/result.json' --temporal-model weights/temporal/tsm_rgb.ckpt --selector temporal
+# Generic CLIP only:
+& 'C:\Program Files\Git\bin\bash.exe' ./run.sh 'input.mp4' 'outputs/result.json'
+# Tests:
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+Setup requires network access; inference uses local weights. No further tuning experiments were performed in this final round.

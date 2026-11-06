@@ -152,3 +152,16 @@ class Scorer:
             batch = self.processor(images=images, return_tensors="pt")
             vectors.append(self.model.get_image_features(**batch))
         return torch.nn.functional.normalize(torch.cat(vectors), dim=-1)
+
+    def kitchen_confidence(self, embeddings):
+        """Conservative, uncalibrated gate using the existing category prompts."""
+        labels = [item["label"] for item in self.categories]
+        if "cooking" not in labels or len(labels) < 2:
+            return False, 0.0, 0.0
+        similarities = embeddings @ self.text.numpy()[:, :].T
+        categories = similarities[:, 2 * len(self.actions) + 1:]
+        index = labels.index("cooking")
+        means = categories.mean(axis=0)
+        margin = float(means[index] - np.max(np.delete(means, index)))
+        fraction = float(np.mean(categories.argmax(axis=1) == index))
+        return margin >= .03 and fraction >= .5, margin, fraction

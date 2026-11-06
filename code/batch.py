@@ -107,7 +107,7 @@ def main():
             from temporal_model import TemporalRecognizer
         except ImportError:
             parser.error("Install optional model dependencies: python -m pip install -r requirements-temporal.txt")
-        temporal = TemporalRecognizer(args.temporal_model, args.threads)
+        temporal_factory = TemporalRecognizer
     args.outputs.mkdir(parents=True, exist_ok=True)
     for video_id, video in entries:
         duration, _ = probe(video)
@@ -125,7 +125,14 @@ def main():
         if args.top_k > 1:
             actions = localize(scores, idle, embeddings, scorer.actions, duration,
                                top_k=args.top_k, smoothing=not args.unsmoothed)
-        if temporal is not None:
+        kitchen, margin, fraction = scorer.kitchen_confidence(embeddings) if args.temporal_model else (False, 0., 0.)
+        if args.temporal_model and not kitchen:
+            from temporal_selection import generic_select
+            highlights = generic_select(actions, scores, scorer.actions, embeddings, duration, highlights)
+            print("Route: generic CLIP + temporal selector", file=sys.stderr)
+        if args.temporal_model and kitchen:
+            if temporal is None:
+                temporal = temporal_factory(args.temporal_model, args.threads)
             actions = temporal.recognize(video, duration, args.temporal_model.parent / "classes.json",
                                          context)
             if args.selector == "temporal":

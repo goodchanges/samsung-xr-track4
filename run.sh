@@ -9,4 +9,4 @@ else
   python="${PYTHON:-python3}"
 fi
 export HF_HUB_OFFLINE=1
-exec "$python" "$root/code/main.py" "$@"
+exec "$python" "$root/code/safe_run.py" "$@"

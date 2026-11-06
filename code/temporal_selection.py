@@ -4,7 +4,7 @@ import math
 import numpy as np
 
 
-def select(actions, verbs, nouns, classes, embeddings, duration):
+def select(actions, verbs, nouns, classes, embeddings, duration, pair_scores=None):
     limit = math.floor(duration * 1000 + 1e-6)
     remaining = limit * 145 // 1000
     verb_ids = {name: i for i, name in enumerate(classes["verb"])}
@@ -25,7 +25,8 @@ def select(actions, verbs, nouns, classes, embeddings, duration):
         left, right = int(start // 1000), min(len(verbs), math.ceil(end / 1000))
         indices = np.arange(left, right)
         weights = np.maximum(0, np.minimum((indices + 1) * 1000, end) - np.maximum(indices * 1000, start))
-        confidence = np.sqrt(verbs[indices, verb_ids[pair[0]]] * nouns[indices, noun_ids[pair[1]]])
+        confidence = (pair_scores[pair][indices] if pair_scores is not None else
+                      np.sqrt(verbs[indices, verb_ids[pair[0]]] * nouns[indices, noun_ids[pair[1]]]))
         importance = float(np.average(confidence, weights=weights))
         vector = np.average(embeddings[indices], axis=0, weights=weights)
         vector /= max(float(np.linalg.norm(vector)), 1e-8)
@@ -53,3 +54,14 @@ def select(actions, verbs, nouns, classes, embeddings, duration):
         prototypes.append(vector)
     return [dict(start=float(a / 1000), end=float(b / 1000), importance=float(np.clip(score, 0, 1)))
             for a, b, score in sorted(chosen)]
+
+
+def generic_select(actions, scores, vocabulary, embeddings, duration, fallback):
+    """Same temporal selector using generic CLIP pair evidence, without TSM."""
+    if not actions:
+        return fallback
+    evidence = np.exp(20 * (scores - scores.max(axis=1, keepdims=True)))
+    evidence /= evidence.sum(axis=1, keepdims=True)
+    pairs = {(a["verb"], a["noun"]): evidence[:, i] for i, a in enumerate(vocabulary)}
+    dummy = np.zeros((len(scores), 1))
+    return select(actions, dummy, dummy, {"verb": [], "noun": []}, embeddings, duration, pairs)
