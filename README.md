@@ -62,18 +62,17 @@ Batch inference reuses the model:
 
 Local evaluation and process-memory measurement instructions are in docs/verification.md. The local metric definitions are provisional.
 
-Build the CPU container after fetching local weights:
-
-    docker build -t track4 .
-    docker run --rm --network none -v /absolute/data:/data track4 /data/video.mp4 /data/video.json
-
-For a fresh checkout without weights, build with `--build-arg DOWNLOAD_WEIGHTS=1` while online, then run offline. The [Linux container check](https://github.com/goodchanges/samsung-xr-track4/actions/runs/42186160883) passed the regression tests and processed a generated two-minute MP4 through `run.sh` with networking disabled.
-
 Create a prototype archive with the registered identifier:
 
     python code/package.py VelloreInstituteOfTechnologyVellore_VIT PATH_TO_NEW_ZIP
 
 The archive includes local weights. Keep outputs/ reserved for official per-video outputs once the manifest arrives. Local fixture results belong under work/verification/.
+
+## Run with Docker
+
+1. Set up `weights/clip/` first, or add `--build-arg DOWNLOAD_WEIGHTS=1` to the build to fetch the checkpoint.
+2. Build with `docker build -t track4 .`.
+3. Run with `docker run --rm --network none -v /absolute/data:/data track4 /data/video.mp4 /data/video.json`.
 
 ## Measured recognition revision
 
