@@ -52,7 +52,7 @@ class RecognitionChecks(unittest.TestCase):
             scorer = Mock(actions=[dict(verb="take", noun="cup")])
             scorer.predict.return_value = (np.zeros((3, 1)), np.ones(3), np.ones((3, 2)), "test")
             argv = ["batch.py", str(root), str(root / "outputs"), "--manifest", str(manifest),
-                    "--validator", str(validator), "--no-adapter", "--selector", "baseline"]
+                    "--validator", str(validator), "--no-adapter", "--selector", "baseline", "--report", str(root / "report.json")]
             with patch.object(sys, "argv", argv), patch.object(batch, "Scorer", return_value=scorer), \
                     patch.object(batch, "frames", return_value=b"frames"), patch.object(batch, "probe", return_value=(3., False)):
                 batch.main()
@@ -62,6 +62,28 @@ class RecognitionChecks(unittest.TestCase):
             manifest.write_text('video_id,path\nCUSTOM_ID,missing.mp4\n', encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "Missing MP4"):
                 manifest_entries(manifest, root)
+
+    def test_batch_continues_after_corrupt_video_and_reports_failure(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "a-corrupt.mp4").touch()
+            (root / "b-valid.mp4").touch()
+            scorer = Mock(actions=[dict(verb="take", noun="cup")])
+            scorer.predict.return_value = (np.zeros((3, 1)), np.ones(3), np.ones((3, 2)), "test")
+            def probe(path):
+                if path.stem == "a-corrupt":
+                    raise ValueError("Unreadable fixture")
+                return 3., False
+            argv = ["batch.py", str(root), str(root / "outputs"), "--selector", "baseline",
+                    "--report", str(root / "report.json")]
+            with patch.object(sys, "argv", argv), patch.object(batch, "Scorer", return_value=scorer), \
+                    patch.object(batch, "frames", return_value=b"frames"), patch.object(batch, "probe", side_effect=probe):
+                with self.assertRaises(SystemExit) as failure:
+                    batch.main()
+            self.assertEqual(failure.exception.code, 1)
+            self.assertEqual(json.loads((root / "outputs/a-corrupt.json").read_text())["label"], "")
+            self.assertEqual(json.loads((root / "outputs/b-valid.json").read_text())["label"], "test")
+            self.assertEqual([r["status"] for r in json.loads((root / "report.json").read_text())], ["failed", "ok"])
 
 
 if __name__ == "__main__":

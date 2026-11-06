@@ -79,7 +79,7 @@ The archive includes local weights. Keep outputs/ reserved for official per-vide
 2. Build with `docker build -t track4 .`.
 3. Run with `docker run --rm --network none -v /absolute/data:/data track4 /data/video.mp4 /data/video.json`.
 
-The current Dockerfile is untested. Docker is unavailable on the development machine.
+Docker is unavailable on the development machine. See [readiness checks](docs/readiness.md) for the latest Linux CI evidence. For the optional temporal model, build with `--build-arg ENABLE_TEMPORAL=1`; combine it with `--build-arg DOWNLOAD_WEIGHTS=1` to fetch both checkpoints at build time. Runtime remains offline.
 
 ## Measured recognition revision
 
@@ -127,3 +127,9 @@ Exact PowerShell run commands, from the repository root:
 ```
 
 Setup requires network access; inference uses local weights. No further tuning experiments were performed in this final round.
+
+## Kit-independent readiness update
+
+A real 210-second non-kitchen recording has now been tested. Routing selected the generic path and labeled it `outdoors`, but its three action predictions were unsupported by inspected source frames and its highlight was only six seconds. This does not establish non-kitchen accuracy. Full provenance, output and limitations are in [readiness.md](docs/readiness.md).
+
+Batch continues after per-video inference failures and writes a status report outside the submission folder. Inspect `work/batch-report.json` or pass `--report PATH`; a failed batch exits 1 after writing each video's result. Package preparation checks all required local CLIP assets and rejects LFS pointer files. Student-kit schema, vocabulary, official outputs and official validation remain pending.

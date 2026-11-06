@@ -8,6 +8,21 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def check_assets(root):
+    clip = root / "weights/clip"
+    required = ("pytorch_model.bin", "config.json", "preprocessor_config.json", "tokenizer.json",
+                "tokenizer_config.json", "special_tokens_map.json", "vocab.json", "merges.txt")
+    missing = [name for name in required if not (clip / name).is_file()]
+    if missing:
+        raise ValueError(f"Incomplete local CLIP assets: {missing}. Run code/setup_model.py first.")
+    if (clip / "pytorch_model.bin").stat().st_size < 100_000_000:
+        raise ValueError("CLIP checkpoint is too small; retrieve the full weights, not an LFS pointer.")
+    temporal = root / "weights/temporal"
+    if temporal.exists() and any(temporal.iterdir()):
+        if not (temporal / "classes.json").is_file() or not (temporal / "tsm_rgb.ckpt").is_file():
+            raise ValueError("Incomplete optional temporal assets; run code/setup_temporal.py first.")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Package local code, weights and outputs.")
     parser.add_argument("identifier", help="Actual registered college/team identifier")
@@ -15,15 +30,17 @@ def main():
     args = parser.parse_args()
     if not re.fullmatch(r"[A-Za-z0-9_-]+", args.identifier):
         parser.error("Use letters, digits, underscores and hyphens in the registered identifier.")
-    if not (ROOT / "weights/clip/pytorch_model.bin").is_file():
-        parser.error("Model weights are missing.")
+    try:
+        check_assets(ROOT)
+    except ValueError as exc:
+        parser.error(str(exc))
     if args.destination.exists():
         parser.error("Destination already exists. Choose a new file.")
     paths = [ROOT / name for name in ("run.sh", "run.cmd", "requirements.txt", "requirements-temporal.txt", "requirements.lock.txt", "README.md", "Dockerfile", ".dockerignore")]
     for directory in ("code", "weights", "outputs", "tests", "docs"):
         paths.extend(p for p in (ROOT / directory).rglob("*") if p.is_file()
                      and not any(part.startswith(".") or part == "__pycache__" for part in p.relative_to(ROOT).parts)
-                     and p.suffix not in (".pyc", ".tmp", ".part"))
+                     and p.suffix.lower() not in (".pyc", ".tmp", ".part", ".partial", ".mp4", ".webm", ".mov", ".avi"))
     args.destination.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
         dir=args.destination.parent, prefix=args.destination.stem + ".", suffix=".partial",
@@ -39,7 +56,7 @@ def main():
                     entry = ZipInfo.from_file(path, name)
                     entry.create_system = 3  # Store Unix file permissions even on Windows.
                     entry.external_attr = (S_IFREG | 0o755) << 16
-                    archive.writestr(entry, path.read_bytes(), compress_type=ZIP_DEFLATED)
+                    archive.writestr(entry, path.read_bytes().replace(b"\r\n", b"\n"), compress_type=ZIP_DEFLATED)
                 else:
                     archive.write(path, name)
         temporary.replace(args.destination)

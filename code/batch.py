@@ -61,6 +61,8 @@ def main():
     parser.add_argument("--id-column", default="video_id")
     parser.add_argument("--path-column", default="path")
     parser.add_argument("--validator", type=Path, help="Organizer's validate.py; run after ALL manifest outputs exist.")
+    parser.add_argument("--report", type=Path, default=ROOT / "work/batch-report.json",
+                        help="Per-video status report, stored outside submission outputs.")
     args = parser.parse_args()
     if args.selector == "temporal" and not args.temporal_model:
         parser.error("--selector temporal requires --temporal-model.")
@@ -77,6 +79,8 @@ def main():
         parser.error("--threads must be positive.")
     if args.validator and (not args.manifest or not args.validator.is_file()):
         parser.error("Official validation requires an existing validator and an explicit manifest.")
+    if args.report.resolve().is_relative_to(args.outputs.resolve()):
+        parser.error("Keep the batch status report outside the submission output directory.")
     videos = sorted(p for p in args.videos.iterdir() if p.is_file() and p.suffix.lower() == ".mp4")
     if args.manifest:
         try:
@@ -102,47 +106,49 @@ def main():
     scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength)
     original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer) if args.selector == "preserved" else None
     temporal = None
-    if args.temporal_model:
-        try:
-            from temporal_model import TemporalRecognizer
-        except ImportError:
-            parser.error("Install optional model dependencies: python -m pip install -r requirements-temporal.txt")
-        temporal_factory = TemporalRecognizer
     args.outputs.mkdir(parents=True, exist_ok=True)
+    report = []
     for video_id, video in entries:
-        duration, _ = probe(video)
-        if not 1 <= duration <= 600.05:
-            parser.error(f"Unsupported duration for {video.name}")
-        raw = frames(video, FRAME_SECONDS)
-        scores, idle, embeddings, label = scorer.predict(raw)
-        actions, highlights = analyze(scores, idle, embeddings, scorer.actions, duration,
-                                      smoothing=not args.unsmoothed)
-        if args.selector == "baseline":
-            _, highlights = baseline(scores, idle, embeddings, scorer.actions, duration)
-        elif original is not None:
-            old_scores, old_idle, _, _ = original.predict(raw)
-            _, highlights = baseline(old_scores, old_idle, embeddings, original.actions, duration)
-        if args.top_k > 1:
-            actions = localize(scores, idle, embeddings, scorer.actions, duration,
-                               top_k=args.top_k, smoothing=not args.unsmoothed)
-        kitchen, margin, fraction = scorer.kitchen_confidence(embeddings) if args.temporal_model else (False, 0., 0.)
-        if args.temporal_model and not kitchen:
-            from temporal_selection import generic_select
-            highlights = generic_select(actions, scores, scorer.actions, embeddings, duration, highlights)
-            print("Route: generic CLIP + temporal selector", file=sys.stderr)
-        if args.temporal_model and kitchen:
-            if temporal is None:
-                temporal = temporal_factory(args.temporal_model, args.threads)
-            actions = temporal.recognize(video, duration, args.temporal_model.parent / "classes.json",
-                                         context)
-            if args.selector == "temporal":
-                from temporal_selection import select
-                verbs, nouns = temporal.score_video(video, duration, context)
-                classes = json.loads((args.temporal_model.parent / "classes.json").read_text(encoding="utf-8"))
-                highlights = select(actions, verbs, nouns, classes, embeddings, duration)
-        actions, highlights = clean_intervals(actions, highlights, duration)
-        result = dict(video_id=video_id, label=label, actions=actions, highlights=highlights)
-        check(result, video_id, duration)
+        try:
+            duration, _ = probe(video)
+            if not 1 <= duration <= 600.05:
+                raise ValueError(f"Unsupported duration for {video.name}")
+            raw = frames(video, FRAME_SECONDS)
+            scores, idle, embeddings, label = scorer.predict(raw)
+            actions, highlights = analyze(scores, idle, embeddings, scorer.actions, duration,
+                                          smoothing=not args.unsmoothed)
+            if args.selector == "baseline":
+                _, highlights = baseline(scores, idle, embeddings, scorer.actions, duration)
+            elif original is not None:
+                old_scores, old_idle, _, _ = original.predict(raw)
+                _, highlights = baseline(old_scores, old_idle, embeddings, original.actions, duration)
+            if args.top_k > 1:
+                actions = localize(scores, idle, embeddings, scorer.actions, duration,
+                                   top_k=args.top_k, smoothing=not args.unsmoothed)
+            kitchen, margin, fraction = scorer.kitchen_confidence(embeddings) if args.temporal_model else (False, 0., 0.)
+            if args.temporal_model and not kitchen:
+                from temporal_selection import generic_select
+                highlights = generic_select(actions, scores, scorer.actions, embeddings, duration, highlights)
+                print("Route: generic CLIP + temporal selector", file=sys.stderr)
+            if args.temporal_model and kitchen:
+                if temporal is None:
+                    from temporal_model import TemporalRecognizer
+                    temporal = TemporalRecognizer(args.temporal_model, args.threads)
+                actions = temporal.recognize(video, duration, args.temporal_model.parent / "classes.json", context)
+                if args.selector == "temporal":
+                    from temporal_selection import select
+                    verbs, nouns = temporal.score_video(video, duration, context)
+                    classes = json.loads((args.temporal_model.parent / "classes.json").read_text(encoding="utf-8"))
+                    highlights = select(actions, verbs, nouns, classes, embeddings, duration)
+            actions, highlights = clean_intervals(actions, highlights, duration)
+            result = dict(video_id=video_id, label=label, actions=actions, highlights=highlights)
+            check(result, video_id, duration)
+            report.append(dict(video_id=video_id, status="ok"))
+        except Exception as exc:
+            reason = f"{type(exc).__name__}: {exc}"
+            print(f"Batch failure [{video_id}]: {reason}", file=sys.stderr)
+            result = dict(video_id=video_id, label="", actions=[], highlights=[])
+            report.append(dict(video_id=video_id, status="failed", reason=reason))
         target = args.outputs / (video_id + ".json")
         import os
         temp = target.with_name(f".{target.name}.{os.getpid()}.tmp")
@@ -151,6 +157,11 @@ def main():
             temp.replace(target)
         finally:
             temp.unlink(missing_ok=True)
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    failures = sum(row["status"] == "failed" for row in report)
+    if failures:
+        parser.exit(1, f"Batch completed with {failures}/{len(report)} failures; see {args.report}.\n")
     if args.validator:
         subprocess.run([sys.executable, str(args.validator.resolve()), "--dir", str(args.outputs.resolve())],
                        cwd=args.validator.resolve().parent, check=True)
