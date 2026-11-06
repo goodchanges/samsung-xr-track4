@@ -3,6 +3,7 @@ WORKDIR /app
 COPY requirements.txt requirements.lock.txt ./
 RUN pip install --no-cache-dir torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
 COPY code/ code/
+COPY tests/ tests/
 COPY weights/ weights/
 COPY run.sh .
 ARG DOWNLOAD_WEIGHTS=0

@@ -35,6 +35,8 @@ class Scorer:
         if not (CHECKPOINT / "pytorch_model.bin").is_file():
             raise ValueError("Model weights are missing. Run code/setup_model.py first.")
         self.processor = CLIPProcessor.from_pretrained(CHECKPOINT, use_fast=False)
+        with (CHECKPOINT / "pytorch_model.bin").open("rb") as handle:
+            self.checkpoint_hash = hashlib.file_digest(handle, "sha256").digest()
         self.model = CLIPModel.from_pretrained(CHECKPOINT, use_safetensors=False, local_files_only=True).eval()
         prompts = [
             prompt
@@ -58,7 +60,7 @@ class Scorer:
 
     @torch.inference_mode()
     def predict(self, raw):
-        key = hashlib.sha256(raw + self.text.numpy().tobytes()).hexdigest()
+        key = hashlib.sha256(self.checkpoint_hash + raw + self.text.numpy().tobytes()).hexdigest()
         cache = ROOT / "work" / "cache"
         cache.mkdir(parents=True, exist_ok=True)
         path = cache / (key + ".npz")
@@ -69,7 +71,7 @@ class Scorer:
         temporary = path.with_name(f"{key}.{os.getpid()}.tmp")
         try:
             with temporary.open("wb") as handle:
-                np.savez_compressed(handle, scores=result[0], idle=result[1], embeddings=result[2], label=result[3])
+                np.savez_compressed(handle, scores=result[0], idle=result[1], embeddings=result[2], label=result[3], sample_timestamps_seconds=np.arange(len(result[0]), dtype=float))
             temporary.replace(path)
         finally:
             temporary.unlink(missing_ok=True)

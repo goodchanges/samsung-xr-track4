@@ -1,0 +1,78 @@
+[
+  {
+    "video_id": "coffee-preview",
+    "mode": "baseline",
+    "split": "development",
+    "feature_seconds_including_cache_lookup": 4.441533600096591,
+    "selection_seconds": 0.00417250010650605,
+    "metrics": {
+      "coverage_at_half_action": 0.25,
+      "action_precision_tiou_0.1": 0.0,
+      "action_recall_tiou_0.1": 0.0,
+      "action_precision_tiou_0.3": 0.0,
+      "action_recall_tiou_0.3": 0.0,
+      "action_precision_tiou_0.5": 0.0,
+      "action_recall_tiou_0.5": 0.0,
+      "highlight_f1_at_10hz": 0.25925925925925924,
+      "label_correct": false,
+      "selected_fraction": 0.14999999999999997
+    }
+  },
+  {
+    "video_id": "coffee-preview",
+    "mode": "smoothed",
+    "split": "development",
+    "feature_seconds_including_cache_lookup": 4.441533600096591,
+    "selection_seconds": 0.004033300094306469,
+    "metrics": {
+      "coverage_at_half_action": 0.0,
+      "action_precision_tiou_0.1": 0.0,
+      "action_recall_tiou_0.1": 0.0,
+      "action_precision_tiou_0.3": 0.0,
+      "action_recall_tiou_0.3": 0.0,
+      "action_precision_tiou_0.5": 0.0,
+      "action_recall_tiou_0.5": 0.0,
+      "highlight_f1_at_10hz": 0.07407407407407407,
+      "label_correct": false,
+      "selected_fraction": 0.14999999999999997
+    }
+  },
+  {
+    "video_id": "coffee-preview",
+    "mode": "unsmoothed",
+    "split": "development",
+    "feature_seconds_including_cache_lookup": 4.441533600096591,
+    "selection_seconds": 0.0016494999872520566,
+    "metrics": {
+      "coverage_at_half_action": 0.0,
+      "action_precision_tiou_0.1": 0.0,
+      "action_recall_tiou_0.1": 0.0,
+      "action_precision_tiou_0.3": 0.0,
+      "action_recall_tiou_0.3": 0.0,
+      "action_precision_tiou_0.5": 0.0,
+      "action_recall_tiou_0.5": 0.0,
+      "highlight_f1_at_10hz": 0.0,
+      "label_correct": false,
+      "selected_fraction": 0.15000000000000002
+    }
+  },
+  {
+    "video_id": "coffee-preview",
+    "mode": "uniform",
+    "split": "development",
+    "feature_seconds_including_cache_lookup": 4.441533600096591,
+    "selection_seconds": 0.0013242000713944435,
+    "metrics": {
+      "coverage_at_half_action": 0.0,
+      "action_precision_tiou_0.1": 0.0,
+      "action_recall_tiou_0.1": 0.0,
+      "action_precision_tiou_0.3": 0.0,
+      "action_recall_tiou_0.3": 0.0,
+      "action_precision_tiou_0.5": 0.0,
+      "action_recall_tiou_0.5": 0.0,
+      "highlight_f1_at_10hz": 0.0851063829787234,
+      "label_correct": false,
+      "selected_fraction": 0.15
+    }
+  }
+]

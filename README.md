@@ -39,3 +39,26 @@ Open work/montage-demo/index.html for the prepared laptop demo. Its input joins 
 The four top-level JSON keys follow the slides' example. The slides also mention six required keys. Use the student kit's validator and examples to resolve the final schema. Replace the provisional labels, map IDs through the manifest if needed, and run the official validator on all outputs. Package under the registered identifier. Include run.sh, code/, weights/, requirements.txt, outputs/ and this README. Keep the demo and deck separate as directed by the organizers. Git excludes large weights, local media and generated outputs.
 
 [OpenAI CLIP checkpoint](https://huggingface.co/openai/clip-vit-base-patch32) · [EPIC-KITCHENS project](https://epic-kitchens.github.io/)
+
+## Revision commands
+
+The default remains the original highlight selector after a small development comparison. Use --selector duration for the experimental duration-aware selector. Use --unsmoothed to compare action localization. Model features cache under work/cache; cache keys include the checkpoint content, sampled video content and text embeddings.
+
+Batch inference reuses the model:
+
+    python code/batch.py VIDEO_DIRECTORY OUTPUT_DIRECTORY --selector duration
+
+Local evaluation and process-memory measurement instructions are in docs/verification.md. The local metric definitions are provisional.
+
+Build the CPU container after fetching local weights:
+
+    docker build -t track4 .
+    docker run --rm --network none -v /absolute/data:/data track4 /data/video.mp4 /data/video.json
+
+For a fresh checkout without weights, build with --build-arg DOWNLOAD_WEIGHTS=1 while online, then run offline. GitHub Actions runs the clean-container smoke check through run.sh.
+
+Create a prototype archive with the registered identifier:
+
+    python code/package.py VelloreInstituteOfTechnologyVellore_VIT PATH_TO_NEW_ZIP
+
+The archive includes local weights. Keep outputs/ reserved for official per-video outputs once the manifest arrives. Local fixture results belong under work/verification/.
