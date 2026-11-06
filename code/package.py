@@ -1,7 +1,8 @@
 import argparse
 import re
 from pathlib import Path
-from zipfile import ZipFile, ZIP_DEFLATED
+from stat import S_IFREG
+from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -28,7 +29,14 @@ def main():
         with ZipFile(temporary, "x", ZIP_DEFLATED, compresslevel=1) as archive:
             archive.writestr(args.identifier + "/outputs/", "")
             for path in paths:
-                archive.write(path, args.identifier + "/" + path.relative_to(ROOT).as_posix())
+                name = args.identifier + "/" + path.relative_to(ROOT).as_posix()
+                if path == ROOT / "run.sh":
+                    entry = ZipInfo.from_file(path, name)
+                    entry.create_system = 3  # Store Unix file permissions even on Windows.
+                    entry.external_attr = (S_IFREG | 0o755) << 16
+                    archive.writestr(entry, path.read_bytes(), compress_type=ZIP_DEFLATED)
+                else:
+                    archive.write(path, name)
         temporary.replace(args.destination)
     finally:
         temporary.unlink(missing_ok=True)

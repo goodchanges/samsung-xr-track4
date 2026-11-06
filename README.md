@@ -13,11 +13,10 @@ Open work/recording-demo/index.html in your browser. Keep the source and demo fi
 
 ## Set up a fresh checkout
 
-Use Python 3.11–3.13. Initial setup downloads dependencies and approximately 600 MB of model weights. Inference then runs offline.
+Use Python 3.13, which matches the verified container. Initial setup downloads dependencies and approximately 600 MB of model weights. Inference then runs offline.
 
     python -m venv .venv
-    .\.venv\Scripts\python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+    .\.venv\Scripts\python.exe -m pip install -r requirements.txt -c requirements.lock.txt
     .\.venv\Scripts\python.exe code/setup_model.py
 
 On Linux, substitute .venv/bin/python for the Windows Python path, then run:
@@ -32,7 +31,7 @@ The provisional vocabulary lives in code/vocabulary.json. Pass --vocabulary PATH
 
 ## Local verification
 
-Open work/montage-demo/index.html for the prepared laptop demo. Its input joins seven single-view crops of the public EPIC-KITCHENS video wall into a 126-second montage. The run produced 48 predicted actions and selected 18.90 seconds in 26.2 seconds on the laptop. The JSON passed the local checker and FFmpeg decoded the rendered highlight without errors. A two-minute static clip with synthetic audio also passed and produced zero predicted actions. These runs check the pipeline; they do not measure challenge accuracy.
+Open `work/final-demo/index.html` for the prepared laptop demo. The 126-second input joins seven crops from the public EPIC-KITCHENS video wall. A cached run with the default selector produced 18.90 seconds of highlights and took 17.9 seconds including process startup. The synthetic 10-minute idle check produced zero predicted actions and 90 seconds of fallback footage. See [verification notes](docs/verification.md) for how these results were measured and what they establish.
 
 ## Official submission handoff
 
@@ -42,7 +41,7 @@ The four top-level JSON keys follow the slides' example. The slides also mention
 
 ## Revision commands
 
-The default remains the original highlight selector after a small development comparison. Use --selector duration for the experimental duration-aware selector. Use --unsmoothed to compare action localization. Model features cache under work/cache; cache keys include the checkpoint content, sampled video content and text embeddings.
+The default remains the original highlight selector after a small development comparison. Use `--selector duration` for the experimental duration-aware selector. Use `--unsmoothed` to compare action localization. Cached features live under `work/cache` and are keyed by the checkpoint content, sampled video content and text embeddings.
 
 Batch inference reuses the model:
 
@@ -55,7 +54,7 @@ Build the CPU container after fetching local weights:
     docker build -t track4 .
     docker run --rm --network none -v /absolute/data:/data track4 /data/video.mp4 /data/video.json
 
-For a fresh checkout without weights, build with --build-arg DOWNLOAD_WEIGHTS=1 while online, then run offline. GitHub Actions runs the clean-container smoke check through run.sh.
+For a fresh checkout without weights, build with `--build-arg DOWNLOAD_WEIGHTS=1` while online, then run offline. The [Linux container check](https://github.com/goodchanges/samsung-xr-track4/actions/runs/42186160883) passed the regression tests and processed a generated two-minute MP4 through `run.sh` with networking disabled.
 
 Create a prototype archive with the registered identifier:
 
