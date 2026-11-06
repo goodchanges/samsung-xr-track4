@@ -13,19 +13,24 @@ Open work/recording-demo/index.html in your browser. Keep the source and demo fi
 
 ## Set up a fresh checkout
 
-Use Python 3.13, which matches the verified container. Initial setup downloads dependencies and approximately 600 MB of model weights. Inference then runs offline.
+Use Python 3.13. Install the dependencies, then follow the Weights section before running inference.
 
     python -m venv .venv
     .\.venv\Scripts\python.exe -m pip install -r requirements.txt -c requirements.lock.txt
-    .\.venv\Scripts\python.exe code/setup_model.py
 
 On Linux, substitute .venv/bin/python for the Windows Python path, then run:
 
     ./run.sh recording.mp4 outputs/recording.json
 
+## Weights
+
+From a fresh clone, run `python code/setup_model.py` with the project venv active to download the pinned CLIP checkpoint and its processor and tokenizer files into `weights/clip/`. The download is approximately 605 MB.
+
+The checkpoint `weights/clip/pytorch_model.bin` is tracked with Git LFS. Once the LFS object is available on the clone's remote, `git lfs pull` can retrieve the checkpoint. Use the setup command to populate the full CLIP directory. Inference reads the local files and runs offline.
+
 ## Method and limits
 
-CLIP ViT-B/32 scores one frame per second against 528 action-pair prompts and six provisional categories. A small visual adapter fitted on four annotated EPIC training recordings adjusts action scores. Neighboring samples smooth the scores. An idle prompt and visual change gate weak action predictions. The selector rewards coverage of distinct predicted verbâ€“noun pairs and discounts visually similar clips. Importance scores are ranking signals.
+CLIP ViT-B/32 scores one frame per second against 528 action-pair prompts and six provisional categories. Neighboring samples smooth the scores. An idle prompt and visual change gate weak action predictions. The selector rewards coverage of distinct predicted verbâ€“noun pairs and discounts visually similar clips. Importance scores are ranking signals.
 
 The provisional vocabulary lives in code/vocabulary.json. Pass --vocabulary PATH to use the same structure with a different label set. CLIP sees still images, so it can confuse similar motions, miss short actions, or predict the wrong verb for a visible object. Challenge accuracy is unmeasured. Use --threads N to tune CPU usage.
 
@@ -48,7 +53,7 @@ Open `work/final-demo/index.html` for the prepared laptop demo. The 126-second i
 
 ## Official submission handoff
 
-The four top-level JSON keys follow the slides' example. The slides also mention six required keys. Use the student kit's validator and examples to resolve the final schema. Replace the provisional labels, map IDs through the manifest if needed, and run the official validator on all outputs. Package under the registered identifier. Include run.sh, code/, weights/, requirements.txt, outputs/ and this README. Keep the demo and deck separate as directed by the organizers. Git excludes large weights, local media and generated outputs.
+The four top-level JSON keys follow the slides' example. The slides also mention six required keys. Use the student kit's validator and examples to resolve the final schema. Replace the provisional labels, map IDs through the manifest if needed, and run the official validator on all outputs. Package under the registered identifier. Include run.sh, code/, weights/, requirements.txt, outputs/ and this README. Keep the demo and deck separate as directed by the organizers. Git excludes local media and generated outputs.
 
 [OpenAI CLIP checkpoint](https://huggingface.co/openai/clip-vit-base-patch32) Â· [EPIC-KITCHENS project](https://epic-kitchens.github.io/)
 
@@ -74,8 +79,10 @@ The archive includes local weights. Keep outputs/ reserved for official per-vide
 2. Build with `docker build -t track4 .`.
 3. Run with `docker run --rm --network none -v /absolute/data:/data track4 /data/video.mp4 /data/video.json`.
 
+The current Dockerfile is untested. Docker is unavailable on the development machine.
+
 ## Measured recognition revision
 
-See [the experiment and limitations](docs/recognition/README.md). On three held-out training-split participants, matched actions at tIoU 0.1 increased from 1/93 to 2/93; mean macro action F1 over tIoU 0.1, 0.3, 0.5 increased from 0.28% to 0.89%. Absolute accuracy remains low. These are local diagnostic metrics, not official scores. Nine real-video outputs passed the provisional checker. Official manifest outputs and validation remain blocked by the missing student kit and challenge data.
+On three local held-out videos, plain CLIP scored **1.38% macro action F1**, compared with **0.89% with the adapter**. Both runs used the same 528 action pairs and averaged F1 across temporal IoU thresholds of 0.1, 0.3, and 0.5. See the [local experiment and its limitations](docs/recognition/README.md).
 
-The checked-in `weights/action_adapter.npz` is part of the revised default. Custom vocabularies disable its automatic use; explicitly supplying an incompatible adapter fails. Use `--no-adapter` to disable it. Image and text caches allow experiments without repeating feature extraction. The manifest/organizer-validator command is documented in the experiment notes.
+The adapter is off by default (strength `0`). Pass `--adapter-strength 0.1` to opt in with the bundled adapter and default vocabulary. For a custom vocabulary, pass a compatible adapter with `--adapter PATH` and a positive strength.

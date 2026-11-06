@@ -26,7 +26,8 @@ def main():
     parser.add_argument("--unsmoothed", action="store_true")
     parser.add_argument("--top-k", type=int, choices=(1, 3), default=1)
     parser.add_argument("--adapter", type=Path)
-    parser.add_argument("--adapter-strength", type=float, default=.1)
+    parser.add_argument("--adapter-strength", type=float, default=0.0,
+                        help="Visual adapter strength. Set a positive value to enable it (default: 0).")
     parser.add_argument("--no-adapter", action="store_true")
     parser.add_argument("--demo", type=Path, metavar="DIR")
     args = parser.parse_args()
@@ -52,7 +53,7 @@ def main():
         if not 1 <= duration <= 600.05:
             raise ValueError("This prototype supports MP4 videos from 1 second to 10 minutes.")
         adapter = args.adapter
-        if adapter is None and not args.no_adapter and args.vocabulary.resolve() == (ROOT / "code/vocabulary.json").resolve():
+        if adapter is None and args.adapter_strength > 0 and not args.no_adapter and args.vocabulary.resolve() == (ROOT / "code/vocabulary.json").resolve():
             adapter = ROOT / "weights/action_adapter.npz"
         if args.no_adapter:
             adapter = None

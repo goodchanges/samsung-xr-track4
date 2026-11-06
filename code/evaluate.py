@@ -65,7 +65,7 @@ def main():
     parser.add_argument("--vocabulary", type=Path, default=ROOT / "code/vocabulary.json")
     parser.add_argument("--top-k", type=int, choices=(1, 3), default=1)
     parser.add_argument("--adapter", type=Path)
-    parser.add_argument("--adapter-strength", type=float, default=.1)
+    parser.add_argument("--adapter-strength", type=float, default=0.0)
     args = parser.parse_args()
     scorer = Scorer(args.vocabulary, 4, args.adapter, args.adapter_strength)
     report = []

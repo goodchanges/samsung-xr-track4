@@ -34,7 +34,7 @@ def setup():
 
 
 class Scorer:
-    def __init__(self, vocabulary, threads, adapter=None, adapter_strength=.1, shared=None):
+    def __init__(self, vocabulary, threads, adapter=None, adapter_strength=0.0, shared=None):
         torch.set_num_threads(threads)
         if not np.isfinite(adapter_strength) or not 0 <= adapter_strength <= 1:
             raise ValueError("Adapter strength must be a finite number between zero and one.")
@@ -44,7 +44,7 @@ class Scorer:
         self.vocabulary_signature = json.dumps(vocab, sort_keys=True).encode("utf-8")
         self.adapter = None
         self.adapter_strength = adapter_strength
-        if adapter is not None:
+        if adapter is not None and adapter_strength > 0:
             with np.load(adapter, allow_pickle=False) as data:
                 if str(data["vocabulary_signature"].item()) != self.vocabulary_signature.decode():
                     raise ValueError("Visual adapter was fitted for a different vocabulary.")

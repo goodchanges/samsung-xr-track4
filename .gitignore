@@ -1,10 +1,15 @@
 .venv/
 __pycache__/
+.cache/
+.pytest_cache/
 weights/*
 !weights/action_adapter.npz
 !weights/README.md
+!weights/clip/
+weights/clip/*
+!weights/clip/pytorch_model.bin
 outputs/*
 !outputs/.gitkeep
 work/
-*.mp4
+*.[mM][pP]4
 *.zip
