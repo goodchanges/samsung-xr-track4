@@ -32,7 +32,7 @@ The provisional vocabulary lives in code/vocabulary.json. Pass --vocabulary PATH
 
 ## Local verification
 
-The prepared laptop demo is at work/epic-demo/index.html. Its input is an 18-second single-view crop from the EPIC-KITCHENS project site's public video wall. The prototype selected 2.70 seconds, and its output passed the local checker. A two-minute static video with a synthetic audio track exercised the idle fallback and audio render. Neither run measures challenge accuracy.
+Open work/montage-demo/index.html for the prepared laptop demo. Its input joins seven single-view crops of the public EPIC-KITCHENS video wall into a 126-second montage. The run produced 48 predicted actions and selected 18.90 seconds in 26.2 seconds on the laptop. The JSON passed the local checker and FFmpeg decoded the rendered highlight without errors. A two-minute static clip with synthetic audio also passed and produced zero predicted actions. These runs check the pipeline; they do not measure challenge accuracy.
 
 ## Official submission handoff
 
