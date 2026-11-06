@@ -36,3 +36,9 @@ Model: https://huggingface.co/openai/clip-vit-base-patch32
 An attempt to download the continuous P01_10 training video from the official Bristol server timed out. No independent full-length evaluation score is claimed.
 
 The official kit, all 187 manifest outputs and official metric evaluation remain pending. The private GitHub repository needs organizer access before submission.
+
+## Follow-up review
+
+The feature-cache key now includes the complete vocabulary so changing category labels invalidates cached predictions. Batch mode accepts --vocabulary and --threads, rejects missing input directories and skips directories whose names end in .mp4. Packaging uses its own unique temporary archive so a failed attempt cannot delete another packaging operation's temporary file.
+
+Remaining work includes action-recognition quality, evaluation on representative continuous recordings, the exact official schema and labels, and predictions for the official manifest. The kit will resolve the submission contract. Improving recognition requires measured model or data changes in addition to kit integration.

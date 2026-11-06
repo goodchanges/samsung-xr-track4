@@ -30,6 +30,7 @@ class Scorer:
         vocab = json.loads(vocabulary.read_text(encoding="utf-8"))
         self.actions = vocab["actions"]
         self.categories = vocab["categories"]
+        self.vocabulary_signature = json.dumps(vocab, sort_keys=True).encode("utf-8")
         if not self.actions or not self.categories:
             raise ValueError("The vocabulary requires at least one action and category.")
         if not (CHECKPOINT / "pytorch_model.bin").is_file():
@@ -60,7 +61,9 @@ class Scorer:
 
     @torch.inference_mode()
     def predict(self, raw):
-        key = hashlib.sha256(self.checkpoint_hash + raw + self.text.numpy().tobytes()).hexdigest()
+        key = hashlib.sha256(
+            self.checkpoint_hash + self.vocabulary_signature + raw + self.text.numpy().tobytes()
+        ).hexdigest()
         cache = ROOT / "work" / "cache"
         cache.mkdir(parents=True, exist_ok=True)
         path = cache / (key + ".npz")

@@ -1,5 +1,6 @@
 import argparse
 import re
+import tempfile
 from pathlib import Path
 from stat import S_IFREG
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
@@ -24,9 +25,13 @@ def main():
                      and not any(part.startswith(".") or part == "__pycache__" for part in p.relative_to(ROOT).parts)
                      and p.suffix not in (".pyc", ".tmp", ".part"))
     args.destination.parent.mkdir(parents=True, exist_ok=True)
-    temporary = args.destination.with_suffix(".partial")
+    with tempfile.NamedTemporaryFile(
+        dir=args.destination.parent, prefix=args.destination.stem + ".", suffix=".partial",
+        delete=False,
+    ) as handle:
+        temporary = Path(handle.name)
     try:
-        with ZipFile(temporary, "x", ZIP_DEFLATED, compresslevel=1) as archive:
+        with ZipFile(temporary, "w", ZIP_DEFLATED, compresslevel=1) as archive:
             archive.writestr(args.identifier + "/outputs/", "")
             for path in paths:
                 name = args.identifier + "/" + path.relative_to(ROOT).as_posix()

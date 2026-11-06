@@ -13,15 +13,21 @@ def main():
     parser = argparse.ArgumentParser(description="Process a directory with one shared model.")
     parser.add_argument("videos", type=Path)
     parser.add_argument("outputs", type=Path)
+    parser.add_argument("--vocabulary", type=Path, default=ROOT / "code" / "vocabulary.json")
+    parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--selector", choices=("baseline", "duration"), default="baseline")
     parser.add_argument("--unsmoothed", action="store_true")
     args = parser.parse_args()
-    videos = sorted(p for p in args.videos.iterdir() if p.suffix.lower() == ".mp4")
+    if not args.videos.is_dir():
+        parser.error("Supply an existing video directory.")
+    if args.threads < 1:
+        parser.error("--threads must be positive.")
+    videos = sorted(p for p in args.videos.iterdir() if p.is_file() and p.suffix.lower() == ".mp4")
     if not videos:
         parser.error("No MP4 videos found.")
     if len({p.stem.casefold() for p in videos}) != len(videos):
         parser.error("Duplicate video IDs.")
-    scorer = Scorer(ROOT / "code" / "vocabulary.json", 4)
+    scorer = Scorer(args.vocabulary, args.threads)
     args.outputs.mkdir(parents=True, exist_ok=True)
     for video in videos:
         duration, _ = probe(video)
