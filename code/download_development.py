@@ -10,8 +10,10 @@ from pathlib import Path
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("destination", type=Path)
+    parser.add_argument("--provenance", type=Path,
+                        default=Path(__file__).resolve().parents[1] / "docs/recognition/provenance.json")
     args = parser.parse_args()
-    provenance = Path(__file__).resolve().parents[1] / "docs/recognition/provenance.json"
+    provenance = args.provenance
     record = json.loads(provenance.read_text(encoding="utf-8"))
     for name, expected in record["files"].items():
         video = name.lower().endswith(".mp4")

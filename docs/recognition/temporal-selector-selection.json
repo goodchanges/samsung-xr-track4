@@ -1,0 +1,14 @@
+{
+  "frozen_at_utc": "2026-11-06T20:50:03.211024+00:00",
+  "recognition_settings": {
+    "context": 2,
+    "smoothing": 1,
+    "top_k": 1
+  },
+  "selector_sha256": "7a20b5c16096e556d18a7aaa072816201a0ce1fb8d9549983b7b779f252c6c93",
+  "development": "P28_18 P09_08 P07_17",
+  "evaluation": "P18_10 P08_14 P04_28",
+  "budget": 0.145,
+  "comparison": "preserved selector and uniform ten clips, same budget",
+  "scope": "Local distinct-action half-interval coverage only; no human highlight F1"
+}

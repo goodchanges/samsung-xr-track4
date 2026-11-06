@@ -19,7 +19,7 @@ def main():
         parser.error("Model weights are missing.")
     if args.destination.exists():
         parser.error("Destination already exists. Choose a new file.")
-    paths = [ROOT / name for name in ("run.sh", "run.cmd", "requirements.txt", "requirements.lock.txt", "README.md", "Dockerfile", ".dockerignore")]
+    paths = [ROOT / name for name in ("run.sh", "run.cmd", "requirements.txt", "requirements-temporal.txt", "requirements.lock.txt", "README.md", "Dockerfile", ".dockerignore")]
     for directory in ("code", "weights", "outputs", "tests", "docs"):
         paths.extend(p for p in (ROOT / directory).rglob("*") if p.is_file()
                      and not any(part.startswith(".") or part == "__pycache__" for part in p.relative_to(ROOT).parts)

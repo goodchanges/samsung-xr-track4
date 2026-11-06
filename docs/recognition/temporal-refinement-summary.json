@@ -1,0 +1,141 @@
+{
+  "settings_sha256": "037b7e54d8f0754b57c9a1741ad937ab25fc0097ae9aef1e98302ec159651e89",
+  "settings": {
+    "selected": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "development_ids": [
+      "P28_18",
+      "P09_08",
+      "P07_17"
+    ],
+    "evaluation_ids": [
+      "P18_10",
+      "P08_14",
+      "P04_28"
+    ],
+    "summary": [
+      {
+        "config": {
+          "context": 4,
+          "smoothing": 1,
+          "top_k": 1
+        },
+        "mean_macro_action_f1": 0.04822363203806504
+      },
+      {
+        "config": {
+          "context": 4,
+          "smoothing": 1,
+          "top_k": 2
+        },
+        "mean_macro_action_f1": 0.05429526748971193
+      },
+      {
+        "config": {
+          "context": 4,
+          "smoothing": 3,
+          "top_k": 1
+        },
+        "mean_macro_action_f1": 0.05507976715407056
+      },
+      {
+        "config": {
+          "context": 4,
+          "smoothing": 3,
+          "top_k": 2
+        },
+        "mean_macro_action_f1": 0.05340810896366452
+      },
+      {
+        "config": {
+          "context": 4,
+          "smoothing": 5,
+          "top_k": 1
+        },
+        "mean_macro_action_f1": 0.04721358759989139
+      },
+      {
+        "config": {
+          "context": 4,
+          "smoothing": 5,
+          "top_k": 2
+        },
+        "mean_macro_action_f1": 0.029942177602693663
+      },
+      {
+        "config": {
+          "context": 2,
+          "smoothing": 1,
+          "top_k": 1
+        },
+        "mean_macro_action_f1": 0.06516631437061544
+      },
+      {
+        "config": {
+          "context": 2,
+          "smoothing": 1,
+          "top_k": 2
+        },
+        "mean_macro_action_f1": 0.04820809567419462
+      },
+      {
+        "config": {
+          "context": 2,
+          "smoothing": 3,
+          "top_k": 1
+        },
+        "mean_macro_action_f1": 0.06349338868210402
+      },
+      {
+        "config": {
+          "context": 2,
+          "smoothing": 3,
+          "top_k": 2
+        },
+        "mean_macro_action_f1": 0.05549185724707307
+      },
+      {
+        "config": {
+          "context": 2,
+          "smoothing": 5,
+          "top_k": 1
+        },
+        "mean_macro_action_f1": 0.04721586259097837
+      },
+      {
+        "config": {
+          "context": 2,
+          "smoothing": 5,
+          "top_k": 2
+        },
+        "mean_macro_action_f1": 0.035437241234342685
+      }
+    ],
+    "frozen_at_utc": "2026-11-06T20:37:23.753257+00:00"
+  },
+  "summary": [
+    {
+      "config": {
+        "context": 4,
+        "smoothing": 1,
+        "top_k": 1
+      },
+      "mean_macro_action_f1": 0.09694167491705112
+    },
+    {
+      "config": {
+        "context": 2,
+        "smoothing": 1,
+        "top_k": 1
+      },
+      "mean_macro_action_f1": 0.07578139795559091
+    },
+    {
+      "config": "clip",
+      "mean_macro_action_f1": 0.003703703703703704
+    }
+  ]
+}

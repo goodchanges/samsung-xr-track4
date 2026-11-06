@@ -1,0 +1,2830 @@
+{
+  "scope": "Public EPIC validation diagnostic; three fixed recordings; no training or tuning; not official scoring",
+  "context_seconds": 4,
+  "stride_seconds": 1,
+  "sample_step_seconds": 0.5,
+  "checkpoint_sha256": "b56b6e7210c89e7dfc93daadafa90fda9d4ea73dfec7e9d3399240bca664139c",
+  "results": [
+    {
+      "video_id": "P28_18",
+      "model": "tsm",
+      "seconds": 111.86595680005848,
+      "predictions": [
+        {
+          "verb": "take",
+          "noun": "cupboard",
+          "start": 0.0,
+          "end": 2.0
+        },
+        {
+          "verb": "put",
+          "noun": "cupboard",
+          "start": 2.0,
+          "end": 3.0
+        },
+        {
+          "verb": "put",
+          "noun": "plate",
+          "start": 3.0,
+          "end": 5.0
+        },
+        {
+          "verb": "take",
+          "noun": "plate",
+          "start": 5.0,
+          "end": 8.0
+        },
+        {
+          "verb": "put",
+          "noun": "plate",
+          "start": 8.0,
+          "end": 12.0
+        },
+        {
+          "verb": "take",
+          "noun": "plate",
+          "start": 12.0,
+          "end": 15.0
+        },
+        {
+          "verb": "put",
+          "noun": "jug",
+          "start": 15.0,
+          "end": 16.0
+        },
+        {
+          "verb": "put",
+          "noun": "plate",
+          "start": 16.0,
+          "end": 18.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 18.0,
+          "end": 19.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 19.0,
+          "end": 20.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 20.0,
+          "end": 21.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 21.0,
+          "end": 26.0
+        },
+        {
+          "verb": "put",
+          "noun": "package",
+          "start": 26.0,
+          "end": 27.0
+        },
+        {
+          "verb": "put",
+          "noun": "drawer",
+          "start": 27.0,
+          "end": 28.0
+        },
+        {
+          "verb": "take",
+          "noun": "drawer",
+          "start": 28.0,
+          "end": 30.0
+        },
+        {
+          "verb": "take",
+          "noun": "courgette",
+          "start": 30.0,
+          "end": 33.0
+        },
+        {
+          "verb": "take",
+          "noun": "onion:spring",
+          "start": 33.0,
+          "end": 35.0
+        },
+        {
+          "verb": "take",
+          "noun": "drawer",
+          "start": 35.0,
+          "end": 37.0
+        },
+        {
+          "verb": "take",
+          "noun": "bag",
+          "start": 37.0,
+          "end": 38.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 38.0,
+          "end": 39.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 39.0,
+          "end": 40.0
+        },
+        {
+          "verb": "move",
+          "noun": "cheese",
+          "start": 40.0,
+          "end": 41.0
+        },
+        {
+          "verb": "move",
+          "noun": "package",
+          "start": 41.0,
+          "end": 42.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 42.0,
+          "end": 43.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 43.0,
+          "end": 45.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 45.0,
+          "end": 47.0
+        },
+        {
+          "verb": "move",
+          "noun": "box",
+          "start": 47.0,
+          "end": 48.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 48.0,
+          "end": 49.0
+        },
+        {
+          "verb": "put",
+          "noun": "cupboard",
+          "start": 49.0,
+          "end": 50.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 50.0,
+          "end": 52.0
+        },
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 52.0,
+          "end": 53.0
+        },
+        {
+          "verb": "take",
+          "noun": "fridge",
+          "start": 53.0,
+          "end": 54.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 54.0,
+          "end": 56.0
+        },
+        {
+          "verb": "put",
+          "noun": "cheese",
+          "start": 56.0,
+          "end": 58.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 58.0,
+          "end": 59.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 59.0,
+          "end": 61.0
+        },
+        {
+          "verb": "take",
+          "noun": "wrap",
+          "start": 61.0,
+          "end": 63.0
+        },
+        {
+          "verb": "put",
+          "noun": "plate",
+          "start": 63.0,
+          "end": 64.0
+        },
+        {
+          "verb": "take",
+          "noun": "pan",
+          "start": 64.0,
+          "end": 65.0
+        },
+        {
+          "verb": "put",
+          "noun": "lid",
+          "start": 65.0,
+          "end": 66.0
+        },
+        {
+          "verb": "put",
+          "noun": "cheese",
+          "start": 66.0,
+          "end": 67.0
+        },
+        {
+          "verb": "put",
+          "noun": "lid",
+          "start": 67.0,
+          "end": 68.0
+        },
+        {
+          "verb": "open",
+          "noun": "lid",
+          "start": 68.0,
+          "end": 69.0
+        },
+        {
+          "verb": "close",
+          "noun": "lid",
+          "start": 69.0,
+          "end": 70.0
+        },
+        {
+          "verb": "take",
+          "noun": "lid",
+          "start": 70.0,
+          "end": 72.0
+        },
+        {
+          "verb": "close",
+          "noun": "lid",
+          "start": 72.0,
+          "end": 73.0
+        },
+        {
+          "verb": "put",
+          "noun": "lid",
+          "start": 73.0,
+          "end": 76.0
+        },
+        {
+          "verb": "close",
+          "noun": "lid",
+          "start": 76.0,
+          "end": 77.0
+        },
+        {
+          "verb": "wrap",
+          "noun": "wrap",
+          "start": 77.0,
+          "end": 79.0
+        },
+        {
+          "verb": "put",
+          "noun": "wrap",
+          "start": 79.0,
+          "end": 83.0
+        },
+        {
+          "verb": "put",
+          "noun": "butter",
+          "start": 83.0,
+          "end": 85.0
+        },
+        {
+          "verb": "take",
+          "noun": "wrap",
+          "start": 85.0,
+          "end": 87.0
+        },
+        {
+          "verb": "put",
+          "noun": "wrap",
+          "start": 87.0,
+          "end": 88.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 88.0,
+          "end": 89.0
+        },
+        {
+          "verb": "take",
+          "noun": "knife",
+          "start": 89.0,
+          "end": 91.0
+        },
+        {
+          "verb": "put",
+          "noun": "knife",
+          "start": 91.0,
+          "end": 92.0
+        },
+        {
+          "verb": "take",
+          "noun": "lid",
+          "start": 92.0,
+          "end": 93.0
+        },
+        {
+          "verb": "put",
+          "noun": "wrap",
+          "start": 93.0,
+          "end": 96.0
+        },
+        {
+          "verb": "put",
+          "noun": "bowl",
+          "start": 96.0,
+          "end": 97.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 97.0,
+          "end": 98.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 98.0,
+          "end": 99.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 99.0,
+          "end": 100.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 100.0,
+          "end": 101.0
+        },
+        {
+          "verb": "put",
+          "noun": "cheese",
+          "start": 101.0,
+          "end": 102.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 102.0,
+          "end": 103.0
+        },
+        {
+          "verb": "take",
+          "noun": "knife",
+          "start": 103.0,
+          "end": 106.0
+        },
+        {
+          "verb": "put",
+          "noun": "knife",
+          "start": 106.0,
+          "end": 110.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 110.0,
+          "end": 111.0
+        },
+        {
+          "verb": "take",
+          "noun": "knife",
+          "start": 111.0,
+          "end": 112.0
+        },
+        {
+          "verb": "take",
+          "noun": "cheese",
+          "start": 112.0,
+          "end": 113.0
+        },
+        {
+          "verb": "move",
+          "noun": "box",
+          "start": 113.0,
+          "end": 114.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 114.0,
+          "end": 117.0
+        },
+        {
+          "verb": "take",
+          "noun": "cup",
+          "start": 117.0,
+          "end": 119.0
+        },
+        {
+          "verb": "pour",
+          "noun": "water",
+          "start": 119.0,
+          "end": 120.27
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0,
+        "action_precision_tiou_0.1": 0.04054054054054054,
+        "action_recall_tiou_0.1": 0.11538461538461539,
+        "action_f1_tiou_0.1": 0.06,
+        "action_precision_tiou_0.3": 0.02702702702702703,
+        "action_recall_tiou_0.3": 0.07692307692307693,
+        "action_f1_tiou_0.3": 0.04,
+        "action_precision_tiou_0.5": 0.02702702702702703,
+        "action_recall_tiou_0.5": 0.07692307692307693,
+        "action_f1_tiou_0.5": 0.04,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.0
+      },
+      "ground_truth_count": 26
+    },
+    {
+      "video_id": "P28_18",
+      "model": "clip",
+      "seconds": 9.610152799985372,
+      "predictions": [
+        {
+          "verb": "put",
+          "noun": "hob",
+          "start": 0,
+          "end": 3.0
+        },
+        {
+          "verb": "open",
+          "noun": "dishwasher",
+          "start": 3,
+          "end": 4.0
+        },
+        {
+          "verb": "move",
+          "noun": "tray",
+          "start": 4,
+          "end": 5.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 5,
+          "end": 6.0
+        },
+        {
+          "verb": "close",
+          "noun": "drawer",
+          "start": 6,
+          "end": 7.0
+        },
+        {
+          "verb": "move",
+          "noun": "bowl",
+          "start": 7,
+          "end": 8.0
+        },
+        {
+          "verb": "move",
+          "noun": "tray",
+          "start": 8,
+          "end": 9.0
+        },
+        {
+          "verb": "turn",
+          "noun": "container",
+          "start": 9,
+          "end": 10.0
+        },
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 10,
+          "end": 11.0
+        },
+        {
+          "verb": "close",
+          "noun": "drawer",
+          "start": 11,
+          "end": 12.0
+        },
+        {
+          "verb": "open",
+          "noun": "container",
+          "start": 12,
+          "end": 13.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 13,
+          "end": 14.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 14,
+          "end": 16.0
+        },
+        {
+          "verb": "open",
+          "noun": "oven",
+          "start": 16,
+          "end": 17.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 17,
+          "end": 19.0
+        },
+        {
+          "verb": "insert",
+          "noun": "board:chopping",
+          "start": 19,
+          "end": 23.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 23,
+          "end": 24.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 24,
+          "end": 25.0
+        },
+        {
+          "verb": "insert",
+          "noun": "board:chopping",
+          "start": 25,
+          "end": 28.0
+        },
+        {
+          "verb": "cut",
+          "noun": "vegetable",
+          "start": 28,
+          "end": 30.0
+        },
+        {
+          "verb": "insert",
+          "noun": "board:chopping",
+          "start": 30,
+          "end": 31.0
+        },
+        {
+          "verb": "wash",
+          "noun": "board:chopping",
+          "start": 31,
+          "end": 32.0
+        },
+        {
+          "verb": "close",
+          "noun": "oven",
+          "start": 32,
+          "end": 33.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 33,
+          "end": 34.0
+        },
+        {
+          "verb": "open",
+          "noun": "microwave",
+          "start": 34,
+          "end": 35.0
+        },
+        {
+          "verb": "adjust",
+          "noun": "hob",
+          "start": 35,
+          "end": 36.0
+        },
+        {
+          "verb": "wash",
+          "noun": "vegetable",
+          "start": 36,
+          "end": 37.0
+        },
+        {
+          "verb": "put",
+          "noun": "board:chopping",
+          "start": 37,
+          "end": 38.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 38,
+          "end": 40.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 40,
+          "end": 41.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 41,
+          "end": 44.0
+        },
+        {
+          "verb": "scrub",
+          "noun": "pan",
+          "start": 44,
+          "end": 45.0
+        },
+        {
+          "verb": "insert",
+          "noun": "board:chopping",
+          "start": 45,
+          "end": 46.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 46,
+          "end": 49.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 49,
+          "end": 50.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 50,
+          "end": 51.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 51,
+          "end": 52.0
+        },
+        {
+          "verb": "move",
+          "noun": "board:chopping",
+          "start": 52,
+          "end": 53.0
+        },
+        {
+          "verb": "put",
+          "noun": "hob",
+          "start": 53,
+          "end": 54.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 54,
+          "end": 62.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 62,
+          "end": 64.0
+        },
+        {
+          "verb": "mix",
+          "noun": "curry",
+          "start": 64,
+          "end": 65.0
+        },
+        {
+          "verb": "scrub",
+          "noun": "pan",
+          "start": 65,
+          "end": 66.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 66,
+          "end": 68.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 68,
+          "end": 69.0
+        },
+        {
+          "verb": "scrub",
+          "noun": "pan",
+          "start": 69,
+          "end": 71.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 71,
+          "end": 72.0
+        },
+        {
+          "verb": "scrub",
+          "noun": "pan",
+          "start": 72,
+          "end": 74.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pan",
+          "start": 74,
+          "end": 75.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 75,
+          "end": 76.0
+        },
+        {
+          "verb": "mix",
+          "noun": "sauce",
+          "start": 76,
+          "end": 77.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 77,
+          "end": 82.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 82,
+          "end": 85.0
+        },
+        {
+          "verb": "scrub",
+          "noun": "pan",
+          "start": 85,
+          "end": 86.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 86,
+          "end": 87.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 87,
+          "end": 89.0
+        },
+        {
+          "verb": "insert",
+          "noun": "board:chopping",
+          "start": 89,
+          "end": 90.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 90,
+          "end": 91.0
+        },
+        {
+          "verb": "flip",
+          "noun": "dough",
+          "start": 91,
+          "end": 95.0
+        },
+        {
+          "verb": "mix",
+          "noun": "food",
+          "start": 95,
+          "end": 97.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 97,
+          "end": 99.0
+        },
+        {
+          "verb": "close",
+          "noun": "bag",
+          "start": 99,
+          "end": 101.0
+        },
+        {
+          "verb": "close",
+          "noun": "box",
+          "start": 101,
+          "end": 102.0
+        },
+        {
+          "verb": "insert",
+          "noun": "tray",
+          "start": 102,
+          "end": 104.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 104,
+          "end": 105.0
+        },
+        {
+          "verb": "put",
+          "noun": "pasta",
+          "start": 105,
+          "end": 106.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 106,
+          "end": 107.0
+        },
+        {
+          "verb": "insert",
+          "noun": "tray",
+          "start": 107,
+          "end": 108.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 108,
+          "end": 109.0
+        },
+        {
+          "verb": "open",
+          "noun": "kettle",
+          "start": 109,
+          "end": 110.0
+        },
+        {
+          "verb": "close",
+          "noun": "bag",
+          "start": 110,
+          "end": 111.0
+        },
+        {
+          "verb": "close",
+          "noun": "box",
+          "start": 111,
+          "end": 113.0
+        },
+        {
+          "verb": "cut",
+          "noun": "package",
+          "start": 113,
+          "end": 114.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 114,
+          "end": 118.0
+        },
+        {
+          "verb": "put",
+          "noun": "hob",
+          "start": 118,
+          "end": 120.27
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0,
+        "action_precision_tiou_0.1": 0.0,
+        "action_recall_tiou_0.1": 0.0,
+        "action_f1_tiou_0.1": 0.0,
+        "action_precision_tiou_0.3": 0.0,
+        "action_recall_tiou_0.3": 0.0,
+        "action_f1_tiou_0.3": 0.0,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.0
+      },
+      "ground_truth_count": 26
+    },
+    {
+      "video_id": "P09_08",
+      "model": "tsm",
+      "seconds": 72.26287580002099,
+      "predictions": [
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 0.0,
+          "end": 1.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 1.0,
+          "end": 3.0
+        },
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 3.0,
+          "end": 4.0
+        },
+        {
+          "verb": "take",
+          "noun": "cup",
+          "start": 4.0,
+          "end": 7.0
+        },
+        {
+          "verb": "put",
+          "noun": "cup",
+          "start": 7.0,
+          "end": 10.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 10.0,
+          "end": 14.0
+        },
+        {
+          "verb": "take",
+          "noun": "fridge",
+          "start": 14.0,
+          "end": 16.0
+        },
+        {
+          "verb": "remove",
+          "noun": "fridge",
+          "start": 16.0,
+          "end": 17.0
+        },
+        {
+          "verb": "take",
+          "noun": "fridge",
+          "start": 17.0,
+          "end": 18.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 18.0,
+          "end": 22.0
+        },
+        {
+          "verb": "put",
+          "noun": "top",
+          "start": 22.0,
+          "end": 23.0
+        },
+        {
+          "verb": "take",
+          "noun": "cloth",
+          "start": 23.0,
+          "end": 24.0
+        },
+        {
+          "verb": "put",
+          "noun": "cloth",
+          "start": 24.0,
+          "end": 25.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 25.0,
+          "end": 26.0
+        },
+        {
+          "verb": "take",
+          "noun": "bag",
+          "start": 26.0,
+          "end": 27.0
+        },
+        {
+          "verb": "take",
+          "noun": "rice",
+          "start": 27.0,
+          "end": 28.0
+        },
+        {
+          "verb": "put",
+          "noun": "rice",
+          "start": 28.0,
+          "end": 29.0
+        },
+        {
+          "verb": "put",
+          "noun": "spoon",
+          "start": 29.0,
+          "end": 31.0
+        },
+        {
+          "verb": "put",
+          "noun": "bag",
+          "start": 31.0,
+          "end": 32.0
+        },
+        {
+          "verb": "take",
+          "noun": "bag",
+          "start": 32.0,
+          "end": 35.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 35.0,
+          "end": 38.0
+        },
+        {
+          "verb": "insert",
+          "noun": "fridge",
+          "start": 38.0,
+          "end": 39.0
+        },
+        {
+          "verb": "take",
+          "noun": "fridge",
+          "start": 39.0,
+          "end": 40.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 40.0,
+          "end": 43.0
+        },
+        {
+          "verb": "put",
+          "noun": "cupboard",
+          "start": 43.0,
+          "end": 44.0
+        },
+        {
+          "verb": "put",
+          "noun": "plate",
+          "start": 44.0,
+          "end": 45.0
+        },
+        {
+          "verb": "take",
+          "noun": "rack:drying",
+          "start": 45.0,
+          "end": 46.0
+        },
+        {
+          "verb": "turn-on",
+          "noun": "tap",
+          "start": 46.0,
+          "end": 50.0
+        },
+        {
+          "verb": "wash",
+          "noun": "tap",
+          "start": 50.0,
+          "end": 51.0
+        },
+        {
+          "verb": "wash",
+          "noun": "hand",
+          "start": 51.0,
+          "end": 52.0
+        },
+        {
+          "verb": "take",
+          "noun": "hand",
+          "start": 52.0,
+          "end": 54.0
+        },
+        {
+          "verb": "take",
+          "noun": "filter",
+          "start": 54.0,
+          "end": 55.0
+        },
+        {
+          "verb": "wash",
+          "noun": "filter",
+          "start": 55.0,
+          "end": 56.0
+        },
+        {
+          "verb": "wash",
+          "noun": "cup",
+          "start": 56.0,
+          "end": 60.0
+        },
+        {
+          "verb": "take",
+          "noun": "colander",
+          "start": 60.0,
+          "end": 62.0
+        },
+        {
+          "verb": "wash",
+          "noun": "bowl",
+          "start": 62.0,
+          "end": 66.0
+        },
+        {
+          "verb": "take",
+          "noun": "bowl",
+          "start": 66.0,
+          "end": 67.0
+        },
+        {
+          "verb": "take",
+          "noun": "cup",
+          "start": 67.0,
+          "end": 68.0
+        },
+        {
+          "verb": "put",
+          "noun": "bowl",
+          "start": 68.0,
+          "end": 69.0
+        },
+        {
+          "verb": "put",
+          "noun": "cup",
+          "start": 69.0,
+          "end": 71.0
+        },
+        {
+          "verb": "take",
+          "noun": "cup",
+          "start": 71.0,
+          "end": 72.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 72.0,
+          "end": 73.0
+        },
+        {
+          "verb": "take",
+          "noun": "cupboard",
+          "start": 73.0,
+          "end": 74.0
+        },
+        {
+          "verb": "take",
+          "noun": "oil",
+          "start": 74.0,
+          "end": 75.0
+        },
+        {
+          "verb": "take",
+          "noun": "bottle",
+          "start": 75.0,
+          "end": 76.0
+        },
+        {
+          "verb": "close",
+          "noun": "bottle",
+          "start": 76.0,
+          "end": 77.0
+        },
+        {
+          "verb": "close",
+          "noun": "cap",
+          "start": 77.0,
+          "end": 78.0
+        },
+        {
+          "verb": "open",
+          "noun": "cap",
+          "start": 78.0,
+          "end": 80.0
+        },
+        {
+          "verb": "close",
+          "noun": "cap",
+          "start": 80.0,
+          "end": 81.0
+        },
+        {
+          "verb": "open",
+          "noun": "cap",
+          "start": 81.0,
+          "end": 86.0
+        },
+        {
+          "verb": "pour",
+          "noun": "sauce",
+          "start": 86.0,
+          "end": 88.0
+        },
+        {
+          "verb": "remove",
+          "noun": "sauce",
+          "start": 88.0,
+          "end": 89.0
+        },
+        {
+          "verb": "insert",
+          "noun": "cereal",
+          "start": 89.0,
+          "end": 92.0
+        },
+        {
+          "verb": "put",
+          "noun": "bottle",
+          "start": 92.0,
+          "end": 93.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 93.0,
+          "end": 94.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 94.0,
+          "end": 98.0
+        },
+        {
+          "verb": "take",
+          "noun": "oatmeal",
+          "start": 98.0,
+          "end": 99.0
+        },
+        {
+          "verb": "scoop",
+          "noun": "oatmeal",
+          "start": 99.0,
+          "end": 100.0
+        },
+        {
+          "verb": "pour",
+          "noun": "oatmeal",
+          "start": 100.0,
+          "end": 101.0
+        },
+        {
+          "verb": "insert",
+          "noun": "oatmeal",
+          "start": 101.0,
+          "end": 102.0
+        },
+        {
+          "verb": "take",
+          "noun": "oatmeal",
+          "start": 102.0,
+          "end": 105.0
+        },
+        {
+          "verb": "take",
+          "noun": "bag",
+          "start": 105.0,
+          "end": 107.0
+        },
+        {
+          "verb": "put",
+          "noun": "bag",
+          "start": 107.0,
+          "end": 108.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 108.0,
+          "end": 110.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 110.0,
+          "end": 111.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 111.0,
+          "end": 112.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 112.0,
+          "end": 113.0
+        },
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 113.0,
+          "end": 115.0
+        },
+        {
+          "verb": "take",
+          "noun": "cup",
+          "start": 115.0,
+          "end": 116.0
+        },
+        {
+          "verb": "take",
+          "noun": "colander",
+          "start": 116.0,
+          "end": 117.0
+        },
+        {
+          "verb": "put",
+          "noun": "colander",
+          "start": 117.0,
+          "end": 118.0
+        },
+        {
+          "verb": "turn-on",
+          "noun": "tap",
+          "start": 118.0,
+          "end": 120.0
+        },
+        {
+          "verb": "turn-off",
+          "noun": "tap",
+          "start": 120.0,
+          "end": 122.0
+        },
+        {
+          "verb": "shake",
+          "noun": "colander",
+          "start": 122.0,
+          "end": 123.0
+        },
+        {
+          "verb": "put",
+          "noun": "colander",
+          "start": 123.0,
+          "end": 124.0
+        },
+        {
+          "verb": "put",
+          "noun": "cup",
+          "start": 124.0,
+          "end": 126.0
+        },
+        {
+          "verb": "take",
+          "noun": "cup",
+          "start": 126.0,
+          "end": 126.46
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0,
+        "action_precision_tiou_0.1": 0.07792207792207792,
+        "action_recall_tiou_0.1": 0.2222222222222222,
+        "action_f1_tiou_0.1": 0.11538461538461539,
+        "action_precision_tiou_0.3": 0.05194805194805195,
+        "action_recall_tiou_0.3": 0.14814814814814814,
+        "action_f1_tiou_0.3": 0.07692307692307693,
+        "action_precision_tiou_0.5": 0.012987012987012988,
+        "action_recall_tiou_0.5": 0.037037037037037035,
+        "action_f1_tiou_0.5": 0.019230769230769232,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.0
+      },
+      "ground_truth_count": 27
+    },
+    {
+      "video_id": "P09_08",
+      "model": "clip",
+      "seconds": 18.695331299910322,
+      "predictions": [
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 0,
+          "end": 1.0
+        },
+        {
+          "verb": "turn-off",
+          "noun": "hob",
+          "start": 1,
+          "end": 2.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 2,
+          "end": 3.0
+        },
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 3,
+          "end": 4.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 4,
+          "end": 5.0
+        },
+        {
+          "verb": "close",
+          "noun": "microwave",
+          "start": 5,
+          "end": 7.0
+        },
+        {
+          "verb": "open",
+          "noun": "dishwasher",
+          "start": 7,
+          "end": 8.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 8,
+          "end": 9.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 9,
+          "end": 10.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 11,
+          "end": 13.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 13,
+          "end": 15.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 15,
+          "end": 18.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 18,
+          "end": 20.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 20,
+          "end": 22.0
+        },
+        {
+          "verb": "turn-off",
+          "noun": "hob",
+          "start": 23,
+          "end": 24.0
+        },
+        {
+          "verb": "turn-on",
+          "noun": "maker:coffee",
+          "start": 24,
+          "end": 25.0
+        },
+        {
+          "verb": "mix",
+          "noun": "coffee",
+          "start": 25,
+          "end": 27.0
+        },
+        {
+          "verb": "move",
+          "noun": "plate",
+          "start": 27,
+          "end": 28.0
+        },
+        {
+          "verb": "move",
+          "noun": "bowl",
+          "start": 28,
+          "end": 29.0
+        },
+        {
+          "verb": "move",
+          "noun": "plate",
+          "start": 29,
+          "end": 30.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 30,
+          "end": 33.0
+        },
+        {
+          "verb": "mix",
+          "noun": "coffee",
+          "start": 33,
+          "end": 34.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 36,
+          "end": 37.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 37,
+          "end": 43.0
+        },
+        {
+          "verb": "turn-off",
+          "noun": "hob",
+          "start": 43,
+          "end": 46.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 46,
+          "end": 47.0
+        },
+        {
+          "verb": "wash",
+          "noun": "dish",
+          "start": 47,
+          "end": 48.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 48,
+          "end": 49.0
+        },
+        {
+          "verb": "wash",
+          "noun": "juicer",
+          "start": 49,
+          "end": 50.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 50,
+          "end": 55.0
+        },
+        {
+          "verb": "wash",
+          "noun": "juicer",
+          "start": 55,
+          "end": 59.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 59,
+          "end": 63.0
+        },
+        {
+          "verb": "put",
+          "noun": "liquid:washing",
+          "start": 63,
+          "end": 64.0
+        },
+        {
+          "verb": "adjust",
+          "noun": "hob",
+          "start": 64,
+          "end": 66.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 66,
+          "end": 68.0
+        },
+        {
+          "verb": "open",
+          "noun": "dishwasher",
+          "start": 68,
+          "end": 69.0
+        },
+        {
+          "verb": "cut",
+          "noun": "fruit",
+          "start": 69,
+          "end": 70.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 70,
+          "end": 71.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 71,
+          "end": 72.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 72,
+          "end": 73.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 73,
+          "end": 75.0
+        },
+        {
+          "verb": "mix",
+          "noun": "coffee",
+          "start": 75,
+          "end": 78.0
+        },
+        {
+          "verb": "close",
+          "noun": "jar",
+          "start": 78,
+          "end": 79.0
+        },
+        {
+          "verb": "mix",
+          "noun": "coffee",
+          "start": 79,
+          "end": 80.0
+        },
+        {
+          "verb": "mix",
+          "noun": "mixture",
+          "start": 80,
+          "end": 81.0
+        },
+        {
+          "verb": "cut",
+          "noun": "fruit",
+          "start": 81,
+          "end": 83.0
+        },
+        {
+          "verb": "cut",
+          "noun": "olive",
+          "start": 83,
+          "end": 85.0
+        },
+        {
+          "verb": "cut",
+          "noun": "fruit",
+          "start": 85,
+          "end": 88.0
+        },
+        {
+          "verb": "mix",
+          "noun": "coffee",
+          "start": 88,
+          "end": 90.0
+        },
+        {
+          "verb": "spread",
+          "noun": "butter",
+          "start": 90,
+          "end": 91.0
+        },
+        {
+          "verb": "close",
+          "noun": "jar",
+          "start": 91,
+          "end": 92.0
+        },
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 92,
+          "end": 93.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 93,
+          "end": 94.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 94,
+          "end": 95.0
+        },
+        {
+          "verb": "spray",
+          "noun": "liquid:washing",
+          "start": 95,
+          "end": 98.0
+        },
+        {
+          "verb": "put",
+          "noun": "blender",
+          "start": 98,
+          "end": 100.0
+        },
+        {
+          "verb": "mix",
+          "noun": "rice",
+          "start": 100,
+          "end": 105.0
+        },
+        {
+          "verb": "spray",
+          "noun": "liquid:washing",
+          "start": 105,
+          "end": 106.0
+        },
+        {
+          "verb": "take",
+          "noun": "flour",
+          "start": 106,
+          "end": 107.0
+        },
+        {
+          "verb": "shake",
+          "noun": "bottle",
+          "start": 107,
+          "end": 108.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 108,
+          "end": 109.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 109,
+          "end": 110.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 110,
+          "end": 111.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 111,
+          "end": 113.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 113,
+          "end": 114.0
+        },
+        {
+          "verb": "mix",
+          "noun": "rice",
+          "start": 115,
+          "end": 116.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 116,
+          "end": 118.0
+        },
+        {
+          "verb": "insert",
+          "noun": "colander",
+          "start": 118,
+          "end": 119.0
+        },
+        {
+          "verb": "mix",
+          "noun": "rice",
+          "start": 119,
+          "end": 121.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 121,
+          "end": 122.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 122,
+          "end": 125.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 125,
+          "end": 126.46
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0,
+        "action_precision_tiou_0.1": 0.05555555555555555,
+        "action_recall_tiou_0.1": 0.14814814814814814,
+        "action_f1_tiou_0.1": 0.08080808080808081,
+        "action_precision_tiou_0.3": 0.027777777777777776,
+        "action_recall_tiou_0.3": 0.07407407407407407,
+        "action_f1_tiou_0.3": 0.04040404040404041,
+        "action_precision_tiou_0.5": 0.027777777777777776,
+        "action_recall_tiou_0.5": 0.07407407407407407,
+        "action_f1_tiou_0.5": 0.04040404040404041,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.0
+      },
+      "ground_truth_count": 27
+    },
+    {
+      "video_id": "P07_17",
+      "model": "tsm",
+      "seconds": 111.2265245000599,
+      "predictions": [
+        {
+          "verb": "take",
+          "noun": "glass",
+          "start": 0.0,
+          "end": 1.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 1.0,
+          "end": 5.0
+        },
+        {
+          "verb": "take",
+          "noun": "bag",
+          "start": 5.0,
+          "end": 8.0
+        },
+        {
+          "verb": "put",
+          "noun": "bag",
+          "start": 8.0,
+          "end": 9.0
+        },
+        {
+          "verb": "take",
+          "noun": "cup",
+          "start": 9.0,
+          "end": 10.0
+        },
+        {
+          "verb": "take",
+          "noun": "pan",
+          "start": 10.0,
+          "end": 12.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 12.0,
+          "end": 13.0
+        },
+        {
+          "verb": "put",
+          "noun": "pasta",
+          "start": 13.0,
+          "end": 15.0
+        },
+        {
+          "verb": "put",
+          "noun": "spoon",
+          "start": 15.0,
+          "end": 17.0
+        },
+        {
+          "verb": "put",
+          "noun": "pan",
+          "start": 17.0,
+          "end": 18.0
+        },
+        {
+          "verb": "take",
+          "noun": "drawer",
+          "start": 18.0,
+          "end": 19.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 19.0,
+          "end": 20.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 20.0,
+          "end": 21.0
+        },
+        {
+          "verb": "open",
+          "noun": "freezer",
+          "start": 21.0,
+          "end": 22.0
+        },
+        {
+          "verb": "take",
+          "noun": "paper",
+          "start": 22.0,
+          "end": 23.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 23.0,
+          "end": 26.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 26.0,
+          "end": 27.0
+        },
+        {
+          "verb": "take",
+          "noun": "cupboard",
+          "start": 27.0,
+          "end": 28.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 28.0,
+          "end": 29.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 29.0,
+          "end": 32.0
+        },
+        {
+          "verb": "open",
+          "noun": "box",
+          "start": 32.0,
+          "end": 34.0
+        },
+        {
+          "verb": "close",
+          "noun": "box",
+          "start": 34.0,
+          "end": 39.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 39.0,
+          "end": 40.0
+        },
+        {
+          "verb": "open",
+          "noun": "box",
+          "start": 40.0,
+          "end": 41.0
+        },
+        {
+          "verb": "open",
+          "noun": "drawer",
+          "start": 41.0,
+          "end": 43.0
+        },
+        {
+          "verb": "take",
+          "noun": "glass",
+          "start": 43.0,
+          "end": 44.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 44.0,
+          "end": 46.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 46.0,
+          "end": 49.0
+        },
+        {
+          "verb": "open",
+          "noun": "box",
+          "start": 49.0,
+          "end": 56.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 56.0,
+          "end": 57.0
+        },
+        {
+          "verb": "put",
+          "noun": "package",
+          "start": 57.0,
+          "end": 59.0
+        },
+        {
+          "verb": "put",
+          "noun": "cheese",
+          "start": 59.0,
+          "end": 60.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 60.0,
+          "end": 61.0
+        },
+        {
+          "verb": "put",
+          "noun": "package",
+          "start": 61.0,
+          "end": 68.0
+        },
+        {
+          "verb": "put",
+          "noun": "spoon",
+          "start": 68.0,
+          "end": 70.0
+        },
+        {
+          "verb": "put",
+          "noun": "package",
+          "start": 70.0,
+          "end": 71.0
+        },
+        {
+          "verb": "open",
+          "noun": "package",
+          "start": 71.0,
+          "end": 72.0
+        },
+        {
+          "verb": "put",
+          "noun": "package",
+          "start": 72.0,
+          "end": 76.0
+        },
+        {
+          "verb": "take",
+          "noun": "package",
+          "start": 76.0,
+          "end": 77.0
+        },
+        {
+          "verb": "put",
+          "noun": "package",
+          "start": 77.0,
+          "end": 78.0
+        },
+        {
+          "verb": "put",
+          "noun": "cheese",
+          "start": 78.0,
+          "end": 82.0
+        },
+        {
+          "verb": "put",
+          "noun": "package",
+          "start": 82.0,
+          "end": 83.0
+        },
+        {
+          "verb": "put",
+          "noun": "box",
+          "start": 83.0,
+          "end": 84.0
+        },
+        {
+          "verb": "open",
+          "noun": "box",
+          "start": 84.0,
+          "end": 89.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 89.0,
+          "end": 91.0
+        },
+        {
+          "verb": "open",
+          "noun": "box",
+          "start": 91.0,
+          "end": 92.0
+        },
+        {
+          "verb": "open",
+          "noun": "freezer",
+          "start": 92.0,
+          "end": 93.0
+        },
+        {
+          "verb": "put",
+          "noun": "freezer",
+          "start": 93.0,
+          "end": 96.0
+        },
+        {
+          "verb": "take",
+          "noun": "cupboard",
+          "start": 96.0,
+          "end": 97.0
+        },
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 97.0,
+          "end": 98.0
+        },
+        {
+          "verb": "open",
+          "noun": "drawer",
+          "start": 98.0,
+          "end": 100.0
+        },
+        {
+          "verb": "take",
+          "noun": "drawer",
+          "start": 100.0,
+          "end": 101.0
+        },
+        {
+          "verb": "close",
+          "noun": "drawer",
+          "start": 101.0,
+          "end": 102.0
+        },
+        {
+          "verb": "open",
+          "noun": "scale",
+          "start": 102.0,
+          "end": 103.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 103.0,
+          "end": 104.0
+        },
+        {
+          "verb": "open",
+          "noun": "cupboard",
+          "start": 104.0,
+          "end": 105.0
+        },
+        {
+          "verb": "take",
+          "noun": "cupboard",
+          "start": 105.0,
+          "end": 108.0
+        },
+        {
+          "verb": "put",
+          "noun": "cupboard",
+          "start": 108.0,
+          "end": 109.0
+        },
+        {
+          "verb": "take",
+          "noun": "spoon",
+          "start": 109.0,
+          "end": 111.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 111.0,
+          "end": 113.0
+        },
+        {
+          "verb": "take",
+          "noun": "paper",
+          "start": 113.0,
+          "end": 114.0
+        },
+        {
+          "verb": "take",
+          "noun": "box",
+          "start": 114.0,
+          "end": 115.0
+        },
+        {
+          "verb": "take",
+          "noun": "glass",
+          "start": 115.0,
+          "end": 116.0
+        },
+        {
+          "verb": "wash",
+          "noun": "spoon",
+          "start": 116.0,
+          "end": 124.0
+        },
+        {
+          "verb": "wash",
+          "noun": "cup",
+          "start": 124.0,
+          "end": 126.0
+        },
+        {
+          "verb": "wash",
+          "noun": "spoon",
+          "start": 126.0,
+          "end": 127.0
+        },
+        {
+          "verb": "wash",
+          "noun": "cup",
+          "start": 127.0,
+          "end": 128.0
+        },
+        {
+          "verb": "take",
+          "noun": "lid",
+          "start": 128.0,
+          "end": 129.0
+        },
+        {
+          "verb": "put",
+          "noun": "jug",
+          "start": 129.0,
+          "end": 130.0
+        },
+        {
+          "verb": "take",
+          "noun": "lid",
+          "start": 130.0,
+          "end": 131.0
+        },
+        {
+          "verb": "take",
+          "noun": "cupboard",
+          "start": 131.0,
+          "end": 132.93
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0,
+        "action_precision_tiou_0.1": 0.028169014084507043,
+        "action_recall_tiou_0.1": 0.07692307692307693,
+        "action_f1_tiou_0.1": 0.041237113402061855,
+        "action_precision_tiou_0.3": 0.028169014084507043,
+        "action_recall_tiou_0.3": 0.07692307692307693,
+        "action_f1_tiou_0.3": 0.041237113402061855,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.0
+      },
+      "ground_truth_count": 26
+    },
+    {
+      "video_id": "P07_17",
+      "model": "clip",
+      "seconds": 18.796329699922353,
+      "predictions": [
+        {
+          "verb": "close",
+          "noun": "cupboard",
+          "start": 0,
+          "end": 2.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 2,
+          "end": 5.0
+        },
+        {
+          "verb": "wash",
+          "noun": "dish",
+          "start": 5,
+          "end": 9.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 9,
+          "end": 10.0
+        },
+        {
+          "verb": "wash",
+          "noun": "dish",
+          "start": 10,
+          "end": 11.0
+        },
+        {
+          "verb": "scrub",
+          "noun": "pan",
+          "start": 11,
+          "end": 14.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pan",
+          "start": 14,
+          "end": 15.0
+        },
+        {
+          "verb": "wash",
+          "noun": "ladle",
+          "start": 15,
+          "end": 16.0
+        },
+        {
+          "verb": "wash",
+          "noun": "spatula",
+          "start": 16,
+          "end": 18.0
+        },
+        {
+          "verb": "put",
+          "noun": "hob",
+          "start": 18,
+          "end": 19.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 19,
+          "end": 20.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 20,
+          "end": 21.0
+        },
+        {
+          "verb": "dry",
+          "noun": "knife",
+          "start": 21,
+          "end": 22.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 22,
+          "end": 23.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 24,
+          "end": 25.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 25,
+          "end": 28.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 28,
+          "end": 30.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 30,
+          "end": 32.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 32,
+          "end": 33.0
+        },
+        {
+          "verb": "flip",
+          "noun": "dough",
+          "start": 33,
+          "end": 38.0
+        },
+        {
+          "verb": "flip",
+          "noun": "tofu",
+          "start": 38,
+          "end": 39.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 39,
+          "end": 40.0
+        },
+        {
+          "verb": "empty",
+          "noun": "sink",
+          "start": 40,
+          "end": 41.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 41,
+          "end": 43.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 43,
+          "end": 44.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 44,
+          "end": 45.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 45,
+          "end": 46.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 46,
+          "end": 47.0
+        },
+        {
+          "verb": "mix",
+          "noun": "rice",
+          "start": 47,
+          "end": 49.0
+        },
+        {
+          "verb": "flip",
+          "noun": "tofu",
+          "start": 49,
+          "end": 50.0
+        },
+        {
+          "verb": "mix",
+          "noun": "rice",
+          "start": 50,
+          "end": 51.0
+        },
+        {
+          "verb": "mix",
+          "noun": "salad",
+          "start": 51,
+          "end": 52.0
+        },
+        {
+          "verb": "scrub",
+          "noun": "plate",
+          "start": 52,
+          "end": 56.0
+        },
+        {
+          "verb": "flip",
+          "noun": "tofu",
+          "start": 56,
+          "end": 67.0
+        },
+        {
+          "verb": "wash",
+          "noun": "dish",
+          "start": 67,
+          "end": 69.0
+        },
+        {
+          "verb": "flip",
+          "noun": "tofu",
+          "start": 69,
+          "end": 71.0
+        },
+        {
+          "verb": "take",
+          "noun": "cereal",
+          "start": 71,
+          "end": 72.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 72,
+          "end": 73.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 73,
+          "end": 74.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 74,
+          "end": 75.0
+        },
+        {
+          "verb": "take",
+          "noun": "cereal",
+          "start": 75,
+          "end": 77.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 77,
+          "end": 79.0
+        },
+        {
+          "verb": "take",
+          "noun": "cereal",
+          "start": 79,
+          "end": 82.0
+        },
+        {
+          "verb": "put",
+          "noun": "cereal",
+          "start": 82,
+          "end": 83.0
+        },
+        {
+          "verb": "take",
+          "noun": "cereal",
+          "start": 83,
+          "end": 84.0
+        },
+        {
+          "verb": "flip",
+          "noun": "tofu",
+          "start": 84,
+          "end": 86.0
+        },
+        {
+          "verb": "mix",
+          "noun": "pasta",
+          "start": 86,
+          "end": 87.0
+        },
+        {
+          "verb": "flip",
+          "noun": "tofu",
+          "start": 87,
+          "end": 88.0
+        },
+        {
+          "verb": "mix",
+          "noun": "rice",
+          "start": 88,
+          "end": 89.0
+        },
+        {
+          "verb": "flip",
+          "noun": "dough",
+          "start": 89,
+          "end": 91.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 91,
+          "end": 92.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 92,
+          "end": 94.0
+        },
+        {
+          "verb": "open",
+          "noun": "fridge",
+          "start": 94,
+          "end": 95.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 95,
+          "end": 97.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 98,
+          "end": 100.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 100,
+          "end": 101.0
+        },
+        {
+          "verb": "wash",
+          "noun": "dish",
+          "start": 101,
+          "end": 102.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 104,
+          "end": 106.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 106,
+          "end": 107.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 107,
+          "end": 108.0
+        },
+        {
+          "verb": "brush",
+          "noun": "floor",
+          "start": 108,
+          "end": 109.0
+        },
+        {
+          "verb": "flip",
+          "noun": "dough",
+          "start": 109,
+          "end": 112.0
+        },
+        {
+          "verb": "mix",
+          "noun": "rice",
+          "start": 112,
+          "end": 114.0
+        },
+        {
+          "verb": "wash",
+          "noun": "spatula",
+          "start": 114,
+          "end": 115.0
+        },
+        {
+          "verb": "press",
+          "noun": "spatula",
+          "start": 115,
+          "end": 116.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 116,
+          "end": 117.0
+        },
+        {
+          "verb": "close",
+          "noun": "fridge",
+          "start": 117,
+          "end": 118.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 118,
+          "end": 125.0
+        },
+        {
+          "verb": "put",
+          "noun": "juicer",
+          "start": 125,
+          "end": 126.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 126,
+          "end": 127.0
+        },
+        {
+          "verb": "put",
+          "noun": "blender",
+          "start": 127,
+          "end": 128.0
+        },
+        {
+          "verb": "wash",
+          "noun": "juicer",
+          "start": 128,
+          "end": 129.0
+        },
+        {
+          "verb": "insert",
+          "noun": "dishwasher",
+          "start": 129,
+          "end": 130.0
+        },
+        {
+          "verb": "open",
+          "noun": "dishwasher",
+          "start": 130,
+          "end": 132.0
+        },
+        {
+          "verb": "close",
+          "noun": "freezer",
+          "start": 132,
+          "end": 132.93
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0,
+        "action_precision_tiou_0.1": 0.0,
+        "action_recall_tiou_0.1": 0.0,
+        "action_f1_tiou_0.1": 0.0,
+        "action_precision_tiou_0.3": 0.0,
+        "action_recall_tiou_0.3": 0.0,
+        "action_f1_tiou_0.3": 0.0,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.0
+      },
+      "ground_truth_count": 26
+    }
+  ],
+  "limitations": [
+    "Three short kitchen recordings, not a representative or blind benchmark.",
+    "Public validation split was also used by the checkpoint authors for evaluation/model selection; none of these recordings are in EPIC training CSV.",
+    "TSM has 97 verb and 300 noun classes; CLIP uses the existing 528 action-pair vocabulary. This compares complete recognizers, not architecture alone.",
+    "No human highlight labels or category labels evaluated; no Samsung kit, validator or official score.",
+    "TSM uses full-frame padding, fixed four-second contexts and one-second output bins; no ground-truth boundaries or local training."
+  ],
+  "summary": {
+    "clip": {
+      "mean_macro_action_f1": 0.017957351290684626,
+      "matches_tiou_0.1": 4,
+      "ground_truth_actions": 79
+    },
+    "tsm": {
+      "mean_macro_action_f1": 0.04822363203806503,
+      "matches_tiou_0.1": 11,
+      "ground_truth_actions": 79
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "scope": "Temporal refinement: development P28_18, P09_08, P07_17; final evaluation P18_10, P08_14, P04_28. All public EPIC validation split, not Samsung manifest. No local fitting.",
+  "annotation_revision": "ea8b40457a400c3fffa1c7f406ef3dc169cc2522",
+  "mirror": "https://huggingface.co/datasets/mohammad2012191/epic_kitchens_100_256p",
+  "mirror_revision": "3297646177d552b615fdb09d3a6986cb3a7cb527",
+  "files": {
+    "P07_17.mp4": {
+      "sha256": "ad1211afc77b3621ac0dfdacc7b4d43af97b137db7f9a1b37dae33cf64397c70",
+      "bytes": 9184831
+    },
+    "P09_08.mp4": {
+      "sha256": "573a73cf9aa966f98c8cc58485098e43aea283f98653e8e5487ef146a9ee277b",
+      "bytes": 8912673
+    },
+    "P28_18.mp4": {
+      "sha256": "bf70f73b23d7e71e02e84cef22d0a9601fe9345459b38b6cd6fbf01c8f5fdc3b",
+      "bytes": 17065605
+    },
+    "EPIC_100_train.csv": {
+      "sha256": "a3a7ef2e397bd8af12bd0496b09d61b1f2c1f3f6e1726fa86af50a27f4855e87",
+      "bytes": 8415872
+    },
+    "EPIC_100_validation.csv": {
+      "sha256": "35f7932ba0a1127a96cac215a98d35398946f343e3cea9ad6688ed17eee9d75d",
+      "bytes": 1184998
+    },
+    "EPIC_100_verb_classes.csv": {
+      "sha256": "aab8bf210d0234b6facb9b191ae402c03a5f8965d123586b4762d3468a85033e",
+      "bytes": 13402
+    },
+    "EPIC_100_noun_classes.csv": {
+      "sha256": "40f0a81c5bd06b33050df9f0bd17cd3c2fccd759f9581e4e5e04fec7562be893",
+      "bytes": 49357
+    },
+    "P18_10.mp4": {
+      "sha256": "6735bab818e77e1faf1dcec21d74c286b3003947e94edb0d9d78306ac4f87487",
+      "bytes": 14274088
+    },
+    "P08_14.mp4": {
+      "sha256": "fb1f18fc1dba48f3df306604b6c2009a0411476c9fdd28935eec21836f23e40b",
+      "bytes": 18813495
+    },
+    "P04_28.mp4": {
+      "sha256": "8ac15fcac2f7da31d8089261b5dd8c5bf1140c2ceb84195e255aff99daf2c03c",
+      "bytes": 21238567
+    }
+  }
+}

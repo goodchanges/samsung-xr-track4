@@ -1,0 +1,756 @@
+[
+  {
+    "video_id": "P18_10",
+    "selector": "preserved",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 2.0,
+        "end": 2.994,
+        "importance": 0.3531
+      },
+      {
+        "start": 3.0,
+        "end": 4.0,
+        "importance": 0.3418
+      },
+      {
+        "start": 12.0,
+        "end": 13.0,
+        "importance": 0.2142
+      },
+      {
+        "start": 33.0,
+        "end": 36.0,
+        "importance": 0.36
+      },
+      {
+        "start": 37.0,
+        "end": 38.0,
+        "importance": 0.1344
+      },
+      {
+        "start": 45.0,
+        "end": 47.0,
+        "importance": 0.2913
+      },
+      {
+        "start": 56.0,
+        "end": 57.0,
+        "importance": 0.3943
+      },
+      {
+        "start": 79.0,
+        "end": 80.0,
+        "importance": 0.2745
+      },
+      {
+        "start": 90.0,
+        "end": 93.0,
+        "importance": 0.1849
+      },
+      {
+        "start": 116.0,
+        "end": 117.0,
+        "importance": 0.184
+      },
+      {
+        "start": 120.0,
+        "end": 121.0,
+        "importance": 0.4422
+      },
+      {
+        "start": 121.0,
+        "end": 122.0,
+        "importance": 0.1749
+      },
+      {
+        "start": 128.0,
+        "end": 129.0,
+        "importance": 0.1537
+      },
+      {
+        "start": 132.0,
+        "end": 133.0,
+        "importance": 0.4039
+      },
+      {
+        "start": 133.0,
+        "end": 134.0,
+        "importance": 0.2504
+      },
+      {
+        "start": 140.0,
+        "end": 141.0,
+        "importance": 0.3552
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.13513513513513514,
+      "action_precision_tiou_0.1": 0.075,
+      "action_recall_tiou_0.1": 0.1956521739130435,
+      "action_f1_tiou_0.1": 0.10843373493975904,
+      "action_precision_tiou_0.3": 0.06666666666666667,
+      "action_recall_tiou_0.3": 0.17391304347826086,
+      "action_f1_tiou_0.3": 0.0963855421686747,
+      "action_precision_tiou_0.5": 0.041666666666666664,
+      "action_recall_tiou_0.5": 0.10869565217391304,
+      "action_f1_tiou_0.5": 0.060240963855421686,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499620139512398
+    }
+  },
+  {
+    "video_id": "P18_10",
+    "selector": "temporal",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "importance": 0.48661795258522034
+      },
+      {
+        "start": 2.0,
+        "end": 4.0,
+        "importance": 0.8250411748886108
+      },
+      {
+        "start": 4.0,
+        "end": 6.0,
+        "importance": 0.6472514271736145
+      },
+      {
+        "start": 6.0,
+        "end": 8.0,
+        "importance": 0.5971749126911163
+      },
+      {
+        "start": 26.5,
+        "end": 27.494,
+        "importance": 0.4792044587298418
+      },
+      {
+        "start": 37.0,
+        "end": 39.0,
+        "importance": 0.5943180620670319
+      },
+      {
+        "start": 49.0,
+        "end": 51.0,
+        "importance": 0.7650444507598877
+      },
+      {
+        "start": 74.0,
+        "end": 76.0,
+        "importance": 0.47768454253673553
+      },
+      {
+        "start": 88.5,
+        "end": 90.5,
+        "importance": 0.507164522074163
+      },
+      {
+        "start": 139.0,
+        "end": 141.0,
+        "importance": 0.49829326570034027
+      },
+      {
+        "start": 141.0,
+        "end": 143.0,
+        "importance": 0.6132105141878128
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.2702702702702703,
+      "action_precision_tiou_0.1": 0.075,
+      "action_recall_tiou_0.1": 0.1956521739130435,
+      "action_f1_tiou_0.1": 0.10843373493975904,
+      "action_precision_tiou_0.3": 0.06666666666666667,
+      "action_recall_tiou_0.3": 0.17391304347826086,
+      "action_f1_tiou_0.3": 0.0963855421686747,
+      "action_precision_tiou_0.5": 0.041666666666666664,
+      "action_recall_tiou_0.5": 0.10869565217391304,
+      "action_f1_tiou_0.5": 0.060240963855421686,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499620139512398
+    }
+  },
+  {
+    "video_id": "P18_10",
+    "selector": "uniform",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 6.1898,
+        "end": 8.2892,
+        "importance": 0.0
+      },
+      {
+        "start": 20.668799999999997,
+        "end": 22.7682,
+        "importance": 0.0
+      },
+      {
+        "start": 35.1478,
+        "end": 37.2472,
+        "importance": 0.0
+      },
+      {
+        "start": 49.626799999999996,
+        "end": 51.7262,
+        "importance": 0.0
+      },
+      {
+        "start": 64.10579999999999,
+        "end": 66.20519999999999,
+        "importance": 0.0
+      },
+      {
+        "start": 78.58479999999999,
+        "end": 80.68419999999999,
+        "importance": 0.0
+      },
+      {
+        "start": 93.0638,
+        "end": 95.1632,
+        "importance": 0.0
+      },
+      {
+        "start": 107.5428,
+        "end": 109.6422,
+        "importance": 0.0
+      },
+      {
+        "start": 122.02179999999998,
+        "end": 124.12119999999999,
+        "importance": 0.0
+      },
+      {
+        "start": 136.5008,
+        "end": 138.6002,
+        "importance": 0.0
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.10810810810810811,
+      "action_precision_tiou_0.1": 0.075,
+      "action_recall_tiou_0.1": 0.1956521739130435,
+      "action_f1_tiou_0.1": 0.10843373493975904,
+      "action_precision_tiou_0.3": 0.06666666666666667,
+      "action_recall_tiou_0.3": 0.17391304347826086,
+      "action_f1_tiou_0.3": 0.0963855421686747,
+      "action_precision_tiou_0.5": 0.041666666666666664,
+      "action_recall_tiou_0.5": 0.10869565217391304,
+      "action_f1_tiou_0.5": 0.060240963855421686,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499620139512415
+    }
+  },
+  {
+    "video_id": "P08_14",
+    "selector": "preserved",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 46.0,
+        "end": 49.0,
+        "importance": 0.499
+      },
+      {
+        "start": 62.0,
+        "end": 65.0,
+        "importance": 0.5528
+      },
+      {
+        "start": 74.0,
+        "end": 76.0,
+        "importance": 0.3017
+      },
+      {
+        "start": 76.0,
+        "end": 77.0,
+        "importance": 0.5633
+      },
+      {
+        "start": 77.0,
+        "end": 78.0,
+        "importance": 0.5349
+      },
+      {
+        "start": 85.0,
+        "end": 88.028,
+        "importance": 0.5179
+      },
+      {
+        "start": 93.0,
+        "end": 94.0,
+        "importance": 0.4375
+      },
+      {
+        "start": 94.0,
+        "end": 96.0,
+        "importance": 0.42
+      },
+      {
+        "start": 123.0,
+        "end": 127.0,
+        "importance": 0.5668
+      },
+      {
+        "start": 138.0,
+        "end": 139.0,
+        "importance": 0.3182
+      },
+      {
+        "start": 143.0,
+        "end": 144.0,
+        "importance": 0.4105
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.09090909090909091,
+      "action_precision_tiou_0.1": 0.08108108108108109,
+      "action_recall_tiou_0.1": 0.20930232558139536,
+      "action_f1_tiou_0.1": 0.11688311688311688,
+      "action_precision_tiou_0.3": 0.05405405405405406,
+      "action_recall_tiou_0.3": 0.13953488372093023,
+      "action_f1_tiou_0.3": 0.07792207792207792,
+      "action_precision_tiou_0.5": 0.02702702702702703,
+      "action_recall_tiou_0.5": 0.06976744186046512,
+      "action_f1_tiou_0.5": 0.03896103896103896,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499736703528174
+    }
+  },
+  {
+    "video_id": "P08_14",
+    "selector": "temporal",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 0.0,
+        "end": 0.028,
+        "importance": 0.4145946204662323
+      },
+      {
+        "start": 3.0,
+        "end": 5.0,
+        "importance": 0.8321676254272461
+      },
+      {
+        "start": 14.0,
+        "end": 16.0,
+        "importance": 0.7172683477401733
+      },
+      {
+        "start": 20.0,
+        "end": 22.0,
+        "importance": 0.7392833828926086
+      },
+      {
+        "start": 24.0,
+        "end": 26.0,
+        "importance": 0.7000620365142822
+      },
+      {
+        "start": 26.0,
+        "end": 28.0,
+        "importance": 0.6478004455566406
+      },
+      {
+        "start": 59.0,
+        "end": 61.0,
+        "importance": 0.6526443660259247
+      },
+      {
+        "start": 78.0,
+        "end": 80.0,
+        "importance": 0.8701417744159698
+      },
+      {
+        "start": 87.5,
+        "end": 89.5,
+        "importance": 0.6224142387509346
+      },
+      {
+        "start": 102.0,
+        "end": 104.0,
+        "importance": 0.6352964639663696
+      },
+      {
+        "start": 104.0,
+        "end": 106.0,
+        "importance": 0.6854971349239349
+      },
+      {
+        "start": 137.0,
+        "end": 139.0,
+        "importance": 0.9025601744651794
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.21212121212121213,
+      "action_precision_tiou_0.1": 0.08108108108108109,
+      "action_recall_tiou_0.1": 0.20930232558139536,
+      "action_f1_tiou_0.1": 0.11688311688311688,
+      "action_precision_tiou_0.3": 0.05405405405405406,
+      "action_recall_tiou_0.3": 0.13953488372093023,
+      "action_f1_tiou_0.3": 0.07792207792207792,
+      "action_precision_tiou_0.5": 0.02702702702702703,
+      "action_recall_tiou_0.5": 0.06976744186046512,
+      "action_f1_tiou_0.5": 0.03896103896103896,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.1449973670352817
+    }
+  },
+  {
+    "video_id": "P08_14",
+    "selector": "uniform",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 6.494600000000001,
+        "end": 8.697400000000002,
+        "importance": 0.0
+      },
+      {
+        "start": 21.686600000000006,
+        "end": 23.889400000000002,
+        "importance": 0.0
+      },
+      {
+        "start": 36.878600000000006,
+        "end": 39.0814,
+        "importance": 0.0
+      },
+      {
+        "start": 52.070600000000006,
+        "end": 54.2734,
+        "importance": 0.0
+      },
+      {
+        "start": 67.2626,
+        "end": 69.4654,
+        "importance": 0.0
+      },
+      {
+        "start": 82.45460000000001,
+        "end": 84.65740000000001,
+        "importance": 0.0
+      },
+      {
+        "start": 97.64660000000002,
+        "end": 99.84940000000002,
+        "importance": 0.0
+      },
+      {
+        "start": 112.83860000000001,
+        "end": 115.04140000000001,
+        "importance": 0.0
+      },
+      {
+        "start": 128.0306,
+        "end": 130.23340000000002,
+        "importance": 0.0
+      },
+      {
+        "start": 143.2226,
+        "end": 145.42540000000002,
+        "importance": 0.0
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.18181818181818182,
+      "action_precision_tiou_0.1": 0.08108108108108109,
+      "action_recall_tiou_0.1": 0.20930232558139536,
+      "action_f1_tiou_0.1": 0.11688311688311688,
+      "action_precision_tiou_0.3": 0.05405405405405406,
+      "action_recall_tiou_0.3": 0.13953488372093023,
+      "action_f1_tiou_0.3": 0.07792207792207792,
+      "action_precision_tiou_0.5": 0.02702702702702703,
+      "action_recall_tiou_0.5": 0.06976744186046512,
+      "action_f1_tiou_0.5": 0.03896103896103896,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499736703528188
+    }
+  },
+  {
+    "video_id": "P04_28",
+    "selector": "preserved",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 10.0,
+        "end": 13.0,
+        "importance": 0.4505
+      },
+      {
+        "start": 24.0,
+        "end": 26.0,
+        "importance": 0.3342
+      },
+      {
+        "start": 26.0,
+        "end": 27.0,
+        "importance": 0.5257
+      },
+      {
+        "start": 27.0,
+        "end": 29.0,
+        "importance": 0.3497
+      },
+      {
+        "start": 97.0,
+        "end": 98.0,
+        "importance": 0.4081
+      },
+      {
+        "start": 100.0,
+        "end": 100.981,
+        "importance": 0.49
+      },
+      {
+        "start": 105.0,
+        "end": 106.0,
+        "importance": 0.4126
+      },
+      {
+        "start": 108.0,
+        "end": 112.0,
+        "importance": 0.3635
+      },
+      {
+        "start": 112.0,
+        "end": 113.0,
+        "importance": 0.4544
+      },
+      {
+        "start": 120.0,
+        "end": 122.0,
+        "importance": 0.3947
+      },
+      {
+        "start": 142.0,
+        "end": 146.0,
+        "importance": 0.4883
+      },
+      {
+        "start": 148.0,
+        "end": 149.0,
+        "importance": 0.181
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.16666666666666666,
+      "action_precision_tiou_0.1": 0.03773584905660377,
+      "action_recall_tiou_0.1": 0.16,
+      "action_f1_tiou_0.1": 0.061068702290076333,
+      "action_precision_tiou_0.3": 0.03773584905660377,
+      "action_recall_tiou_0.3": 0.16,
+      "action_f1_tiou_0.3": 0.061068702290076333,
+      "action_precision_tiou_0.5": 0.03773584905660377,
+      "action_recall_tiou_0.5": 0.16,
+      "action_f1_tiou_0.5": 0.061068702290076333,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499968452268278
+    }
+  },
+  {
+    "video_id": "P04_28",
+    "selector": "temporal",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 0.0,
+        "end": 0.981,
+        "importance": 0.36173537373542786
+      },
+      {
+        "start": 4.0,
+        "end": 6.0,
+        "importance": 0.5182832032442093
+      },
+      {
+        "start": 13.5,
+        "end": 15.5,
+        "importance": 0.49159208685159683
+      },
+      {
+        "start": 32.0,
+        "end": 34.0,
+        "importance": 0.9352745413780212
+      },
+      {
+        "start": 58.5,
+        "end": 60.5,
+        "importance": 0.5084879845380783
+      },
+      {
+        "start": 62.0,
+        "end": 64.0,
+        "importance": 0.8521430492401123
+      },
+      {
+        "start": 99.0,
+        "end": 101.0,
+        "importance": 0.9975875914096832
+      },
+      {
+        "start": 101.0,
+        "end": 103.0,
+        "importance": 0.9858334064483643
+      },
+      {
+        "start": 105.0,
+        "end": 107.0,
+        "importance": 0.6014714539051056
+      },
+      {
+        "start": 118.0,
+        "end": 120.0,
+        "importance": 0.6524353325366974
+      },
+      {
+        "start": 140.0,
+        "end": 142.0,
+        "importance": 0.9890701174736023
+      },
+      {
+        "start": 145.0,
+        "end": 147.0,
+        "importance": 0.7523379623889923
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.2777777777777778,
+      "action_precision_tiou_0.1": 0.03773584905660377,
+      "action_recall_tiou_0.1": 0.16,
+      "action_f1_tiou_0.1": 0.061068702290076333,
+      "action_precision_tiou_0.3": 0.03773584905660377,
+      "action_recall_tiou_0.3": 0.16,
+      "action_f1_tiou_0.3": 0.061068702290076333,
+      "action_precision_tiou_0.5": 0.03773584905660377,
+      "action_recall_tiou_0.5": 0.16,
+      "action_f1_tiou_0.5": 0.061068702290076333,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499968452268283
+    }
+  },
+  {
+    "video_id": "P04_28",
+    "selector": "uniform",
+    "config": {
+      "context": 2,
+      "smoothing": 1,
+      "top_k": 1
+    },
+    "highlights": [
+      {
+        "start": 6.77545,
+        "end": 9.073550000000001,
+        "importance": 0.0
+      },
+      {
+        "start": 22.624450000000003,
+        "end": 24.92255,
+        "importance": 0.0
+      },
+      {
+        "start": 38.47345,
+        "end": 40.771550000000005,
+        "importance": 0.0
+      },
+      {
+        "start": 54.32245,
+        "end": 56.62055000000001,
+        "importance": 0.0
+      },
+      {
+        "start": 70.17145000000001,
+        "end": 72.46955000000001,
+        "importance": 0.0
+      },
+      {
+        "start": 86.02045,
+        "end": 88.31855,
+        "importance": 0.0
+      },
+      {
+        "start": 101.86944999999999,
+        "end": 104.16754999999999,
+        "importance": 0.0
+      },
+      {
+        "start": 117.71845000000002,
+        "end": 120.01655000000002,
+        "importance": 0.0
+      },
+      {
+        "start": 133.56745,
+        "end": 135.86554999999998,
+        "importance": 0.0
+      },
+      {
+        "start": 149.41645000000003,
+        "end": 151.71455,
+        "importance": 0.0
+      }
+    ],
+    "metrics": {
+      "coverage_at_half_action": 0.16666666666666666,
+      "action_precision_tiou_0.1": 0.03773584905660377,
+      "action_recall_tiou_0.1": 0.16,
+      "action_f1_tiou_0.1": 0.061068702290076333,
+      "action_precision_tiou_0.3": 0.03773584905660377,
+      "action_recall_tiou_0.3": 0.16,
+      "action_f1_tiou_0.3": 0.061068702290076333,
+      "action_precision_tiou_0.5": 0.03773584905660377,
+      "action_recall_tiou_0.5": 0.16,
+      "action_f1_tiou_0.5": 0.061068702290076333,
+      "highlight_f1_at_10hz": null,
+      "label_correct": null,
+      "selected_fraction": 0.14499968452268272
+    }
+  }
+]

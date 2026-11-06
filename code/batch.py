@@ -46,18 +46,25 @@ def main():
     parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
                         help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=4)
-    parser.add_argument("--selector", choices=("preserved", "baseline", "duration"), default="preserved")
+    parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"), default="preserved")
     parser.add_argument("--unsmoothed", action="store_true")
     parser.add_argument("--top-k", type=int, choices=(1, 3), default=1)
     parser.add_argument("--adapter", type=Path)
     parser.add_argument("--adapter-strength", type=float, default=0.0,
                         help="Visual adapter strength. Set a positive value to enable it (default: 0).")
     parser.add_argument("--no-adapter", action="store_true")
+    parser.add_argument("--temporal-model", type=Path,
+                        help="Optional EPIC TSM checkpoint; classes.json must be alongside it.")
+    parser.add_argument("--temporal-context", type=int, choices=(2, 4),
+                        help="Defaults to 2 for the temporal selector, otherwise 4.")
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--id-column", default="video_id")
     parser.add_argument("--path-column", default="path")
     parser.add_argument("--validator", type=Path, help="Organizer's validate.py; run after ALL manifest outputs exist.")
     args = parser.parse_args()
+    if args.selector == "temporal" and not args.temporal_model:
+        parser.error("--selector temporal requires --temporal-model.")
+    context = args.temporal_context or (2 if args.selector == "temporal" else 4)
     try:
         supported = load_supported_classes(args.supported_classes)
     except (OSError, ValueError) as exc:
@@ -94,6 +101,13 @@ def main():
         adapter = None
     scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength)
     original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer) if args.selector == "preserved" else None
+    temporal = None
+    if args.temporal_model:
+        try:
+            from temporal_model import TemporalRecognizer
+        except ImportError:
+            parser.error("Install optional model dependencies: python -m pip install -r requirements-temporal.txt")
+        temporal = TemporalRecognizer(args.temporal_model, args.threads)
     args.outputs.mkdir(parents=True, exist_ok=True)
     for video_id, video in entries:
         duration, _ = probe(video)
@@ -111,6 +125,14 @@ def main():
         if args.top_k > 1:
             actions = localize(scores, idle, embeddings, scorer.actions, duration,
                                top_k=args.top_k, smoothing=not args.unsmoothed)
+        if temporal is not None:
+            actions = temporal.recognize(video, duration, args.temporal_model.parent / "classes.json",
+                                         context)
+            if args.selector == "temporal":
+                from temporal_selection import select
+                verbs, nouns = temporal.score_video(video, duration, context)
+                classes = json.loads((args.temporal_model.parent / "classes.json").read_text(encoding="utf-8"))
+                highlights = select(actions, verbs, nouns, classes, embeddings, duration)
         actions, highlights = clean_intervals(actions, highlights, duration)
         result = dict(video_id=video_id, label=label, actions=actions, highlights=highlights)
         check(result, video_id, duration)

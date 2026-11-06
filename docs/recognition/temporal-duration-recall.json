@@ -1,0 +1,47 @@
+{
+  "scope": "Pooled matched/GT counts at tIoU 0.1; local greedy matcher; three evaluation videos",
+  "counts": {
+    "tsm-4": {
+      "under_2s": [
+        15,
+        57
+      ],
+      "2_to_5s": [
+        6,
+        35
+      ],
+      "at_least_5s": [
+        4,
+        22
+      ]
+    },
+    "tsm-2": {
+      "under_2s": [
+        14,
+        57
+      ],
+      "2_to_5s": [
+        6,
+        35
+      ],
+      "at_least_5s": [
+        2,
+        22
+      ]
+    },
+    "clip": {
+      "under_2s": [
+        1,
+        57
+      ],
+      "2_to_5s": [
+        0,
+        35
+      ],
+      "at_least_5s": [
+        0,
+        22
+      ]
+    }
+  }
+}

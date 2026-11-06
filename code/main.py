@@ -22,15 +22,22 @@ def main():
     parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
                         help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=min(4, os.cpu_count() or 1))
-    parser.add_argument("--selector", choices=("preserved", "baseline", "duration"), default="preserved")
+    parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"), default="preserved")
     parser.add_argument("--unsmoothed", action="store_true")
     parser.add_argument("--top-k", type=int, choices=(1, 3), default=1)
     parser.add_argument("--adapter", type=Path)
     parser.add_argument("--adapter-strength", type=float, default=0.0,
                         help="Visual adapter strength. Set a positive value to enable it (default: 0).")
     parser.add_argument("--no-adapter", action="store_true")
+    parser.add_argument("--temporal-model", type=Path,
+                        help="Optional EPIC TSM checkpoint; classes.json must be alongside it.")
+    parser.add_argument("--temporal-context", type=int, choices=(2, 4),
+                        help="Defaults to 2 for the temporal selector, otherwise 4.")
     parser.add_argument("--demo", type=Path, metavar="DIR")
     args = parser.parse_args()
+    if args.selector == "temporal" and not args.temporal_model:
+        parser.error("--selector temporal requires --temporal-model.")
+    context = args.temporal_context or (2 if args.selector == "temporal" else 4)
     source, output = args.video.resolve(), args.output.resolve()
     if args.threads < 1:
         parser.error("--threads must be positive.")
@@ -70,6 +77,19 @@ def main():
         if args.top_k > 1:
             actions = localize(scores, idle, embeddings, scorer.actions, duration,
                                top_k=args.top_k, smoothing=not args.unsmoothed)
+        if args.temporal_model:
+            try:
+                from temporal_model import TemporalRecognizer
+            except ImportError as exc:
+                raise ValueError("Install optional model dependencies: python -m pip install -r requirements-temporal.txt") from exc
+            temporal = TemporalRecognizer(args.temporal_model, args.threads)
+            actions = temporal.recognize(source, duration, args.temporal_model.parent / "classes.json",
+                                         context)
+            if args.selector == "temporal":
+                from temporal_selection import select
+                verbs, nouns = temporal.score_video(source, duration, context)
+                classes = json.loads((args.temporal_model.parent / "classes.json").read_text(encoding="utf-8"))
+                highlights = select(actions, verbs, nouns, classes, embeddings, duration)
         actions, highlights = clean_intervals(actions, highlights, duration)
         result = dict(video_id=source.stem, label=label, actions=actions, highlights=highlights)
         if args.demo:

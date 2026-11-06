@@ -1,0 +1,80 @@
+{
+  "max_probability_errors": [
+    5.364418029785156e-07,
+    4.172325134277344e-07
+  ],
+  "records": [
+    {
+      "model": "original",
+      "threads": 2,
+      "seconds": 2.2490339000942186,
+      "clips": 4
+    },
+    {
+      "model": "fused_channels_last",
+      "threads": 2,
+      "seconds": 2.04708920000121,
+      "clips": 4
+    },
+    {
+      "model": "original",
+      "threads": 2,
+      "seconds": 2.2926658999640495,
+      "clips": 4
+    },
+    {
+      "model": "fused_channels_last",
+      "threads": 2,
+      "seconds": 2.019599199993536,
+      "clips": 4
+    },
+    {
+      "model": "original",
+      "threads": 2,
+      "seconds": 2.4633662999840453,
+      "clips": 4
+    },
+    {
+      "model": "fused_channels_last",
+      "threads": 2,
+      "seconds": 2.0508193999994546,
+      "clips": 4
+    },
+    {
+      "model": "original",
+      "threads": 4,
+      "seconds": 1.9377954000374302,
+      "clips": 4
+    },
+    {
+      "model": "fused_channels_last",
+      "threads": 4,
+      "seconds": 1.7045691000530496,
+      "clips": 4
+    },
+    {
+      "model": "original",
+      "threads": 4,
+      "seconds": 1.9898704999359325,
+      "clips": 4
+    },
+    {
+      "model": "fused_channels_last",
+      "threads": 4,
+      "seconds": 1.9544985999818891,
+      "clips": 4
+    },
+    {
+      "model": "original",
+      "threads": 4,
+      "seconds": 4.432691999943927,
+      "clips": 4
+    },
+    {
+      "model": "fused_channels_last",
+      "threads": 4,
+      "seconds": 3.791849899920635,
+      "clips": 4
+    }
+  ]
+}

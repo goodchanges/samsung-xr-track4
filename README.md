@@ -86,3 +86,18 @@ The current Dockerfile is untested. Docker is unavailable on the development mac
 On three local held-out videos, plain CLIP scored **1.38% macro action F1**, compared with **0.89% with the adapter**. Both runs used the same 528 action pairs and averaged F1 across temporal IoU thresholds of 0.1, 0.3, and 0.5. See the [local experiment and its limitations](docs/recognition/README.md).
 
 The adapter is off by default (strength `0`). Pass `--adapter-strength 0.1` to opt in with the bundled adapter and default vocabulary. For a custom vocabulary, pass a compatible adapter with `--adapter PATH` and a positive strength.
+
+## Optional temporal recognizer
+
+The subsequent [separate evaluation and coverage improvement](docs/recognition/refinement.md) found 9.69% local action F1 for four-second TSM versus 0.37% for CLIP on three new recordings. An optional `--selector temporal` profile raised local action coverage from 13.09% to 25.34%, with a recognition tradeoff described in that report. It uses two-second contexts and the same 14.5% budget. Neither recognizer is universal; the TSM model is kitchen-specific. Input filenames and annotations do not determine production predictions.
+
+A pretrained eight-frame TSM recognizer improved local macro action F1 from **1.80% to 4.82%** on three different public EPIC validation recordings (79 annotated actions). It matched 11 actions at tIoU 0.1 versus CLIP's 4. This is a small diagnostic with low absolute accuracy, not an official score or evidence of a competition ranking. See [results, provenance, runtime and limitations](docs/recognition/temporal.md).
+
+With the venv active, install `python -m pip install -r requirements-temporal.txt`, then run `python code/setup_temporal.py` once online. The latter downloads and checks the 97.6 MB checkpoint and EPIC class names in `weights/temporal/`. These are published model labels, not a guessed student-kit vocabulary.
+
+```sh
+./run.sh recording.mp4 outputs/recording.json --temporal-model weights/temporal/tsm_rgb.ckpt
+python code/batch.py VIDEO_DIRECTORY OUTPUT_DIRECTORY --temporal-model weights/temporal/tsm_rgb.ckpt
+```
+
+Omit the flag to retain plain CLIP. By default the optional model replaces action predictions only; CLIP still chooses highlights and the video-level label. Add `--selector temporal` to use the tested temporal highlight selector as well. The four JSON keys and 14.5% budget are unchanged. No training is needed, and inference makes no model downloads. The current Dockerfile installs only the default CLIP dependencies and does not enable this optional model. Samsung model/data permissions and exact vocabulary remain pending.
