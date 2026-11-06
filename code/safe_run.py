@@ -4,6 +4,8 @@ import os
 from pathlib import Path
 import sys
 
+from structured_log import log_event
+
 
 def main():
     try:
@@ -24,6 +26,7 @@ def main():
             temporary = target.with_name(f".{target.name}.{os.getpid()}.tmp")
             temporary.write_text(json.dumps(dict(video_id=source.stem, label="", actions=[], highlights=[])) + "\n", encoding="utf-8")
             temporary.replace(target)
+            log_event("fallback_json_written", output=str(target))
         except Exception as write_error:
             print(f"Cannot write fallback JSON: {write_error}", file=sys.stderr)
 

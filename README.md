@@ -128,6 +128,15 @@ Exact PowerShell run commands, from the repository root:
 
 Setup requires network access; inference uses local weights. No further tuning experiments were performed in this final round.
 
+## Engineering hardening updates
+
+- Shared pipeline orchestration now lives in `code/pipeline.py` and is used by both `code/main.py` and `code/batch.py` to reduce drift risk.
+- Thresholds used by routing/localization/selection are centralized and versioned in `code/config.py` (`CONFIG_VERSION`).
+- Structured JSON-line telemetry is emitted to stderr through `code/structured_log.py` for route decisions, completion timing and failures.
+- CI now enforces a coverage threshold and includes a performance guardrail (`code/perf_guardrail.py`) in addition to offline container smoke checks.
+
+See [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) for go/no-go release gates and exact validation commands.
+
 ## Kit-independent readiness update
 
 A real 210-second non-kitchen recording has now been tested. Routing selected the generic path and labeled it `outdoors`, but its three action predictions were unsupported by inspected source frames and its highlight was only six seconds. This does not establish non-kitchen accuracy. Full provenance, output and limitations are in [readiness.md](docs/readiness.md).

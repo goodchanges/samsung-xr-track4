@@ -17,6 +17,14 @@ jobs:
         run: docker build --build-arg DOWNLOAD_WEIGHTS=1 --build-arg ENABLE_TEMPORAL=${{ matrix.temporal }} -t track4 .
       - name: Run focused regression checks
         run: docker run --rm --network none --entrypoint python track4 -m unittest discover -s tests -v
+      - name: Enforce coverage threshold
+        if: matrix.temporal == 1
+        run: |
+          docker run --rm --entrypoint bash track4 -lc "
+            python -m pip install --no-cache-dir coverage &&
+            coverage run -m unittest discover -s tests -v &&
+            coverage report --fail-under=70
+          "
       - name: Verify actual inference offline (failure fallback cannot pass)
         run: |
           if [ "${{ matrix.temporal }}" = "1" ]; then
@@ -24,3 +32,6 @@ jobs:
           else
             docker run --rm --network none --entrypoint python track4 code/container_smoke.py
           fi
+      - name: Performance guardrail
+        if: matrix.temporal == 0
+        run: docker run --rm --network none --entrypoint python track4 code/perf_guardrail.py --max-seconds 120 --max-rss-bytes 2200000000

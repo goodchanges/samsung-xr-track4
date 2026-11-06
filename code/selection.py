@@ -1,6 +1,7 @@
 import math
 
 import numpy as np
+from config import SELECTION
 
 FRAME_SECONDS = 1
 MILLISECONDS = 1000
@@ -14,7 +15,7 @@ def unit_scale(values):
 def analyze(scores, idle, embeddings, vocabulary, duration, smoothing=True):
     end = math.floor(duration * MILLISECONDS + 1e-6)
     step = FRAME_SECONDS * MILLISECONDS
-    budget = end * 145 // 1000
+    budget = end * int(SELECTION.budget_fraction * 1000) // 1000
     length = min(len(scores), math.ceil(end / step))
     scores, idle, embeddings = scores[:length], idle[:length], embeddings[:length]
     before = np.maximum(np.arange(length) - 1, 0)
@@ -25,8 +26,10 @@ def analyze(scores, idle, embeddings, vocabulary, duration, smoothing=True):
     labels = smooth.argmax(axis=1)
     margin = smooth.max(axis=1) - idle
     change = np.clip(1 - (embeddings[before] * embeddings[after]).sum(axis=1), 0, 1)
-    valid = (margin > 0.005) & ((change > 0.012) | (margin > 0.045))
-    activity = 0.7 * np.clip(margin / 0.10, 0, 1) + 0.3 * unit_scale(change)
+    valid = (margin > SELECTION.margin_low) & (
+        (change > SELECTION.change_low) | (margin > SELECTION.margin_high)
+    )
+    activity = 0.7 * np.clip(margin / SELECTION.margin_activity_scale, 0, 1) + 0.3 * unit_scale(change)
 
     actions = []
     candidates = []
@@ -50,9 +53,9 @@ def analyze(scores, idle, embeddings, vocabulary, duration, smoothing=True):
         i = j
 
     # Include visually active regions where the vocabulary lacks a convincing label.
-    if float(activity.max()) > 0.015:
+    if float(activity.max()) > SELECTION.fallback_activity_threshold:
         candidates.extend((i, min(i + 3, length), None) for i in range(0, length, 3)
-                          if float(activity[i:i + 3].max()) > 0.015)
+                          if float(activity[i:i + 3].max()) > SELECTION.fallback_activity_threshold)
     # Prefix sums make each candidate's retained-frame summary constant time.
     embedding_prefix = np.vstack([np.zeros(embeddings.shape[1]), np.cumsum(embeddings, axis=0)])
     activity_prefix = np.r_[0.0, np.cumsum(activity)]
@@ -92,7 +95,15 @@ def analyze(scores, idle, embeddings, vocabulary, duration, smoothing=True):
             repeat = max((float(vector @ other) for other in prototypes), default=0.0)
             novel = pair is not None and pair not in covered
             seconds = (stop - start) / MILLISECONDS
-            merit = (0.8 * novel + seconds * (base + 0.08 * (pair is not None) - 0.22 * max(repeat, 0))) / seconds
+            merit = (
+                SELECTION.novelty_weight * novel
+                + seconds
+                * (
+                    base
+                    + SELECTION.labeled_bonus * (pair is not None)
+                    - SELECTION.redundancy_penalty * max(repeat, 0)
+                )
+            ) / seconds
             if best is None or merit > best[0]:
                 best = (merit, start, stop, pair, vector, base)
         if best is None:

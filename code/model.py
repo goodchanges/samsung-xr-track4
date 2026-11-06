@@ -8,6 +8,7 @@ import torch
 from PIL import Image
 from transformers import CLIPModel, CLIPProcessor
 
+from config import ROUTING
 from media import SIZE
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -164,4 +165,8 @@ class Scorer:
         means = categories.mean(axis=0)
         margin = float(means[index] - np.max(np.delete(means, index)))
         fraction = float(np.mean(categories.argmax(axis=1) == index))
-        return margin >= .03 and fraction >= .5, margin, fraction
+        return (
+            margin >= ROUTING.kitchen_margin_min and fraction >= ROUTING.kitchen_fraction_min,
+            margin,
+            fraction,
+        )

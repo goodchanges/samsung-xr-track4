@@ -1,6 +1,7 @@
 import math
 
 import numpy as np
+from config import SELECTION
 
 FRAME_SECONDS = 1
 MILLISECONDS = 1000
@@ -14,7 +15,7 @@ def unit_scale(values):
 def analyze(scores, idle, embeddings, vocabulary, duration):
     end = math.floor(duration * MILLISECONDS + 1e-6)
     step = FRAME_SECONDS * MILLISECONDS
-    budget = end * 145 // 1000
+    budget = end * int(SELECTION.budget_fraction * 1000) // 1000
     length = min(len(scores), math.ceil(end / step))
     scores, idle, embeddings = scores[:length], idle[:length], embeddings[:length]
     before = np.maximum(np.arange(length) - 1, 0)
@@ -23,8 +24,10 @@ def analyze(scores, idle, embeddings, vocabulary, duration):
     labels = smooth.argmax(axis=1)
     margin = smooth.max(axis=1) - idle
     change = np.clip(1 - (embeddings[before] * embeddings[after]).sum(axis=1), 0, 1)
-    valid = (margin > 0.005) & ((change > 0.012) | (margin > 0.045))
-    activity = 0.7 * np.clip(margin / 0.10, 0, 1) + 0.3 * unit_scale(change)
+    valid = (margin > SELECTION.margin_low) & (
+        (change > SELECTION.change_low) | (margin > SELECTION.margin_high)
+    )
+    activity = 0.7 * np.clip(margin / SELECTION.margin_activity_scale, 0, 1) + 0.3 * unit_scale(change)
 
     actions = []
     candidates = []
@@ -48,9 +51,9 @@ def analyze(scores, idle, embeddings, vocabulary, duration):
         i = j
 
     # Include visually active regions where the vocabulary lacks a convincing label.
-    if float(activity.max()) > 0.015:
+    if float(activity.max()) > SELECTION.fallback_activity_threshold:
         candidates.extend((i, min(i + 3, length), None) for i in range(0, length, 3)
-                          if float(activity[i:i + 3].max()) > 0.015)
+                          if float(activity[i:i + 3].max()) > SELECTION.fallback_activity_threshold)
     chosen = []
     covered = set()
     prototypes = []
@@ -67,7 +70,12 @@ def analyze(scores, idle, embeddings, vocabulary, duration):
             repeat = max((float(vector @ other) for other in prototypes), default=0.0)
             base = float(activity[i:j].mean())
             novel = pair is not None and pair not in covered
-            merit = base + 0.8 * novel + 0.08 * (pair is not None) - 0.22 * max(repeat, 0)
+            merit = (
+                base
+                + SELECTION.novelty_weight * novel
+                + SELECTION.labeled_bonus * (pair is not None)
+                - SELECTION.redundancy_penalty * max(repeat, 0)
+            )
             if best is None or merit > best[0]:
                 best = (merit, start, stop, pair, vector, base)
         if best is None:
