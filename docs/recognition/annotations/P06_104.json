@@ -1,0 +1,231 @@
+{
+  "video_id": "P06_104",
+  "split": "development",
+  "actions": [
+    {
+      "verb": "take",
+      "noun": "spoon",
+      "start": 5.36,
+      "end": 7.01
+    },
+    {
+      "verb": "put",
+      "noun": "glove",
+      "start": 6.77,
+      "end": 8.98
+    },
+    {
+      "verb": "remove",
+      "noun": "pan",
+      "start": 44.05,
+      "end": 48.09
+    },
+    {
+      "verb": "put",
+      "noun": "pan",
+      "start": 48.15,
+      "end": 49.45
+    },
+    {
+      "verb": "close",
+      "noun": "oven",
+      "start": 49.5,
+      "end": 50.97
+    },
+    {
+      "verb": "shake",
+      "noun": "pan",
+      "start": 52.53,
+      "end": 56.68
+    },
+    {
+      "verb": "adjust",
+      "noun": "pan",
+      "start": 65.49,
+      "end": 68.78999999999999
+    },
+    {
+      "verb": "remove",
+      "noun": "lid",
+      "start": 67.28,
+      "end": 70.89
+    },
+    {
+      "verb": "put",
+      "noun": "lid",
+      "start": 69.89,
+      "end": 72.69
+    },
+    {
+      "verb": "take",
+      "noun": "fork",
+      "start": 73.36,
+      "end": 74.6
+    },
+    {
+      "verb": "take",
+      "noun": "potato",
+      "start": 74.23,
+      "end": 76.82
+    },
+    {
+      "verb": "cut",
+      "noun": "potato",
+      "start": 76.87,
+      "end": 80.5
+    },
+    {
+      "verb": "remove",
+      "noun": "lid",
+      "start": 9.06,
+      "end": 10.34
+    },
+    {
+      "verb": "insert",
+      "noun": "potato",
+      "start": 80.6,
+      "end": 83.74
+    },
+    {
+      "verb": "eat",
+      "noun": "potato",
+      "start": 83.83,
+      "end": 92.21000000000001
+    },
+    {
+      "verb": "put",
+      "noun": "fork",
+      "start": 92.82,
+      "end": 95.74000000000001
+    },
+    {
+      "verb": "take",
+      "noun": "pan",
+      "start": 95.81,
+      "end": 98.19
+    },
+    {
+      "verb": "shake",
+      "noun": "pan",
+      "start": 98.28,
+      "end": 99.56
+    },
+    {
+      "verb": "pour",
+      "noun": "potato",
+      "start": 99.14,
+      "end": 102.95
+    },
+    {
+      "verb": "put",
+      "noun": "pan",
+      "start": 102.8,
+      "end": 106.66
+    },
+    {
+      "verb": "take",
+      "noun": "spoon",
+      "start": 106.49000000000001,
+      "end": 108.1
+    },
+    {
+      "verb": "mix",
+      "noun": "pan",
+      "start": 108.2,
+      "end": 125.91
+    },
+    {
+      "verb": "take",
+      "noun": "kettle",
+      "start": 139.32,
+      "end": 140.15
+    },
+    {
+      "verb": "mix",
+      "noun": "pan",
+      "start": 10.23,
+      "end": 20.91
+    },
+    {
+      "verb": "open",
+      "noun": "kettle",
+      "start": 141.49,
+      "end": 142.4
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 142.88,
+      "end": 143.95
+    },
+    {
+      "verb": "fill",
+      "noun": "kettle",
+      "start": 143.74,
+      "end": 145.99
+    },
+    {
+      "verb": "turn-off",
+      "noun": "tap",
+      "start": 145.67000000000002,
+      "end": 146.53
+    },
+    {
+      "verb": "close",
+      "noun": "kettle",
+      "start": 146.49,
+      "end": 147.24
+    },
+    {
+      "verb": "put",
+      "noun": "kettle",
+      "start": 146.86,
+      "end": 149.42000000000002
+    },
+    {
+      "verb": "turn-on",
+      "noun": "kettle",
+      "start": 149.52,
+      "end": 151.26
+    },
+    {
+      "verb": "take",
+      "noun": "rice",
+      "start": 17.97,
+      "end": 20.58
+    },
+    {
+      "verb": "eat",
+      "noun": "rice",
+      "start": 23.03,
+      "end": 31.06
+    },
+    {
+      "verb": "put",
+      "noun": "spoon",
+      "start": 31.08,
+      "end": 32.46
+    },
+    {
+      "verb": "take",
+      "noun": "glove",
+      "start": 37.38,
+      "end": 40.09
+    },
+    {
+      "verb": "put",
+      "noun": "glove",
+      "start": 40.09,
+      "end": 42.19
+    },
+    {
+      "verb": "open",
+      "noun": "oven",
+      "start": 42.25,
+      "end": 44.07
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

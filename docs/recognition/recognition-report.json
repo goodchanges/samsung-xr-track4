@@ -1,0 +1,1254 @@
+{
+  "scope": "Local participant-held-out experiment on EPIC training split; NOT official hackathon scoring",
+  "selection": {
+    "config": {
+      "smoothing": true,
+      "strength": 0.1,
+      "top_k": 1
+    },
+    "objective": "Macro action F1 averaged over tIoU 0.1, 0.3, 0.5",
+    "baseline_development": 0.0043859649122807015,
+    "revised_development": 0.022186147186147188
+  },
+  "baseline_development": {
+    "config": {
+      "smoothing": true,
+      "strength": 0,
+      "top_k": 1
+    },
+    "videos": [
+      {
+        "video_id": "P05_05",
+        "duration": 155.67000000000002,
+        "action_count": 30,
+        "prediction_count": 46,
+        "metrics": {
+          "coverage_at_half_action": 0.2608695652173913,
+          "action_precision_tiou_0.1": 0.021739130434782608,
+          "action_recall_tiou_0.1": 0.03333333333333333,
+          "action_f1_tiou_0.1": 0.02631578947368421,
+          "action_precision_tiou_0.3": 0.0,
+          "action_recall_tiou_0.3": 0.0,
+          "action_f1_tiou_0.3": 0.0,
+          "action_precision_tiou_0.5": 0.0,
+          "action_recall_tiou_0.5": 0.0,
+          "action_f1_tiou_0.5": 0.0,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.1499967880773431
+        }
+      },
+      {
+        "video_id": "P06_104",
+        "duration": 152.42000000000002,
+        "action_count": 37,
+        "prediction_count": 59,
+        "metrics": {
+          "coverage_at_half_action": 0.22580645161290322,
+          "action_precision_tiou_0.1": 0.0,
+          "action_recall_tiou_0.1": 0.0,
+          "action_f1_tiou_0.1": 0.0,
+          "action_precision_tiou_0.3": 0.0,
+          "action_recall_tiou_0.3": 0.0,
+          "action_f1_tiou_0.3": 0.0,
+          "action_precision_tiou_0.5": 0.0,
+          "action_recall_tiou_0.5": 0.0,
+          "action_f1_tiou_0.5": 0.0,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.15
+        }
+      }
+    ],
+    "macro": {
+      "action_precision_tiou_0.1": 0.010869565217391304,
+      "action_recall_tiou_0.1": 0.016666666666666666,
+      "action_f1_tiou_0.1": 0.013157894736842105,
+      "action_precision_tiou_0.3": 0.0,
+      "action_recall_tiou_0.3": 0.0,
+      "action_f1_tiou_0.3": 0.0,
+      "action_precision_tiou_0.5": 0.0,
+      "action_recall_tiou_0.5": 0.0,
+      "action_f1_tiou_0.5": 0.0,
+      "coverage_at_half_action": 0.24333800841514724
+    }
+  },
+  "candidates": [
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 61,
+          "metrics": {
+            "coverage_at_half_action": 0.30434782608695654,
+            "action_precision_tiou_0.1": 0.0,
+            "action_recall_tiou_0.1": 0.0,
+            "action_f1_tiou_0.1": 0.0,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 73,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.0273972602739726,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.03636363636363636,
+            "action_precision_tiou_0.3": 0.0273972602739726,
+            "action_recall_tiou_0.3": 0.05405405405405406,
+            "action_f1_tiou_0.3": 0.03636363636363636,
+            "action_precision_tiou_0.5": 0.0273972602739726,
+            "action_recall_tiou_0.5": 0.05405405405405406,
+            "action_f1_tiou_0.5": 0.03636363636363636,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.0136986301369863,
+        "action_recall_tiou_0.1": 0.02702702702702703,
+        "action_f1_tiou_0.1": 0.01818181818181818,
+        "action_precision_tiou_0.3": 0.0136986301369863,
+        "action_recall_tiou_0.3": 0.02702702702702703,
+        "action_f1_tiou_0.3": 0.01818181818181818,
+        "action_precision_tiou_0.5": 0.0136986301369863,
+        "action_recall_tiou_0.5": 0.02702702702702703,
+        "action_f1_tiou_0.5": 0.01818181818181818,
+        "coverage_at_half_action": 0.23281907433380084
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 99,
+          "metrics": {
+            "coverage_at_half_action": 0.30434782608695654,
+            "action_precision_tiou_0.1": 0.010101010101010102,
+            "action_recall_tiou_0.1": 0.03333333333333333,
+            "action_f1_tiou_0.1": 0.015503875968992248,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 107,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.009345794392523364,
+            "action_recall_tiou_0.1": 0.02702702702702703,
+            "action_f1_tiou_0.1": 0.013888888888888888,
+            "action_precision_tiou_0.3": 0.009345794392523364,
+            "action_recall_tiou_0.3": 0.02702702702702703,
+            "action_f1_tiou_0.3": 0.013888888888888888,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.009723402246766733,
+        "action_recall_tiou_0.1": 0.03018018018018018,
+        "action_f1_tiou_0.1": 0.014696382428940568,
+        "action_precision_tiou_0.3": 0.004672897196261682,
+        "action_recall_tiou_0.3": 0.013513513513513514,
+        "action_f1_tiou_0.3": 0.006944444444444444,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "coverage_at_half_action": 0.23281907433380084
+      }
+    },
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 144,
+          "metrics": {
+            "coverage_at_half_action": 0.30434782608695654,
+            "action_precision_tiou_0.1": 0.013888888888888888,
+            "action_recall_tiou_0.1": 0.06666666666666667,
+            "action_f1_tiou_0.1": 0.022988505747126436,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 198,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.010101010101010102,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.01702127659574468,
+            "action_precision_tiou_0.3": 0.010101010101010102,
+            "action_recall_tiou_0.3": 0.05405405405405406,
+            "action_f1_tiou_0.3": 0.01702127659574468,
+            "action_precision_tiou_0.5": 0.010101010101010102,
+            "action_recall_tiou_0.5": 0.05405405405405406,
+            "action_f1_tiou_0.5": 0.01702127659574468,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.011994949494949496,
+        "action_recall_tiou_0.1": 0.06036036036036036,
+        "action_f1_tiou_0.1": 0.020004891171435557,
+        "action_precision_tiou_0.3": 0.005050505050505051,
+        "action_recall_tiou_0.3": 0.02702702702702703,
+        "action_f1_tiou_0.3": 0.00851063829787234,
+        "action_precision_tiou_0.5": 0.005050505050505051,
+        "action_recall_tiou_0.5": 0.02702702702702703,
+        "action_f1_tiou_0.5": 0.00851063829787234,
+        "coverage_at_half_action": 0.23281907433380084
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 247,
+          "metrics": {
+            "coverage_at_half_action": 0.30434782608695654,
+            "action_precision_tiou_0.1": 0.004048582995951417,
+            "action_recall_tiou_0.1": 0.03333333333333333,
+            "action_f1_tiou_0.1": 0.007220216606498195,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 307,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.003257328990228013,
+            "action_recall_tiou_0.1": 0.02702702702702703,
+            "action_f1_tiou_0.1": 0.005813953488372093,
+            "action_precision_tiou_0.3": 0.003257328990228013,
+            "action_recall_tiou_0.3": 0.02702702702702703,
+            "action_f1_tiou_0.3": 0.005813953488372093,
+            "action_precision_tiou_0.5": 0.003257328990228013,
+            "action_recall_tiou_0.5": 0.02702702702702703,
+            "action_f1_tiou_0.5": 0.005813953488372093,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.003652955993089715,
+        "action_recall_tiou_0.1": 0.03018018018018018,
+        "action_f1_tiou_0.1": 0.006517085047435144,
+        "action_precision_tiou_0.3": 0.0016286644951140066,
+        "action_recall_tiou_0.3": 0.013513513513513514,
+        "action_f1_tiou_0.3": 0.0029069767441860465,
+        "action_precision_tiou_0.5": 0.0016286644951140066,
+        "action_recall_tiou_0.5": 0.013513513513513514,
+        "action_f1_tiou_0.5": 0.0029069767441860465,
+        "coverage_at_half_action": 0.23281907433380084
+      }
+    },
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0.1,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 47,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.02127659574468085,
+            "action_recall_tiou_0.1": 0.03333333333333333,
+            "action_f1_tiou_0.1": 0.025974025974025976,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 75,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.02666666666666667,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.03571428571428571,
+            "action_precision_tiou_0.3": 0.02666666666666667,
+            "action_recall_tiou_0.3": 0.05405405405405406,
+            "action_f1_tiou_0.3": 0.03571428571428571,
+            "action_precision_tiou_0.5": 0.02666666666666667,
+            "action_recall_tiou_0.5": 0.05405405405405406,
+            "action_f1_tiou_0.5": 0.03571428571428571,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.02397163120567376,
+        "action_recall_tiou_0.1": 0.04369369369369369,
+        "action_f1_tiou_0.1": 0.030844155844155844,
+        "action_precision_tiou_0.3": 0.013333333333333334,
+        "action_recall_tiou_0.3": 0.02702702702702703,
+        "action_f1_tiou_0.3": 0.017857142857142856,
+        "action_precision_tiou_0.5": 0.013333333333333334,
+        "action_recall_tiou_0.5": 0.02702702702702703,
+        "action_f1_tiou_0.5": 0.017857142857142856,
+        "coverage_at_half_action": 0.25455820476858343
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0.1,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 89,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.02247191011235955,
+            "action_recall_tiou_0.1": 0.06666666666666667,
+            "action_f1_tiou_0.1": 0.03361344537815126,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 110,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.00909090909090909,
+            "action_recall_tiou_0.1": 0.02702702702702703,
+            "action_f1_tiou_0.1": 0.013605442176870748,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.015781409601634322,
+        "action_recall_tiou_0.1": 0.04684684684684685,
+        "action_f1_tiou_0.1": 0.023609443777511004,
+        "action_precision_tiou_0.3": 0.0,
+        "action_recall_tiou_0.3": 0.0,
+        "action_f1_tiou_0.3": 0.0,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "coverage_at_half_action": 0.25455820476858343
+      }
+    },
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0.1,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 143,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.013986013986013986,
+            "action_recall_tiou_0.1": 0.06666666666666667,
+            "action_f1_tiou_0.1": 0.023121387283236993,
+            "action_precision_tiou_0.3": 0.006993006993006993,
+            "action_recall_tiou_0.3": 0.03333333333333333,
+            "action_f1_tiou_0.3": 0.011560693641618497,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 209,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.009569377990430622,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.016260162601626018,
+            "action_precision_tiou_0.3": 0.009569377990430622,
+            "action_recall_tiou_0.3": 0.05405405405405406,
+            "action_f1_tiou_0.3": 0.016260162601626018,
+            "action_precision_tiou_0.5": 0.009569377990430622,
+            "action_recall_tiou_0.5": 0.05405405405405406,
+            "action_f1_tiou_0.5": 0.016260162601626018,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.011777695988222304,
+        "action_recall_tiou_0.1": 0.06036036036036036,
+        "action_f1_tiou_0.1": 0.019690774942431506,
+        "action_precision_tiou_0.3": 0.008281192491718808,
+        "action_recall_tiou_0.3": 0.04369369369369369,
+        "action_f1_tiou_0.3": 0.013910428121622256,
+        "action_precision_tiou_0.5": 0.004784688995215311,
+        "action_recall_tiou_0.5": 0.02702702702702703,
+        "action_f1_tiou_0.5": 0.008130081300813009,
+        "coverage_at_half_action": 0.25455820476858343
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0.1,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 251,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.00796812749003984,
+            "action_recall_tiou_0.1": 0.06666666666666667,
+            "action_f1_tiou_0.1": 0.014234875444839857,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 305,
+          "metrics": {
+            "coverage_at_half_action": 0.16129032258064516,
+            "action_precision_tiou_0.1": 0.006557377049180328,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.011695906432748537,
+            "action_precision_tiou_0.3": 0.006557377049180328,
+            "action_recall_tiou_0.3": 0.05405405405405406,
+            "action_f1_tiou_0.3": 0.011695906432748537,
+            "action_precision_tiou_0.5": 0.006557377049180328,
+            "action_recall_tiou_0.5": 0.05405405405405406,
+            "action_f1_tiou_0.5": 0.011695906432748537,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.007262752269610084,
+        "action_recall_tiou_0.1": 0.06036036036036036,
+        "action_f1_tiou_0.1": 0.012965390938794197,
+        "action_precision_tiou_0.3": 0.003278688524590164,
+        "action_recall_tiou_0.3": 0.02702702702702703,
+        "action_f1_tiou_0.3": 0.005847953216374269,
+        "action_precision_tiou_0.5": 0.003278688524590164,
+        "action_recall_tiou_0.5": 0.02702702702702703,
+        "action_f1_tiou_0.5": 0.005847953216374269,
+        "coverage_at_half_action": 0.25455820476858343
+      }
+    },
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0.25,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 38,
+          "metrics": {
+            "coverage_at_half_action": 0.2608695652173913,
+            "action_precision_tiou_0.1": 0.0,
+            "action_recall_tiou_0.1": 0.0,
+            "action_f1_tiou_0.1": 0.0,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 73,
+          "metrics": {
+            "coverage_at_half_action": 0.25806451612903225,
+            "action_precision_tiou_0.1": 0.0273972602739726,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.03636363636363636,
+            "action_precision_tiou_0.3": 0.0273972602739726,
+            "action_recall_tiou_0.3": 0.05405405405405406,
+            "action_f1_tiou_0.3": 0.03636363636363636,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.0136986301369863,
+        "action_recall_tiou_0.1": 0.02702702702702703,
+        "action_f1_tiou_0.1": 0.01818181818181818,
+        "action_precision_tiou_0.3": 0.0136986301369863,
+        "action_recall_tiou_0.3": 0.02702702702702703,
+        "action_f1_tiou_0.3": 0.01818181818181818,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "coverage_at_half_action": 0.2594670406732118
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0.25,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 83,
+          "metrics": {
+            "coverage_at_half_action": 0.2608695652173913,
+            "action_precision_tiou_0.1": 0.024096385542168676,
+            "action_recall_tiou_0.1": 0.06666666666666667,
+            "action_f1_tiou_0.1": 0.035398230088495575,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 118,
+          "metrics": {
+            "coverage_at_half_action": 0.25806451612903225,
+            "action_precision_tiou_0.1": 0.01694915254237288,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.025806451612903226,
+            "action_precision_tiou_0.3": 0.00847457627118644,
+            "action_recall_tiou_0.3": 0.02702702702702703,
+            "action_f1_tiou_0.3": 0.012903225806451613,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.02052276904227078,
+        "action_recall_tiou_0.1": 0.06036036036036036,
+        "action_f1_tiou_0.1": 0.0306023408506994,
+        "action_precision_tiou_0.3": 0.00423728813559322,
+        "action_recall_tiou_0.3": 0.013513513513513514,
+        "action_f1_tiou_0.3": 0.0064516129032258064,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "coverage_at_half_action": 0.2594670406732118
+      }
+    },
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0.25,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 121,
+          "metrics": {
+            "coverage_at_half_action": 0.2608695652173913,
+            "action_precision_tiou_0.1": 0.008264462809917356,
+            "action_recall_tiou_0.1": 0.03333333333333333,
+            "action_f1_tiou_0.1": 0.013245033112582781,
+            "action_precision_tiou_0.3": 0.008264462809917356,
+            "action_recall_tiou_0.3": 0.03333333333333333,
+            "action_f1_tiou_0.3": 0.013245033112582781,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 180,
+          "metrics": {
+            "coverage_at_half_action": 0.25806451612903225,
+            "action_precision_tiou_0.1": 0.016666666666666666,
+            "action_recall_tiou_0.1": 0.08108108108108109,
+            "action_f1_tiou_0.1": 0.027649769585253458,
+            "action_precision_tiou_0.3": 0.016666666666666666,
+            "action_recall_tiou_0.3": 0.08108108108108109,
+            "action_f1_tiou_0.3": 0.027649769585253458,
+            "action_precision_tiou_0.5": 0.011111111111111112,
+            "action_recall_tiou_0.5": 0.05405405405405406,
+            "action_f1_tiou_0.5": 0.018433179723502304,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.012465564738292011,
+        "action_recall_tiou_0.1": 0.057207207207207206,
+        "action_f1_tiou_0.1": 0.02044740134891812,
+        "action_precision_tiou_0.3": 0.012465564738292011,
+        "action_recall_tiou_0.3": 0.057207207207207206,
+        "action_f1_tiou_0.3": 0.02044740134891812,
+        "action_precision_tiou_0.5": 0.005555555555555556,
+        "action_recall_tiou_0.5": 0.02702702702702703,
+        "action_f1_tiou_0.5": 0.009216589861751152,
+        "coverage_at_half_action": 0.2594670406732118
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0.25,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 220,
+          "metrics": {
+            "coverage_at_half_action": 0.2608695652173913,
+            "action_precision_tiou_0.1": 0.004545454545454545,
+            "action_recall_tiou_0.1": 0.03333333333333333,
+            "action_f1_tiou_0.1": 0.008,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.1499967880773431
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 295,
+          "metrics": {
+            "coverage_at_half_action": 0.25806451612903225,
+            "action_precision_tiou_0.1": 0.006779661016949152,
+            "action_recall_tiou_0.1": 0.05405405405405406,
+            "action_f1_tiou_0.1": 0.012048192771084338,
+            "action_precision_tiou_0.3": 0.006779661016949152,
+            "action_recall_tiou_0.3": 0.05405405405405406,
+            "action_f1_tiou_0.3": 0.012048192771084338,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.005662557781201848,
+        "action_recall_tiou_0.1": 0.04369369369369369,
+        "action_f1_tiou_0.1": 0.010024096385542169,
+        "action_precision_tiou_0.3": 0.003389830508474576,
+        "action_recall_tiou_0.3": 0.02702702702702703,
+        "action_f1_tiou_0.3": 0.006024096385542169,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "coverage_at_half_action": 0.2594670406732118
+      }
+    },
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0.5,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 22,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.045454545454545456,
+            "action_recall_tiou_0.1": 0.03333333333333333,
+            "action_f1_tiou_0.1": 0.038461538461538464,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 55,
+          "metrics": {
+            "coverage_at_half_action": 0.22580645161290322,
+            "action_precision_tiou_0.1": 0.01818181818181818,
+            "action_recall_tiou_0.1": 0.02702702702702703,
+            "action_f1_tiou_0.1": 0.021739130434782608,
+            "action_precision_tiou_0.3": 0.01818181818181818,
+            "action_recall_tiou_0.3": 0.02702702702702703,
+            "action_f1_tiou_0.3": 0.021739130434782608,
+            "action_precision_tiou_0.5": 0.01818181818181818,
+            "action_recall_tiou_0.5": 0.02702702702702703,
+            "action_f1_tiou_0.5": 0.021739130434782608,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.031818181818181815,
+        "action_recall_tiou_0.1": 0.03018018018018018,
+        "action_f1_tiou_0.1": 0.030100334448160536,
+        "action_precision_tiou_0.3": 0.00909090909090909,
+        "action_recall_tiou_0.3": 0.013513513513513514,
+        "action_f1_tiou_0.3": 0.010869565217391304,
+        "action_precision_tiou_0.5": 0.00909090909090909,
+        "action_recall_tiou_0.5": 0.013513513513513514,
+        "action_f1_tiou_0.5": 0.010869565217391304,
+        "coverage_at_half_action": 0.2868162692847125
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0.5,
+        "top_k": 1
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 43,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.046511627906976744,
+            "action_recall_tiou_0.1": 0.06666666666666667,
+            "action_f1_tiou_0.1": 0.0547945205479452,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 97,
+          "metrics": {
+            "coverage_at_half_action": 0.22580645161290322,
+            "action_precision_tiou_0.1": 0.010309278350515464,
+            "action_recall_tiou_0.1": 0.02702702702702703,
+            "action_f1_tiou_0.1": 0.014925373134328358,
+            "action_precision_tiou_0.3": 0.010309278350515464,
+            "action_recall_tiou_0.3": 0.02702702702702703,
+            "action_f1_tiou_0.3": 0.014925373134328358,
+            "action_precision_tiou_0.5": 0.010309278350515464,
+            "action_recall_tiou_0.5": 0.02702702702702703,
+            "action_f1_tiou_0.5": 0.014925373134328358,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.028410453128746103,
+        "action_recall_tiou_0.1": 0.04684684684684685,
+        "action_f1_tiou_0.1": 0.03485994684113678,
+        "action_precision_tiou_0.3": 0.005154639175257732,
+        "action_recall_tiou_0.3": 0.013513513513513514,
+        "action_f1_tiou_0.3": 0.007462686567164179,
+        "action_precision_tiou_0.5": 0.005154639175257732,
+        "action_recall_tiou_0.5": 0.013513513513513514,
+        "action_f1_tiou_0.5": 0.007462686567164179,
+        "coverage_at_half_action": 0.2868162692847125
+      }
+    },
+    {
+      "config": {
+        "smoothing": true,
+        "strength": 0.5,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 103,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.009708737864077669,
+            "action_recall_tiou_0.1": 0.03333333333333333,
+            "action_f1_tiou_0.1": 0.015037593984962405,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 168,
+          "metrics": {
+            "coverage_at_half_action": 0.22580645161290322,
+            "action_precision_tiou_0.1": 0.023809523809523808,
+            "action_recall_tiou_0.1": 0.10810810810810811,
+            "action_f1_tiou_0.1": 0.03902439024390244,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.016759130836800737,
+        "action_recall_tiou_0.1": 0.07072072072072072,
+        "action_f1_tiou_0.1": 0.027030992114432422,
+        "action_precision_tiou_0.3": 0.0,
+        "action_recall_tiou_0.3": 0.0,
+        "action_f1_tiou_0.3": 0.0,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "coverage_at_half_action": 0.2868162692847125
+      }
+    },
+    {
+      "config": {
+        "smoothing": false,
+        "strength": 0.5,
+        "top_k": 3
+      },
+      "videos": [
+        {
+          "video_id": "P05_05",
+          "duration": 155.67000000000002,
+          "action_count": 30,
+          "prediction_count": 187,
+          "metrics": {
+            "coverage_at_half_action": 0.34782608695652173,
+            "action_precision_tiou_0.1": 0.0106951871657754,
+            "action_recall_tiou_0.1": 0.06666666666666667,
+            "action_f1_tiou_0.1": 0.018433179723502304,
+            "action_precision_tiou_0.3": 0.0,
+            "action_recall_tiou_0.3": 0.0,
+            "action_f1_tiou_0.3": 0.0,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.14999678807734304
+          }
+        },
+        {
+          "video_id": "P06_104",
+          "duration": 152.42000000000002,
+          "action_count": 37,
+          "prediction_count": 270,
+          "metrics": {
+            "coverage_at_half_action": 0.22580645161290322,
+            "action_precision_tiou_0.1": 0.011111111111111112,
+            "action_recall_tiou_0.1": 0.08108108108108109,
+            "action_f1_tiou_0.1": 0.019543973941368076,
+            "action_precision_tiou_0.3": 0.003703703703703704,
+            "action_recall_tiou_0.3": 0.02702702702702703,
+            "action_f1_tiou_0.3": 0.006514657980456026,
+            "action_precision_tiou_0.5": 0.0,
+            "action_recall_tiou_0.5": 0.0,
+            "action_f1_tiou_0.5": 0.0,
+            "highlight_f1_at_10hz": null,
+            "label_correct": null,
+            "selected_fraction": 0.15
+          }
+        }
+      ],
+      "macro": {
+        "action_precision_tiou_0.1": 0.010903149138443256,
+        "action_recall_tiou_0.1": 0.07387387387387387,
+        "action_f1_tiou_0.1": 0.01898857683243519,
+        "action_precision_tiou_0.3": 0.001851851851851852,
+        "action_recall_tiou_0.3": 0.013513513513513514,
+        "action_f1_tiou_0.3": 0.003257328990228013,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "coverage_at_half_action": 0.2868162692847125
+      }
+    }
+  ],
+  "baseline_evaluation": {
+    "config": {
+      "smoothing": true,
+      "strength": 0,
+      "top_k": 1
+    },
+    "videos": [
+      {
+        "video_id": "P07_05",
+        "duration": 209.56,
+        "action_count": 34,
+        "prediction_count": 74,
+        "metrics": {
+          "coverage_at_half_action": 0.2,
+          "action_precision_tiou_0.1": 0.0,
+          "action_recall_tiou_0.1": 0.0,
+          "action_f1_tiou_0.1": 0.0,
+          "action_precision_tiou_0.3": 0.0,
+          "action_recall_tiou_0.3": 0.0,
+          "action_f1_tiou_0.3": 0.0,
+          "action_precision_tiou_0.5": 0.0,
+          "action_recall_tiou_0.5": 0.0,
+          "action_f1_tiou_0.5": 0.0,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.15
+        }
+      },
+      {
+        "video_id": "P08_19",
+        "duration": 137.59,
+        "action_count": 25,
+        "prediction_count": 37,
+        "metrics": {
+          "coverage_at_half_action": 0.0,
+          "action_precision_tiou_0.1": 0.0,
+          "action_recall_tiou_0.1": 0.0,
+          "action_f1_tiou_0.1": 0.0,
+          "action_precision_tiou_0.3": 0.0,
+          "action_recall_tiou_0.3": 0.0,
+          "action_f1_tiou_0.3": 0.0,
+          "action_precision_tiou_0.5": 0.0,
+          "action_recall_tiou_0.5": 0.0,
+          "action_f1_tiou_0.5": 0.0,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.14999636601497204
+        }
+      },
+      {
+        "video_id": "P09_03",
+        "duration": 146.25,
+        "action_count": 34,
+        "prediction_count": 46,
+        "metrics": {
+          "coverage_at_half_action": 0.35,
+          "action_precision_tiou_0.1": 0.021739130434782608,
+          "action_recall_tiou_0.1": 0.029411764705882353,
+          "action_f1_tiou_0.1": 0.025,
+          "action_precision_tiou_0.3": 0.0,
+          "action_recall_tiou_0.3": 0.0,
+          "action_f1_tiou_0.3": 0.0,
+          "action_precision_tiou_0.5": 0.0,
+          "action_recall_tiou_0.5": 0.0,
+          "action_f1_tiou_0.5": 0.0,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.14999658119658119
+        }
+      }
+    ],
+    "macro": {
+      "action_precision_tiou_0.1": 0.007246376811594203,
+      "action_recall_tiou_0.1": 0.00980392156862745,
+      "action_f1_tiou_0.1": 0.008333333333333333,
+      "action_precision_tiou_0.3": 0.0,
+      "action_recall_tiou_0.3": 0.0,
+      "action_f1_tiou_0.3": 0.0,
+      "action_precision_tiou_0.5": 0.0,
+      "action_recall_tiou_0.5": 0.0,
+      "action_f1_tiou_0.5": 0.0,
+      "coverage_at_half_action": 0.18333333333333335
+    }
+  },
+  "revised_evaluation": {
+    "config": {
+      "smoothing": true,
+      "strength": 0.1,
+      "top_k": 1
+    },
+    "videos": [
+      {
+        "video_id": "P07_05",
+        "duration": 209.56,
+        "action_count": 34,
+        "prediction_count": 124,
+        "metrics": {
+          "coverage_at_half_action": 0.1,
+          "action_precision_tiou_0.1": 0.0,
+          "action_recall_tiou_0.1": 0.0,
+          "action_f1_tiou_0.1": 0.0,
+          "action_precision_tiou_0.3": 0.0,
+          "action_recall_tiou_0.3": 0.0,
+          "action_f1_tiou_0.3": 0.0,
+          "action_precision_tiou_0.5": 0.0,
+          "action_recall_tiou_0.5": 0.0,
+          "action_f1_tiou_0.5": 0.0,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.15
+        }
+      },
+      {
+        "video_id": "P08_19",
+        "duration": 137.59,
+        "action_count": 25,
+        "prediction_count": 61,
+        "metrics": {
+          "coverage_at_half_action": 0.041666666666666664,
+          "action_precision_tiou_0.1": 0.0,
+          "action_recall_tiou_0.1": 0.0,
+          "action_f1_tiou_0.1": 0.0,
+          "action_precision_tiou_0.3": 0.0,
+          "action_recall_tiou_0.3": 0.0,
+          "action_f1_tiou_0.3": 0.0,
+          "action_precision_tiou_0.5": 0.0,
+          "action_recall_tiou_0.5": 0.0,
+          "action_f1_tiou_0.5": 0.0,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.149996366014972
+        }
+      },
+      {
+        "video_id": "P09_03",
+        "duration": 146.25,
+        "action_count": 34,
+        "prediction_count": 66,
+        "metrics": {
+          "coverage_at_half_action": 0.25,
+          "action_precision_tiou_0.1": 0.030303030303030304,
+          "action_recall_tiou_0.1": 0.058823529411764705,
+          "action_f1_tiou_0.1": 0.04,
+          "action_precision_tiou_0.3": 0.015151515151515152,
+          "action_recall_tiou_0.3": 0.029411764705882353,
+          "action_f1_tiou_0.3": 0.02,
+          "action_precision_tiou_0.5": 0.015151515151515152,
+          "action_recall_tiou_0.5": 0.029411764705882353,
+          "action_f1_tiou_0.5": 0.02,
+          "highlight_f1_at_10hz": null,
+          "label_correct": null,
+          "selected_fraction": 0.14999658119658119
+        }
+      }
+    ],
+    "macro": {
+      "action_precision_tiou_0.1": 0.010101010101010102,
+      "action_recall_tiou_0.1": 0.0196078431372549,
+      "action_f1_tiou_0.1": 0.013333333333333334,
+      "action_precision_tiou_0.3": 0.005050505050505051,
+      "action_recall_tiou_0.3": 0.00980392156862745,
+      "action_f1_tiou_0.3": 0.006666666666666667,
+      "action_precision_tiou_0.5": 0.005050505050505051,
+      "action_recall_tiou_0.5": 0.00980392156862745,
+      "action_f1_tiou_0.5": 0.006666666666666667,
+      "coverage_at_half_action": 0.13055555555555556
+    }
+  }
+}

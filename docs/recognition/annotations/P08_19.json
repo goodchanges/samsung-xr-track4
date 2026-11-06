@@ -1,0 +1,159 @@
+{
+  "video_id": "P08_19",
+  "split": "evaluation",
+  "actions": [
+    {
+      "verb": "transition",
+      "noun": "kitchen",
+      "start": 0.0,
+      "end": 2.69
+    },
+    {
+      "verb": "take",
+      "noun": "spoon",
+      "start": 62.88,
+      "end": 64.27
+    },
+    {
+      "verb": "crush",
+      "noun": "leaf",
+      "start": 64.37,
+      "end": 71.53999999999999
+    },
+    {
+      "verb": "take",
+      "noun": "lemon",
+      "start": 72.39,
+      "end": 73.58
+    },
+    {
+      "verb": "take",
+      "noun": "board:chopping",
+      "start": 74.16,
+      "end": 75.48
+    },
+    {
+      "verb": "take",
+      "noun": "knife",
+      "start": 75.35,
+      "end": 76.76
+    },
+    {
+      "verb": "cut",
+      "noun": "lemon",
+      "start": 76.42,
+      "end": 81.47
+    },
+    {
+      "verb": "squeeze",
+      "noun": "lemon",
+      "start": 82.35,
+      "end": 86.6
+    },
+    {
+      "verb": "throw",
+      "noun": "lemon",
+      "start": 87.35,
+      "end": 88.61
+    },
+    {
+      "verb": "turn",
+      "noun": "water",
+      "start": 89.6,
+      "end": 90.44
+    },
+    {
+      "verb": "wash",
+      "noun": "hand",
+      "start": 90.44,
+      "end": 91.47
+    },
+    {
+      "verb": "insert",
+      "noun": "mint",
+      "start": 40.08,
+      "end": 41.48
+    },
+    {
+      "verb": "take",
+      "noun": "towel:kitchen",
+      "start": 93.42,
+      "end": 95.53999999999999
+    },
+    {
+      "verb": "wash",
+      "noun": "hand",
+      "start": 95.64,
+      "end": 102.64
+    },
+    {
+      "verb": "take",
+      "noun": "water",
+      "start": 103.14,
+      "end": 104.89
+    },
+    {
+      "verb": "pour",
+      "noun": "water",
+      "start": 104.99000000000001,
+      "end": 111.74000000000001
+    },
+    {
+      "verb": "throw",
+      "noun": "water",
+      "start": 112.34,
+      "end": 116.34
+    },
+    {
+      "verb": "put",
+      "noun": "kettle",
+      "start": 116.84,
+      "end": 118.09
+    },
+    {
+      "verb": "close",
+      "noun": "fridge",
+      "start": 40.79,
+      "end": 43.38
+    },
+    {
+      "verb": "throw",
+      "noun": "rubbish",
+      "start": 45.14,
+      "end": 47.26
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 48.19,
+      "end": 49.43
+    },
+    {
+      "verb": "wash",
+      "noun": "leaf",
+      "start": 49.43,
+      "end": 56.91
+    },
+    {
+      "verb": "turn-off",
+      "noun": "tap",
+      "start": 57.19,
+      "end": 57.79
+    },
+    {
+      "verb": "insert",
+      "noun": "leaf",
+      "start": 59.48,
+      "end": 60.3
+    },
+    {
+      "verb": "open",
+      "noun": "drawer",
+      "start": 62.05,
+      "end": 62.84
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

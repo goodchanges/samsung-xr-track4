@@ -1,6 +1,6 @@
-# Samsung XR Challenge 2026 · Track 4
+# Samsung XR Challenge 2026 Â· Track 4
 
-Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verb–noun predictions, a category, and chronological highlight intervals within 15% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.
+Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verbâ€“noun predictions, a category, and chronological highlight intervals within 15% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.
 
 ## Run on this Windows laptop
 
@@ -25,7 +25,7 @@ On Linux, substitute .venv/bin/python for the Windows Python path, then run:
 
 ## Method and limits
 
-CLIP ViT-B/32 scores one frame per second against prompts for each action and category. Neighboring samples smooth the scores. An idle prompt and visual change gate weak action predictions. The selector rewards coverage of distinct predicted verb–noun pairs and discounts visually similar clips. Importance scores are ranking signals.
+CLIP ViT-B/32 scores one frame per second against 528 action-pair prompts and six provisional categories. A small visual adapter fitted on four annotated EPIC training recordings adjusts action scores. Neighboring samples smooth the scores. An idle prompt and visual change gate weak action predictions. The selector rewards coverage of distinct predicted verbâ€“noun pairs and discounts visually similar clips. Importance scores are ranking signals.
 
 The provisional vocabulary lives in code/vocabulary.json. Pass --vocabulary PATH to use the same structure with a different label set. CLIP sees still images, so it can confuse similar motions, miss short actions, or predict the wrong verb for a visible object. Challenge accuracy is unmeasured. Use --threads N to tune CPU usage.
 
@@ -37,11 +37,11 @@ Open `work/final-demo/index.html` for the prepared laptop demo. The 126-second i
 
 The four top-level JSON keys follow the slides' example. The slides also mention six required keys. Use the student kit's validator and examples to resolve the final schema. Replace the provisional labels, map IDs through the manifest if needed, and run the official validator on all outputs. Package under the registered identifier. Include run.sh, code/, weights/, requirements.txt, outputs/ and this README. Keep the demo and deck separate as directed by the organizers. Git excludes large weights, local media and generated outputs.
 
-[OpenAI CLIP checkpoint](https://huggingface.co/openai/clip-vit-base-patch32) · [EPIC-KITCHENS project](https://epic-kitchens.github.io/)
+[OpenAI CLIP checkpoint](https://huggingface.co/openai/clip-vit-base-patch32) Â· [EPIC-KITCHENS project](https://epic-kitchens.github.io/)
 
 ## Revision commands
 
-The default remains the original highlight selector after a small development comparison. Use `--selector duration` for the experimental duration-aware selector. Use `--unsmoothed` to compare action localization. Cached features live under `work/cache` and are keyed by the checkpoint content, sampled video content and text embeddings.
+The default `--selector preserved` retains the original 29-pair scorer and highlight decisions while using revised recognition for action outputs. Both scorers share one CLIP model. Use `--selector duration` for the experimental duration-aware selector. Use `--unsmoothed` to compare action localization. Cached features live under `work/cache` and are keyed by the checkpoint content, sampled video content and text embeddings.
 
 Batch inference reuses the model:
 
@@ -61,3 +61,9 @@ Create a prototype archive with the registered identifier:
     python code/package.py VelloreInstituteOfTechnologyVellore_VIT PATH_TO_NEW_ZIP
 
 The archive includes local weights. Keep outputs/ reserved for official per-video outputs once the manifest arrives. Local fixture results belong under work/verification/.
+
+## Measured recognition revision
+
+See [the experiment and limitations](docs/recognition/README.md). On three held-out training-split participants, matched actions at tIoU 0.1 increased from 1/93 to 2/93; mean macro action F1 over tIoU 0.1, 0.3, 0.5 increased from 0.28% to 0.89%. Absolute accuracy remains low. These are local diagnostic metrics, not official scores. Nine real-video outputs passed the provisional checker. Official manifest outputs and validation remain blocked by the missing student kit and challenge data.
+
+The checked-in `weights/action_adapter.npz` is part of the revised default. Custom vocabularies disable its automatic use; explicitly supplying an incompatible adapter fails. Use `--no-adapter` to disable it. Image and text caches allow experiments without repeating feature extraction. The manifest/organizer-validator command is documented in the experiment notes.

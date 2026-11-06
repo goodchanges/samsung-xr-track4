@@ -1,0 +1,189 @@
+{
+  "video_id": "P05_05",
+  "split": "development",
+  "actions": [
+    {
+      "verb": "take",
+      "noun": "container",
+      "start": 0.65,
+      "end": 2.12
+    },
+    {
+      "verb": "open",
+      "noun": "cupboard",
+      "start": 2.69,
+      "end": 4.78
+    },
+    {
+      "verb": "open",
+      "noun": "microwave",
+      "start": 27.5,
+      "end": 28.75
+    },
+    {
+      "verb": "insert",
+      "noun": "cup",
+      "start": 28.78,
+      "end": 30.41
+    },
+    {
+      "verb": "close",
+      "noun": "microwave",
+      "start": 31.56,
+      "end": 32.56
+    },
+    {
+      "verb": "press",
+      "noun": "button",
+      "start": 32.58,
+      "end": 33.74
+    },
+    {
+      "verb": "turn-on",
+      "noun": "microwave",
+      "start": 33.76,
+      "end": 35.06
+    },
+    {
+      "verb": "take",
+      "noun": "package",
+      "start": 36.32,
+      "end": 40.58
+    },
+    {
+      "verb": "close",
+      "noun": "fridge",
+      "start": 46.21,
+      "end": 47.79
+    },
+    {
+      "verb": "put",
+      "noun": "plate",
+      "start": 50.97,
+      "end": 52.76
+    },
+    {
+      "verb": "open",
+      "noun": "package",
+      "start": 52.97,
+      "end": 56.91
+    },
+    {
+      "verb": "put",
+      "noun": "biscuit",
+      "start": 59.96,
+      "end": 61.95
+    },
+    {
+      "verb": "insert",
+      "noun": "container",
+      "start": 3.23,
+      "end": 4.86
+    },
+    {
+      "verb": "open",
+      "noun": "fridge",
+      "start": 64.75,
+      "end": 65.56
+    },
+    {
+      "verb": "insert",
+      "noun": "package",
+      "start": 65.59,
+      "end": 66.41
+    },
+    {
+      "verb": "close",
+      "noun": "fridge",
+      "start": 66.69,
+      "end": 67.35
+    },
+    {
+      "verb": "take",
+      "noun": "glass",
+      "start": 71.65,
+      "end": 72.4
+    },
+    {
+      "verb": "take",
+      "noun": "jar",
+      "start": 72.31,
+      "end": 73.36
+    },
+    {
+      "verb": "pour",
+      "noun": "water",
+      "start": 73.49,
+      "end": 78.49
+    },
+    {
+      "verb": "turn-off",
+      "noun": "microwave",
+      "start": 143.81,
+      "end": 144.65
+    },
+    {
+      "verb": "open",
+      "noun": "microwave",
+      "start": 145.16,
+      "end": 146.16
+    },
+    {
+      "verb": "take",
+      "noun": "cup",
+      "start": 146.25,
+      "end": 149.51
+    },
+    {
+      "verb": "close",
+      "noun": "microwave",
+      "start": 149.42000000000002,
+      "end": 151.07
+    },
+    {
+      "verb": "close",
+      "noun": "cupboard",
+      "start": 3.71,
+      "end": 4.91
+    },
+    {
+      "verb": "take",
+      "noun": "cup",
+      "start": 4.4,
+      "end": 5.67
+    },
+    {
+      "verb": "put",
+      "noun": "cup",
+      "start": 6.36,
+      "end": 7.36
+    },
+    {
+      "verb": "open",
+      "noun": "fridge",
+      "start": 8.13,
+      "end": 9.18
+    },
+    {
+      "verb": "take",
+      "noun": "container",
+      "start": 9.13,
+      "end": 10.36
+    },
+    {
+      "verb": "pour",
+      "noun": "milk",
+      "start": 11.94,
+      "end": 22.0
+    },
+    {
+      "verb": "insert",
+      "noun": "container",
+      "start": 22.71,
+      "end": 25.75
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

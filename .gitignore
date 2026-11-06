@@ -1,6 +1,7 @@
 .venv/
 __pycache__/
 weights/*
+!weights/action_adapter.npz
 !weights/README.md
 outputs/*
 !outputs/.gitkeep

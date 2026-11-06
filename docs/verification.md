@@ -42,3 +42,7 @@ The official kit, all 187 manifest outputs and official metric evaluation remain
 The feature-cache key now includes the complete vocabulary so changing category labels invalidates cached predictions. Batch mode accepts --vocabulary and --threads, rejects missing input directories and skips directories whose names end in .mp4. Packaging uses its own unique temporary archive so a failed attempt cannot delete another packaging operation's temporary file.
 
 Remaining work includes action-recognition quality, evaluation on representative continuous recordings, the exact official schema and labels, and predictions for the official manifest. The kit will resolve the submission contract. Improving recognition requires measured model or data changes in addition to kit integration.
+
+## Continuous-data recognition revision
+
+The earlier Bristol download failure was bypassed using a pinned 256p mirror. Nine continuous recordings are now available locally. See [recognition evidence](recognition/README.md) for fitting/development/held-out separation, measured results, actual-output checks and limitations. Earlier runtime and idle figures above describe the old version and are not current recognition accuracy.

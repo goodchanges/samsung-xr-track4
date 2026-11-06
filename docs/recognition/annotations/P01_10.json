@@ -1,0 +1,165 @@
+{
+  "video_id": "P01_10",
+  "split": "fit",
+  "actions": [
+    {
+      "verb": "open",
+      "noun": "oven",
+      "start": 1.41,
+      "end": 3.79
+    },
+    {
+      "verb": "turn-off",
+      "noun": "oven",
+      "start": 3.1,
+      "end": 7.52
+    },
+    {
+      "verb": "put",
+      "noun": "hob",
+      "start": 32.51,
+      "end": 33.51
+    },
+    {
+      "verb": "take",
+      "noun": "leaf",
+      "start": 33.02,
+      "end": 34.64
+    },
+    {
+      "verb": "apply",
+      "noun": "basil",
+      "start": 34.58,
+      "end": 42.0
+    },
+    {
+      "verb": "throw",
+      "noun": "bin",
+      "start": 45.24,
+      "end": 47.26
+    },
+    {
+      "verb": "take",
+      "noun": "spatula",
+      "start": 49.38,
+      "end": 50.56
+    },
+    {
+      "verb": "cut",
+      "noun": "pizza",
+      "start": 52.55,
+      "end": 61.11
+    },
+    {
+      "verb": "cut",
+      "noun": "pizza",
+      "start": 55.17,
+      "end": 72.12
+    },
+    {
+      "verb": "cut",
+      "noun": "pizza",
+      "start": 72.22,
+      "end": 88.07
+    },
+    {
+      "verb": "move",
+      "noun": "cutlery",
+      "start": 92.89,
+      "end": 95.11
+    },
+    {
+      "verb": "take",
+      "noun": "plate",
+      "start": 94.95,
+      "end": 96.24000000000001
+    },
+    {
+      "verb": "take",
+      "noun": "hob",
+      "start": 7.12,
+      "end": 8.95
+    },
+    {
+      "verb": "put",
+      "noun": "plate",
+      "start": 97.28999999999999,
+      "end": 98.74000000000001
+    },
+    {
+      "verb": "take",
+      "noun": "pizza",
+      "start": 98.81,
+      "end": 113.34
+    },
+    {
+      "verb": "put",
+      "noun": "pizza",
+      "start": 113.38,
+      "end": 116.35
+    },
+    {
+      "verb": "take",
+      "noun": "pizza",
+      "start": 116.45,
+      "end": 129.4
+    },
+    {
+      "verb": "put",
+      "noun": "pizza",
+      "start": 129.5,
+      "end": 131.97
+    },
+    {
+      "verb": "put",
+      "noun": "plate",
+      "start": 134.79,
+      "end": 137.67000000000002
+    },
+    {
+      "verb": "take",
+      "noun": "hob",
+      "start": 8.0,
+      "end": 10.25
+    },
+    {
+      "verb": "put",
+      "noun": "hob",
+      "start": 9.78,
+      "end": 10.53
+    },
+    {
+      "verb": "take",
+      "noun": "pizza",
+      "start": 10.1,
+      "end": 13.68
+    },
+    {
+      "verb": "put",
+      "noun": "pizza",
+      "start": 13.28,
+      "end": 16.43
+    },
+    {
+      "verb": "remove",
+      "noun": "pizza",
+      "start": 20.58,
+      "end": 26.35
+    },
+    {
+      "verb": "put",
+      "noun": "pizza",
+      "start": 27.09,
+      "end": 28.08
+    },
+    {
+      "verb": "close",
+      "noun": "oven",
+      "start": 28.96,
+      "end": 31.87
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

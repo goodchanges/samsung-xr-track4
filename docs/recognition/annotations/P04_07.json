@@ -1,0 +1,183 @@
+{
+  "video_id": "P04_07",
+  "split": "fit",
+  "actions": [
+    {
+      "verb": "take",
+      "noun": "lid",
+      "start": 0.14,
+      "end": 1.95
+    },
+    {
+      "verb": "put",
+      "noun": "lid",
+      "start": 2.05,
+      "end": 4.06
+    },
+    {
+      "verb": "close",
+      "noun": "box",
+      "start": 37.86,
+      "end": 42.36
+    },
+    {
+      "verb": "open",
+      "noun": "fridge",
+      "start": 42.43,
+      "end": 43.46
+    },
+    {
+      "verb": "put",
+      "noun": "box",
+      "start": 43.48,
+      "end": 48.02
+    },
+    {
+      "verb": "open",
+      "noun": "cupboard",
+      "start": 48.66,
+      "end": 49.41
+    },
+    {
+      "verb": "take",
+      "noun": "box",
+      "start": 49.53,
+      "end": 51.36
+    },
+    {
+      "verb": "open",
+      "noun": "box",
+      "start": 51.46,
+      "end": 54.15
+    },
+    {
+      "verb": "take",
+      "noun": "pan",
+      "start": 54.71,
+      "end": 56.21
+    },
+    {
+      "verb": "pour",
+      "noun": "food",
+      "start": 56.16,
+      "end": 73.13
+    },
+    {
+      "verb": "take",
+      "noun": "food",
+      "start": 73.23,
+      "end": 80.44
+    },
+    {
+      "verb": "insert",
+      "noun": "box",
+      "start": 78.22,
+      "end": 80.21000000000001
+    },
+    {
+      "verb": "open",
+      "noun": "fridge",
+      "start": 4.56,
+      "end": 6.71
+    },
+    {
+      "verb": "pour",
+      "noun": "towel:kitchen",
+      "start": 80.37,
+      "end": 82.88
+    },
+    {
+      "verb": "wash",
+      "noun": "top",
+      "start": 82.8,
+      "end": 86.46000000000001
+    },
+    {
+      "verb": "close",
+      "noun": "box",
+      "start": 86.93,
+      "end": 90.14
+    },
+    {
+      "verb": "insert",
+      "noun": "box",
+      "start": 91.82,
+      "end": 96.53999999999999
+    },
+    {
+      "verb": "open",
+      "noun": "bin",
+      "start": 98.95,
+      "end": 99.63
+    },
+    {
+      "verb": "insert",
+      "noun": "bin",
+      "start": 99.7,
+      "end": 100.22999999999999
+    },
+    {
+      "verb": "take",
+      "noun": "spice",
+      "start": 101.9,
+      "end": 106.28
+    },
+    {
+      "verb": "open",
+      "noun": "drawer",
+      "start": 107.25999999999999,
+      "end": 109.15
+    },
+    {
+      "verb": "put",
+      "noun": "spice",
+      "start": 108.97,
+      "end": 118.28999999999999
+    },
+    {
+      "verb": "put",
+      "noun": "butter",
+      "start": 6.02,
+      "end": 7.42
+    },
+    {
+      "verb": "open",
+      "noun": "cupboard",
+      "start": 8.05,
+      "end": 8.87
+    },
+    {
+      "verb": "take",
+      "noun": "box",
+      "start": 9.66,
+      "end": 13.42
+    },
+    {
+      "verb": "open",
+      "noun": "box",
+      "start": 15.2,
+      "end": 19.03
+    },
+    {
+      "verb": "take",
+      "noun": "pan",
+      "start": 19.13,
+      "end": 21.08
+    },
+    {
+      "verb": "pour",
+      "noun": "food",
+      "start": 21.05,
+      "end": 30.19
+    },
+    {
+      "verb": "scrape",
+      "noun": "spatula",
+      "start": 30.38,
+      "end": 35.92
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

@@ -1,0 +1,213 @@
+{
+  "video_id": "P07_05",
+  "split": "evaluation",
+  "actions": [
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 6.74,
+      "end": 7.37
+    },
+    {
+      "verb": "insert",
+      "noun": "liquid:washing",
+      "start": 11.93,
+      "end": 14.17
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 63.41,
+      "end": 68.98
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 69.08,
+      "end": 74.56
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 74.66,
+      "end": 81.28
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 81.78999999999999,
+      "end": 82.47
+    },
+    {
+      "verb": "turn",
+      "noun": "knob",
+      "start": 88.82,
+      "end": 91.32
+    },
+    {
+      "verb": "put",
+      "noun": "pan",
+      "start": 93.16,
+      "end": 96.65
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 99.47999999999999,
+      "end": 100.77000000000001
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 101.38,
+      "end": 105.09
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 105.53,
+      "end": 108.28999999999999
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 109.69,
+      "end": 117.92
+    },
+    {
+      "verb": "wash",
+      "noun": "fork",
+      "start": 16.55,
+      "end": 20.16
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 118.59,
+      "end": 119.62
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 119.78999999999999,
+      "end": 123.77
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 123.87,
+      "end": 127.03
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 127.79,
+      "end": 136.64
+    },
+    {
+      "verb": "turn-off",
+      "noun": "tap",
+      "start": 136.07999999999998,
+      "end": 138.04
+    },
+    {
+      "verb": "wash",
+      "noun": "spoon",
+      "start": 139.5,
+      "end": 147.26
+    },
+    {
+      "verb": "wash",
+      "noun": "spoon",
+      "start": 146.21,
+      "end": 151.75
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 151.9,
+      "end": 152.9
+    },
+    {
+      "verb": "wash",
+      "noun": "spoon",
+      "start": 153.55,
+      "end": 156.15
+    },
+    {
+      "verb": "wash",
+      "noun": "spoon",
+      "start": 156.13,
+      "end": 158.35
+    },
+    {
+      "verb": "wash",
+      "noun": "fork",
+      "start": 20.26,
+      "end": 25.35
+    },
+    {
+      "verb": "turn-off",
+      "noun": "tap",
+      "start": 158.66,
+      "end": 160.31
+    },
+    {
+      "verb": "open",
+      "noun": "fridge",
+      "start": 164.7,
+      "end": 166.35
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 187.37,
+      "end": 188.49
+    },
+    {
+      "verb": "turn-off",
+      "noun": "tap",
+      "start": 189.65,
+      "end": 195.03
+    },
+    {
+      "verb": "turn-off",
+      "noun": "tap",
+      "start": 24.87,
+      "end": 25.63
+    },
+    {
+      "verb": "turn-on",
+      "noun": "tap",
+      "start": 33.95,
+      "end": 36.07
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 39.59,
+      "end": 48.74
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 48.84,
+      "end": 55.22
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 55.75,
+      "end": 68.87
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 58.27,
+      "end": 63.31
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

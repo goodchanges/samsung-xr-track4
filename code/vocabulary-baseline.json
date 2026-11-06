@@ -1,0 +1,175 @@
+{
+  "actions": [
+    {
+      "verb": "cut",
+      "noun": "vegetable",
+      "description": "cutting a vegetable with a knife"
+    },
+    {
+      "verb": "cut",
+      "noun": "fruit",
+      "description": "slicing fruit with a knife"
+    },
+    {
+      "verb": "peel",
+      "noun": "vegetable",
+      "description": "peeling a vegetable"
+    },
+    {
+      "verb": "wash",
+      "noun": "vegetable",
+      "description": "washing vegetables under a tap"
+    },
+    {
+      "verb": "wash",
+      "noun": "dish",
+      "description": "washing a dish in a sink"
+    },
+    {
+      "verb": "open",
+      "noun": "drawer",
+      "description": "pulling open a drawer"
+    },
+    {
+      "verb": "close",
+      "noun": "drawer",
+      "description": "pushing a drawer closed"
+    },
+    {
+      "verb": "open",
+      "noun": "cupboard",
+      "description": "opening a cupboard door"
+    },
+    {
+      "verb": "open",
+      "noun": "fridge",
+      "description": "opening a refrigerator door"
+    },
+    {
+      "verb": "pour",
+      "noun": "water",
+      "description": "pouring water into a container"
+    },
+    {
+      "verb": "pour",
+      "noun": "milk",
+      "description": "pouring milk into a cup"
+    },
+    {
+      "verb": "stir",
+      "noun": "food",
+      "description": "stirring food in a bowl or pan"
+    },
+    {
+      "verb": "take",
+      "noun": "cup",
+      "description": "picking up a cup"
+    },
+    {
+      "verb": "put",
+      "noun": "cup",
+      "description": "putting down a cup on a surface"
+    },
+    {
+      "verb": "take",
+      "noun": "knife",
+      "description": "picking up a kitchen knife"
+    },
+    {
+      "verb": "take",
+      "noun": "spoon",
+      "description": "picking up a spoon"
+    },
+    {
+      "verb": "put",
+      "noun": "food",
+      "description": "placing food into a container"
+    },
+    {
+      "verb": "crack",
+      "noun": "egg",
+      "description": "cracking an egg into a bowl"
+    },
+    {
+      "verb": "spread",
+      "noun": "butter",
+      "description": "spreading butter with a knife"
+    },
+    {
+      "verb": "wipe",
+      "noun": "surface",
+      "description": "wiping a surface with a cloth"
+    },
+    {
+      "verb": "type",
+      "noun": "keyboard",
+      "description": "typing on a keyboard"
+    },
+    {
+      "verb": "write",
+      "noun": "paper",
+      "description": "writing on paper with a pen"
+    },
+    {
+      "verb": "turn",
+      "noun": "page",
+      "description": "turning a page of a book"
+    },
+    {
+      "verb": "tighten",
+      "noun": "screw",
+      "description": "tightening a screw with a screwdriver"
+    },
+    {
+      "verb": "fold",
+      "noun": "clothes",
+      "description": "folding clothes"
+    },
+    {
+      "verb": "open",
+      "noun": "bottle",
+      "description": "opening a bottle"
+    },
+    {
+      "verb": "drink",
+      "noun": "cup",
+      "description": "drinking from a cup"
+    },
+    {
+      "verb": "take",
+      "noun": "phone",
+      "description": "picking up a phone"
+    },
+    {
+      "verb": "press",
+      "noun": "button",
+      "description": "pressing a button with a finger"
+    }
+  ],
+  "categories": [
+    {
+      "label": "cooking",
+      "description": "preparing a meal in a kitchen"
+    },
+    {
+      "label": "cleaning",
+      "description": "cleaning or washing objects"
+    },
+    {
+      "label": "office",
+      "description": "office work at a desk"
+    },
+    {
+      "label": "assembly",
+      "description": "assembling or repairing an object with tools"
+    },
+    {
+      "label": "household",
+      "description": "organizing objects and doing household tasks"
+    },
+    {
+      "label": "outdoors",
+      "description": "outdoor activity"
+    }
+  ]
+}

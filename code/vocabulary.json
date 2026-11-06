@@ -1,6 +1,2566 @@
 {
   "actions": [
     {
+      "verb": "turn-on",
+      "noun": "tap",
+      "description": "turning on a tap"
+    },
+    {
+      "verb": "turn-off",
+      "noun": "tap",
+      "description": "turning off a tap"
+    },
+    {
+      "verb": "open",
+      "noun": "cupboard",
+      "description": "opening a cupboard"
+    },
+    {
+      "verb": "close",
+      "noun": "cupboard",
+      "description": "closing a cupboard"
+    },
+    {
+      "verb": "open",
+      "noun": "drawer",
+      "description": "opening a drawer"
+    },
+    {
+      "verb": "take",
+      "noun": "spoon",
+      "description": "taking a spoon"
+    },
+    {
+      "verb": "take",
+      "noun": "plate",
+      "description": "taking a plate"
+    },
+    {
+      "verb": "put",
+      "noun": "plate",
+      "description": "putting a plate"
+    },
+    {
+      "verb": "take",
+      "noun": "knife",
+      "description": "taking a knife"
+    },
+    {
+      "verb": "put",
+      "noun": "spoon",
+      "description": "putting a spoon"
+    },
+    {
+      "verb": "wash",
+      "noun": "hand",
+      "description": "washing a hand"
+    },
+    {
+      "verb": "put",
+      "noun": "knife",
+      "description": "putting a knife"
+    },
+    {
+      "verb": "close",
+      "noun": "drawer",
+      "description": "closing a drawer"
+    },
+    {
+      "verb": "open",
+      "noun": "fridge",
+      "description": "opening a fridge"
+    },
+    {
+      "verb": "put",
+      "noun": "lid",
+      "description": "putting a lid"
+    },
+    {
+      "verb": "put",
+      "noun": "glass",
+      "description": "putting a glass"
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "description": "washing a plate"
+    },
+    {
+      "verb": "take",
+      "noun": "glass",
+      "description": "taking a glass"
+    },
+    {
+      "verb": "take",
+      "noun": "sponge",
+      "description": "taking a sponge"
+    },
+    {
+      "verb": "take",
+      "noun": "bowl",
+      "description": "taking a bowl"
+    },
+    {
+      "verb": "put",
+      "noun": "pan",
+      "description": "putting a pan"
+    },
+    {
+      "verb": "put",
+      "noun": "bowl",
+      "description": "putting a bowl"
+    },
+    {
+      "verb": "wash",
+      "noun": "knife",
+      "description": "washing a knife"
+    },
+    {
+      "verb": "take",
+      "noun": "pan",
+      "description": "taking a pan"
+    },
+    {
+      "verb": "take",
+      "noun": "lid",
+      "description": "taking a lid"
+    },
+    {
+      "verb": "close",
+      "noun": "fridge",
+      "description": "closing a fridge"
+    },
+    {
+      "verb": "dry",
+      "noun": "hand",
+      "description": "drying a hand"
+    },
+    {
+      "verb": "wash",
+      "noun": "spoon",
+      "description": "washing a spoon"
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "description": "washing a pan"
+    },
+    {
+      "verb": "take",
+      "noun": "fork",
+      "description": "taking a fork"
+    },
+    {
+      "verb": "put",
+      "noun": "sponge",
+      "description": "putting a sponge"
+    },
+    {
+      "verb": "wash",
+      "noun": "sponge",
+      "description": "washing a sponge"
+    },
+    {
+      "verb": "put",
+      "noun": "fork",
+      "description": "putting a fork"
+    },
+    {
+      "verb": "take",
+      "noun": "cloth",
+      "description": "taking a cloth"
+    },
+    {
+      "verb": "wash",
+      "noun": "top",
+      "description": "washing a top"
+    },
+    {
+      "verb": "put",
+      "noun": "cloth",
+      "description": "putting a cloth"
+    },
+    {
+      "verb": "pour",
+      "noun": "water",
+      "description": "pouring a water"
+    },
+    {
+      "verb": "take",
+      "noun": "cup",
+      "description": "taking a cup"
+    },
+    {
+      "verb": "take",
+      "noun": "spatula",
+      "description": "taking a spatula"
+    },
+    {
+      "verb": "wash",
+      "noun": "glass",
+      "description": "washing a glass"
+    },
+    {
+      "verb": "put",
+      "noun": "cup",
+      "description": "putting a cup"
+    },
+    {
+      "verb": "put",
+      "noun": "liquid:washing",
+      "description": "putting a washing liquid"
+    },
+    {
+      "verb": "put",
+      "noun": "spatula",
+      "description": "putting a spatula"
+    },
+    {
+      "verb": "cut",
+      "noun": "onion",
+      "description": "cutting a onion"
+    },
+    {
+      "verb": "wash",
+      "noun": "bowl",
+      "description": "washing a bowl"
+    },
+    {
+      "verb": "take",
+      "noun": "board:chopping",
+      "description": "taking a chopping board"
+    },
+    {
+      "verb": "take",
+      "noun": "container",
+      "description": "taking a container"
+    },
+    {
+      "verb": "put",
+      "noun": "board:chopping",
+      "description": "putting a chopping board"
+    },
+    {
+      "verb": "take",
+      "noun": "bottle",
+      "description": "taking a bottle"
+    },
+    {
+      "verb": "take",
+      "noun": "box",
+      "description": "taking a box"
+    },
+    {
+      "verb": "wash",
+      "noun": "fork",
+      "description": "washing a fork"
+    },
+    {
+      "verb": "take",
+      "noun": "liquid:washing",
+      "description": "taking a washing liquid"
+    },
+    {
+      "verb": "put",
+      "noun": "bottle",
+      "description": "putting a bottle"
+    },
+    {
+      "verb": "mix",
+      "noun": "food",
+      "description": "mixing a food"
+    },
+    {
+      "verb": "put",
+      "noun": "container",
+      "description": "putting a container"
+    },
+    {
+      "verb": "take",
+      "noun": "bag",
+      "description": "taking a bag"
+    },
+    {
+      "verb": "open",
+      "noun": "bin",
+      "description": "opening a bin"
+    },
+    {
+      "verb": "wash",
+      "noun": "cloth",
+      "description": "washing a cloth"
+    },
+    {
+      "verb": "wash",
+      "noun": "cup",
+      "description": "washing a cup"
+    },
+    {
+      "verb": "wash",
+      "noun": "sink",
+      "description": "washing a sink"
+    },
+    {
+      "verb": "wash",
+      "noun": "board:chopping",
+      "description": "washing a chopping board"
+    },
+    {
+      "verb": "put",
+      "noun": "box",
+      "description": "putting a box"
+    },
+    {
+      "verb": "take",
+      "noun": "meat",
+      "description": "taking a meat"
+    },
+    {
+      "verb": "close",
+      "noun": "bin",
+      "description": "closing a bin"
+    },
+    {
+      "verb": "put",
+      "noun": "pot",
+      "description": "putting a pot"
+    },
+    {
+      "verb": "wash",
+      "noun": "hob",
+      "description": "washing a hob"
+    },
+    {
+      "verb": "take",
+      "noun": "paper",
+      "description": "taking a paper"
+    },
+    {
+      "verb": "wash",
+      "noun": "lid",
+      "description": "washing a lid"
+    },
+    {
+      "verb": "shake",
+      "noun": "hand",
+      "description": "shaking a hand"
+    },
+    {
+      "verb": "take",
+      "noun": "onion",
+      "description": "taking a onion"
+    },
+    {
+      "verb": "take",
+      "noun": "tray",
+      "description": "taking a tray"
+    },
+    {
+      "verb": "take",
+      "noun": "salt",
+      "description": "taking a salt"
+    },
+    {
+      "verb": "turn-on",
+      "noun": "hob",
+      "description": "turning on a hob"
+    },
+    {
+      "verb": "put",
+      "noun": "tray",
+      "description": "putting a tray"
+    },
+    {
+      "verb": "insert",
+      "noun": "spoon",
+      "description": "inserting a spoon"
+    },
+    {
+      "verb": "take",
+      "noun": "colander",
+      "description": "taking a colander"
+    },
+    {
+      "verb": "open",
+      "noun": "bag",
+      "description": "opening a bag"
+    },
+    {
+      "verb": "take",
+      "noun": "pot",
+      "description": "taking a pot"
+    },
+    {
+      "verb": "take",
+      "noun": "bread",
+      "description": "taking a bread"
+    },
+    {
+      "verb": "put",
+      "noun": "bag",
+      "description": "putting a bag"
+    },
+    {
+      "verb": "take",
+      "noun": "towel",
+      "description": "taking a towel"
+    },
+    {
+      "verb": "take",
+      "noun": "oil",
+      "description": "taking a oil"
+    },
+    {
+      "verb": "put",
+      "noun": "colander",
+      "description": "putting a colander"
+    },
+    {
+      "verb": "insert",
+      "noun": "pan",
+      "description": "inserting a pan"
+    },
+    {
+      "verb": "move",
+      "noun": "pan",
+      "description": "moving a pan"
+    },
+    {
+      "verb": "put",
+      "noun": "meat",
+      "description": "putting a meat"
+    },
+    {
+      "verb": "take",
+      "noun": "package",
+      "description": "taking a package"
+    },
+    {
+      "verb": "open",
+      "noun": "package",
+      "description": "opening a package"
+    },
+    {
+      "verb": "put",
+      "noun": "salt",
+      "description": "putting a salt"
+    },
+    {
+      "verb": "move",
+      "noun": "tap",
+      "description": "moving a tap"
+    },
+    {
+      "verb": "pour",
+      "noun": "oil",
+      "description": "pouring a oil"
+    },
+    {
+      "verb": "mix",
+      "noun": "pasta",
+      "description": "mixing a pasta"
+    },
+    {
+      "verb": "close",
+      "noun": "bottle",
+      "description": "closing a bottle"
+    },
+    {
+      "verb": "throw",
+      "noun": "skin",
+      "description": "throwing a skin"
+    },
+    {
+      "verb": "take",
+      "noun": "cutlery",
+      "description": "taking a cutlery"
+    },
+    {
+      "verb": "pour",
+      "noun": "liquid:washing",
+      "description": "pouring a washing liquid"
+    },
+    {
+      "verb": "mix",
+      "noun": "meat",
+      "description": "mixing a meat"
+    },
+    {
+      "verb": "adjust",
+      "noun": "hob",
+      "description": "adjusting a hob"
+    },
+    {
+      "verb": "open",
+      "noun": "oven",
+      "description": "opening a oven"
+    },
+    {
+      "verb": "open",
+      "noun": "box",
+      "description": "opening a box"
+    },
+    {
+      "verb": "take",
+      "noun": "cheese",
+      "description": "taking a cheese"
+    },
+    {
+      "verb": "throw",
+      "noun": "rubbish",
+      "description": "throwing a rubbish"
+    },
+    {
+      "verb": "put",
+      "noun": "towel",
+      "description": "putting a towel"
+    },
+    {
+      "verb": "take",
+      "noun": "hob",
+      "description": "taking a hob"
+    },
+    {
+      "verb": "cut",
+      "noun": "carrot",
+      "description": "cutting a carrot"
+    },
+    {
+      "verb": "wash",
+      "noun": "colander",
+      "description": "washing a colander"
+    },
+    {
+      "verb": "open",
+      "noun": "bottle",
+      "description": "opening a bottle"
+    },
+    {
+      "verb": "close",
+      "noun": "oven",
+      "description": "closing a oven"
+    },
+    {
+      "verb": "cut",
+      "noun": "tomato",
+      "description": "cutting a tomato"
+    },
+    {
+      "verb": "mix",
+      "noun": "onion",
+      "description": "mixing a onion"
+    },
+    {
+      "verb": "put",
+      "noun": "dough",
+      "description": "putting a dough"
+    },
+    {
+      "verb": "put",
+      "noun": "hob",
+      "description": "putting a hob"
+    },
+    {
+      "verb": "put",
+      "noun": "cutlery",
+      "description": "putting a cutlery"
+    },
+    {
+      "verb": "put",
+      "noun": "jar",
+      "description": "putting a jar"
+    },
+    {
+      "verb": "put",
+      "noun": "oil",
+      "description": "putting a oil"
+    },
+    {
+      "verb": "put",
+      "noun": "onion",
+      "description": "putting a onion"
+    },
+    {
+      "verb": "take",
+      "noun": "jar",
+      "description": "taking a jar"
+    },
+    {
+      "verb": "squeeze",
+      "noun": "sponge",
+      "description": "squeezing a sponge"
+    },
+    {
+      "verb": "insert",
+      "noun": "plate",
+      "description": "inserting a plate"
+    },
+    {
+      "verb": "take",
+      "noun": "carrot",
+      "description": "taking a carrot"
+    },
+    {
+      "verb": "open",
+      "noun": "lid",
+      "description": "opening a lid"
+    },
+    {
+      "verb": "insert",
+      "noun": "knife",
+      "description": "inserting a knife"
+    },
+    {
+      "verb": "pour",
+      "noun": "salt",
+      "description": "pouring a salt"
+    },
+    {
+      "verb": "close",
+      "noun": "lid",
+      "description": "closing a lid"
+    },
+    {
+      "verb": "put",
+      "noun": "bread",
+      "description": "putting a bread"
+    },
+    {
+      "verb": "wash",
+      "noun": "pot",
+      "description": "washing a pot"
+    },
+    {
+      "verb": "turn-off",
+      "noun": "hob",
+      "description": "turning off a hob"
+    },
+    {
+      "verb": "close",
+      "noun": "bag",
+      "description": "closing a bag"
+    },
+    {
+      "verb": "peel",
+      "noun": "onion",
+      "description": "peeling a onion"
+    },
+    {
+      "verb": "take",
+      "noun": "kettle",
+      "description": "taking a kettle"
+    },
+    {
+      "verb": "put",
+      "noun": "kettle",
+      "description": "putting a kettle"
+    },
+    {
+      "verb": "remove",
+      "noun": "skin",
+      "description": "removing a skin"
+    },
+    {
+      "verb": "insert",
+      "noun": "bowl",
+      "description": "inserting a bowl"
+    },
+    {
+      "verb": "take",
+      "noun": "potato",
+      "description": "taking a potato"
+    },
+    {
+      "verb": "press",
+      "noun": "button",
+      "description": "pressing a button"
+    },
+    {
+      "verb": "put",
+      "noun": "package",
+      "description": "putting a package"
+    },
+    {
+      "verb": "take",
+      "noun": "aubergine",
+      "description": "taking a aubergine"
+    },
+    {
+      "verb": "take",
+      "noun": "napkin",
+      "description": "taking a napkin"
+    },
+    {
+      "verb": "take",
+      "noun": "dough",
+      "description": "taking a dough"
+    },
+    {
+      "verb": "spray",
+      "noun": "liquid:washing",
+      "description": "spraying a washing liquid"
+    },
+    {
+      "verb": "put",
+      "noun": "glove",
+      "description": "putting a glove"
+    },
+    {
+      "verb": "mix",
+      "noun": "mixture",
+      "description": "mixing a mixture"
+    },
+    {
+      "verb": "remove",
+      "noun": "lid",
+      "description": "removing a lid"
+    },
+    {
+      "verb": "take",
+      "noun": "rubbish",
+      "description": "taking a rubbish"
+    },
+    {
+      "verb": "unroll",
+      "noun": "dough",
+      "description": "unrolling a dough"
+    },
+    {
+      "verb": "put",
+      "noun": "cheese",
+      "description": "putting a cheese"
+    },
+    {
+      "verb": "take",
+      "noun": "jug",
+      "description": "taking a jug"
+    },
+    {
+      "verb": "adjust",
+      "noun": "heat",
+      "description": "adjusting a heat"
+    },
+    {
+      "verb": "take",
+      "noun": "pasta",
+      "description": "taking a pasta"
+    },
+    {
+      "verb": "take",
+      "noun": "egg",
+      "description": "taking a egg"
+    },
+    {
+      "verb": "wash",
+      "noun": "spatula",
+      "description": "washing a spatula"
+    },
+    {
+      "verb": "mix",
+      "noun": "pan",
+      "description": "mixing a pan"
+    },
+    {
+      "verb": "open",
+      "noun": "container",
+      "description": "opening a container"
+    },
+    {
+      "verb": "flip",
+      "noun": "aubergine",
+      "description": "fliping a aubergine"
+    },
+    {
+      "verb": "close",
+      "noun": "box",
+      "description": "closing a box"
+    },
+    {
+      "verb": "cut",
+      "noun": "garlic",
+      "description": "cutting a garlic"
+    },
+    {
+      "verb": "take",
+      "noun": "pepper",
+      "description": "taking a pepper"
+    },
+    {
+      "verb": "take",
+      "noun": "skin",
+      "description": "taking a skin"
+    },
+    {
+      "verb": "put",
+      "noun": "maker:coffee",
+      "description": "putting a coffee maker"
+    },
+    {
+      "verb": "cut",
+      "noun": "courgette",
+      "description": "cutting a courgette"
+    },
+    {
+      "verb": "put",
+      "noun": "aubergine",
+      "description": "putting a aubergine"
+    },
+    {
+      "verb": "put",
+      "noun": "jug",
+      "description": "putting a jug"
+    },
+    {
+      "verb": "take",
+      "noun": "mushroom",
+      "description": "taking a mushroom"
+    },
+    {
+      "verb": "put",
+      "noun": "pepper",
+      "description": "putting a pepper"
+    },
+    {
+      "verb": "take",
+      "noun": "scissors",
+      "description": "taking a scissors"
+    },
+    {
+      "verb": "take",
+      "noun": "maker:coffee",
+      "description": "taking a coffee maker"
+    },
+    {
+      "verb": "put",
+      "noun": "paper",
+      "description": "putting a paper"
+    },
+    {
+      "verb": "press",
+      "noun": "spatula",
+      "description": "pressing a spatula"
+    },
+    {
+      "verb": "take",
+      "noun": "tomato",
+      "description": "taking a tomato"
+    },
+    {
+      "verb": "empty",
+      "noun": "bowl",
+      "description": "emptying a bowl"
+    },
+    {
+      "verb": "throw",
+      "noun": "paper",
+      "description": "throwing a paper"
+    },
+    {
+      "verb": "take",
+      "noun": "chicken",
+      "description": "taking a chicken"
+    },
+    {
+      "verb": "close",
+      "noun": "container",
+      "description": "closing a container"
+    },
+    {
+      "verb": "throw",
+      "noun": "package",
+      "description": "throwing a package"
+    },
+    {
+      "verb": "mix",
+      "noun": "egg",
+      "description": "mixing a egg"
+    },
+    {
+      "verb": "cut",
+      "noun": "cheese",
+      "description": "cutting a cheese"
+    },
+    {
+      "verb": "insert",
+      "noun": "carrot",
+      "description": "inserting a carrot"
+    },
+    {
+      "verb": "wash",
+      "noun": "maker:coffee",
+      "description": "washing a coffee maker"
+    },
+    {
+      "verb": "flip",
+      "noun": "meat",
+      "description": "fliping a meat"
+    },
+    {
+      "verb": "take",
+      "noun": "leaf",
+      "description": "taking a leaf"
+    },
+    {
+      "verb": "take",
+      "noun": "glove",
+      "description": "taking a glove"
+    },
+    {
+      "verb": "wash",
+      "noun": "container",
+      "description": "washing a container"
+    },
+    {
+      "verb": "cut",
+      "noun": "potato",
+      "description": "cutting a potato"
+    },
+    {
+      "verb": "move",
+      "noun": "bowl",
+      "description": "moving a bowl"
+    },
+    {
+      "verb": "put",
+      "noun": "pasta",
+      "description": "putting a pasta"
+    },
+    {
+      "verb": "close",
+      "noun": "dishwasher",
+      "description": "closing a dishwasher"
+    },
+    {
+      "verb": "put",
+      "noun": "potato",
+      "description": "putting a potato"
+    },
+    {
+      "verb": "peel",
+      "noun": "carrot",
+      "description": "peeling a carrot"
+    },
+    {
+      "verb": "take",
+      "noun": "chopstick",
+      "description": "taking a chopstick"
+    },
+    {
+      "verb": "put",
+      "noun": "chopstick",
+      "description": "putting a chopstick"
+    },
+    {
+      "verb": "hold",
+      "noun": "pan",
+      "description": "holding a pan"
+    },
+    {
+      "verb": "open",
+      "noun": "dishwasher",
+      "description": "opening a dishwasher"
+    },
+    {
+      "verb": "take",
+      "noun": "ladle",
+      "description": "taking a ladle"
+    },
+    {
+      "verb": "open",
+      "noun": "jar",
+      "description": "opening a jar"
+    },
+    {
+      "verb": "close",
+      "noun": "jar",
+      "description": "closing a jar"
+    },
+    {
+      "verb": "take",
+      "noun": "mat",
+      "description": "taking a mat"
+    },
+    {
+      "verb": "move",
+      "noun": "plate",
+      "description": "moving a plate"
+    },
+    {
+      "verb": "pour",
+      "noun": "pasta",
+      "description": "pouring a pasta"
+    },
+    {
+      "verb": "mix",
+      "noun": "courgette",
+      "description": "mixing a courgette"
+    },
+    {
+      "verb": "adjust",
+      "noun": "tap",
+      "description": "adjusting a tap"
+    },
+    {
+      "verb": "insert",
+      "noun": "bag",
+      "description": "inserting a bag"
+    },
+    {
+      "verb": "squeeze",
+      "noun": "dough",
+      "description": "squeezing a dough"
+    },
+    {
+      "verb": "mix",
+      "noun": "curry",
+      "description": "mixing a curry"
+    },
+    {
+      "verb": "move",
+      "noun": "board:chopping",
+      "description": "moving a chopping board"
+    },
+    {
+      "verb": "put",
+      "noun": "sauce",
+      "description": "putting a sauce"
+    },
+    {
+      "verb": "take",
+      "noun": "coffee",
+      "description": "taking a coffee"
+    },
+    {
+      "verb": "flip",
+      "noun": "dough",
+      "description": "fliping a dough"
+    },
+    {
+      "verb": "insert",
+      "noun": "box",
+      "description": "inserting a box"
+    },
+    {
+      "verb": "wash",
+      "noun": "box",
+      "description": "washing a box"
+    },
+    {
+      "verb": "insert",
+      "noun": "bread",
+      "description": "inserting a bread"
+    },
+    {
+      "verb": "take",
+      "noun": "clothes",
+      "description": "taking a clothes"
+    },
+    {
+      "verb": "peel",
+      "noun": "potato",
+      "description": "peeling a potato"
+    },
+    {
+      "verb": "put",
+      "noun": "can",
+      "description": "putting a can"
+    },
+    {
+      "verb": "take",
+      "noun": "brush",
+      "description": "taking a brush"
+    },
+    {
+      "verb": "insert",
+      "noun": "rubbish",
+      "description": "inserting a rubbish"
+    },
+    {
+      "verb": "take",
+      "noun": "can",
+      "description": "taking a can"
+    },
+    {
+      "verb": "cut",
+      "noun": "cucumber",
+      "description": "cutting a cucumber"
+    },
+    {
+      "verb": "insert",
+      "noun": "bin",
+      "description": "inserting a bin"
+    },
+    {
+      "verb": "break",
+      "noun": "chicken",
+      "description": "breaking a chicken"
+    },
+    {
+      "verb": "put",
+      "noun": "mat",
+      "description": "putting a mat"
+    },
+    {
+      "verb": "put",
+      "noun": "ladle",
+      "description": "putting a ladle"
+    },
+    {
+      "verb": "put",
+      "noun": "mushroom",
+      "description": "putting a mushroom"
+    },
+    {
+      "verb": "take",
+      "noun": "sauce",
+      "description": "taking a sauce"
+    },
+    {
+      "verb": "break",
+      "noun": "egg",
+      "description": "breaking a egg"
+    },
+    {
+      "verb": "wash",
+      "noun": "cutlery",
+      "description": "washing a cutlery"
+    },
+    {
+      "verb": "close",
+      "noun": "package",
+      "description": "closing a package"
+    },
+    {
+      "verb": "mix",
+      "noun": "vegetable",
+      "description": "mixing a vegetable"
+    },
+    {
+      "verb": "fold",
+      "noun": "dough",
+      "description": "folding a dough"
+    },
+    {
+      "verb": "take",
+      "noun": "grater",
+      "description": "taking a grater"
+    },
+    {
+      "verb": "mix",
+      "noun": "sauce",
+      "description": "mixing a sauce"
+    },
+    {
+      "verb": "fold",
+      "noun": "cheese",
+      "description": "folding a cheese"
+    },
+    {
+      "verb": "take",
+      "noun": "tofu",
+      "description": "taking a tofu"
+    },
+    {
+      "verb": "turn-on",
+      "noun": "kettle",
+      "description": "turning on a kettle"
+    },
+    {
+      "verb": "take",
+      "noun": "flour",
+      "description": "taking a flour"
+    },
+    {
+      "verb": "pour",
+      "noun": "sauce",
+      "description": "pouring a sauce"
+    },
+    {
+      "verb": "take",
+      "noun": "towel:kitchen",
+      "description": "taking a kitchen towel"
+    },
+    {
+      "verb": "wash",
+      "noun": "tray",
+      "description": "washing a tray"
+    },
+    {
+      "verb": "insert",
+      "noun": "fork",
+      "description": "inserting a fork"
+    },
+    {
+      "verb": "sharpen",
+      "noun": "knife",
+      "description": "sharpening a knife"
+    },
+    {
+      "verb": "turn-on",
+      "noun": "light",
+      "description": "turning on a light"
+    },
+    {
+      "verb": "move",
+      "noun": "glass",
+      "description": "moving a glass"
+    },
+    {
+      "verb": "put",
+      "noun": "leaf",
+      "description": "putting a leaf"
+    },
+    {
+      "verb": "take",
+      "noun": "cucumber",
+      "description": "taking a cucumber"
+    },
+    {
+      "verb": "mix",
+      "noun": "potato",
+      "description": "mixing a potato"
+    },
+    {
+      "verb": "put",
+      "noun": "tomato",
+      "description": "putting a tomato"
+    },
+    {
+      "verb": "squeeze",
+      "noun": "cloth",
+      "description": "squeezing a cloth"
+    },
+    {
+      "verb": "put",
+      "noun": "scissors",
+      "description": "putting a scissors"
+    },
+    {
+      "verb": "take",
+      "noun": "garlic",
+      "description": "taking a garlic"
+    },
+    {
+      "verb": "take",
+      "noun": "butter",
+      "description": "taking a butter"
+    },
+    {
+      "verb": "take",
+      "noun": "olive",
+      "description": "taking a olive"
+    },
+    {
+      "verb": "cut",
+      "noun": "olive",
+      "description": "cutting a olive"
+    },
+    {
+      "verb": "put",
+      "noun": "rest",
+      "description": "putting a rest"
+    },
+    {
+      "verb": "put",
+      "noun": "grater",
+      "description": "putting a grater"
+    },
+    {
+      "verb": "take",
+      "noun": "sausage",
+      "description": "taking a sausage"
+    },
+    {
+      "verb": "take",
+      "noun": "peeler:potato",
+      "description": "taking a potato peeler"
+    },
+    {
+      "verb": "insert",
+      "noun": "meat",
+      "description": "inserting a meat"
+    },
+    {
+      "verb": "move",
+      "noun": "meat",
+      "description": "moving a meat"
+    },
+    {
+      "verb": "insert",
+      "noun": "onion",
+      "description": "inserting a onion"
+    },
+    {
+      "verb": "cut",
+      "noun": "mushroom",
+      "description": "cutting a mushroom"
+    },
+    {
+      "verb": "put",
+      "noun": "peeler:potato",
+      "description": "putting a potato peeler"
+    },
+    {
+      "verb": "insert",
+      "noun": "cheese",
+      "description": "inserting a cheese"
+    },
+    {
+      "verb": "pour",
+      "noun": "milk",
+      "description": "pouring a milk"
+    },
+    {
+      "verb": "take",
+      "noun": "lighter",
+      "description": "taking a lighter"
+    },
+    {
+      "verb": "insert",
+      "noun": "lid",
+      "description": "inserting a lid"
+    },
+    {
+      "verb": "turn-on",
+      "noun": "oven",
+      "description": "turning on a oven"
+    },
+    {
+      "verb": "move",
+      "noun": "tofu",
+      "description": "moving a tofu"
+    },
+    {
+      "verb": "move",
+      "noun": "container",
+      "description": "moving a container"
+    },
+    {
+      "verb": "open",
+      "noun": "freezer",
+      "description": "opening a freezer"
+    },
+    {
+      "verb": "apply",
+      "noun": "butter",
+      "description": "applying a butter"
+    },
+    {
+      "verb": "scrub",
+      "noun": "pan",
+      "description": "scrubing a pan"
+    },
+    {
+      "verb": "water",
+      "noun": "sponge",
+      "description": "watering a sponge"
+    },
+    {
+      "verb": "shake",
+      "noun": "pot",
+      "description": "shaking a pot"
+    },
+    {
+      "verb": "set",
+      "noun": "alarm",
+      "description": "seting a alarm"
+    },
+    {
+      "verb": "take",
+      "noun": "food",
+      "description": "taking a food"
+    },
+    {
+      "verb": "scoop",
+      "noun": "food",
+      "description": "scooping a food"
+    },
+    {
+      "verb": "put",
+      "noun": "chicken",
+      "description": "putting a chicken"
+    },
+    {
+      "verb": "put",
+      "noun": "brush",
+      "description": "putting a brush"
+    },
+    {
+      "verb": "put",
+      "noun": "peach",
+      "description": "putting a peach"
+    },
+    {
+      "verb": "take",
+      "noun": "rest",
+      "description": "taking a rest"
+    },
+    {
+      "verb": "take",
+      "noun": "milk",
+      "description": "taking a milk"
+    },
+    {
+      "verb": "insert",
+      "noun": "food",
+      "description": "inserting a food"
+    },
+    {
+      "verb": "close",
+      "noun": "freezer",
+      "description": "closing a freezer"
+    },
+    {
+      "verb": "open",
+      "noun": "maker:coffee",
+      "description": "opening a coffee maker"
+    },
+    {
+      "verb": "insert",
+      "noun": "package",
+      "description": "inserting a package"
+    },
+    {
+      "verb": "stretch",
+      "noun": "dough",
+      "description": "stretching a dough"
+    },
+    {
+      "verb": "drink",
+      "noun": "water",
+      "description": "drinking a water"
+    },
+    {
+      "verb": "move",
+      "noun": "bag",
+      "description": "moving a bag"
+    },
+    {
+      "verb": "empty",
+      "noun": "water",
+      "description": "emptying a water"
+    },
+    {
+      "verb": "insert",
+      "noun": "water",
+      "description": "inserting a water"
+    },
+    {
+      "verb": "shake",
+      "noun": "bottle",
+      "description": "shaking a bottle"
+    },
+    {
+      "verb": "take",
+      "noun": "salad",
+      "description": "taking a salad"
+    },
+    {
+      "verb": "take",
+      "noun": "courgette",
+      "description": "taking a courgette"
+    },
+    {
+      "verb": "open",
+      "noun": "oil",
+      "description": "opening a oil"
+    },
+    {
+      "verb": "pour",
+      "noun": "flour",
+      "description": "pouring a flour"
+    },
+    {
+      "verb": "knead",
+      "noun": "dough",
+      "description": "kneading a dough"
+    },
+    {
+      "verb": "roll",
+      "noun": "dough",
+      "description": "rolling a dough"
+    },
+    {
+      "verb": "put",
+      "noun": "pizza",
+      "description": "putting a pizza"
+    },
+    {
+      "verb": "insert",
+      "noun": "bottle",
+      "description": "inserting a bottle"
+    },
+    {
+      "verb": "pour",
+      "noun": "coffee",
+      "description": "pouring a coffee"
+    },
+    {
+      "verb": "insert",
+      "noun": "container",
+      "description": "inserting a container"
+    },
+    {
+      "verb": "cut",
+      "noun": "paper",
+      "description": "cutting a paper"
+    },
+    {
+      "verb": "move",
+      "noun": "box",
+      "description": "moving a box"
+    },
+    {
+      "verb": "insert",
+      "noun": "tray",
+      "description": "inserting a tray"
+    },
+    {
+      "verb": "dry",
+      "noun": "pan",
+      "description": "drying a pan"
+    },
+    {
+      "verb": "take",
+      "noun": "filter",
+      "description": "taking a filter"
+    },
+    {
+      "verb": "put",
+      "noun": "yoghurt",
+      "description": "putting a yoghurt"
+    },
+    {
+      "verb": "take",
+      "noun": "sugar",
+      "description": "taking a sugar"
+    },
+    {
+      "verb": "apply",
+      "noun": "liquid:washing",
+      "description": "applying a washing liquid"
+    },
+    {
+      "verb": "take",
+      "noun": "biscuit",
+      "description": "taking a biscuit"
+    },
+    {
+      "verb": "insert",
+      "noun": "tofu",
+      "description": "inserting a tofu"
+    },
+    {
+      "verb": "put",
+      "noun": "napkin",
+      "description": "putting a napkin"
+    },
+    {
+      "verb": "insert",
+      "noun": "cup",
+      "description": "inserting a cup"
+    },
+    {
+      "verb": "pour",
+      "noun": "rice",
+      "description": "pouring a rice"
+    },
+    {
+      "verb": "scoop",
+      "noun": "rice",
+      "description": "scooping a rice"
+    },
+    {
+      "verb": "take",
+      "noun": "pin:rolling",
+      "description": "taking a rolling pin"
+    },
+    {
+      "verb": "put",
+      "noun": "garlic",
+      "description": "putting a garlic"
+    },
+    {
+      "verb": "look",
+      "noun": "recipe",
+      "description": "looking a recipe"
+    },
+    {
+      "verb": "insert",
+      "noun": "salt",
+      "description": "inserting a salt"
+    },
+    {
+      "verb": "take",
+      "noun": "yoghurt",
+      "description": "taking a yoghurt"
+    },
+    {
+      "verb": "cut",
+      "noun": "peach",
+      "description": "cutting a peach"
+    },
+    {
+      "verb": "mix",
+      "noun": "mushroom",
+      "description": "mixing a mushroom"
+    },
+    {
+      "verb": "insert",
+      "noun": "glass",
+      "description": "inserting a glass"
+    },
+    {
+      "verb": "empty",
+      "noun": "pan",
+      "description": "emptying a pan"
+    },
+    {
+      "verb": "remove",
+      "noun": "seed",
+      "description": "removing a seed"
+    },
+    {
+      "verb": "fill",
+      "noun": "bottle",
+      "description": "filling a bottle"
+    },
+    {
+      "verb": "stretch",
+      "noun": "cheese",
+      "description": "stretching a cheese"
+    },
+    {
+      "verb": "put",
+      "noun": "lighter",
+      "description": "putting a lighter"
+    },
+    {
+      "verb": "take",
+      "noun": "rice",
+      "description": "taking a rice"
+    },
+    {
+      "verb": "hang",
+      "noun": "clothes",
+      "description": "hanging a clothes"
+    },
+    {
+      "verb": "move",
+      "noun": "cup",
+      "description": "moving a cup"
+    },
+    {
+      "verb": "put",
+      "noun": "butter",
+      "description": "putting a butter"
+    },
+    {
+      "verb": "lift",
+      "noun": "pan",
+      "description": "lifting a pan"
+    },
+    {
+      "verb": "mix",
+      "noun": "salad",
+      "description": "mixing a salad"
+    },
+    {
+      "verb": "wear",
+      "noun": "glove",
+      "description": "wearing a glove"
+    },
+    {
+      "verb": "insert",
+      "noun": "oil",
+      "description": "inserting a oil"
+    },
+    {
+      "verb": "cut",
+      "noun": "pepper",
+      "description": "cutting a pepper"
+    },
+    {
+      "verb": "put",
+      "noun": "towel:kitchen",
+      "description": "putting a kitchen towel"
+    },
+    {
+      "verb": "wash",
+      "noun": "filter",
+      "description": "washing a filter"
+    },
+    {
+      "verb": "wash",
+      "noun": "grater",
+      "description": "washing a grater"
+    },
+    {
+      "verb": "move",
+      "noun": "bottle",
+      "description": "moving a bottle"
+    },
+    {
+      "verb": "insert",
+      "noun": "board:chopping",
+      "description": "inserting a chopping board"
+    },
+    {
+      "verb": "put",
+      "noun": "olive",
+      "description": "putting a olive"
+    },
+    {
+      "verb": "pat",
+      "noun": "spatula",
+      "description": "pating a spatula"
+    },
+    {
+      "verb": "turn-off",
+      "noun": "oven",
+      "description": "turning off a oven"
+    },
+    {
+      "verb": "take",
+      "noun": "wrap:plastic",
+      "description": "taking a plastic wrap"
+    },
+    {
+      "verb": "empty",
+      "noun": "sink",
+      "description": "emptying a sink"
+    },
+    {
+      "verb": "put",
+      "noun": "cover",
+      "description": "putting a cover"
+    },
+    {
+      "verb": "turn",
+      "noun": "meat",
+      "description": "turning a meat"
+    },
+    {
+      "verb": "cut",
+      "noun": "chilli",
+      "description": "cutting a chilli"
+    },
+    {
+      "verb": "take",
+      "noun": "tongs",
+      "description": "taking a tongs"
+    },
+    {
+      "verb": "put",
+      "noun": "egg",
+      "description": "putting a egg"
+    },
+    {
+      "verb": "wash",
+      "noun": "ladle",
+      "description": "washing a ladle"
+    },
+    {
+      "verb": "remove",
+      "noun": "glove",
+      "description": "removing a glove"
+    },
+    {
+      "verb": "remove",
+      "noun": "package",
+      "description": "removing a package"
+    },
+    {
+      "verb": "put",
+      "noun": "coffee",
+      "description": "putting a coffee"
+    },
+    {
+      "verb": "take",
+      "noun": "spice",
+      "description": "taking a spice"
+    },
+    {
+      "verb": "insert",
+      "noun": "chicken",
+      "description": "inserting a chicken"
+    },
+    {
+      "verb": "wash",
+      "noun": "jug",
+      "description": "washing a jug"
+    },
+    {
+      "verb": "take",
+      "noun": "chilli",
+      "description": "taking a chilli"
+    },
+    {
+      "verb": "take",
+      "noun": "water",
+      "description": "taking a water"
+    },
+    {
+      "verb": "put",
+      "noun": "salad",
+      "description": "putting a salad"
+    },
+    {
+      "verb": "mix",
+      "noun": "rice",
+      "description": "mixing a rice"
+    },
+    {
+      "verb": "take",
+      "noun": "pizza",
+      "description": "taking a pizza"
+    },
+    {
+      "verb": "wash",
+      "noun": "peeler:potato",
+      "description": "washing a potato peeler"
+    },
+    {
+      "verb": "fill",
+      "noun": "kettle",
+      "description": "filling a kettle"
+    },
+    {
+      "verb": "move",
+      "noun": "pot",
+      "description": "moving a pot"
+    },
+    {
+      "verb": "break",
+      "noun": "meat",
+      "description": "breaking a meat"
+    },
+    {
+      "verb": "shake",
+      "noun": "spoon",
+      "description": "shaking a spoon"
+    },
+    {
+      "verb": "move",
+      "noun": "bread",
+      "description": "moving a bread"
+    },
+    {
+      "verb": "take",
+      "noun": "lemon",
+      "description": "taking a lemon"
+    },
+    {
+      "verb": "insert",
+      "noun": "clothes",
+      "description": "inserting a clothes"
+    },
+    {
+      "verb": "turn",
+      "noun": "chicken",
+      "description": "turning a chicken"
+    },
+    {
+      "verb": "rub",
+      "noun": "sponge",
+      "description": "rubing a sponge"
+    },
+    {
+      "verb": "scrub",
+      "noun": "bowl",
+      "description": "scrubing a bowl"
+    },
+    {
+      "verb": "peel",
+      "noun": "peach",
+      "description": "peeling a peach"
+    },
+    {
+      "verb": "wash",
+      "noun": "oven",
+      "description": "washing a oven"
+    },
+    {
+      "verb": "dry",
+      "noun": "knife",
+      "description": "drying a knife"
+    },
+    {
+      "verb": "move",
+      "noun": "knife",
+      "description": "moving a knife"
+    },
+    {
+      "verb": "insert",
+      "noun": "colander",
+      "description": "inserting a colander"
+    },
+    {
+      "verb": "take",
+      "noun": "broccoli",
+      "description": "taking a broccoli"
+    },
+    {
+      "verb": "take",
+      "noun": "juicer",
+      "description": "taking a juicer"
+    },
+    {
+      "verb": "lift",
+      "noun": "lid",
+      "description": "lifting a lid"
+    },
+    {
+      "verb": "pat",
+      "noun": "spoon",
+      "description": "pating a spoon"
+    },
+    {
+      "verb": "put",
+      "noun": "filter",
+      "description": "putting a filter"
+    },
+    {
+      "verb": "flip",
+      "noun": "tofu",
+      "description": "fliping a tofu"
+    },
+    {
+      "verb": "put",
+      "noun": "rack:drying",
+      "description": "putting a drying rack"
+    },
+    {
+      "verb": "put",
+      "noun": "top",
+      "description": "putting a top"
+    },
+    {
+      "verb": "put",
+      "noun": "food",
+      "description": "putting a food"
+    },
+    {
+      "verb": "throw",
+      "noun": "bag",
+      "description": "throwing a bag"
+    },
+    {
+      "verb": "peel",
+      "noun": "garlic",
+      "description": "peeling a garlic"
+    },
+    {
+      "verb": "move",
+      "noun": "jar",
+      "description": "moving a jar"
+    },
+    {
+      "verb": "remove",
+      "noun": "rubbish",
+      "description": "removing a rubbish"
+    },
+    {
+      "verb": "press",
+      "noun": "dough",
+      "description": "pressing a dough"
+    },
+    {
+      "verb": "remove",
+      "noun": "peach",
+      "description": "removing a peach"
+    },
+    {
+      "verb": "close",
+      "noun": "oil",
+      "description": "closing a oil"
+    },
+    {
+      "verb": "move",
+      "noun": "tray",
+      "description": "moving a tray"
+    },
+    {
+      "verb": "insert",
+      "noun": "sauce",
+      "description": "inserting a sauce"
+    },
+    {
+      "verb": "move",
+      "noun": "spoon",
+      "description": "moving a spoon"
+    },
+    {
+      "verb": "wash",
+      "noun": "tomato",
+      "description": "washing a tomato"
+    },
+    {
+      "verb": "cut",
+      "noun": "lettuce",
+      "description": "cutting a lettuce"
+    },
+    {
+      "verb": "open",
+      "noun": "microwave",
+      "description": "opening a microwave"
+    },
+    {
+      "verb": "wash",
+      "noun": "scissors",
+      "description": "washing a scissors"
+    },
+    {
+      "verb": "insert",
+      "noun": "cucumber",
+      "description": "inserting a cucumber"
+    },
+    {
+      "verb": "brush",
+      "noun": "floor",
+      "description": "brushing a floor"
+    },
+    {
+      "verb": "cut",
+      "noun": "ginger",
+      "description": "cutting a ginger"
+    },
+    {
+      "verb": "take",
+      "noun": "peach",
+      "description": "taking a peach"
+    },
+    {
+      "verb": "turn",
+      "noun": "container",
+      "description": "turning a container"
+    },
+    {
+      "verb": "peel",
+      "noun": "skin",
+      "description": "peeling a skin"
+    },
+    {
+      "verb": "put",
+      "noun": "rice",
+      "description": "putting a rice"
+    },
+    {
+      "verb": "fold",
+      "noun": "bag",
+      "description": "folding a bag"
+    },
+    {
+      "verb": "take",
+      "noun": "cereal",
+      "description": "taking a cereal"
+    },
+    {
+      "verb": "put",
+      "noun": "tongs",
+      "description": "putting a tongs"
+    },
+    {
+      "verb": "insert",
+      "noun": "milk",
+      "description": "inserting a milk"
+    },
+    {
+      "verb": "cut",
+      "noun": "pizza",
+      "description": "cutting a pizza"
+    },
+    {
+      "verb": "fill",
+      "noun": "glass",
+      "description": "filling a glass"
+    },
+    {
+      "verb": "pour",
+      "noun": "spice",
+      "description": "pouring a spice"
+    },
+    {
+      "verb": "insert",
+      "noun": "coffee",
+      "description": "inserting a coffee"
+    },
+    {
+      "verb": "take",
+      "noun": "cover",
+      "description": "taking a cover"
+    },
+    {
+      "verb": "wash",
+      "noun": "juicer",
+      "description": "washing a juicer"
+    },
+    {
+      "verb": "put",
+      "noun": "clothes",
+      "description": "putting a clothes"
+    },
+    {
+      "verb": "put",
+      "noun": "wrap:plastic",
+      "description": "putting a plastic wrap"
+    },
+    {
+      "verb": "wash",
+      "noun": "jar",
+      "description": "washing a jar"
+    },
+    {
+      "verb": "take",
+      "noun": "tuna",
+      "description": "taking a tuna"
+    },
+    {
+      "verb": "take",
+      "noun": "rack:drying",
+      "description": "taking a drying rack"
+    },
+    {
+      "verb": "open",
+      "noun": "kettle",
+      "description": "opening a kettle"
+    },
+    {
+      "verb": "insert",
+      "noun": "dough",
+      "description": "inserting a dough"
+    },
+    {
+      "verb": "open",
+      "noun": "can",
+      "description": "opening a can"
+    },
+    {
+      "verb": "put",
+      "noun": "nut",
+      "description": "putting a nut"
+    },
+    {
+      "verb": "put",
+      "noun": "carrot",
+      "description": "putting a carrot"
+    },
+    {
+      "verb": "pour",
+      "noun": "food",
+      "description": "pouring a food"
+    },
+    {
+      "verb": "close",
+      "noun": "maker:coffee",
+      "description": "closing a coffee maker"
+    },
+    {
+      "verb": "fill",
+      "noun": "pan",
+      "description": "filling a pan"
+    },
+    {
+      "verb": "insert",
+      "noun": "broccoli",
+      "description": "inserting a broccoli"
+    },
+    {
+      "verb": "insert",
+      "noun": "tomato",
+      "description": "inserting a tomato"
+    },
+    {
+      "verb": "insert",
+      "noun": "pasta",
+      "description": "inserting a pasta"
+    },
+    {
+      "verb": "insert",
+      "noun": "filter",
+      "description": "inserting a filter"
+    },
+    {
+      "verb": "throw",
+      "noun": "bin",
+      "description": "throwing a bin"
+    },
+    {
+      "verb": "put",
+      "noun": "milk",
+      "description": "putting a milk"
+    },
+    {
+      "verb": "move",
+      "noun": "onion",
+      "description": "moving a onion"
+    },
+    {
+      "verb": "take",
+      "noun": "lettuce",
+      "description": "taking a lettuce"
+    },
+    {
+      "verb": "put",
+      "noun": "clip",
+      "description": "putting a clip"
+    },
+    {
+      "verb": "pour",
+      "noun": "stock",
+      "description": "pouring a stock"
+    },
+    {
+      "verb": "mix",
+      "noun": "coffee",
+      "description": "mixing a coffee"
+    },
+    {
+      "verb": "cut",
+      "noun": "meat",
+      "description": "cutting a meat"
+    },
+    {
+      "verb": "put",
+      "noun": "spice",
+      "description": "putting a spice"
+    },
+    {
+      "verb": "soak",
+      "noun": "sponge",
+      "description": "soaking a sponge"
+    },
+    {
+      "verb": "scoop",
+      "noun": "yoghurt",
+      "description": "scooping a yoghurt"
+    },
+    {
+      "verb": "put",
+      "noun": "blender",
+      "description": "putting a blender"
+    },
+    {
+      "verb": "remove",
+      "noun": "cheese",
+      "description": "removing a cheese"
+    },
+    {
+      "verb": "put",
+      "noun": "scale",
+      "description": "putting a scale"
+    },
+    {
+      "verb": "insert",
+      "noun": "dishwasher",
+      "description": "inserting a dishwasher"
+    },
+    {
+      "verb": "throw",
+      "noun": "napkin",
+      "description": "throwing a napkin"
+    },
+    {
+      "verb": "put",
+      "noun": "sausage",
+      "description": "putting a sausage"
+    },
+    {
+      "verb": "cut",
+      "noun": "dough",
+      "description": "cutting a dough"
+    },
+    {
+      "verb": "insert",
+      "noun": "garlic",
+      "description": "inserting a garlic"
+    },
+    {
+      "verb": "wash",
+      "noun": "leaf",
+      "description": "washing a leaf"
+    },
+    {
+      "verb": "insert",
+      "noun": "pot",
+      "description": "inserting a pot"
+    },
+    {
+      "verb": "remove",
+      "noun": "leaf",
+      "description": "removing a leaf"
+    },
+    {
+      "verb": "close",
+      "noun": "microwave",
+      "description": "closing a microwave"
+    },
+    {
+      "verb": "cut",
+      "noun": "package",
+      "description": "cutting a package"
+    },
+    {
+      "verb": "turn-on",
+      "noun": "maker:coffee",
+      "description": "turning on a coffee maker"
+    },
+    {
+      "verb": "put",
+      "noun": "lemon",
+      "description": "putting a lemon"
+    },
+    {
+      "verb": "form",
+      "noun": "dough",
+      "description": "forming a dough"
+    },
+    {
+      "verb": "put",
+      "noun": "juicer",
+      "description": "putting a juicer"
+    },
+    {
+      "verb": "pour",
+      "noun": "sugar",
+      "description": "pouring a sugar"
+    },
+    {
+      "verb": "coat",
+      "noun": "hand",
+      "description": "coating a hand"
+    },
+    {
+      "verb": "take",
+      "noun": "pie",
+      "description": "taking a pie"
+    },
+    {
+      "verb": "turn-off",
+      "noun": "blender",
+      "description": "turning off a blender"
+    },
+    {
+      "verb": "open",
+      "noun": "bread",
+      "description": "opening a bread"
+    },
+    {
+      "verb": "wash",
+      "noun": "brush",
+      "description": "washing a brush"
+    },
+    {
+      "verb": "scrape",
+      "noun": "egg",
+      "description": "scraping a egg"
+    },
+    {
+      "verb": "put",
+      "noun": "water",
+      "description": "putting a water"
+    },
+    {
+      "verb": "wash",
+      "noun": "rest",
+      "description": "washing a rest"
+    },
+    {
+      "verb": "open",
+      "noun": "salt",
+      "description": "opening a salt"
+    },
+    {
+      "verb": "cut",
+      "noun": "bread",
+      "description": "cutting a bread"
+    },
+    {
+      "verb": "wash",
+      "noun": "mushroom",
+      "description": "washing a mushroom"
+    },
+    {
+      "verb": "move",
+      "noun": "colander",
+      "description": "moving a colander"
+    },
+    {
+      "verb": "fold",
+      "noun": "towel",
+      "description": "folding a towel"
+    },
+    {
+      "verb": "move",
+      "noun": "cutlery",
+      "description": "moving a cutlery"
+    },
+    {
+      "verb": "take",
+      "noun": "stock",
+      "description": "taking a stock"
+    },
+    {
+      "verb": "mix",
+      "noun": "stock",
+      "description": "mixing a stock"
+    },
+    {
+      "verb": "fill",
+      "noun": "jug",
+      "description": "filling a jug"
+    },
+    {
+      "verb": "take",
+      "noun": "mixture",
+      "description": "taking a mixture"
+    },
+    {
+      "verb": "put",
+      "noun": "mixture",
+      "description": "putting a mixture"
+    },
+    {
+      "verb": "move",
+      "noun": "dough",
+      "description": "moving a dough"
+    },
+    {
+      "verb": "rip",
+      "noun": "paper",
+      "description": "riping a paper"
+    },
+    {
+      "verb": "shake",
+      "noun": "pan",
+      "description": "shaking a pan"
+    },
+    {
+      "verb": "squeeze",
+      "noun": "liquid:washing",
+      "description": "squeezing a washing liquid"
+    },
+    {
+      "verb": "take",
+      "noun": "scale",
+      "description": "taking a scale"
+    },
+    {
+      "verb": "feel",
+      "noun": "heat",
+      "description": "feeling a heat"
+    },
+    {
+      "verb": "rip",
+      "noun": "broccoli",
+      "description": "riping a broccoli"
+    },
+    {
+      "verb": "scrub",
+      "noun": "plate",
+      "description": "scrubing a plate"
+    },
+    {
+      "verb": "throw",
+      "noun": "food",
+      "description": "throwing a food"
+    },
+    {
+      "verb": "hang",
+      "noun": "cloth",
+      "description": "hanging a cloth"
+    },
+    {
+      "verb": "pour",
+      "noun": "mushroom",
+      "description": "pouring a mushroom"
+    },
+    {
+      "verb": "check",
+      "noun": "water",
+      "description": "checking a water"
+    },
+    {
+      "verb": "dry",
+      "noun": "plate",
+      "description": "drying a plate"
+    },
+    {
+      "verb": "put",
+      "noun": "sugar",
+      "description": "putting a sugar"
+    },
+    {
+      "verb": "cut",
+      "noun": "chicken",
+      "description": "cutting a chicken"
+    },
+    {
+      "verb": "fill",
+      "noun": "cup",
+      "description": "filling a cup"
+    },
+    {
+      "verb": "wash",
+      "noun": "tap",
+      "description": "washing a tap"
+    },
+    {
+      "verb": "check",
+      "noun": "heat",
+      "description": "checking a heat"
+    },
+    {
+      "verb": "wash",
+      "noun": "can",
+      "description": "washing a can"
+    },
+    {
+      "verb": "dry",
+      "noun": "spoon",
+      "description": "drying a spoon"
+    },
+    {
+      "verb": "pull",
+      "noun": "dishwasher",
+      "description": "pulling a dishwasher"
+    },
+    {
+      "verb": "cut",
+      "noun": "sausage",
+      "description": "cutting a sausage"
+    },
+    {
+      "verb": "break",
+      "noun": "rice",
+      "description": "breaking a rice"
+    },
+    {
+      "verb": "filter",
+      "noun": "plate",
+      "description": "filtering a plate"
+    },
+    {
+      "verb": "pour",
+      "noun": "onion",
+      "description": "pouring a onion"
+    },
+    {
+      "verb": "unroll",
+      "noun": "cloth",
+      "description": "unrolling a cloth"
+    },
+    {
+      "verb": "put",
+      "noun": "cereal",
+      "description": "putting a cereal"
+    },
+    {
+      "verb": "close",
+      "noun": "kettle",
+      "description": "closing a kettle"
+    },
+    {
       "verb": "cut",
       "noun": "vegetable",
       "description": "cutting a vegetable with a knife"
@@ -26,64 +2586,9 @@
       "description": "washing a dish in a sink"
     },
     {
-      "verb": "open",
-      "noun": "drawer",
-      "description": "pulling open a drawer"
-    },
-    {
-      "verb": "close",
-      "noun": "drawer",
-      "description": "pushing a drawer closed"
-    },
-    {
-      "verb": "open",
-      "noun": "cupboard",
-      "description": "opening a cupboard door"
-    },
-    {
-      "verb": "open",
-      "noun": "fridge",
-      "description": "opening a refrigerator door"
-    },
-    {
-      "verb": "pour",
-      "noun": "water",
-      "description": "pouring water into a container"
-    },
-    {
-      "verb": "pour",
-      "noun": "milk",
-      "description": "pouring milk into a cup"
-    },
-    {
       "verb": "stir",
       "noun": "food",
       "description": "stirring food in a bowl or pan"
-    },
-    {
-      "verb": "take",
-      "noun": "cup",
-      "description": "picking up a cup"
-    },
-    {
-      "verb": "put",
-      "noun": "cup",
-      "description": "putting down a cup on a surface"
-    },
-    {
-      "verb": "take",
-      "noun": "knife",
-      "description": "picking up a kitchen knife"
-    },
-    {
-      "verb": "take",
-      "noun": "spoon",
-      "description": "picking up a spoon"
-    },
-    {
-      "verb": "put",
-      "noun": "food",
-      "description": "placing food into a container"
     },
     {
       "verb": "crack",
@@ -126,11 +2631,6 @@
       "description": "folding clothes"
     },
     {
-      "verb": "open",
-      "noun": "bottle",
-      "description": "opening a bottle"
-    },
-    {
       "verb": "drink",
       "noun": "cup",
       "description": "drinking from a cup"
@@ -139,11 +2639,6 @@
       "verb": "take",
       "noun": "phone",
       "description": "picking up a phone"
-    },
-    {
-      "verb": "press",
-      "noun": "button",
-      "description": "pressing a button with a finger"
     }
   ],
   "categories": [

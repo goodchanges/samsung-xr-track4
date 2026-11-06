@@ -1,0 +1,213 @@
+{
+  "video_id": "P09_03",
+  "split": "evaluation",
+  "actions": [
+    {
+      "verb": "take",
+      "noun": "plate",
+      "start": 1.06,
+      "end": 3.8
+    },
+    {
+      "verb": "insert",
+      "noun": "plate",
+      "start": 3.8,
+      "end": 6.35
+    },
+    {
+      "verb": "open",
+      "noun": "dishwasher",
+      "start": 41.14,
+      "end": 43.03
+    },
+    {
+      "verb": "insert",
+      "noun": "plate",
+      "start": 43.13,
+      "end": 47.78
+    },
+    {
+      "verb": "insert",
+      "noun": "fork",
+      "start": 47.47,
+      "end": 49.72
+    },
+    {
+      "verb": "close",
+      "noun": "dishwasher",
+      "start": 50.07,
+      "end": 51.61
+    },
+    {
+      "verb": "take",
+      "noun": "spatula",
+      "start": 52.78,
+      "end": 54.09
+    },
+    {
+      "verb": "wash",
+      "noun": "spatula",
+      "start": 54.19,
+      "end": 57.09
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 57.19,
+      "end": 60.7
+    },
+    {
+      "verb": "put",
+      "noun": "liquid:washing",
+      "start": 63.23,
+      "end": 68.26
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 71.75,
+      "end": 77.93
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 77.43,
+      "end": 82.78999999999999
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 6.45,
+      "end": 10.78
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 83.89,
+      "end": 90.66
+    },
+    {
+      "verb": "wash",
+      "noun": "pan",
+      "start": 87.53999999999999,
+      "end": 95.2
+    },
+    {
+      "verb": "take",
+      "noun": "knife",
+      "start": 98.86,
+      "end": 99.82
+    },
+    {
+      "verb": "wash",
+      "noun": "knife",
+      "start": 100.53999999999999,
+      "end": 102.62
+    },
+    {
+      "verb": "take",
+      "noun": "board:chopping",
+      "start": 102.5,
+      "end": 103.3
+    },
+    {
+      "verb": "wash",
+      "noun": "board:chopping",
+      "start": 103.4,
+      "end": 107.65
+    },
+    {
+      "verb": "take",
+      "noun": "spatula",
+      "start": 109.44,
+      "end": 110.19
+    },
+    {
+      "verb": "wash",
+      "noun": "spatula",
+      "start": 110.35,
+      "end": 112.6
+    },
+    {
+      "verb": "wash",
+      "noun": "spatula",
+      "start": 114.2,
+      "end": 117.2
+    },
+    {
+      "verb": "wash",
+      "noun": "knife",
+      "start": 116.99000000000001,
+      "end": 120.24
+    },
+    {
+      "verb": "wash",
+      "noun": "spoon",
+      "start": 7.14,
+      "end": 7.99
+    },
+    {
+      "verb": "dry",
+      "noun": "spatula",
+      "start": 120.15,
+      "end": 124.0
+    },
+    {
+      "verb": "wash",
+      "noun": "board:chopping",
+      "start": 125.69,
+      "end": 130.59
+    },
+    {
+      "verb": "dry",
+      "noun": "board:chopping",
+      "start": 131.2,
+      "end": 132.95
+    },
+    {
+      "verb": "dry",
+      "noun": "hand",
+      "start": 135.64,
+      "end": 142.64
+    },
+    {
+      "verb": "put",
+      "noun": "plate",
+      "start": 14.67,
+      "end": 22.67
+    },
+    {
+      "verb": "put",
+      "noun": "plate",
+      "start": 22.11,
+      "end": 28.89
+    },
+    {
+      "verb": "close",
+      "noun": "dishwasher",
+      "start": 29.58,
+      "end": 31.95
+    },
+    {
+      "verb": "take",
+      "noun": "fork",
+      "start": 34.01,
+      "end": 34.93
+    },
+    {
+      "verb": "take",
+      "noun": "plate",
+      "start": 34.82,
+      "end": 35.57
+    },
+    {
+      "verb": "wash",
+      "noun": "plate",
+      "start": 35.38,
+      "end": 40.21
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

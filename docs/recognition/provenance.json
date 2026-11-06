@@ -1,0 +1,64 @@
+{
+  "mirror": "https://huggingface.co/datasets/mohammad2012191/epic_kitchens_100_256p",
+  "mirror_revision": "3297646177d552b615fdb09d3a6986cb3a7cb527",
+  "annotation_source": "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+  "files": {
+    "EPIC_100_noun_classes.csv": {
+      "bytes": 49357,
+      "sha256": "40f0a81c5bd06b33050df9f0bd17cd3c2fccd759f9581e4e5e04fec7562be893"
+    },
+    "EPIC_100_train.csv": {
+      "bytes": 8415872,
+      "sha256": "a3a7ef2e397bd8af12bd0496b09d61b1f2c1f3f6e1726fa86af50a27f4855e87"
+    },
+    "EPIC_100_validation.csv": {
+      "bytes": 1184998,
+      "sha256": "35f7932ba0a1127a96cac215a98d35398946f343e3cea9ad6688ed17eee9d75d"
+    },
+    "EPIC_100_verb_classes.csv": {
+      "bytes": 13402,
+      "sha256": "aab8bf210d0234b6facb9b191ae402c03a5f8965d123586b4762d3468a85033e"
+    },
+    "EPIC_100_video_info.csv": {
+      "bytes": 27721,
+      "sha256": "75fd040f6662cb407b4ca2eed4811ca94df280a1aba00b6bf8a5cd286deff382"
+    },
+    "P01_10.mp4": {
+      "bytes": 11726850,
+      "sha256": "705822dd1fcf08109c5cb554dc9ae4df35b5e212808eac7da563f4c4f7a0b236"
+    },
+    "P02_103.mp4": {
+      "bytes": 15566614,
+      "sha256": "2229dc93e27380176efd4fe3e30b416c186995bb3034129e70e37d39085c22ff"
+    },
+    "P03_17.mp4": {
+      "bytes": 11913763,
+      "sha256": "b790ef700cab60eb2493970a01a8a929e470aaf07fe55fc83272a00ac4a2ac1a"
+    },
+    "P04_07.mp4": {
+      "bytes": 12692360,
+      "sha256": "ec244f144721d9acd5d5ced641852b88837e97e029eb4c099458dd5e05fdf691"
+    },
+    "P05_05.mp4": {
+      "bytes": 11006056,
+      "sha256": "169f16ef8b3581262e828ea15a4638975a646ad20675501606e7f02f4653f4ce"
+    },
+    "P06_104.mp4": {
+      "bytes": 21583847,
+      "sha256": "149a4a6d26f00ceb0bb63df0aed8836734316dc46067d109255f253343f7dc62"
+    },
+    "P07_05.mp4": {
+      "bytes": 5657430,
+      "sha256": "96833559c9a398e7b5e32b260aefb6bc7f7f3b5878373cc7348250dcdd3e7f44"
+    },
+    "P08_19.mp4": {
+      "bytes": 16575391,
+      "sha256": "89ac9f281806318d37488cb649236e8f605f4428d438fe44fe4e395b93bd7910"
+    },
+    "P09_03.mp4": {
+      "bytes": 16911444,
+      "sha256": "db8e7a734a3c3db86f197a091ea3f64957860f798822f2de87724ee4a70a4a63"
+    }
+  },
+  "annotation_revision": "ea8b40457a400c3fffa1c7f406ef3dc169cc2522"
+}

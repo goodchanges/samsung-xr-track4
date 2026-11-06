@@ -8,6 +8,7 @@ from time import perf_counter
 from demo import build_demo
 from media import frames, probe, render
 from model import ROOT, Scorer
+from localization import localize
 from selection import FRAME_SECONDS, analyze
 from selection_baseline import analyze as baseline
 
@@ -18,8 +19,12 @@ def main():
     parser.add_argument("output", type=Path)
     parser.add_argument("--vocabulary", type=Path, default=ROOT / "code" / "vocabulary.json")
     parser.add_argument("--threads", type=int, default=min(4, os.cpu_count() or 1))
-    parser.add_argument("--selector", choices=("baseline", "duration"), default="baseline")
+    parser.add_argument("--selector", choices=("preserved", "baseline", "duration"), default="preserved")
     parser.add_argument("--unsmoothed", action="store_true")
+    parser.add_argument("--top-k", type=int, choices=(1, 3), default=1)
+    parser.add_argument("--adapter", type=Path)
+    parser.add_argument("--adapter-strength", type=float, default=.1)
+    parser.add_argument("--no-adapter", action="store_true")
     parser.add_argument("--demo", type=Path, metavar="DIR")
     args = parser.parse_args()
     source, output = args.video.resolve(), args.output.resolve()
@@ -40,12 +45,24 @@ def main():
         duration, audio = probe(source)
         if not 1 <= duration <= 600.05:
             raise ValueError("This prototype supports MP4 videos from 1 second to 10 minutes.")
-        scorer = Scorer(args.vocabulary, args.threads)
+        adapter = args.adapter
+        if adapter is None and not args.no_adapter and args.vocabulary.resolve() == (ROOT / "code/vocabulary.json").resolve():
+            adapter = ROOT / "weights/action_adapter.npz"
+        if args.no_adapter:
+            adapter = None
+        scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength)
         raw = frames(source, FRAME_SECONDS)
         scores, idle, embeddings, label = scorer.predict(raw)
         actions, highlights = analyze(scores, idle, embeddings, scorer.actions, duration, smoothing=not args.unsmoothed)
         if args.selector == "baseline":
             _, highlights = baseline(scores, idle, embeddings, scorer.actions, duration)
+        elif args.selector == "preserved":
+            original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer)
+            old_scores, old_idle, _, _ = original.predict(raw)
+            _, highlights = baseline(old_scores, old_idle, embeddings, original.actions, duration)
+        if args.top_k > 1:
+            actions = localize(scores, idle, embeddings, scorer.actions, duration,
+                               top_k=args.top_k, smoothing=not args.unsmoothed)
         result = dict(video_id=source.stem, label=label, actions=actions, highlights=highlights)
         if args.demo:
             render(source, reel, highlights, audio)

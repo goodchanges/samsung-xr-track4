@@ -1,0 +1,74 @@
+{
+  "scope": "Actual default outputs, provisional local metrics; no official validation",
+  "videos": [
+    {
+      "video_id": "P07_05",
+      "duration": 209.56,
+      "metrics": {
+        "coverage_at_half_action": 0.2,
+        "action_precision_tiou_0.1": 0.0,
+        "action_recall_tiou_0.1": 0.0,
+        "action_f1_tiou_0.1": 0.0,
+        "action_precision_tiou_0.3": 0.0,
+        "action_recall_tiou_0.3": 0.0,
+        "action_f1_tiou_0.3": 0.0,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.15
+      }
+    },
+    {
+      "video_id": "P08_19",
+      "duration": 137.59,
+      "metrics": {
+        "coverage_at_half_action": 0.0,
+        "action_precision_tiou_0.1": 0.0,
+        "action_recall_tiou_0.1": 0.0,
+        "action_f1_tiou_0.1": 0.0,
+        "action_precision_tiou_0.3": 0.0,
+        "action_recall_tiou_0.3": 0.0,
+        "action_f1_tiou_0.3": 0.0,
+        "action_precision_tiou_0.5": 0.0,
+        "action_recall_tiou_0.5": 0.0,
+        "action_f1_tiou_0.5": 0.0,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14999636601497204
+      }
+    },
+    {
+      "video_id": "P09_03",
+      "duration": 146.25,
+      "metrics": {
+        "coverage_at_half_action": 0.35,
+        "action_precision_tiou_0.1": 0.030303030303030304,
+        "action_recall_tiou_0.1": 0.058823529411764705,
+        "action_f1_tiou_0.1": 0.04,
+        "action_precision_tiou_0.3": 0.015151515151515152,
+        "action_recall_tiou_0.3": 0.029411764705882353,
+        "action_f1_tiou_0.3": 0.02,
+        "action_precision_tiou_0.5": 0.015151515151515152,
+        "action_recall_tiou_0.5": 0.029411764705882353,
+        "action_f1_tiou_0.5": 0.02,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14999658119658119
+      }
+    }
+  ],
+  "macro": {
+    "action_precision_tiou_0.1": 0.010101010101010102,
+    "action_recall_tiou_0.1": 0.0196078431372549,
+    "action_f1_tiou_0.1": 0.013333333333333334,
+    "action_precision_tiou_0.3": 0.005050505050505051,
+    "action_recall_tiou_0.3": 0.00980392156862745,
+    "action_f1_tiou_0.3": 0.006666666666666667,
+    "action_precision_tiou_0.5": 0.005050505050505051,
+    "action_recall_tiou_0.5": 0.00980392156862745,
+    "action_f1_tiou_0.5": 0.006666666666666667,
+    "coverage_at_half_action": 0.18333333333333335
+  }
+}

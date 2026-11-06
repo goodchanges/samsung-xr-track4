@@ -1,0 +1,159 @@
+{
+  "video_id": "P03_17",
+  "split": "fit",
+  "actions": [
+    {
+      "verb": "mix",
+      "noun": "food",
+      "start": 1.97,
+      "end": 5.95
+    },
+    {
+      "verb": "turn-down",
+      "noun": "hob",
+      "start": 6.31,
+      "end": 7.11
+    },
+    {
+      "verb": "put",
+      "noun": "plate",
+      "start": 69.98,
+      "end": 72.61
+    },
+    {
+      "verb": "take",
+      "noun": "spoon",
+      "start": 73.24,
+      "end": 74.14
+    },
+    {
+      "verb": "take",
+      "noun": "lid",
+      "start": 75.01,
+      "end": 76.16
+    },
+    {
+      "verb": "take",
+      "noun": "pan",
+      "start": 78.39,
+      "end": 79.16
+    },
+    {
+      "verb": "scoop",
+      "noun": "rice",
+      "start": 79.26,
+      "end": 81.05
+    },
+    {
+      "verb": "scoop",
+      "noun": "rice",
+      "start": 87.61,
+      "end": 103.85
+    },
+    {
+      "verb": "put",
+      "noun": "pan",
+      "start": 104.47,
+      "end": 105.41
+    },
+    {
+      "verb": "take",
+      "noun": "pan",
+      "start": 106.4,
+      "end": 109.53
+    },
+    {
+      "verb": "put",
+      "noun": "food",
+      "start": 110.37,
+      "end": 120.5
+    },
+    {
+      "verb": "put",
+      "noun": "food",
+      "start": 122.36,
+      "end": 129.08
+    },
+    {
+      "verb": "mix",
+      "noun": "food",
+      "start": 7.42,
+      "end": 17.05
+    },
+    {
+      "verb": "put",
+      "noun": "pan",
+      "start": 132.37,
+      "end": 135.27
+    },
+    {
+      "verb": "open",
+      "noun": "drawer",
+      "start": 137.88,
+      "end": 140.19
+    },
+    {
+      "verb": "take",
+      "noun": "knife",
+      "start": 140.49,
+      "end": 141.15
+    },
+    {
+      "verb": "take",
+      "noun": "fork",
+      "start": 141.53,
+      "end": 142.35
+    },
+    {
+      "verb": "take",
+      "noun": "fork",
+      "start": 143.21,
+      "end": 144.48
+    },
+    {
+      "verb": "mix",
+      "noun": "food",
+      "start": 11.74,
+      "end": 22.68
+    },
+    {
+      "verb": "take",
+      "noun": "pan",
+      "start": 22.75,
+      "end": 25.05
+    },
+    {
+      "verb": "put",
+      "noun": "pan",
+      "start": 23.65,
+      "end": 24.9
+    },
+    {
+      "verb": "mix",
+      "noun": "food",
+      "start": 40.5,
+      "end": 61.08
+    },
+    {
+      "verb": "turn-off",
+      "noun": "hob",
+      "start": 61.16,
+      "end": 62.51
+    },
+    {
+      "verb": "open",
+      "noun": "cupboard",
+      "start": 67.07,
+      "end": 67.68
+    },
+    {
+      "verb": "take",
+      "noun": "plate",
+      "start": 67.75,
+      "end": 69.28
+    }
+  ],
+  "source": "EPIC_100_train.csv; official canonical verb/noun class keys",
+  "highlights": null,
+  "label": null
+}

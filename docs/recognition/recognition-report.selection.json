@@ -1,0 +1,10 @@
+{
+  "config": {
+    "smoothing": true,
+    "strength": 0.1,
+    "top_k": 1
+  },
+  "objective": "Macro action F1 averaged over tIoU 0.1, 0.3, 0.5",
+  "baseline_development": 0.0043859649122807015,
+  "revised_development": 0.022186147186147188
+}
