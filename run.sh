@@ -8,4 +8,5 @@ elif [[ -x "$root/.venv/Scripts/python.exe" ]]; then
 else
   python="${PYTHON:-python3}"
 fi
+export HF_HUB_OFFLINE=1
 exec "$python" "$root/code/main.py" "$@"

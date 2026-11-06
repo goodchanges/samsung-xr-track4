@@ -14,7 +14,7 @@ def unit_scale(values):
 def analyze(scores, idle, embeddings, vocabulary, duration, smoothing=True):
     end = math.floor(duration * MILLISECONDS + 1e-6)
     step = FRAME_SECONDS * MILLISECONDS
-    budget = end * 15 // 100
+    budget = end * 145 // 1000
     length = min(len(scores), math.ceil(end / step))
     scores, idle, embeddings = scores[:length], idle[:length], embeddings[:length]
     before = np.maximum(np.arange(length) - 1, 0)

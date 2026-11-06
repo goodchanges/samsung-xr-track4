@@ -7,8 +7,9 @@ from time import perf_counter
 
 from demo import build_demo
 from media import frames, probe, render
-from model import ROOT, Scorer
+from model import ROOT, Scorer, load_supported_classes
 from localization import localize
+from output import clean_intervals
 from selection import FRAME_SECONDS, analyze
 from selection_baseline import analyze as baseline
 
@@ -18,6 +19,8 @@ def main():
     parser.add_argument("video", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--vocabulary", type=Path, default=ROOT / "code" / "vocabulary.json")
+    parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
+                        help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=min(4, os.cpu_count() or 1))
     parser.add_argument("--selector", choices=("preserved", "baseline", "duration"), default="preserved")
     parser.add_argument("--unsmoothed", action="store_true")
@@ -42,6 +45,9 @@ def main():
             parser.error("The demo output would overwrite the input video.")
     started = perf_counter()
     try:
+        supported = load_supported_classes(args.supported_classes)
+        if supported is not None:
+            raise ValueError(f"Loaded {supported[0]}. Class mapping requires the confirmed student-kit format.")
         duration, audio = probe(source)
         if not 1 <= duration <= 600.05:
             raise ValueError("This prototype supports MP4 videos from 1 second to 10 minutes.")
@@ -63,6 +69,7 @@ def main():
         if args.top_k > 1:
             actions = localize(scores, idle, embeddings, scorer.actions, duration,
                                top_k=args.top_k, smoothing=not args.unsmoothed)
+        actions, highlights = clean_intervals(actions, highlights, duration)
         result = dict(video_id=source.stem, label=label, actions=actions, highlights=highlights)
         if args.demo:
             render(source, reel, highlights, audio)

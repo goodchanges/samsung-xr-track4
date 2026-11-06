@@ -9,6 +9,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 from media import ffmpeg, frames, probe, SIZE
 from selection import analyze
+from selection_baseline import analyze as baseline
 from check_output import check
 
 VOCAB = [{"verb":"cut","noun":"carrot"}, {"verb":"wash","noun":"cup"}]
@@ -27,21 +28,22 @@ class PipelineChecks(unittest.TestCase):
             check(dict(video_id="fixture",label="test",actions=actions,highlights=highlights),
                   "fixture",duration)
             self.assertEqual((actions, highlights), analyze(*inputs))
-            self.assertLessEqual(sum(x["end"]-x["start"] for x in highlights),duration*.15+1e-8)
+            for selected in (highlights, baseline(*inputs)[1]):
+                self.assertLessEqual(sum(x["end"]-x["start"] for x in selected),duration*.145+1e-8)
 
     def test_partial_candidate_uses_retained_score(self):
         scores=np.array([[.12],[.4],[.4],[.4]])
         actions, highlights=analyze(scores,np.full(4,.1),np.tile([1.,0.],(4,1)),
                                    [VOCAB[0]],4)
         self.assertEqual(highlights[0]["start"],0)
-        self.assertEqual(highlights[0]["end"],.6)
+        self.assertEqual(highlights[0]["end"],.58)
         self.assertAlmostEqual(highlights[0]["importance"],.532,places=3)
 
     def test_all_idle(self):
         actions, highlights = analyze(np.zeros((120,2)),np.ones(120),
                                       np.tile([1.,0.],(120,1)),VOCAB,120)
         self.assertEqual(actions,[])
-        self.assertEqual(highlights,[{"start":51.0,"end":69.0,"importance":0.0}])
+        self.assertEqual(highlights,[{"start":51.3,"end":68.7,"importance":0.0}])
 
     def test_peripheral_content_and_bad_video(self):
         with tempfile.TemporaryDirectory(prefix="track4 spaces ") as folder:

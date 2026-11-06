@@ -5,7 +5,6 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from huggingface_hub import snapshot_download
 from PIL import Image
 from transformers import CLIPModel, CLIPProcessor
 
@@ -16,7 +15,17 @@ CHECKPOINT = ROOT / "weights" / "clip"
 MODEL_ID = "openai/clip-vit-base-patch32"
 
 
+def load_supported_classes(path):
+    """Read the kit document as JSON without assuming its class layout."""
+    try:
+        return path, json.loads(path.read_text(encoding="utf-8-sig"))
+    except FileNotFoundError:
+        return None
+
+
 def setup():
+    from huggingface_hub import snapshot_download
+
     snapshot_download(
         MODEL_ID, revision="3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
         local_dir=CHECKPOINT,
@@ -46,7 +55,7 @@ class Scorer:
         if not (CHECKPOINT / "pytorch_model.bin").is_file():
             raise ValueError("Model weights are missing. Run code/setup_model.py first.")
         if shared is None:
-            self.processor = CLIPProcessor.from_pretrained(CHECKPOINT, use_fast=False)
+            self.processor = CLIPProcessor.from_pretrained(CHECKPOINT, use_fast=False, local_files_only=True)
             with (CHECKPOINT / "pytorch_model.bin").open("rb") as handle:
                 self.checkpoint_hash = hashlib.file_digest(handle, "sha256").digest()
             self.model = CLIPModel.from_pretrained(CHECKPOINT, use_safetensors=False, local_files_only=True).eval()

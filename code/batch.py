@@ -7,8 +7,9 @@ from pathlib import Path
 
 from check_output import check
 from media import frames, probe
-from model import ROOT, Scorer
+from model import ROOT, Scorer, load_supported_classes
 from localization import localize
+from output import clean_intervals
 from selection import FRAME_SECONDS, analyze
 from selection_baseline import analyze as baseline
 
@@ -42,6 +43,8 @@ def main():
     parser.add_argument("videos", type=Path)
     parser.add_argument("outputs", type=Path)
     parser.add_argument("--vocabulary", type=Path, default=ROOT / "code" / "vocabulary.json")
+    parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
+                        help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--selector", choices=("preserved", "baseline", "duration"), default="preserved")
     parser.add_argument("--unsmoothed", action="store_true")
@@ -54,6 +57,12 @@ def main():
     parser.add_argument("--path-column", default="path")
     parser.add_argument("--validator", type=Path, help="Organizer's validate.py; run after ALL manifest outputs exist.")
     args = parser.parse_args()
+    try:
+        supported = load_supported_classes(args.supported_classes)
+    except (OSError, ValueError) as exc:
+        parser.error(str(exc))
+    if supported is not None:
+        parser.error(f"Loaded {supported[0]}. Class mapping requires the confirmed student-kit format.")
     if not args.videos.is_dir():
         parser.error("Supply an existing video directory.")
     if args.threads < 1:
@@ -101,6 +110,7 @@ def main():
         if args.top_k > 1:
             actions = localize(scores, idle, embeddings, scorer.actions, duration,
                                top_k=args.top_k, smoothing=not args.unsmoothed)
+        actions, highlights = clean_intervals(actions, highlights, duration)
         result = dict(video_id=video_id, label=label, actions=actions, highlights=highlights)
         check(result, video_id, duration)
         target = args.outputs / (video_id + ".json")

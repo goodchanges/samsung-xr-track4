@@ -29,6 +29,19 @@ CLIP ViT-B/32 scores one frame per second against 528 action-pair prompts and si
 
 The provisional vocabulary lives in code/vocabulary.json. Pass --vocabulary PATH to use the same structure with a different label set. CLIP sees still images, so it can confuse similar motions, miss short actions, or predict the wrong verb for a visible object. Challenge accuracy is unmeasured. Use --threads N to tune CPU usage.
 
+## Data used
+
+The fitted action adapter (`weights/action_adapter.npz`) records four source videos from the 256p mirror of the EPIC-KITCHENS-100 training split. The fitting input used the timestamped action rows for these IDs from `EPIC_100_train.csv`. Verb and noun class IDs were mapped to canonical keys using `EPIC_100_verb_classes.csv` and `EPIC_100_noun_classes.csv`.
+
+| Fitting video | Annotations used |
+| --- | --- |
+| `P01_10.mp4` | [P01_10.json](docs/recognition/annotations/P01_10.json) |
+| `P02_103.mp4` | [P02_103.json](docs/recognition/annotations/P02_103.json) |
+| `P03_17.mp4` | [P03_17.json](docs/recognition/annotations/P03_17.json) |
+| `P04_07.mp4` | [P04_07.json](docs/recognition/annotations/P04_07.json) |
+
+The local held-out evaluation used `P07_05`, `P08_19`, and `P09_03`, with no video or participant overlap with adapter fitting. The separate development split used `P05_05` and `P06_104` to select settings. Overlap with the official Samsung evaluation videos is unknown until the student-kit manifest is available. The [split assignments](docs/recognition/splits.json) and [source revisions and hashes](docs/recognition/provenance.json) record the inputs.
+
 ## Local verification
 
 Open `work/final-demo/index.html` for the prepared laptop demo. The 126-second input joins seven crops from the public EPIC-KITCHENS video wall. A cached run with the default selector produced 18.90 seconds of highlights and took 17.9 seconds including process startup. The synthetic 10-minute idle check produced zero predicted actions and 90 seconds of fallback footage. See [verification notes](docs/verification.md) for how these results were measured and what they establish.
