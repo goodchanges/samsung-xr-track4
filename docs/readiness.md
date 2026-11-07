@@ -4,7 +4,7 @@ These checks cover execution, portability and packaging. They do not provide off
 
 ## Real non-kitchen smoke test
 
-Source: [Kaninlandsbanan POV 2013](https://commons.wikimedia.org/wiki/File:Kaninlandsbanan_POV_2013.webm), Albin Olsson, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The Wikimedia 240p derivative was converted to H.264/AAC MP4, retaining the full 210 seconds. It is a public first-person amusement-ride recording, unrelated to Samsung's evaluation manifest. The downloaded video and generated reel remain under `work/`, outside Git and the submission archive.
+Source: [Kaninlandsbanan POV 2013](https://commons.wikimedia.org/wiki/File:Kaninlandsbanan_POV_2013.webm), Albin Olsson, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The Wikimedia 240p derivative was converted to H.264 MP4, retaining the full 210 seconds. It is a public first-person amusement-ride recording, with no audio track; overlap with Samsung's evaluation manifest is unknown. The downloaded video and generated reel remain under `work/`, outside Git and the submission archive.
 
 Source SHA-256: `a4ea97f377fc53de596c2d5f641f33182750feada19537f66be1e25eb11c4a9f`.
 MP4 SHA-256: `1ba613592c6a15f37141d5a6835c6897700ef51b3ccc78ea26aedcc22f9e4042`.
@@ -34,4 +34,6 @@ The package command rejects missing processor/tokenizer files, small LFS pointer
 
 ## Container verification
 
-The CI workflow now tests default and optional-temporal CPU images separately, using `--network none` at inference. It checks nonempty labels/highlights for valid media so an empty failure fallback cannot count as a pass. The temporal image additionally loads the real local checkpoint and runs the model directly. Docker is unavailable on the laptop; actual Linux CI results will be recorded after the run completes.
+The CI workflow now tests default and optional-temporal CPU images separately, using `--network none` at inference. It checks nonempty labels/highlights for valid media so an empty failure fallback cannot count as a pass. The temporal image additionally loads the real local checkpoint and runs the model directly. Docker is unavailable on the laptop. [Linux CI run 42295192380](https://github.com/goodchanges/samsung-xr-track4/actions/runs/42295192380) passed on commit 336a42c: the temporal image passed all 16 tests and directly executed the local TSM checkpoint; the default image passed 11 and skipped five optional tests. Both images processed a 120-second synthetic video at 14.5% and contained corrupt-input failures with networking disabled. The end-to-end temporal fixture used the generic route.
+
+The real non-kitchen reel measured 6.00 seconds, matching the selected intervals; both source and reel had no audio. In a mixed batch, the corrupt video produced fallback JSON and a failure report while a subsequent valid 2-second video was processed with a 0.29-second highlight. The batch exited 1 to flag the failure.
