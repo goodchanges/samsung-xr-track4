@@ -18,6 +18,7 @@ class PipelineOptions:
     temporal_model: Path | None
     temporal_context: int
     temporal_decoder: Path | None = None
+    kitchen_routing: str = "category"
 
 
 @dataclass
@@ -56,6 +57,9 @@ def infer_video(source, duration, raw, options: PipelineOptions, state: Pipeline
     kitchen, margin, fraction = (
         state.scorer.kitchen_confidence(embeddings) if options.temporal_model else (False, 0., 0.)
     )
+    if options.temporal_model and options.kitchen_routing == "scene":
+        from scene_gate import confidence
+        kitchen, margin, fraction = confidence(state.scorer, embeddings)
     route = "clip"
     if options.temporal_model:
         log_event(

@@ -57,6 +57,7 @@ def main():
     parser.add_argument("--temporal-context", type=int, choices=(2, 4),
                         help="Defaults to 2 for the temporal selector, otherwise 4.")
     parser.add_argument("--temporal-decoder", type=Path, help="Optional measured joint decoder profile; requires four-second TSM contexts.")
+    parser.add_argument("--kitchen-routing", choices=("category", "scene"), default="category", help="Experimental scene-based kitchen gate, or existing category gate.")
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--id-column", default="video_id")
     parser.add_argument("--path-column", default="path")
@@ -116,6 +117,7 @@ def main():
         temporal_model=args.temporal_model,
         temporal_context=context,
         temporal_decoder=args.temporal_decoder,
+        kitchen_routing=args.kitchen_routing,
     )
     args.outputs.mkdir(parents=True, exist_ok=True)
     report = []

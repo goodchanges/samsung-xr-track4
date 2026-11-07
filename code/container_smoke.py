@@ -28,7 +28,14 @@ def main():
         assert np.isfinite(verbs).all() and np.isfinite(nouns).all()
         np.testing.assert_allclose(verbs.sum(axis=1), 1., atol=1e-5)
         np.testing.assert_allclose(nouns.sum(axis=1), 1., atol=1e-5)
+        from joint_decoder import joint_segments, load_profile
+        classes = json.loads((root / "weights/temporal/classes.json").read_text())
+        association, strength, switch_cost = load_profile(root / "weights/temporal_decoder.npz")
+        decoded = joint_segments(verbs, nouns, classes, .5, association, strength, switch_cost)
+        assert len(decoded) == 1 and decoded[0]["start"] == 0. and decoded[0]["end"] == .5
         extra = ["--temporal-model", str(root / "weights/temporal/tsm_rgb.ckpt"), "--selector", "temporal"]
+        extra += ["--temporal-decoder", str(root / "weights/temporal_decoder.npz"),
+                  "--temporal-context", "4", "--kitchen-routing", "scene"]
         print("Local temporal checkpoint inference passed", flush=True)
     output = folder / "idle.json"
     run = subprocess.run([str(root / "run.sh"), str(video), str(output), *extra], capture_output=True, text=True)

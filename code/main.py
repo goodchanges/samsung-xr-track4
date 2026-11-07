@@ -32,6 +32,7 @@ def main():
     parser.add_argument("--temporal-context", type=int, choices=(2, 4),
                         help="Defaults to 2 for the temporal selector, otherwise 4.")
     parser.add_argument("--temporal-decoder", type=Path, help="Optional measured joint decoder profile; requires four-second TSM contexts.")
+    parser.add_argument("--kitchen-routing", choices=("category", "scene"), default="category", help="Experimental scene-based kitchen gate, or existing category gate.")
     parser.add_argument("--demo", type=Path, metavar="DIR")
     args = parser.parse_args()
     if args.selector == "temporal" and not args.temporal_model:
@@ -76,6 +77,7 @@ def main():
             temporal_model=args.temporal_model,
             temporal_context=context,
             temporal_decoder=args.temporal_decoder,
+            kitchen_routing=args.kitchen_routing,
         )
         inferred = infer_video(source, duration, raw, options, PipelineState(scorer=scorer, original=original))
         log_event(
