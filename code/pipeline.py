@@ -17,6 +17,7 @@ class PipelineOptions:
     threads: int
     temporal_model: Path | None
     temporal_context: int
+    temporal_decoder: Path | None = None
 
 
 @dataclass
@@ -77,8 +78,9 @@ def infer_video(source, duration, raw, options: PipelineOptions, state: Pipeline
                     "Install optional model dependencies: python -m pip install -r requirements-temporal.txt"
                 ) from exc
             state.temporal = TemporalRecognizer(options.temporal_model, options.threads)
+        extra = dict(decoder_path=options.temporal_decoder) if options.temporal_decoder else {}
         actions = state.temporal.recognize(
-            source, duration, options.temporal_model.parent / "classes.json", options.temporal_context
+            source, duration, options.temporal_model.parent / "classes.json", options.temporal_context, **extra
         )
         if options.selector == "temporal":
             from temporal_selection import select

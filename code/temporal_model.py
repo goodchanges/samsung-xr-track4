@@ -98,13 +98,19 @@ class TemporalRecognizer(nn.Module):
             temporary.unlink(missing_ok=True)
         return verbs, nouns
 
-    def recognize(self, video, duration, classes_path, context_seconds=4, smoothing=1, top_k=1):
+    def recognize(self, video, duration, classes_path, context_seconds=4, smoothing=1, top_k=1, decoder_path=None):
         """Decode cached clip scores; class names come from EPIC, not a kit guess."""
         classes = json.loads(classes_path.read_text(encoding="utf-8"))
         for kind, count in (("verb", 97), ("noun", 300)):
             if len(classes[kind]) != count or not all(isinstance(x, str) and x for x in classes[kind]):
                 raise ValueError(f"Expected {count} EPIC {kind} names")
         verbs, nouns = self.score_video(video, duration, context_seconds)
+        if decoder_path is not None:
+            if context_seconds != 4 or smoothing != 1 or top_k != 1:
+                raise ValueError("The measured joint decoder requires four-second contexts, no smoothing and top-k 1")
+            from joint_decoder import joint_segments, load_profile
+            association, strength, switch_cost = load_profile(decoder_path)
+            return joint_segments(verbs, nouns, classes, duration, association, strength, switch_cost)
         return decode(verbs, nouns, classes, duration, smoothing, top_k)
 
 

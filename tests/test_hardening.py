@@ -78,6 +78,9 @@ class HardeningChecks(unittest.TestCase):
             self.assertEqual(result.actions, temporal.recognize.return_value)
         self.assertEqual(temporal.recognize.call_count, 2)
         temporal.recognize.assert_called_with(Path("v.mp4"), 3., Path("classes.json"), 4)
+        options = PipelineOptions("duration", False, 1, 1, Path("local.ckpt"), 4, Path("profile.npz"))
+        infer_video(Path("v.mp4"), 3., b"raw", options, state)
+        temporal.recognize.assert_called_with(Path("v.mp4"), 3., Path("classes.json"), 4, decoder_path=Path("profile.npz"))
 
     def test_config_version_is_pinned(self):
         self.assertRegex(CONFIG_VERSION, r"^\d{4}-\d{2}-\d{2}\.v\d+$")

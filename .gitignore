@@ -6,6 +6,7 @@ __pycache__/
 htmlcov/
 weights/*
 !weights/action_adapter.npz
+!weights/temporal_decoder.npz
 !weights/README.md
 !weights/clip/
 weights/clip/*

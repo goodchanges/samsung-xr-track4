@@ -10,6 +10,27 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
 @unittest.skipUnless(importlib.util.find_spec("torchvision"), "Optional temporal dependencies not installed")
 class TemporalChecks(unittest.TestCase):
+    def test_joint_decoder_zero_profile_reproduces_independent_decode(self):
+        import numpy as np
+        from joint_decoder import joint_segments
+        from temporal_model import decode
+        classes = dict(verb=['take', 'put'], noun=['cup', 'plate'])
+        verbs = np.array([[.8, .2], [.4, .6], [.1, .9]])
+        nouns = np.array([[.7, .3], [.1, .9], [.3, .7]])
+        self.assertEqual(joint_segments(verbs, nouns, classes, 2.4, np.zeros((2, 2)), 0., 0.),
+                         decode(verbs, nouns, classes, 2.4))
+
+    def test_joint_decoder_continuity_and_pair_association(self):
+        import numpy as np
+        from joint_decoder import joint_segments
+        classes = dict(verb=['take', 'put'], noun=['cup'])
+        verbs = np.array([[.9, .1], [.49, .51], [.9, .1]])
+        nouns = np.ones((3, 1))
+        result = joint_segments(verbs, nouns, classes, 2.4, np.zeros((2, 1)), 0., 1.)
+        self.assertEqual(result, [dict(verb='take', noun='cup', start=0., end=2.4)])
+        associated = joint_segments(verbs, nouns, classes, 2.4, np.array([[-10.], [0.]]), 1., 0.)
+        self.assertEqual(associated, [dict(verb='put', noun='cup', start=0., end=2.4)])
+
     def test_shift_does_not_mix_separate_clips(self):
         import torch
         from temporal_model import Shift

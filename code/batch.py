@@ -56,6 +56,7 @@ def main():
                         help="Optional EPIC TSM checkpoint; classes.json must be alongside it.")
     parser.add_argument("--temporal-context", type=int, choices=(2, 4),
                         help="Defaults to 2 for the temporal selector, otherwise 4.")
+    parser.add_argument("--temporal-decoder", type=Path, help="Optional measured joint decoder profile; requires four-second TSM contexts.")
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--id-column", default="video_id")
     parser.add_argument("--path-column", default="path")
@@ -66,6 +67,8 @@ def main():
     if args.selector == "temporal" and not args.temporal_model:
         parser.error("--selector temporal requires --temporal-model.")
     context = args.temporal_context or (2 if args.selector == "temporal" else 4)
+    if args.temporal_decoder and (not args.temporal_model or context != 4):
+        parser.error("--temporal-decoder requires --temporal-model and --temporal-context 4.")
     try:
         supported = load_supported_classes(args.supported_classes)
     except (OSError, ValueError) as exc:
@@ -112,6 +115,7 @@ def main():
         threads=args.threads,
         temporal_model=args.temporal_model,
         temporal_context=context,
+        temporal_decoder=args.temporal_decoder,
     )
     args.outputs.mkdir(parents=True, exist_ok=True)
     report = []
