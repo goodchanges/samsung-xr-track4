@@ -1,4 +1,4 @@
-"""Download a public real-world POV fixture, not challenge or training data."""
+"""Download a public real-world POV fixture, not model tuning."""
 import hashlib
 import json
 from pathlib import Path
@@ -30,7 +30,7 @@ def main():
                               "-preset", "veryfast", "-pix_fmt", "yuv420p", "-c:a", "aac", video), check=True)
     record = dict(source_page=PAGE, download_url=URL, author="Albin Olsson",
                   license="CC BY-SA 3.0", license_url="https://creativecommons.org/licenses/by-sa/3.0/",
-                  modifications="Wikimedia 240p transcode converted to H.264/AAC MP4; full duration retained",
+                  modifications="Wikimedia 240p transcode converted to H.264 MP4; full duration retained",
                   use="Non-kitchen smoke test only; no training, tuning or action annotations",
                   source_sha256=hashlib.sha256(original.read_bytes()).hexdigest(),
                   mp4_sha256=hashlib.sha256(video.read_bytes()).hexdigest())

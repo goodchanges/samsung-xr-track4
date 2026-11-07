@@ -1,6 +1,6 @@
 # Samsung XR Challenge 2026 Â· Track 4
 
-Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verbâ€“noun predictions, a category, and chronological highlight intervals within 15% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.
+Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verbâ€“noun predictions, a category, and chronological highlight intervals within 14.5% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.
 
 ## Run on this Windows laptop
 
@@ -49,7 +49,7 @@ The local held-out evaluation used `P07_05`, `P08_19`, and `P09_03`, with no vid
 
 ## Local verification
 
-Open `work/final-demo/index.html` for the prepared laptop demo. The 126-second input joins seven crops from the public EPIC-KITCHENS video wall. A cached run with the default selector produced 18.90 seconds of highlights and took 17.9 seconds including process startup. The synthetic 10-minute idle check produced zero predicted actions and 90 seconds of fallback footage. See [verification notes](docs/verification.md) for how these results were measured and what they establish.
+Open `work/final-demo/index.html` for the prepared laptop demo. The 126-second input joins seven crops from the public EPIC-KITCHENS video wall. Those historical runs predate the 14.5% safety margin and are not final-settings outputs. See [verification notes](docs/verification.md) for how these results were measured and what they establish.
 
 ## Official submission handoff
 
@@ -102,7 +102,7 @@ With the venv active, install `python -m pip install -r requirements-temporal.tx
 python code/batch.py VIDEO_DIRECTORY OUTPUT_DIRECTORY --temporal-model weights/temporal/tsm_rgb.ckpt
 ```
 
-Omit the flag to retain plain CLIP. By default the optional model replaces action predictions only; CLIP still chooses highlights and the video-level label. Add `--selector temporal` to use the tested temporal highlight selector as well. The four JSON keys and 14.5% budget are unchanged. No training is needed, and inference makes no model downloads. The current Dockerfile installs only the default CLIP dependencies and does not enable this optional model. Samsung model/data permissions and exact vocabulary remain pending.
+Omit the flag to retain plain CLIP. By default the optional model replaces action predictions only; CLIP still chooses highlights and the video-level label. Add `--selector temporal` to use the tested temporal highlight selector as well. The four JSON keys and 14.5% budget are unchanged. No training is needed, and inference makes no model downloads. The Docker image supports optional temporal dependencies with `--build-arg ENABLE_TEMPORAL=1`. Samsung model/data permissions and exact vocabulary remain pending.
 
 ## Final verification round
 
@@ -110,7 +110,7 @@ Video-level labels are data-driven: normalized CLIP frame embeddings are compare
 
 Historical development results: four-second TSM action F1 4.82%, selected two-second candidate 6.52%; preserved highlight coverage 20.37%, temporal selector 24.07%. Reserved three-video results: CLIP F1 0.37%, four-second TSM 9.69%, two-second TSM 7.58%; preserved coverage 13.09%, two-second temporal selection 25.34%, uniform coverage 15.22%. The shorter context was rejected as the recognition default. These are small, kitchen-specific, three-video local splits, using local metrics—not Samsung scores. Human highlight agreement and real non-kitchen accuracy remain unmeasured. See `docs/recognition/refinement.md` for definitions and frozen-selection evidence. Do not infer final gated accuracy from these historical ungated results.
 
-Actual final-settings edge tests all exited zero: 2-second clip, 600-second synthetic color video, no-audio clip, 160x120/12-fps clip, physically rotated 240x426 clip, and corrupt input. Readable cases stayed within 14.5%; corrupt input wrote empty actions/highlights and an empty label. Raw results and stderr are in [final-audit.json](docs/final-audit.json). The ten-minute synthetic run took 76.787 seconds wall time with a sampled peak summed process-tree RSS of 854.531 MiB (50-ms sampling, not unique physical memory). It used the generic route and is not a ten-minute TSM or real-world accuracy benchmark. No real non-kitchen recording was available. All 14 unit tests passed.
+Actual final-settings edge tests all exited zero: 2-second clip, 600-second synthetic color video, no-audio clip, 160x120/12-fps clip, physically rotated 240x426 clip, and corrupt input. Readable cases stayed within 14.5%; corrupt input wrote empty actions/highlights and an empty label. Raw results and stderr are in [final-audit.json](docs/final-audit.json). The ten-minute synthetic run took 76.787 seconds wall time with a sampled peak summed process-tree RSS of 854.531 MiB (50-ms sampling, not unique physical memory). It used the generic route and is not a ten-minute TSM or real-world accuracy benchmark. At that stage no real non-kitchen recording was available and all 14 unit tests passed; see the readiness update for later checks.
 
 `run.sh` and `run.cmd` contain inference/import failures, log the reason to stderr, write the current four-key fallback JSON and exit zero. Empty label means classification was unavailable. This passes the existing provisional format checker, but official vocabulary/schema validity cannot be guaranteed before the kit arrives. A killed process, missing Python interpreter, absent output argument, unwritable output path, or a request to overwrite the input cannot be guaranteed to produce JSON. Downstream users must inspect stderr and empty outputs rather than treating exit zero as inference success.
 
@@ -128,17 +128,12 @@ Exact PowerShell run commands, from the repository root:
 
 Setup requires network access; inference uses local weights. No further tuning experiments were performed in this final round.
 
-## Engineering hardening updates
-
-- Shared pipeline orchestration now lives in `code/pipeline.py` and is used by both `code/main.py` and `code/batch.py` to reduce drift risk.
-- Thresholds used by routing/localization/selection are centralized and versioned in `code/config.py` (`CONFIG_VERSION`).
-- Structured JSON-line telemetry is emitted to stderr through `code/structured_log.py` for route decisions, completion timing and failures.
-- CI now enforces a coverage threshold and includes a performance guardrail (`code/perf_guardrail.py`) in addition to offline container smoke checks.
-
-See [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) for go/no-go release gates and exact validation commands.
-
 ## Kit-independent readiness update
+
+The shared inference path is in `code/pipeline.py`, with unchanged default recognition settings and versioned constants in `code/config.py`. Route and completion logs are JSON lines on stderr. CI measures coverage specifically for the refactored pipeline, localization, normalization and selection modules; it does not claim whole-project coverage. Its performance guardrail validates actual output as well as runtime and sampled memory. See `RELEASE_CHECKLIST.md` for release commands.
 
 A real 210-second non-kitchen recording has now been tested. Routing selected the generic path and labeled it `outdoors`, but its three action predictions were unsupported by inspected source frames and its highlight was only six seconds. This does not establish non-kitchen accuracy. Full provenance, output and limitations are in [readiness.md](docs/readiness.md).
 
 Batch continues after per-video inference failures and writes a status report outside the submission folder. Inspect `work/batch-report.json` or pass `--report PATH`; a failed batch exits 1 after writing each video's result. Package preparation checks all required local CLIP assets and rejects LFS pointer files. Student-kit schema, vocabulary, official outputs and official validation remain pending.
+
+Both CPU images passed [Linux CI](https://github.com/goodchanges/samsung-xr-track4/actions/runs/42295192380) with inference networking disabled. The temporal image passed all 16 tests and directly executed the local TSM checkpoint; the default image passed 11 tests and skipped five optional tests. Both processed a 120-second synthetic video and a corrupt input. The end-to-end temporal-image fixture used the generic route.

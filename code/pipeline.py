@@ -52,7 +52,9 @@ def infer_video(source, duration, raw, options: PipelineOptions, state: Pipeline
             scores, idle, embeddings, state.scorer.actions, duration,
             top_k=options.top_k, smoothing=not options.unsmoothed
         )
-    kitchen, margin, fraction = state.scorer.kitchen_confidence(embeddings)
+    kitchen, margin, fraction = (
+        state.scorer.kitchen_confidence(embeddings) if options.temporal_model else (False, 0., 0.)
+    )
     route = "clip"
     if options.temporal_model:
         log_event(

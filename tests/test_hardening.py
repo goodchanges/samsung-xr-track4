@@ -3,6 +3,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import Mock, patch
 
 import numpy as np
 
@@ -11,6 +12,7 @@ from batch import manifest_entries
 from config import CONFIG_VERSION
 from output import clean_intervals
 from pipeline import InferenceResult, PipelineOptions, PipelineState, infer_video
+from perf_guardrail import validate_result
 
 
 class FakeScorer:
@@ -41,6 +43,42 @@ class FakeOriginal(FakeScorer):
 
 
 class HardeningChecks(unittest.TestCase):
+    def test_perf_guardrail_rejects_failure_fallback(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / "out.json"
+            output.write_text(json.dumps(dict(video_id="v", label="", actions=[], highlights=[])))
+            with self.assertRaisesRegex(ValueError, "empty failure output"):
+                validate_result(output, "v", 30.)
+
+    def test_clip_route_does_not_query_kitchen_gate(self):
+        scorer = FakeScorer()
+        scorer.kitchen_confidence = Mock(side_effect=AssertionError("Unexpected kitchen gate"))
+        options = PipelineOptions("preserved", False, 3, 1, None, 4)
+        result = infer_video(Path("v.mp4"), 3., b"raw", options, PipelineState(scorer, FakeOriginal()))
+        self.assertEqual(result.route, "clip")
+        scorer.kitchen_confidence.assert_not_called()
+
+    def test_rejected_kitchen_route_does_not_load_temporal_model(self):
+        options = PipelineOptions("temporal", False, 1, 1, Path("absent.ckpt"), 2)
+        state = PipelineState(FakeScorer())
+        result = infer_video(Path("v.mp4"), 3., b"raw", options, state)
+        self.assertEqual(result.route, "generic_clip_temporal_selector")
+        self.assertIsNone(state.temporal)
+
+    def test_accepted_kitchen_route_reuses_model_and_context(self):
+        scorer = FakeScorer()
+        scorer.kitchen_confidence = lambda _: (True, .1, 1.)
+        temporal = Mock()
+        temporal.recognize.return_value = [dict(verb="take", noun="cup", start=0., end=1.)]
+        options = PipelineOptions("duration", False, 1, 1, Path("local.ckpt"), 4)
+        state = PipelineState(scorer, temporal=temporal)
+        for _ in range(2):
+            result = infer_video(Path("v.mp4"), 3., b"raw", options, state)
+            self.assertEqual(result.route, "kitchen_tsm")
+            self.assertEqual(result.actions, temporal.recognize.return_value)
+        self.assertEqual(temporal.recognize.call_count, 2)
+        temporal.recognize.assert_called_with(Path("v.mp4"), 3., Path("classes.json"), 4)
+
     def test_config_version_is_pinned(self):
         self.assertRegex(CONFIG_VERSION, r"^\d{4}-\d{2}-\d{2}\.v\d+$")
 
