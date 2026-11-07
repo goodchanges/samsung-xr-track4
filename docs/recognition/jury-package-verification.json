@@ -1,0 +1,24 @@
+{
+  "code_revision": "b3d8780",
+  "archive_sha256": "f27ffe96466a8d05361e50a25d7a40ddba834fd242460febce256ebbda7f5044",
+  "archive_bytes": 502995556,
+  "fresh_venv": true,
+  "install": "pip install -r requirements.txt only",
+  "pip_check": "No broken requirements found.",
+  "arguments": [
+    "run.sh",
+    "P01_12.mp4",
+    "work/verification.json"
+  ],
+  "actions_match_evaluated_profile": true,
+  "actions": 54,
+  "selected_seconds": 25.201999999999998,
+  "source_seconds": 173.81,
+  "runtime": {
+    "exit_code": 0,
+    "elapsed_seconds": 157.84362369999963,
+    "peak_sampled_rss_bytes": 1348739072,
+    "sample_interval_seconds": 0.05
+  },
+  "official_validator_available": false
+}

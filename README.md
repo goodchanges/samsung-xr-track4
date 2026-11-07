@@ -4,6 +4,8 @@ Solo prototype for action-aware video summarization. The runner reads a first-pe
 
 ## Run on this Windows laptop
 
+For the measured scene/joint profile, install `requirements-temporal.txt`, prepare the temporal weights with `python code/setup_temporal.py`, then run `./run.sh input.mp4 output.json --profile improved` (or `run.cmd` on Windows). Plain CLIP remains the source checkout default. The [strict mock jury review](docs/jury-review.md) records current weaknesses, error counts and the selector comparison.
+
 Open PowerShell in this folder.
 
     .\run.cmd "path\to\recording.mp4" "outputs\recording.json" --demo "work\recording-demo"
@@ -72,6 +74,10 @@ Create a prototype archive with the registered identifier:
     python code/package.py VelloreInstituteOfTechnologyVellore_VIT PATH_TO_NEW_ZIP
 
 The archive includes local weights. Keep outputs/ reserved for official per-video outputs once the manifest arrives. Local fixture results belong under work/verification/.
+
+To package the improved profile for the required two-argument command, add `--profile improved` to the package command. That archive includes an internal preset and all temporal dependencies in its root `requirements.txt`; after installing dependencies, `./run.sh video.mp4 out.json` activates the measured profile. Its selector was chosen on development coverage. Use `--profile clip` to opt out. All packages remain provisional until organizer validation is available.
+
+The jury-review revision passed 36 local tests and both offline Linux Docker configurations. A new Windows venv installed only the improved archive's requirements, then its bare runner processed a 173.81-second recording in 157.84 seconds with an empty application cache. Its outputs matched the measured profile. Detailed evidence and remaining limitations are in [the review](docs/jury-review.md).
 
 ## Run with Docker
 

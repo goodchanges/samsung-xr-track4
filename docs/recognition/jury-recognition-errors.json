@@ -1,0 +1,455 @@
+{
+  "scope": "Reused local three-video comparison. Greedy matching at tIoU .1; descriptive error buckets, not Samsung scores.",
+  "total": {
+    "matched": 33,
+    "both_labels_missing_at_time": 63,
+    "no_prediction_with_temporal_overlap": 10,
+    "verb_present_noun_missing": 26,
+    "noun_present_verb_missing": 32,
+    "duplicate_or_competing_instance": 1
+  },
+  "results": [
+    {
+      "video_id": "P01_12",
+      "counts": {
+        "matched": 15,
+        "both_labels_missing_at_time": 22,
+        "no_prediction_with_temporal_overlap": 8,
+        "verb_present_noun_missing": 6,
+        "noun_present_verb_missing": 10,
+        "duplicate_or_competing_instance": 1
+      },
+      "examples": {
+        "both_labels_missing_at_time": [
+          {
+            "ground_truth": {
+              "verb": "take",
+              "noun": "cutlery",
+              "start": 6.79,
+              "end": 10.5
+            },
+            "predictions": [
+              {
+                "verb": "put",
+                "noun": "lid",
+                "start": 6.0,
+                "end": 10.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "open",
+              "noun": "cupboard",
+              "start": 31.35,
+              "end": 32.42
+            },
+            "predictions": [
+              {
+                "verb": "take",
+                "noun": "board:chopping",
+                "start": 31.0,
+                "end": 33.0
+              }
+            ]
+          }
+        ],
+        "no_prediction_with_temporal_overlap": [
+          {
+            "ground_truth": {
+              "verb": "close",
+              "noun": "drawer",
+              "start": 27.28,
+              "end": 27.98
+            },
+            "predictions": []
+          },
+          {
+            "ground_truth": {
+              "verb": "close",
+              "noun": "cupboard",
+              "start": 67.1,
+              "end": 67.64
+            },
+            "predictions": []
+          }
+        ],
+        "verb_present_noun_missing": [
+          {
+            "ground_truth": {
+              "verb": "take",
+              "noun": "tray",
+              "start": 38.07,
+              "end": 41.62
+            },
+            "predictions": [
+              {
+                "verb": "take",
+                "noun": "board:chopping",
+                "start": 40.0,
+                "end": 42.0
+              },
+              {
+                "verb": "put",
+                "noun": "bowl",
+                "start": 39.0,
+                "end": 40.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "take",
+              "noun": "bowl",
+              "start": 60.21,
+              "end": 63.75
+            },
+            "predictions": [
+              {
+                "verb": "put",
+                "noun": "cup",
+                "start": 62.0,
+                "end": 64.0
+              },
+              {
+                "verb": "take",
+                "noun": "box",
+                "start": 59.0,
+                "end": 62.0
+              }
+            ]
+          }
+        ],
+        "noun_present_verb_missing": [
+          {
+            "ground_truth": {
+              "verb": "open",
+              "noun": "cupboard",
+              "start": 64.87,
+              "end": 66.06
+            },
+            "predictions": [
+              {
+                "verb": "close",
+                "noun": "cupboard",
+                "start": 64.0,
+                "end": 71.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "remove",
+              "noun": "cupboard",
+              "start": 66.07,
+              "end": 67.16
+            },
+            "predictions": [
+              {
+                "verb": "close",
+                "noun": "cupboard",
+                "start": 64.0,
+                "end": 71.0
+              }
+            ]
+          }
+        ],
+        "duplicate_or_competing_instance": [
+          {
+            "ground_truth": {
+              "verb": "close",
+              "noun": "cupboard",
+              "start": 90.78999999999999,
+              "end": 92.06
+            },
+            "predictions": [
+              {
+                "verb": "close",
+                "noun": "cupboard",
+                "start": 90.0,
+                "end": 97.0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "video_id": "P06_12",
+      "counts": {
+        "matched": 9,
+        "noun_present_verb_missing": 9,
+        "both_labels_missing_at_time": 5,
+        "verb_present_noun_missing": 7
+      },
+      "examples": {
+        "noun_present_verb_missing": [
+          {
+            "ground_truth": {
+              "verb": "open",
+              "noun": "fridge",
+              "start": 1.02,
+              "end": 2.66
+            },
+            "predictions": [
+              {
+                "verb": "take",
+                "noun": "towel:kitchen",
+                "start": 0.0,
+                "end": 2.0
+              },
+              {
+                "verb": "close",
+                "noun": "fridge",
+                "start": 2.0,
+                "end": 7.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "wrap",
+              "noun": "bag",
+              "start": 39.23,
+              "end": 43.56
+            },
+            "predictions": [
+              {
+                "verb": "hang",
+                "noun": "towel",
+                "start": 40.0,
+                "end": 43.0
+              },
+              {
+                "verb": "take",
+                "noun": "bag",
+                "start": 37.0,
+                "end": 40.0
+              }
+            ]
+          }
+        ],
+        "both_labels_missing_at_time": [
+          {
+            "ground_truth": {
+              "verb": "take",
+              "noun": "pea",
+              "start": 2.89,
+              "end": 5.3
+            },
+            "predictions": [
+              {
+                "verb": "close",
+                "noun": "fridge",
+                "start": 2.0,
+                "end": 7.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "open",
+              "noun": "fridge",
+              "start": 46.25,
+              "end": 47.29
+            },
+            "predictions": [
+              {
+                "verb": "close",
+                "noun": "microwave",
+                "start": 46.0,
+                "end": 47.0
+              }
+            ]
+          }
+        ],
+        "verb_present_noun_missing": [
+          {
+            "ground_truth": {
+              "verb": "pour",
+              "noun": "pea",
+              "start": 25.68,
+              "end": 34.37
+            },
+            "predictions": [
+              {
+                "verb": "scoop",
+                "noun": "sauce",
+                "start": 31.0,
+                "end": 34.0
+              },
+              {
+                "verb": "take",
+                "noun": "bag",
+                "start": 27.0,
+                "end": 29.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "close",
+              "noun": "fridge",
+              "start": 51.24,
+              "end": 53.68
+            },
+            "predictions": [
+              {
+                "verb": "close",
+                "noun": "freezer",
+                "start": 47.0,
+                "end": 53.0
+              },
+              {
+                "verb": "put",
+                "noun": "box",
+                "start": 53.0,
+                "end": 55.0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "video_id": "P11_22",
+      "counts": {
+        "matched": 9,
+        "both_labels_missing_at_time": 36,
+        "noun_present_verb_missing": 13,
+        "verb_present_noun_missing": 13,
+        "no_prediction_with_temporal_overlap": 2
+      },
+      "examples": {
+        "both_labels_missing_at_time": [
+          {
+            "ground_truth": {
+              "verb": "turn-off",
+              "noun": "oven",
+              "start": 1.1,
+              "end": 2.0
+            },
+            "predictions": [
+              {
+                "verb": "close",
+                "noun": "cupboard",
+                "start": 0.0,
+                "end": 2.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "close",
+              "noun": "cupboard",
+              "start": 36.32,
+              "end": 37.01
+            },
+            "predictions": [
+              {
+                "verb": "open",
+                "noun": "drawer",
+                "start": 35.0,
+                "end": 37.0
+              }
+            ]
+          }
+        ],
+        "noun_present_verb_missing": [
+          {
+            "ground_truth": {
+              "verb": "turn-off",
+              "noun": "hob",
+              "start": 2.1,
+              "end": 3.14
+            },
+            "predictions": [
+              {
+                "verb": "adjust",
+                "noun": "hob",
+                "start": 2.0,
+                "end": 4.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "put",
+              "noun": "board:chopping",
+              "start": 30.4,
+              "end": 32.12
+            },
+            "predictions": [
+              {
+                "verb": "take",
+                "noun": "jug",
+                "start": 31.0,
+                "end": 35.0
+              },
+              {
+                "verb": "take",
+                "noun": "board:chopping",
+                "start": 27.0,
+                "end": 31.0
+              }
+            ]
+          }
+        ],
+        "verb_present_noun_missing": [
+          {
+            "ground_truth": {
+              "verb": "put",
+              "noun": "colander",
+              "start": 25.0,
+              "end": 27.43
+            },
+            "predictions": [
+              {
+                "verb": "put",
+                "noun": "pan",
+                "start": 23.0,
+                "end": 27.0
+              }
+            ]
+          },
+          {
+            "ground_truth": {
+              "verb": "open",
+              "noun": "cupboard",
+              "start": 35.09,
+              "end": 36.0
+            },
+            "predictions": [
+              {
+                "verb": "open",
+                "noun": "drawer",
+                "start": 35.0,
+                "end": 37.0
+              }
+            ]
+          }
+        ],
+        "no_prediction_with_temporal_overlap": [
+          {
+            "ground_truth": {
+              "verb": "insert",
+              "noun": "vegetable",
+              "start": 88.97,
+              "end": 89.97
+            },
+            "predictions": []
+          },
+          {
+            "ground_truth": {
+              "verb": "put",
+              "noun": "pot",
+              "start": 17.05,
+              "end": 18.08
+            },
+            "predictions": []
+          }
+        ]
+      }
+    }
+  ]
+}

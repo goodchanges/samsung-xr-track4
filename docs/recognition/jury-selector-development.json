@@ -1,0 +1,642 @@
+{
+  "summary": {
+    "preserved": 0.20370370370370372,
+    "temporal": 0.1597222222222222,
+    "uniform": 0.10185185185185186
+  },
+  "rows": [
+    {
+      "video_id": "P28_18",
+      "selector": "preserved",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 10.0,
+          "end": 14.0,
+          "importance": 0.4023
+        },
+        {
+          "start": 30.0,
+          "end": 31.0,
+          "importance": 0.4036
+        },
+        {
+          "start": 32.0,
+          "end": 33.439,
+          "importance": 0.3637
+        },
+        {
+          "start": 35.0,
+          "end": 37.0,
+          "importance": 0.3719
+        },
+        {
+          "start": 52.0,
+          "end": 53.0,
+          "importance": 0.432
+        },
+        {
+          "start": 89.0,
+          "end": 90.0,
+          "importance": 0.4009
+        },
+        {
+          "start": 90.0,
+          "end": 93.0,
+          "importance": 0.3843
+        },
+        {
+          "start": 108.0,
+          "end": 112.0,
+          "importance": 0.3756
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.1111111111111111,
+        "action_precision_tiou_0.1": 0.08571428571428572,
+        "action_recall_tiou_0.1": 0.11538461538461539,
+        "action_f1_tiou_0.1": 0.09836065573770492,
+        "action_precision_tiou_0.3": 0.08571428571428572,
+        "action_recall_tiou_0.3": 0.11538461538461539,
+        "action_f1_tiou_0.3": 0.09836065573770492,
+        "action_precision_tiou_0.5": 0.05714285714285714,
+        "action_recall_tiou_0.5": 0.07692307692307693,
+        "action_f1_tiou_0.5": 0.06557377049180328,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.1449987528061861
+      }
+    },
+    {
+      "video_id": "P28_18",
+      "selector": "uniform",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 5.14155,
+          "end": 6.88545,
+          "importance": 0.0
+        },
+        {
+          "start": 17.168550000000003,
+          "end": 18.91245,
+          "importance": 0.0
+        },
+        {
+          "start": 29.195550000000004,
+          "end": 30.93945,
+          "importance": 0.0
+        },
+        {
+          "start": 41.22255,
+          "end": 42.966449999999995,
+          "importance": 0.0
+        },
+        {
+          "start": 53.249550000000006,
+          "end": 54.99345,
+          "importance": 0.0
+        },
+        {
+          "start": 65.27655,
+          "end": 67.02045,
+          "importance": 0.0
+        },
+        {
+          "start": 77.30355,
+          "end": 79.04745,
+          "importance": 0.0
+        },
+        {
+          "start": 89.33055,
+          "end": 91.07445,
+          "importance": 0.0
+        },
+        {
+          "start": 101.35755,
+          "end": 103.10145,
+          "importance": 0.0
+        },
+        {
+          "start": 113.38455,
+          "end": 115.12845,
+          "importance": 0.0
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.05555555555555555,
+        "action_precision_tiou_0.1": 0.08571428571428572,
+        "action_recall_tiou_0.1": 0.11538461538461539,
+        "action_f1_tiou_0.1": 0.09836065573770492,
+        "action_precision_tiou_0.3": 0.08571428571428572,
+        "action_recall_tiou_0.3": 0.11538461538461539,
+        "action_f1_tiou_0.3": 0.09836065573770492,
+        "action_precision_tiou_0.5": 0.05714285714285714,
+        "action_recall_tiou_0.5": 0.07692307692307693,
+        "action_f1_tiou_0.5": 0.06557377049180328,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14499875280618582
+      }
+    },
+    {
+      "video_id": "P28_18",
+      "selector": "temporal",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 10.0,
+          "end": 12.0,
+          "importance": 0.7382484376430511
+        },
+        {
+          "start": 12.0,
+          "end": 14.0,
+          "importance": 0.8361333310604095
+        },
+        {
+          "start": 50.0,
+          "end": 52.0,
+          "importance": 0.46281662583351135
+        },
+        {
+          "start": 59.5,
+          "end": 60.939,
+          "importance": 0.5236827122245588
+        },
+        {
+          "start": 74.0,
+          "end": 76.0,
+          "importance": 0.5050118118524551
+        },
+        {
+          "start": 77.0,
+          "end": 79.0,
+          "importance": 0.548039436340332
+        },
+        {
+          "start": 79.0,
+          "end": 81.0,
+          "importance": 0.7024727463722229
+        },
+        {
+          "start": 85.0,
+          "end": 87.0,
+          "importance": 0.6264889538288116
+        },
+        {
+          "start": 89.0,
+          "end": 91.0,
+          "importance": 0.5040973275899887
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.16666666666666666,
+        "action_precision_tiou_0.1": 0.08571428571428572,
+        "action_recall_tiou_0.1": 0.11538461538461539,
+        "action_f1_tiou_0.1": 0.09836065573770492,
+        "action_precision_tiou_0.3": 0.08571428571428572,
+        "action_recall_tiou_0.3": 0.11538461538461539,
+        "action_f1_tiou_0.3": 0.09836065573770492,
+        "action_precision_tiou_0.5": 0.05714285714285714,
+        "action_recall_tiou_0.5": 0.07692307692307693,
+        "action_f1_tiou_0.5": 0.06557377049180328,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.1449987528061861
+      }
+    },
+    {
+      "video_id": "P09_08",
+      "selector": "preserved",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 3.0,
+          "end": 4.0,
+          "importance": 0.3502
+        },
+        {
+          "start": 24.0,
+          "end": 27.0,
+          "importance": 0.3238
+        },
+        {
+          "start": 33.0,
+          "end": 34.0,
+          "importance": 0.3057
+        },
+        {
+          "start": 56.0,
+          "end": 57.0,
+          "importance": 0.4019
+        },
+        {
+          "start": 75.0,
+          "end": 76.0,
+          "importance": 0.2822
+        },
+        {
+          "start": 84.0,
+          "end": 86.336,
+          "importance": 0.2835
+        },
+        {
+          "start": 93.0,
+          "end": 95.0,
+          "importance": 0.5174
+        },
+        {
+          "start": 104.0,
+          "end": 105.0,
+          "importance": 0.3187
+        },
+        {
+          "start": 108.0,
+          "end": 109.0,
+          "importance": 0.3567
+        },
+        {
+          "start": 118.0,
+          "end": 120.0,
+          "importance": 0.3657
+        },
+        {
+          "start": 120.0,
+          "end": 123.0,
+          "importance": 0.3661
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.1875,
+        "action_precision_tiou_0.1": 0.13333333333333333,
+        "action_recall_tiou_0.1": 0.2222222222222222,
+        "action_f1_tiou_0.1": 0.16666666666666666,
+        "action_precision_tiou_0.3": 0.1111111111111111,
+        "action_recall_tiou_0.3": 0.18518518518518517,
+        "action_f1_tiou_0.3": 0.1388888888888889,
+        "action_precision_tiou_0.5": 0.044444444444444446,
+        "action_recall_tiou_0.5": 0.07407407407407407,
+        "action_f1_tiou_0.5": 0.05555555555555555,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14499446465285465
+      }
+    },
+    {
+      "video_id": "P09_08",
+      "selector": "uniform",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 5.406199999999999,
+          "end": 7.2398,
+          "importance": 0.0
+        },
+        {
+          "start": 18.052200000000003,
+          "end": 19.8858,
+          "importance": 0.0
+        },
+        {
+          "start": 30.6982,
+          "end": 32.5318,
+          "importance": 0.0
+        },
+        {
+          "start": 43.344199999999994,
+          "end": 45.1778,
+          "importance": 0.0
+        },
+        {
+          "start": 55.990199999999994,
+          "end": 57.8238,
+          "importance": 0.0
+        },
+        {
+          "start": 68.6362,
+          "end": 70.46979999999999,
+          "importance": 0.0
+        },
+        {
+          "start": 81.2822,
+          "end": 83.1158,
+          "importance": 0.0
+        },
+        {
+          "start": 93.9282,
+          "end": 95.7618,
+          "importance": 0.0
+        },
+        {
+          "start": 106.57419999999999,
+          "end": 108.40779999999998,
+          "importance": 0.0
+        },
+        {
+          "start": 119.22019999999999,
+          "end": 121.05379999999998,
+          "importance": 0.0
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.1875,
+        "action_precision_tiou_0.1": 0.13333333333333333,
+        "action_recall_tiou_0.1": 0.2222222222222222,
+        "action_f1_tiou_0.1": 0.16666666666666666,
+        "action_precision_tiou_0.3": 0.1111111111111111,
+        "action_recall_tiou_0.3": 0.18518518518518517,
+        "action_f1_tiou_0.3": 0.1388888888888889,
+        "action_precision_tiou_0.5": 0.044444444444444446,
+        "action_recall_tiou_0.5": 0.07407407407407407,
+        "action_f1_tiou_0.5": 0.05555555555555555,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.1449944646528543
+      }
+    },
+    {
+      "video_id": "P09_08",
+      "selector": "temporal",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 7.0,
+          "end": 9.0,
+          "importance": 0.9644423425197601
+        },
+        {
+          "start": 10.0,
+          "end": 12.0,
+          "importance": 0.9954683780670166
+        },
+        {
+          "start": 19.0,
+          "end": 21.0,
+          "importance": 0.9985917508602142
+        },
+        {
+          "start": 47.0,
+          "end": 49.0,
+          "importance": 0.9901804029941559
+        },
+        {
+          "start": 63.0,
+          "end": 65.0,
+          "importance": 0.625320702791214
+        },
+        {
+          "start": 93.0,
+          "end": 95.0,
+          "importance": 0.6425658166408539
+        },
+        {
+          "start": 95.0,
+          "end": 97.0,
+          "importance": 0.575271725654602
+        },
+        {
+          "start": 103.5,
+          "end": 105.5,
+          "importance": 0.7994675636291504
+        },
+        {
+          "start": 116.0,
+          "end": 116.336,
+          "importance": 0.6568556427955627
+        },
+        {
+          "start": 120.0,
+          "end": 122.0,
+          "importance": 0.9519443809986115
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.25,
+        "action_precision_tiou_0.1": 0.13333333333333333,
+        "action_recall_tiou_0.1": 0.2222222222222222,
+        "action_f1_tiou_0.1": 0.16666666666666666,
+        "action_precision_tiou_0.3": 0.1111111111111111,
+        "action_recall_tiou_0.3": 0.18518518518518517,
+        "action_f1_tiou_0.3": 0.1388888888888889,
+        "action_precision_tiou_0.5": 0.044444444444444446,
+        "action_recall_tiou_0.5": 0.07407407407407407,
+        "action_f1_tiou_0.5": 0.05555555555555555,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14499446465285465
+      }
+    },
+    {
+      "video_id": "P07_17",
+      "selector": "preserved",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 1.0,
+          "end": 2.0,
+          "importance": 0.1626
+        },
+        {
+          "start": 5.0,
+          "end": 7.274,
+          "importance": 0.4228
+        },
+        {
+          "start": 10.0,
+          "end": 11.0,
+          "importance": 0.4224
+        },
+        {
+          "start": 12.0,
+          "end": 15.0,
+          "importance": 0.3746
+        },
+        {
+          "start": 45.0,
+          "end": 46.0,
+          "importance": 0.4636
+        },
+        {
+          "start": 46.0,
+          "end": 50.0,
+          "importance": 0.3695
+        },
+        {
+          "start": 95.0,
+          "end": 97.0,
+          "importance": 0.3601
+        },
+        {
+          "start": 122.0,
+          "end": 123.0,
+          "importance": 0.4531
+        },
+        {
+          "start": 124.0,
+          "end": 128.0,
+          "importance": 0.3328
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.3125,
+        "action_precision_tiou_0.1": 0.06818181818181818,
+        "action_recall_tiou_0.1": 0.11538461538461539,
+        "action_f1_tiou_0.1": 0.08571428571428572,
+        "action_precision_tiou_0.3": 0.06818181818181818,
+        "action_recall_tiou_0.3": 0.11538461538461539,
+        "action_f1_tiou_0.3": 0.08571428571428572,
+        "action_precision_tiou_0.5": 0.022727272727272728,
+        "action_recall_tiou_0.5": 0.038461538461538464,
+        "action_f1_tiou_0.5": 0.02857142857142857,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14499360565711278
+      }
+    },
+    {
+      "video_id": "P07_17",
+      "selector": "uniform",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 5.6828,
+          "end": 7.610200000000001,
+          "importance": 0.0
+        },
+        {
+          "start": 18.975800000000003,
+          "end": 20.903200000000002,
+          "importance": 0.0
+        },
+        {
+          "start": 32.2688,
+          "end": 34.196200000000005,
+          "importance": 0.0
+        },
+        {
+          "start": 45.5618,
+          "end": 47.489200000000004,
+          "importance": 0.0
+        },
+        {
+          "start": 58.854800000000004,
+          "end": 60.78220000000001,
+          "importance": 0.0
+        },
+        {
+          "start": 72.1478,
+          "end": 74.07520000000001,
+          "importance": 0.0
+        },
+        {
+          "start": 85.44080000000001,
+          "end": 87.36820000000002,
+          "importance": 0.0
+        },
+        {
+          "start": 98.7338,
+          "end": 100.66120000000001,
+          "importance": 0.0
+        },
+        {
+          "start": 112.0268,
+          "end": 113.9542,
+          "importance": 0.0
+        },
+        {
+          "start": 125.3198,
+          "end": 127.2472,
+          "importance": 0.0
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0625,
+        "action_precision_tiou_0.1": 0.06818181818181818,
+        "action_recall_tiou_0.1": 0.11538461538461539,
+        "action_f1_tiou_0.1": 0.08571428571428572,
+        "action_precision_tiou_0.3": 0.06818181818181818,
+        "action_recall_tiou_0.3": 0.11538461538461539,
+        "action_f1_tiou_0.3": 0.08571428571428572,
+        "action_precision_tiou_0.5": 0.022727272727272728,
+        "action_recall_tiou_0.5": 0.038461538461538464,
+        "action_f1_tiou_0.5": 0.02857142857142857,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14499360565711308
+      }
+    },
+    {
+      "video_id": "P07_17",
+      "selector": "temporal",
+      "route": "kitchen_tsm",
+      "highlights": [
+        {
+          "start": 0.0,
+          "end": 1.274,
+          "importance": 0.3911654404605764
+        },
+        {
+          "start": 10.0,
+          "end": 12.0,
+          "importance": 0.5366535484790802
+        },
+        {
+          "start": 23.0,
+          "end": 25.0,
+          "importance": 0.8686886131763458
+        },
+        {
+          "start": 29.0,
+          "end": 31.0,
+          "importance": 0.5225888043642044
+        },
+        {
+          "start": 34.0,
+          "end": 36.0,
+          "importance": 0.6477900743484497
+        },
+        {
+          "start": 41.0,
+          "end": 43.0,
+          "importance": 0.6026880145072937
+        },
+        {
+          "start": 49.0,
+          "end": 51.0,
+          "importance": 0.7245709896087646
+        },
+        {
+          "start": 73.0,
+          "end": 75.0,
+          "importance": 0.5876056849956512
+        },
+        {
+          "start": 118.0,
+          "end": 120.0,
+          "importance": 0.6564584672451019
+        },
+        {
+          "start": 124.0,
+          "end": 126.0,
+          "importance": 0.5230331569910049
+        }
+      ],
+      "metrics": {
+        "coverage_at_half_action": 0.0625,
+        "action_precision_tiou_0.1": 0.06818181818181818,
+        "action_recall_tiou_0.1": 0.11538461538461539,
+        "action_f1_tiou_0.1": 0.08571428571428572,
+        "action_precision_tiou_0.3": 0.06818181818181818,
+        "action_recall_tiou_0.3": 0.11538461538461539,
+        "action_f1_tiou_0.3": 0.08571428571428572,
+        "action_precision_tiou_0.5": 0.022727272727272728,
+        "action_recall_tiou_0.5": 0.038461538461538464,
+        "action_f1_tiou_0.5": 0.02857142857142857,
+        "highlight_f1_at_10hz": null,
+        "label_correct": null,
+        "selected_fraction": 0.14499360565711278
+      }
+    }
+  ]
+}

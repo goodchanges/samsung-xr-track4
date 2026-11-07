@@ -1,0 +1,22 @@
+{
+  "selected": "preserved",
+  "context": 4,
+  "recognition": "scene/joint",
+  "development_ids": [
+    "P28_18",
+    "P09_08",
+    "P07_17"
+  ],
+  "comparison_ids": [
+    "P01_12",
+    "P06_12",
+    "P11_22"
+  ],
+  "summary": {
+    "preserved": 0.20370370370370372,
+    "temporal": 0.1597222222222222,
+    "uniform": 0.10185185185185186
+  },
+  "frozen_at": "2026-11-07T07:09:35.551822+00:00",
+  "recognition_profile_sha256": "e855dac98e3743339380632223325eb1a0abfde9ce318ffad013f9590131a92f"
+}
