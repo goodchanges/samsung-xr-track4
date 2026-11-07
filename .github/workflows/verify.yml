@@ -14,9 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build CPU image and fetch pinned model
-        run: docker build --build-arg DOWNLOAD_WEIGHTS=1 --build-arg ENABLE_TEMPORAL=${{ matrix.temporal }} -t track4 .
+        run: docker build --build-arg DOWNLOAD_WEIGHTS=1 --build-arg INSTALL_TEST_TOOLS=1 --build-arg ENABLE_TEMPORAL=${{ matrix.temporal }} -t track4 .
       - name: Run focused regression checks
         run: docker run --rm --network none --entrypoint python track4 -m unittest discover -s tests -v
+      - name: Enforce refactored pipeline coverage threshold
+        if: matrix.temporal == 1
+        run: |
+          docker run --rm --network none --entrypoint bash track4 -lc "
+            coverage run -m unittest discover -s tests -v &&
+            coverage report --include='*/code/config.py,*/code/pipeline.py,*/code/localization.py,*/code/output.py,*/code/selection*.py,*/code/temporal_selection.py' --fail-under=70
+          "
       - name: Verify actual inference offline (failure fallback cannot pass)
         run: |
           if [ "${{ matrix.temporal }}" = "1" ]; then
@@ -24,3 +31,6 @@ jobs:
           else
             docker run --rm --network none --entrypoint python track4 code/container_smoke.py
           fi
+      - name: Performance guardrail
+        if: matrix.temporal == 0
+        run: docker run --rm --network none --entrypoint python track4 code/perf_guardrail.py --max-seconds 120 --max-rss-bytes 2200000000

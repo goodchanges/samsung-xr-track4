@@ -8,10 +8,9 @@ from pathlib import Path
 from check_output import check
 from media import frames, probe
 from model import ROOT, Scorer, load_supported_classes
-from localization import localize
-from output import clean_intervals
-from selection import FRAME_SECONDS, analyze
-from selection_baseline import analyze as baseline
+from pipeline import PipelineOptions, PipelineState, infer_video
+from selection import FRAME_SECONDS
+from structured_log import log_event
 
 
 def manifest_entries(manifest, root, id_column="video_id", path_column="path"):
@@ -105,7 +104,15 @@ def main():
         adapter = None
     scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength)
     original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer) if args.selector == "preserved" else None
-    temporal = None
+    state = PipelineState(scorer=scorer, original=original, temporal=None)
+    options = PipelineOptions(
+        selector=args.selector,
+        unsmoothed=args.unsmoothed,
+        top_k=args.top_k,
+        threads=args.threads,
+        temporal_model=args.temporal_model,
+        temporal_context=context,
+    )
     args.outputs.mkdir(parents=True, exist_ok=True)
     report = []
     for video_id, video in entries:
@@ -114,39 +121,15 @@ def main():
             if not 1 <= duration <= 600.05:
                 raise ValueError(f"Unsupported duration for {video.name}")
             raw = frames(video, FRAME_SECONDS)
-            scores, idle, embeddings, label = scorer.predict(raw)
-            actions, highlights = analyze(scores, idle, embeddings, scorer.actions, duration,
-                                          smoothing=not args.unsmoothed)
-            if args.selector == "baseline":
-                _, highlights = baseline(scores, idle, embeddings, scorer.actions, duration)
-            elif original is not None:
-                old_scores, old_idle, _, _ = original.predict(raw)
-                _, highlights = baseline(old_scores, old_idle, embeddings, original.actions, duration)
-            if args.top_k > 1:
-                actions = localize(scores, idle, embeddings, scorer.actions, duration,
-                                   top_k=args.top_k, smoothing=not args.unsmoothed)
-            kitchen, margin, fraction = scorer.kitchen_confidence(embeddings) if args.temporal_model else (False, 0., 0.)
-            if args.temporal_model and not kitchen:
-                from temporal_selection import generic_select
-                highlights = generic_select(actions, scores, scorer.actions, embeddings, duration, highlights)
-                print("Route: generic CLIP + temporal selector", file=sys.stderr)
-            if args.temporal_model and kitchen:
-                if temporal is None:
-                    from temporal_model import TemporalRecognizer
-                    temporal = TemporalRecognizer(args.temporal_model, args.threads)
-                actions = temporal.recognize(video, duration, args.temporal_model.parent / "classes.json", context)
-                if args.selector == "temporal":
-                    from temporal_selection import select
-                    verbs, nouns = temporal.score_video(video, duration, context)
-                    classes = json.loads((args.temporal_model.parent / "classes.json").read_text(encoding="utf-8"))
-                    highlights = select(actions, verbs, nouns, classes, embeddings, duration)
-            actions, highlights = clean_intervals(actions, highlights, duration)
-            result = dict(video_id=video_id, label=label, actions=actions, highlights=highlights)
+            inferred = infer_video(video, duration, raw, options, state)
+            log_event("batch_video_route", video_id=video_id, route=inferred.route)
+            result = dict(video_id=video_id, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights)
             check(result, video_id, duration)
             report.append(dict(video_id=video_id, status="ok"))
         except Exception as exc:
             reason = f"{type(exc).__name__}: {exc}"
             print(f"Batch failure [{video_id}]: {reason}", file=sys.stderr)
+            log_event("batch_video_failed", video_id=video_id, reason=reason)
             result = dict(video_id=video_id, label="", actions=[], highlights=[])
             report.append(dict(video_id=video_id, status="failed", reason=reason))
         target = args.outputs / (video_id + ".json")

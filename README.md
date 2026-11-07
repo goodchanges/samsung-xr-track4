@@ -130,6 +130,8 @@ Setup requires network access; inference uses local weights. No further tuning e
 
 ## Kit-independent readiness update
 
+The shared inference path is in `code/pipeline.py`, with unchanged default recognition settings and versioned constants in `code/config.py`. Route and completion logs are JSON lines on stderr. CI measures coverage specifically for the refactored pipeline, localization, normalization and selection modules; it does not claim whole-project coverage. Its performance guardrail validates actual output as well as runtime and sampled memory. See `RELEASE_CHECKLIST.md` for release commands.
+
 A real 210-second non-kitchen recording has now been tested. Routing selected the generic path and labeled it `outdoors`, but its three action predictions were unsupported by inspected source frames and its highlight was only six seconds. This does not establish non-kitchen accuracy. Full provenance, output and limitations are in [readiness.md](docs/readiness.md).
 
 Batch continues after per-video inference failures and writes a status report outside the submission folder. Inspect `work/batch-report.json` or pass `--report PATH`; a failed batch exits 1 after writing each video's result. Package preparation checks all required local CLIP assets and rejects LFS pointer files. Student-kit schema, vocabulary, official outputs and official validation remain pending.

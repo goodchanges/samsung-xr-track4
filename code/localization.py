@@ -1,5 +1,6 @@
 """Localize concurrent action hypotheses without forcing one action per frame."""
 import numpy as np
+from config import LOCALIZATION
 
 
 def localize(scores, idle, embeddings, vocabulary, duration, top_k=3, smoothing=True):
@@ -15,8 +16,10 @@ def localize(scores, idle, embeddings, vocabulary, duration, top_k=3, smoothing=
     np.put_along_axis(active, ranks, True, axis=1)
     margin = scores - idle[:, None]
     # Additional hypotheses must be close to the best action and beat idle.
-    active &= scores >= scores.max(axis=1, keepdims=True) - .025
-    active &= (margin > .005) & ((change[:, None] > .012) | (margin > .045))
+    active &= scores >= scores.max(axis=1, keepdims=True) - LOCALIZATION.topk_delta
+    active &= (margin > LOCALIZATION.margin_low) & (
+        (change[:, None] > LOCALIZATION.change_low) | (margin > LOCALIZATION.margin_high)
+    )
     actions = []
     for label in np.flatnonzero(active.any(axis=0)):
         transitions = np.diff(np.r_[False, active[:, label], False].astype(int))

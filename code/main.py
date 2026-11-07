@@ -1,17 +1,15 @@
 import argparse
 import json
 import os
-import sys
 from pathlib import Path
 from time import perf_counter
 
 from demo import build_demo
 from media import frames, probe, render
 from model import ROOT, Scorer, load_supported_classes
-from localization import localize
-from output import clean_intervals
-from selection import FRAME_SECONDS, analyze
-from selection_baseline import analyze as baseline
+from pipeline import PipelineOptions, PipelineState, infer_video
+from selection import FRAME_SECONDS
+from structured_log import log_event
 
 
 def main():
@@ -65,43 +63,26 @@ def main():
         if args.no_adapter:
             adapter = None
         scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength)
+        original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer) if args.selector == "preserved" else None
         raw = frames(source, FRAME_SECONDS)
-        scores, idle, embeddings, label = scorer.predict(raw)
-        actions, highlights = analyze(scores, idle, embeddings, scorer.actions, duration, smoothing=not args.unsmoothed)
-        if args.selector == "baseline":
-            _, highlights = baseline(scores, idle, embeddings, scorer.actions, duration)
-        elif args.selector == "preserved":
-            original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer)
-            old_scores, old_idle, _, _ = original.predict(raw)
-            _, highlights = baseline(old_scores, old_idle, embeddings, original.actions, duration)
-        if args.top_k > 1:
-            actions = localize(scores, idle, embeddings, scorer.actions, duration,
-                               top_k=args.top_k, smoothing=not args.unsmoothed)
-        kitchen, margin, fraction = scorer.kitchen_confidence(embeddings)
-        if args.temporal_model:
-            print(f"Kitchen gate: accepted={kitchen} margin={margin:.4f} frame_fraction={fraction:.3f}", file=sys.stderr)
-        if args.temporal_model and not kitchen:
-            from temporal_selection import generic_select
-            highlights = generic_select(actions, scores, scorer.actions, embeddings, duration, highlights)
-            print("Route: generic CLIP + temporal selector", file=sys.stderr)
-        if args.temporal_model and kitchen:
-            print("Route: kitchen TSM", file=sys.stderr)
-            try:
-                from temporal_model import TemporalRecognizer
-            except ImportError as exc:
-                raise ValueError("Install optional model dependencies: python -m pip install -r requirements-temporal.txt") from exc
-            temporal = TemporalRecognizer(args.temporal_model, args.threads)
-            actions = temporal.recognize(source, duration, args.temporal_model.parent / "classes.json",
-                                         context)
-            if args.selector == "temporal":
-                from temporal_selection import select
-                verbs, nouns = temporal.score_video(source, duration, context)
-                classes = json.loads((args.temporal_model.parent / "classes.json").read_text(encoding="utf-8"))
-                highlights = select(actions, verbs, nouns, classes, embeddings, duration)
-        actions, highlights = clean_intervals(actions, highlights, duration)
-        result = dict(video_id=source.stem, label=label, actions=actions, highlights=highlights)
+        options = PipelineOptions(
+            selector=args.selector,
+            unsmoothed=args.unsmoothed,
+            top_k=args.top_k,
+            threads=args.threads,
+            temporal_model=args.temporal_model,
+            temporal_context=context,
+        )
+        inferred = infer_video(source, duration, raw, options, PipelineState(scorer=scorer, original=original))
+        log_event(
+            "route_selected",
+            route=inferred.route,
+            temporal_model=bool(args.temporal_model),
+            kitchen_gate_accepted=inferred.kitchen_gate_accepted,
+        )
+        result = dict(video_id=source.stem, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights)
         if args.demo:
-            render(source, reel, highlights, audio)
+            render(source, reel, inferred.highlights, audio)
             build_demo(page, source, reel, result, duration)
         output.parent.mkdir(parents=True, exist_ok=True)
         temp = output.with_name(f".{output.name}.{os.getpid()}.tmp")
@@ -112,9 +93,15 @@ def main():
             temp.unlink(missing_ok=True)
     except (OSError, ValueError, RuntimeError, KeyError, TypeError) as exc:
         parser.exit(1, f"Track 4: {exc}\n")
-    selected = sum(item["end"] - item["start"] for item in highlights)
-    print(f"{len(actions)} actions · {selected:.2f}/{duration:.2f}s selected "
-          f"({selected/duration:.1%}) · {perf_counter()-started:.1f}s elapsed", file=sys.stderr)
+    selected = sum(item["end"] - item["start"] for item in inferred.highlights)
+    log_event(
+        "inference_complete",
+        actions=len(inferred.actions),
+        selected_seconds=round(selected, 6),
+        duration_seconds=round(duration, 6),
+        selected_fraction=round(selected / duration, 6),
+        elapsed_seconds=round(perf_counter() - started, 6),
+    )
 
 
 if __name__ == "__main__":

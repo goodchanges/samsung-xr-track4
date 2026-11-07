@@ -2,7 +2,9 @@ FROM python:3.13-slim
 WORKDIR /app
 COPY requirements.txt requirements-temporal.txt ./
 ARG ENABLE_TEMPORAL=0
+ARG INSTALL_TEST_TOOLS=0
 RUN if [ "$ENABLE_TEMPORAL" = "1" ]; then pip install --no-cache-dir -r requirements-temporal.txt; else pip install --no-cache-dir -r requirements.txt; fi
+RUN if [ "$INSTALL_TEST_TOOLS" = "1" ]; then pip install --no-cache-dir coverage==7.17.2; fi
 COPY code/ code/
 COPY tests/ tests/
 COPY weights/ weights/
