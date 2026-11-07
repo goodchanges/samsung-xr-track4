@@ -1,0 +1,9 @@
+{
+  "summary": {
+    "tsm_original_backend": 0.07936729627641337,
+    "joint_backend": 0.13336672434204538,
+    "old_gated": 0.005089058524173028,
+    "scene_joint": 0.13336672434204538
+  },
+  "ground_truth_actions": 165
+}

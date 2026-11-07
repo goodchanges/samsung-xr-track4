@@ -1,0 +1,95 @@
+{
+  "ids": [
+    "P01_12",
+    "P06_12",
+    "P11_22"
+  ],
+  "selection": "First eligible sorted video IDs from distinct participants outside the previous six-video comparison; last annotated time 120-240 seconds. No recognition scores inspected.",
+  "prompts": [
+    "A first-person view inside a kitchen.",
+    "A first-person view inside a bathroom.",
+    "A first-person view inside a office.",
+    "A first-person view inside a bedroom.",
+    "A first-person view inside a living room.",
+    "A first-person view inside a workshop.",
+    "A first-person view inside a vehicle.",
+    "A first-person view outdoors."
+  ],
+  "margin": 0.01,
+  "frame_fraction": 0.5,
+  "decoder_sha256": "e855dac98e3743339380632223325eb1a0abfde9ce318ffad013f9590131a92f",
+  "context": 4,
+  "checkpoint_sha256": "b56b6e7210c89e7dfc93daadafa90fda9d4ea73dfec7e9d3399240bca664139c",
+  "validation_sha256": "35f7932ba0a1127a96cac215a98d35398946f343e3cea9ad6688ed17eee9d75d",
+  "model_sources": {
+    "scope": "Temporal refinement: development P28_18, P09_08, P07_17; final evaluation P18_10, P08_14, P04_28. All public EPIC validation split, not Samsung manifest. No local fitting.",
+    "annotation_revision": "ea8b40457a400c3fffa1c7f406ef3dc169cc2522",
+    "mirror": "https://huggingface.co/datasets/mohammad2012191/epic_kitchens_100_256p",
+    "mirror_revision": "3297646177d552b615fdb09d3a6986cb3a7cb527",
+    "files": {
+      "P07_17.mp4": {
+        "sha256": "ad1211afc77b3621ac0dfdacc7b4d43af97b137db7f9a1b37dae33cf64397c70",
+        "bytes": 9184831
+      },
+      "P09_08.mp4": {
+        "sha256": "573a73cf9aa966f98c8cc58485098e43aea283f98653e8e5487ef146a9ee277b",
+        "bytes": 8912673
+      },
+      "P28_18.mp4": {
+        "sha256": "bf70f73b23d7e71e02e84cef22d0a9601fe9345459b38b6cd6fbf01c8f5fdc3b",
+        "bytes": 17065605
+      },
+      "EPIC_100_train.csv": {
+        "sha256": "a3a7ef2e397bd8af12bd0496b09d61b1f2c1f3f6e1726fa86af50a27f4855e87",
+        "bytes": 8415872
+      },
+      "EPIC_100_validation.csv": {
+        "sha256": "35f7932ba0a1127a96cac215a98d35398946f343e3cea9ad6688ed17eee9d75d",
+        "bytes": 1184998
+      },
+      "EPIC_100_verb_classes.csv": {
+        "sha256": "aab8bf210d0234b6facb9b191ae402c03a5f8965d123586b4762d3468a85033e",
+        "bytes": 13402
+      },
+      "EPIC_100_noun_classes.csv": {
+        "sha256": "40f0a81c5bd06b33050df9f0bd17cd3c2fccd759f9581e4e5e04fec7562be893",
+        "bytes": 49357
+      },
+      "P18_10.mp4": {
+        "sha256": "6735bab818e77e1faf1dcec21d74c286b3003947e94edb0d9d78306ac4f87487",
+        "bytes": 14274088
+      },
+      "P08_14.mp4": {
+        "sha256": "fb1f18fc1dba48f3df306604b6c2009a0411476c9fdd28935eec21836f23e40b",
+        "bytes": 18813495
+      },
+      "P04_28.mp4": {
+        "sha256": "8ac15fcac2f7da31d8089261b5dd8c5bf1140c2ceb84195e255aff99daf2c03c",
+        "bytes": 21238567
+      }
+    }
+  },
+  "files": {
+    "P01_12": {
+      "url": "https://huggingface.co/datasets/mohammad2012191/epic_kitchens_100_256p/resolve/3297646177d552b615fdb09d3a6986cb3a7cb527/videos/P01_12.MP4",
+      "sha256": "3981f0e928799d9286c5a306cf92fdec1fe80472f8319acd1e19bc773eb8e650",
+      "bytes": 12571809
+    },
+    "P06_12": {
+      "url": "https://huggingface.co/datasets/mohammad2012191/epic_kitchens_100_256p/resolve/3297646177d552b615fdb09d3a6986cb3a7cb527/videos/P06_12.MP4",
+      "sha256": "582b2cbee9e1122c5148aae33bf1d8c741c8da300522b66bdd09b3fd040b2b1f",
+      "bytes": 19173591
+    },
+    "P11_22": {
+      "url": "https://huggingface.co/datasets/mohammad2012191/epic_kitchens_100_256p/resolve/3297646177d552b615fdb09d3a6986cb3a7cb527/videos/P11_22.MP4",
+      "sha256": "9e88a4571a14fa9099b601e804f1289c8ad3a06697cf1cfecb01dd89fb3707b2",
+      "bytes": 17531144
+    }
+  },
+  "frozen_at": "2026-11-07T06:57:54.390454+00:00",
+  "implementation_sha256": {
+    "scene_gate.py": "778a342fa545b32d873168860a1e8d2c6c0c1c2d13da6fb52f44ff9a72892632",
+    "pipeline.py": "4a4825416f52139b6c1993ab765a7a492822c1108158faf8db30e7146b365d20",
+    "joint_decoder.py": "51a1d848b7cb501902339742647ec0508c48c7d373531364772632a9efdc867d"
+  }
+}

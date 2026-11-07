@@ -1,0 +1,69 @@
+{
+  "prompts": [
+    "A first-person view inside a kitchen.",
+    "A first-person view inside a bathroom.",
+    "A first-person view inside a office.",
+    "A first-person view inside a bedroom.",
+    "A first-person view inside a living room.",
+    "A first-person view inside a workshop.",
+    "A first-person view inside a vehicle.",
+    "A first-person view outdoors."
+  ],
+  "margin": 0.01,
+  "frame_fraction": 0.5,
+  "rows": [
+    {
+      "video_id": "P28_18",
+      "old_gate": [
+        false,
+        0.020530760288238525,
+        0.8264462809917356
+      ],
+      "scene_gate": [
+        true,
+        0.05254887044429779,
+        0.9834710743801653
+      ]
+    },
+    {
+      "video_id": "P09_08",
+      "old_gate": [
+        false,
+        -0.007398784160614014,
+        0.3228346456692913
+      ],
+      "scene_gate": [
+        true,
+        0.03908431529998779,
+        0.889763779527559
+      ]
+    },
+    {
+      "video_id": "P07_17",
+      "old_gate": [
+        false,
+        0.00024324655532836914,
+        0.518796992481203
+      ],
+      "scene_gate": [
+        true,
+        0.026634931564331055,
+        0.8120300751879699
+      ]
+    },
+    {
+      "video_id": "ride",
+      "old_gate": [
+        false,
+        -0.07050304114818573,
+        0.0
+      ],
+      "scene_gate": [
+        false,
+        -0.06444905698299408,
+        0.0
+      ]
+    }
+  ],
+  "scope": "Three kitchen development videos, one reused non-kitchen smoke video; not representative domain validation"
+}

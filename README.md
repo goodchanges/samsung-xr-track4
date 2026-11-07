@@ -89,6 +89,16 @@ The adapter is off by default (strength `0`). Pass `--adapter-strength 0.1` to o
 
 ## Optional temporal recognizer
 
+The subsequent [scene-routing comparison](docs/recognition/scene-routing.md) used three fresh recordings (165 annotated actions). Original TSM scored **7.94%** local action F1; joint decoding scored **13.34%**. With explicit scene routing, the full pipeline scored **13.34% versus 0.51% with the old gate** on these same recordings. This is a different set from the historical results below. Both precision and recall improved on the fresh set. All 34 local tests and both Linux Docker jobs passed.
+
+Enable the experimentally improved kitchen profile with:
+
+```sh
+./run.sh input.mp4 output.json --temporal-model weights/temporal/tsm_rgb.ckpt --temporal-context 4 --temporal-decoder weights/temporal_decoder.npz --kitchen-routing scene
+```
+
+Scene routing is optional because only one real non-kitchen negative has been checked. Its internal scene prompts do not change output categories or the pending student-kit schema.
+
 A subsequent optional [joint decoder](docs/recognition/joint-decoder.md) improved the same three-recording backend comparison from **9.69% to 11.86% local action F1**. Enable it with `--temporal-decoder weights/temporal_decoder.npz --temporal-context 4` alongside `--temporal-model`. It uses training-only pair associations and temporal continuity; the kitchen gate remains active. This is a small reused local comparison, not final gated accuracy or official scoring.
 
 **Final safety revision:** the historical TSM results below were measured before the confidence gate. They are not accuracy measurements of the final gated pipeline. TSM now runs only when the existing CLIP `cooking` category exceeds every other category by a mean cosine-similarity margin of at least 0.03 and wins at least half of sampled frames. This fixed, uncalibrated safety rule was not tuned. Otherwise the runner uses generic CLIP action predictions and the temporal selector; no kitchen-only decoding occurs. Generic pair scores are normalized ranking signals, not calibrated probabilities. With no detected actions, the existing budget-safe fallback highlight is retained.
