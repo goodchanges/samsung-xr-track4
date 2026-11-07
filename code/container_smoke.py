@@ -33,9 +33,8 @@ def main():
         association, strength, switch_cost = load_profile(root / "weights/temporal_decoder.npz")
         decoded = joint_segments(verbs, nouns, classes, .5, association, strength, switch_cost)
         assert len(decoded) == 1 and decoded[0]["start"] == 0. and decoded[0]["end"] == .5
-        extra = ["--temporal-model", str(root / "weights/temporal/tsm_rgb.ckpt"), "--selector", "temporal"]
-        extra += ["--temporal-decoder", str(root / "weights/temporal_decoder.npz"),
-                  "--temporal-context", "4", "--kitchen-routing", "scene"]
+        # Exercise the exact two-argument contract used by the improved archive.
+        (root / 'code/inference_profile.txt').write_text('improved\n')
         print("Local temporal checkpoint inference passed", flush=True)
     output = folder / "idle.json"
     run = subprocess.run([str(root / "run.sh"), str(video), str(output), *extra], capture_output=True, text=True)

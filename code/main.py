@@ -10,6 +10,7 @@ from model import ROOT, Scorer, load_supported_classes
 from pipeline import PipelineOptions, PipelineState, infer_video
 from selection import FRAME_SECONDS
 from structured_log import log_event
+from runtime_profile import apply_profile
 
 
 def main():
@@ -20,7 +21,8 @@ def main():
     parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
                         help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=min(4, os.cpu_count() or 1))
-    parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"), default="preserved")
+    parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"))
+    parser.add_argument("--profile", choices=("clip", "improved"), help="Deployment preset; otherwise use packaged preset or CLIP.")
     parser.add_argument("--unsmoothed", action="store_true")
     parser.add_argument("--top-k", type=int, choices=(1, 3), default=1)
     parser.add_argument("--adapter", type=Path)
@@ -32,9 +34,13 @@ def main():
     parser.add_argument("--temporal-context", type=int, choices=(2, 4),
                         help="Defaults to 2 for the temporal selector, otherwise 4.")
     parser.add_argument("--temporal-decoder", type=Path, help="Optional measured joint decoder profile; requires four-second TSM contexts.")
-    parser.add_argument("--kitchen-routing", choices=("category", "scene"), default="category", help="Experimental scene-based kitchen gate, or existing category gate.")
+    parser.add_argument("--kitchen-routing", choices=("category", "scene"), help="Experimental scene-based kitchen gate, or existing category gate.")
     parser.add_argument("--demo", type=Path, metavar="DIR")
     args = parser.parse_args()
+    try:
+        apply_profile(args, ROOT)
+    except (OSError, ValueError) as exc:
+        parser.error(str(exc))
     if args.selector == "temporal" and not args.temporal_model:
         parser.error("--selector temporal requires --temporal-model.")
     context = args.temporal_context or (2 if args.selector == "temporal" else 4)
@@ -85,11 +91,11 @@ def main():
             route=inferred.route,
             temporal_model=bool(args.temporal_model),
             kitchen_gate_accepted=inferred.kitchen_gate_accepted,
+            profile=args.profile,
+            selector=args.selector,
+            kitchen_routing=args.kitchen_routing,
         )
         result = dict(video_id=source.stem, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights)
-        if args.demo:
-            render(source, reel, inferred.highlights, audio)
-            build_demo(page, source, reel, result, duration)
         output.parent.mkdir(parents=True, exist_ok=True)
         temp = output.with_name(f".{output.name}.{os.getpid()}.tmp")
         try:
@@ -99,6 +105,12 @@ def main():
             temp.unlink(missing_ok=True)
     except (OSError, ValueError, RuntimeError, KeyError, TypeError) as exc:
         parser.exit(1, f"Track 4: {exc}\n")
+    if args.demo:
+        try:
+            render(source, reel, inferred.highlights, audio)
+            build_demo(page, source, reel, result, duration)
+        except (OSError, ValueError, RuntimeError) as exc:
+            log_event("demo_failed", reason=str(exc), inference_json_written=str(output))
     selected = sum(item["end"] - item["start"] for item in inferred.highlights)
     log_event(
         "inference_complete",

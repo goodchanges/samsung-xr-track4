@@ -11,6 +11,7 @@ from model import ROOT, Scorer, load_supported_classes
 from pipeline import PipelineOptions, PipelineState, infer_video
 from selection import FRAME_SECONDS
 from structured_log import log_event
+from runtime_profile import apply_profile
 
 
 def manifest_entries(manifest, root, id_column="video_id", path_column="path"):
@@ -45,7 +46,8 @@ def main():
     parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
                         help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=4)
-    parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"), default="preserved")
+    parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"))
+    parser.add_argument("--profile", choices=("clip", "improved"), help="Deployment preset; otherwise use packaged preset or CLIP.")
     parser.add_argument("--unsmoothed", action="store_true")
     parser.add_argument("--top-k", type=int, choices=(1, 3), default=1)
     parser.add_argument("--adapter", type=Path)
@@ -57,7 +59,7 @@ def main():
     parser.add_argument("--temporal-context", type=int, choices=(2, 4),
                         help="Defaults to 2 for the temporal selector, otherwise 4.")
     parser.add_argument("--temporal-decoder", type=Path, help="Optional measured joint decoder profile; requires four-second TSM contexts.")
-    parser.add_argument("--kitchen-routing", choices=("category", "scene"), default="category", help="Experimental scene-based kitchen gate, or existing category gate.")
+    parser.add_argument("--kitchen-routing", choices=("category", "scene"), help="Experimental scene-based kitchen gate, or existing category gate.")
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--id-column", default="video_id")
     parser.add_argument("--path-column", default="path")
@@ -65,6 +67,10 @@ def main():
     parser.add_argument("--report", type=Path, default=ROOT / "work/batch-report.json",
                         help="Per-video status report, stored outside submission outputs.")
     args = parser.parse_args()
+    try:
+        apply_profile(args, ROOT)
+    except (OSError, ValueError) as exc:
+        parser.error(str(exc))
     if args.selector == "temporal" and not args.temporal_model:
         parser.error("--selector temporal requires --temporal-model.")
     context = args.temporal_context or (2 if args.selector == "temporal" else 4)
@@ -128,7 +134,8 @@ def main():
                 raise ValueError(f"Unsupported duration for {video.name}")
             raw = frames(video, FRAME_SECONDS)
             inferred = infer_video(video, duration, raw, options, state)
-            log_event("batch_video_route", video_id=video_id, route=inferred.route)
+            log_event("batch_video_route", video_id=video_id, route=inferred.route,
+                      profile=args.profile, selector=args.selector, kitchen_routing=args.kitchen_routing)
             result = dict(video_id=video_id, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights)
             check(result, video_id, duration)
             report.append(dict(video_id=video_id, status="ok"))

@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 .coverage*
 htmlcov/
+code/inference_profile.txt
 weights/*
 !weights/action_adapter.npz
 !weights/temporal_decoder.npz
