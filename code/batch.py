@@ -130,7 +130,7 @@ def main():
     for video_id, video in entries:
         try:
             duration, _ = probe(video)
-            if not 1 <= duration <= 600.05:
+            if not 1 <= duration:
                 raise ValueError(f"Unsupported duration for {video.name}")
             raw = frames(video, FRAME_SECONDS)
             inferred = infer_video(video, duration, raw, options, state)

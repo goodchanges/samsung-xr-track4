@@ -65,8 +65,8 @@ def main():
         if supported is not None:
             raise ValueError(f"Loaded {supported[0]}. Class mapping requires the confirmed student-kit format.")
         duration, audio = probe(source)
-        if not 1 <= duration <= 600.05:
-            raise ValueError("This prototype supports MP4 videos from 1 second to 10 minutes.")
+        if not 1 <= duration:
+            raise ValueError("This prototype requires a video duration of at least one second.")
         adapter = args.adapter
         if adapter is None and args.adapter_strength > 0 and not args.no_adapter and args.vocabulary.resolve() == (ROOT / "code/vocabulary.json").resolve():
             adapter = ROOT / "weights/action_adapter.npz"
