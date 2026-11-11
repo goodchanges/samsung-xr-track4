@@ -8,6 +8,13 @@ from media import probe
 
 
 def check(document, video_id, duration):
+    if "team_id" in document:
+        from submission import check_submission
+        check_submission(document)
+        if document["video_id"] != video_id or abs(document["duration_sec"] - duration) > 0.5:
+            raise ValueError("Video identity or duration mismatch")
+        print("Local kit-guide checks passed; organizer validator unavailable.")
+        return
     if set(document) != {"video_id", "label", "actions", "highlights"}:
         raise ValueError("Unexpected provisional top-level keys.")
     if document["video_id"] != video_id or not isinstance(document["label"], str):

@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 
 from structured_log import log_event
+from submission import failure_submission
 
 
 def main():
@@ -24,7 +25,13 @@ def main():
                 raise ValueError("Refusing to overwrite the input file")
             target.parent.mkdir(parents=True, exist_ok=True)
             temporary = target.with_name(f".{target.name}.{os.getpid()}.tmp")
-            temporary.write_text(json.dumps(dict(video_id=source.stem, label="", actions=[], highlights=[])) + "\n", encoding="utf-8")
+            duration = 0.0
+            try:
+                from media import probe
+                duration, _ = probe(source)
+            except Exception:
+                print("Duration unavailable: fallback JSON cannot satisfy the official positive-duration and highlight rules.", file=sys.stderr)
+            temporary.write_text(json.dumps(failure_submission(source.stem, duration)) + "\n", encoding="utf-8")
             temporary.replace(target)
             log_event("fallback_json_written", output=str(target))
         except Exception as write_error:

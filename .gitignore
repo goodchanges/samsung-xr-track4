@@ -17,3 +17,5 @@ outputs/*
 work/
 *.[mM][pP]4
 *.zip
+
+kit/

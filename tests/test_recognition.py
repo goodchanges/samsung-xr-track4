@@ -7,6 +7,7 @@ from unittest.mock import patch, Mock
 from pathlib import Path
 
 import numpy as np
+import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 from batch import manifest_entries
@@ -49,12 +50,12 @@ class RecognitionChecks(unittest.TestCase):
             manifest.write_text("video_id,path\nCUSTOM_ID,video.mp4\n", encoding="utf-8")
             validator = root / "validate.py"
             validator.write_text("import json,sys,pathlib\nassert json.loads((pathlib.Path(sys.argv[2])/'CUSTOM_ID.json').read_text())['video_id']=='CUSTOM_ID'\n", encoding="utf-8")
-            scorer = Mock(actions=[dict(verb="take", noun="cup")])
-            scorer.predict.return_value = (np.zeros((3, 1)), np.ones(3), np.ones((3, 2)), "test")
+            scorer = Mock(actions=[dict(verb="take", noun="cup")], categories=[dict(label="cooking")], text=torch.ones((4, 2)))
+            scorer.predict.return_value = (np.zeros((3, 1)), np.ones(3), np.ones((3, 2)), "cooking")
             argv = ["batch.py", str(root), str(root / "outputs"), "--manifest", str(manifest),
                     "--validator", str(validator), "--no-adapter", "--selector", "baseline", "--report", str(root / "report.json")]
             with patch.object(sys, "argv", argv), patch.object(batch, "Scorer", return_value=scorer), \
-                    patch.object(batch, "frames", return_value=b"frames"), patch.object(batch, "probe", return_value=(3., False)):
+                    patch.object(batch, "frames", return_value=b"frames"), patch.object(batch, "probe", return_value=(30., False)):
                 batch.main()
                 validator.write_text("raise SystemExit(7)\n", encoding="utf-8")
                 with self.assertRaises(subprocess.CalledProcessError):
@@ -68,12 +69,12 @@ class RecognitionChecks(unittest.TestCase):
             root = Path(folder)
             (root / "a-corrupt.mp4").touch()
             (root / "b-valid.mp4").touch()
-            scorer = Mock(actions=[dict(verb="take", noun="cup")])
-            scorer.predict.return_value = (np.zeros((3, 1)), np.ones(3), np.ones((3, 2)), "test")
+            scorer = Mock(actions=[dict(verb="take", noun="cup")], categories=[dict(label="cooking")], text=torch.ones((4, 2)))
+            scorer.predict.return_value = (np.zeros((3, 1)), np.ones(3), np.ones((3, 2)), "cooking")
             def probe(path):
                 if path.stem == "a-corrupt":
                     raise ValueError("Unreadable fixture")
-                return 3., False
+                return 30., False
             argv = ["batch.py", str(root), str(root / "outputs"), "--selector", "baseline",
                     "--report", str(root / "report.json")]
             with patch.object(sys, "argv", argv), patch.object(batch, "Scorer", return_value=scorer), \
@@ -81,8 +82,8 @@ class RecognitionChecks(unittest.TestCase):
                 with self.assertRaises(SystemExit) as failure:
                     batch.main()
             self.assertEqual(failure.exception.code, 1)
-            self.assertEqual(json.loads((root / "outputs/a-corrupt.json").read_text())["label"], "")
-            self.assertEqual(json.loads((root / "outputs/b-valid.json").read_text())["label"], "test")
+            self.assertEqual(json.loads((root / "outputs/a-corrupt.json").read_text())["label"]["name"], "other")
+            self.assertEqual(json.loads((root / "outputs/b-valid.json").read_text())["label"]["name"], "cooking")
             self.assertEqual([r["status"] for r in json.loads((root / "report.json").read_text())], ["failed", "ok"])
 
 

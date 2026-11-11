@@ -1,3 +1,27 @@
+## Student kit integration status
+
+The supplied kit uses six output keys and 16 labels, 98 verbs, and 301 nouns.
+The runtime loads code/supported_classes.json locally and predicts categories
+from CLIP image features. Predictions never consult the manifest or annotations.
+Scores are uncalibrated: CLIP category softmax on mean cosine similarities,
+CLIP action cosine rescaled to [0,1], and TSM mean verb/noun probability products.
+
+Highlights are rounded inward to centiseconds. Short proposals expand to four
+seconds where they fit without overlap and within 14.5%; remaining proposals
+that cannot fit are dropped. When no segment survives, the highest-ranked original
+highlight supplies the start for one contiguous interval. For videos whose
+budget is below four seconds, the temporary assumption prioritizes one four-second
+segment and logs the budget conflict. Inputs shorter than four seconds cannot
+meet the guide's minimum. Samsung clarification is required.
+
+The supplied ZIP omits validate.py. Local checks are based on the guide and
+cannot establish an official pass. Historical development and comparison videos
+overlap the official manifest; those results are not independent submission
+scores. Do not tune further on manifest videos. The joint decoder's parameters
+were selected on three videos now known to be in the manifest. Organizer
+permission for using that component remains unresolved; the default source
+runner continues to use CLIP.
+
 # Samsung XR Challenge 2026 Â· Track 4
 
 Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verbâ€“noun predictions, a category, and chronological highlight intervals within 14.5% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.

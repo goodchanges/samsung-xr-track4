@@ -12,13 +12,14 @@ from pipeline import PipelineOptions, PipelineState, infer_video
 from selection import FRAME_SECONDS
 from structured_log import log_event
 from runtime_profile import apply_profile
+from submission import make_submission, failure_submission
 
 
 def manifest_entries(manifest, root, id_column="video_id", path_column="path"):
     """Use explicit manifest IDs, never guess dataset paths or silently skip rows."""
     with manifest.open(encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
-        if not {id_column, path_column}.issubset(reader.fieldnames or []):
+        if id_column not in (reader.fieldnames or []):
             raise ValueError(f"Manifest needs columns {id_column!r}, {path_column!r}; set column flags to match the kit.")
         entries = []
         seen = set()
@@ -29,7 +30,7 @@ def manifest_entries(manifest, root, id_column="video_id", path_column="path"):
             if video_id.casefold() in seen:
                 raise ValueError(f"Duplicate manifest video ID: {video_id}")
             seen.add(video_id.casefold())
-            video = (root / row[path_column]).resolve()
+            video = (root / (row[path_column] if path_column in row else video_id + ".mp4")).resolve()
             if not video.is_file() or video.suffix.lower() != ".mp4":
                 raise ValueError(f"Missing MP4 for manifest entry {video_id}: {video}")
             entries.append((video_id, video))
@@ -43,7 +44,7 @@ def main():
     parser.add_argument("videos", type=Path)
     parser.add_argument("outputs", type=Path)
     parser.add_argument("--vocabulary", type=Path, default=ROOT / "code" / "vocabulary.json")
-    parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
+    parser.add_argument("--supported-classes", type=Path, default=ROOT / "code/supported_classes.json",
                         help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"))
@@ -80,8 +81,6 @@ def main():
         supported = load_supported_classes(args.supported_classes)
     except (OSError, ValueError) as exc:
         parser.error(str(exc))
-    if supported is not None:
-        parser.error(f"Loaded {supported[0]}. Class mapping requires the confirmed student-kit format.")
     if not args.videos.is_dir():
         parser.error("Supply an existing video directory.")
     if args.threads < 1:
@@ -112,7 +111,7 @@ def main():
         adapter = ROOT / "weights/action_adapter.npz"
     if args.no_adapter:
         adapter = None
-    scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength)
+    scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength, supported=supported)
     original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer) if args.selector == "preserved" else None
     state = PipelineState(scorer=scorer, original=original, temporal=None)
     options = PipelineOptions(
@@ -128,6 +127,7 @@ def main():
     args.outputs.mkdir(parents=True, exist_ok=True)
     report = []
     for video_id, video in entries:
+        duration = 0.0
         try:
             duration, _ = probe(video)
             if not 1 <= duration:
@@ -136,14 +136,14 @@ def main():
             inferred = infer_video(video, duration, raw, options, state)
             log_event("batch_video_route", video_id=video_id, route=inferred.route,
                       profile=args.profile, selector=args.selector, kitchen_routing=args.kitchen_routing)
-            result = dict(video_id=video_id, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights)
+            result = make_submission(video_id, duration, inferred, supported[1])
             check(result, video_id, duration)
             report.append(dict(video_id=video_id, status="ok"))
         except Exception as exc:
             reason = f"{type(exc).__name__}: {exc}"
             print(f"Batch failure [{video_id}]: {reason}", file=sys.stderr)
             log_event("batch_video_failed", video_id=video_id, reason=reason)
-            result = dict(video_id=video_id, label="", actions=[], highlights=[])
+            result = failure_submission(video_id, duration)
             report.append(dict(video_id=video_id, status="failed", reason=reason))
         target = args.outputs / (video_id + ".json")
         import os

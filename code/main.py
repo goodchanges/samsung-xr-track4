@@ -11,6 +11,7 @@ from pipeline import PipelineOptions, PipelineState, infer_video
 from selection import FRAME_SECONDS
 from structured_log import log_event
 from runtime_profile import apply_profile
+from submission import make_submission
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
     parser.add_argument("video", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--vocabulary", type=Path, default=ROOT / "code" / "vocabulary.json")
-    parser.add_argument("--supported-classes", type=Path, default=ROOT / "supported_classes.json",
+    parser.add_argument("--supported-classes", type=Path, default=ROOT / "code/supported_classes.json",
                         help="Student-kit class JSON. Class mapping requires the kit format.")
     parser.add_argument("--threads", type=int, default=min(4, os.cpu_count() or 1))
     parser.add_argument("--selector", choices=("preserved", "baseline", "duration", "temporal"))
@@ -62,8 +63,6 @@ def main():
     started = perf_counter()
     try:
         supported = load_supported_classes(args.supported_classes)
-        if supported is not None:
-            raise ValueError(f"Loaded {supported[0]}. Class mapping requires the confirmed student-kit format.")
         duration, audio = probe(source)
         if not 1 <= duration:
             raise ValueError("This prototype requires a video duration of at least one second.")
@@ -72,7 +71,7 @@ def main():
             adapter = ROOT / "weights/action_adapter.npz"
         if args.no_adapter:
             adapter = None
-        scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength)
+        scorer = Scorer(args.vocabulary, args.threads, adapter, args.adapter_strength, supported=supported)
         original = Scorer(ROOT / "code/vocabulary-baseline.json", args.threads, shared=scorer) if args.selector == "preserved" else None
         raw = frames(source, FRAME_SECONDS)
         options = PipelineOptions(
@@ -95,7 +94,7 @@ def main():
             selector=args.selector,
             kitchen_routing=args.kitchen_routing,
         )
-        result = dict(video_id=source.stem, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights)
+        result = make_submission(source.stem, duration, inferred, supported[1])
         output.parent.mkdir(parents=True, exist_ok=True)
         temp = output.with_name(f".{output.name}.{os.getpid()}.tmp")
         try:
@@ -107,11 +106,11 @@ def main():
         parser.exit(1, f"Track 4: {exc}\n")
     if args.demo:
         try:
-            render(source, reel, inferred.highlights, audio)
-            build_demo(page, source, reel, result, duration)
+            render(source, reel, [dict(start=h["segment"][0], end=h["segment"][1]) for h in result["highlights"]], audio)
+            build_demo(page, source, reel, dict(video_id=source.stem, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights), duration)
         except (OSError, ValueError, RuntimeError) as exc:
             log_event("demo_failed", reason=str(exc), inference_json_written=str(output))
-    selected = sum(item["end"] - item["start"] for item in inferred.highlights)
+    selected = sum(item["segment"][1] - item["segment"][0] for item in result["highlights"])
     log_event(
         "inference_complete",
         actions=len(inferred.actions),

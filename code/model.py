@@ -35,11 +35,18 @@ def setup():
 
 
 class Scorer:
-    def __init__(self, vocabulary, threads, adapter=None, adapter_strength=0.0, shared=None):
+    def __init__(self, vocabulary, threads, adapter=None, adapter_strength=0.0, shared=None, supported=None):
         torch.set_num_threads(threads)
         if not np.isfinite(adapter_strength) or not 0 <= adapter_strength <= 1:
             raise ValueError("Adapter strength must be a finite number between zero and one.")
         vocab = json.loads(vocabulary.read_text(encoding="utf-8"))
+        if supported is not None:
+            classes = supported[1]
+            for key in ("labels", "verbs", "nouns"):
+                if not isinstance(classes.get(key), list) or not all(isinstance(x, str) for x in classes[key]):
+                    raise ValueError(f"Invalid official class list: {key}")
+            vocab["actions"] = [a for a in vocab["actions"] if a["verb"] in classes["verbs"] and a["noun"] in classes["nouns"]]
+            vocab["categories"] = [{"label": name, "description": name} for name in classes["labels"]]
         self.actions = vocab["actions"]
         self.categories = vocab["categories"]
         self.vocabulary_signature = json.dumps(vocab, sort_keys=True).encode("utf-8")

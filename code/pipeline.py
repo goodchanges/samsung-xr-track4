@@ -37,6 +37,7 @@ class InferenceResult:
     kitchen_gate_accepted: bool
     kitchen_margin: float
     kitchen_frame_fraction: float
+    label_score: float = 0.0
 
 
 def infer_video(source, duration, raw, options: PipelineOptions, state: PipelineState):
@@ -93,9 +94,30 @@ def infer_video(source, duration, raw, options: PipelineOptions, state: Pipeline
             verbs, nouns = state.temporal.score_video(source, duration, options.temporal_context)
             classes = json.loads((options.temporal_model.parent / "classes.json").read_text(encoding="utf-8"))
             highlights = select(actions, verbs, nouns, classes, embeddings, duration)
+    import numpy as np
+    label_score = 0.0
+    if hasattr(state.scorer, "text"):
+        category_logits = (embeddings @ state.scorer.text.numpy().T)[:, 2 * len(state.scorer.actions) + 1:].mean(axis=0)
+        probabilities = np.exp(category_logits - category_logits.max())
+        probabilities /= probabilities.sum()
+        label_score = float(probabilities.argmax() == [x["label"] for x in state.scorer.categories].index(label)) * float(probabilities.max())
+        pair_indices = {(a["verb"], a["noun"]): i for i, a in enumerate(state.scorer.actions)}
+        for action in actions:
+            index = pair_indices.get((action["verb"], action["noun"]))
+            start, end = int(action["start"]), max(int(np.ceil(action["end"])), int(action["start"]) + 1)
+            action["score"] = float(np.clip((scores[start:end, index].mean() + 1) / 2, 0, 1)) if index is not None else 0.0
+        if route == "kitchen_tsm":
+            import json
+            verbs, nouns = state.temporal.score_video(source, duration, options.temporal_context)
+            classes = json.loads((options.temporal_model.parent / "classes.json").read_text())
+            for action in actions:
+                vi, ni = classes["verb"].index(action["verb"]), classes["noun"].index(action["noun"])
+                start, end = int(action["start"]), max(int(np.ceil(action["end"])), int(action["start"]) + 1)
+                action["score"] = float((verbs[start:end, vi] * nouns[start:end, ni]).mean())
     actions, highlights = clean_intervals(actions, highlights, duration)
     return InferenceResult(
         label=label,
+        label_score=label_score,
         actions=actions,
         highlights=highlights,
         route=route,
