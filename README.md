@@ -45,6 +45,22 @@ requires the six-key format; legacy four-key support is retained only in the
 internal checker used by historical tests. These checks do not measure accuracy
 or replace Samsung's validator.
 
+To process available manifest videos while recording unavailable entries:
+
+```sh
+python code/batch.py VIDEO_ROOT outputs --manifest kit/manifest.csv --available-only --profile clip --report work/manifest-run/report.json
+```
+
+The batch expects VIDEO_ROOT/<video_id>.mp4, or accepts a manifest copy with
+an explicit path column. It checks source duration against the manifest before
+inference, shares the loaded model, and records elapsed seconds, source path,
+profile, result status and failure reasons. The report is updated atomically
+after each entry. Missing inputs produce report entries without placeholder
+JSONs. Inference failures produce failure JSONs and remain marked failed.
+Output-write errors are recorded and later videos continue. Any missing,
+failed or unresolved entry makes the batch exit 1 and skips official validation.
+The strict default still rejects missing files before processing.
+
 # Samsung XR Challenge 2026 Â· Track 4
 
 Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verbâ€“noun predictions, a category, and chronological highlight intervals within 14.5% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.
