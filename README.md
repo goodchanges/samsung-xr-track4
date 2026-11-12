@@ -22,6 +22,29 @@ were selected on three videos now known to be in the manifest. Organizer
 permission for using that component remains unresolved; the default source
 runner continues to use CLIP.
 
+Check all available outputs against the complete manifest:
+
+```sh
+python code/check_output.py --dir outputs --manifest kit/manifest.csv --team-id VelloreInstituteOfTechnologyVellore_VIT --report work/local-submission-check.json
+```
+
+This local check requires exactly six fields, supported labels/verbs/nouns,
+finite numeric values, scores in [0, 1], valid two-decimal segment timestamps,
+at most 2,000 actions, and nonempty sorted nonoverlapping highlights of at
+least four seconds. It enforces the project's stricter 14.5% safety margin.
+It also checks filenames, manifest durations within 0.5 seconds, team-ID
+consistency, missing and unexpected files, duplicate manifest IDs, and
+duplicate JSON keys. Touching highlight endpoints are allowed.
+
+Exit code 0 means all local checks passed; 1 means invalid or missing outputs;
+2 means only unresolved short-video budget conflicts remain. A four-second
+highlight that cannot fit even the guide's 15% budget is reported as unresolved
+and never counted as a clean pass. The report is stored outside outputs.
+The existing single-video command remains available. The command-line checker
+requires the six-key format; legacy four-key support is retained only in the
+internal checker used by historical tests. These checks do not measure accuracy
+or replace Samsung's validator.
+
 # Samsung XR Challenge 2026 Â· Track 4
 
 Solo prototype for action-aware video summarization. The runner reads a first-person MP4 and writes timestamped verbâ€“noun predictions, a category, and chronological highlight intervals within 14.5% of the source duration. The optional browser demo plays the original footage and a highlight reel and lets you click timestamps to seek.
