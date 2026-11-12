@@ -12,7 +12,7 @@ from check_output import check
 
 def validate_result(output, video_id, duration):
     document = json.loads(output.read_text(encoding="utf-8"))
-    if not document["label"] or not document["highlights"]:
+    if not isinstance(document["label"], dict) or not document["label"].get("name") or not document["highlights"]:
         raise ValueError("Guardrail failed: valid media produced empty failure output.")
     check(document, video_id, duration)
 

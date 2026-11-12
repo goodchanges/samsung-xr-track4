@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 from check_output import check
 from media import ffmpeg
@@ -37,20 +38,25 @@ def main():
         (root / 'code/inference_profile.txt').write_text('improved\n')
         print("Local temporal checkpoint inference passed", flush=True)
     output = folder / "idle.json"
-    run = subprocess.run([str(root / "run.sh"), str(video), str(output), *extra], capture_output=True, text=True)
+    runner = ([sys.executable, str(root / "code/safe_run.py")] if sys.platform == "win32"
+              else [str(root / "run.sh")])
+    run = subprocess.run([*runner, str(video), str(output), *extra], capture_output=True, text=True)
     print(run.stderr, end="", flush=True)
     assert run.returncode == 0
     document = json.loads(output.read_text())
-    assert document["label"], "Empty failure fallback is not a successful inference"
+    assert document["label"]["name"] in json.loads((root / "code/supported_classes.json").read_text())["labels"]
     assert "Track 4 failure:" not in run.stderr
     assert document["highlights"], "Expected a nonempty summary of valid media"
     check(document, video.stem, 120.)
-    assert sum(h["end"] - h["start"] for h in document["highlights"]) <= 120 * .145 + 1e-8
+    assert sum(h["segment"][1] - h["segment"][0] for h in document["highlights"]) <= 120 * .145 + 1e-8
     broken = folder / "corrupt.mp4"
     broken.write_bytes(b"invalid video")
-    failed = subprocess.run([str(root / "run.sh"), str(broken), str(output)], capture_output=True, text=True)
+    failed = subprocess.run([*runner, str(broken), str(output)], capture_output=True, text=True)
     assert failed.returncode == 0 and "Track 4 failure:" in failed.stderr
-    assert json.loads(output.read_text()) == dict(video_id="corrupt", label="", actions=[], highlights=[])
+    document = json.loads(output.read_text())
+    assert document["video_id"] == "corrupt" and document["duration_sec"] == 0
+    assert document["label"] == {"name": "other", "score": 0.0}
+    assert document["actions"] == [] and document["highlights"] == []
     print("Offline runner and corrupt-input containment passed", flush=True)
 
 

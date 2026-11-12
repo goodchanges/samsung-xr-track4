@@ -56,7 +56,7 @@ The checkpoint `weights/clip/pytorch_model.bin` is tracked with Git LFS. Once th
 
 ## Method and limits
 
-CLIP ViT-B/32 scores one frame per second against 528 action-pair prompts and six provisional categories. Neighboring samples smooth the scores. An idle prompt and visual change gate weak action predictions. The selector rewards coverage of distinct predicted verbâ€“noun pairs and discounts visually similar clips. Importance scores are ranking signals.
+CLIP ViT-B/32 scores one frame per second against 519 supported action-pair prompts and 16 student-kit categories. Neighboring samples smooth the scores. An idle prompt and visual change gate weak action predictions. The selector rewards coverage of distinct predicted verbâ€“noun pairs and discounts visually similar clips. Importance scores are ranking signals.
 
 The provisional vocabulary lives in code/vocabulary.json. Pass --vocabulary PATH to use the same structure with a different label set. CLIP sees still images, so it can confuse similar motions, miss short actions, or predict the wrong verb for a visible object. Challenge accuracy is unmeasured. Use --threads N to tune CPU usage.
 
@@ -71,7 +71,7 @@ The fitted action adapter (`weights/action_adapter.npz`) records four source vid
 | `P03_17.mp4` | [P03_17.json](docs/recognition/annotations/P03_17.json) |
 | `P04_07.mp4` | [P04_07.json](docs/recognition/annotations/P04_07.json) |
 
-The local held-out evaluation used `P07_05`, `P08_19`, and `P09_03`, with no video or participant overlap with adapter fitting. The separate development split used `P05_05` and `P06_104` to select settings. Overlap with the official Samsung evaluation videos is unknown until the student-kit manifest is available. The [split assignments](docs/recognition/splits.json) and [source revisions and hashes](docs/recognition/provenance.json) record the inputs.
+The local held-out evaluation used `P07_05`, `P08_19`, and `P09_03`, with no video or participant overlap with adapter fitting. The separate development split used `P05_05` and `P06_104` to select settings. None of the four adapter fitting videos appears in the supplied manifest. The temporal decoder settings were selected on three manifest videos, as described above. The [split assignments](docs/recognition/splits.json) and [source revisions and hashes](docs/recognition/provenance.json) record the inputs.
 
 ## Local verification
 
@@ -79,7 +79,9 @@ Open `work/final-demo/index.html` for the prepared laptop demo. The 126-second i
 
 ## Official submission handoff
 
-The four top-level JSON keys follow the slides' example. The slides also mention six required keys. Use the student kit's validator and examples to resolve the final schema. Replace the provisional labels, map IDs through the manifest if needed, and run the official validator on all outputs. Package under the registered identifier. Include run.sh, code/, weights/, requirements.txt, outputs/ and this README. Keep the demo and deck separate as directed by the organizers. Git excludes local media and generated outputs.
+The student guide specifies six top-level JSON fields. The runner uses that format and the supplied class list. The organizer validator was absent from the ZIP, so the format has not been officially validated. Process every manifest video and run the official validator once supplied. Package under the registered identifier with run.sh, code/, weights/, requirements.txt, outputs/ and this README.
+
+The November 12 organizer email sets the final submission date to 22 November 2026, the top 12 announcement to 29 November, final demo to 9 December, and results to 12 December. It asks for code, resources, documents, demo, presentation, package, and README in a public GitHub repository, with its link submitted through the organizer form: https://forms.gle/86xENrtqhx988hBt8. Review redistribution permissions before making materials public. The final presentation template asks for team details, problem, solution, architecture, track output, differentiation, demo and setup, and optional additional slides. The repository and materials still require a public-release and completeness review.
 
 [OpenAI CLIP checkpoint](https://huggingface.co/openai/clip-vit-base-patch32) Â· [EPIC-KITCHENS project](https://epic-kitchens.github.io/)
 
@@ -154,7 +156,7 @@ Historical development results: four-second TSM action F1 4.82%, selected two-se
 
 Actual final-settings edge tests all exited zero: 2-second clip, 600-second synthetic color video, no-audio clip, 160x120/12-fps clip, physically rotated 240x426 clip, and corrupt input. Readable cases stayed within 14.5%; corrupt input wrote empty actions/highlights and an empty label. Raw results and stderr are in [final-audit.json](docs/final-audit.json). The ten-minute synthetic run took 76.787 seconds wall time with a sampled peak summed process-tree RSS of 854.531 MiB (50-ms sampling, not unique physical memory). It used the generic route and is not a ten-minute TSM or real-world accuracy benchmark. At that stage no real non-kitchen recording was available and all 14 unit tests passed; see the readiness update for later checks.
 
-`run.sh` and `run.cmd` contain inference/import failures, log the reason to stderr, write the current four-key fallback JSON and exit zero. Empty label means classification was unavailable. This passes the existing provisional format checker, but official vocabulary/schema validity cannot be guaranteed before the kit arrives. A killed process, missing Python interpreter, absent output argument, unwritable output path, or a request to overwrite the input cannot be guaranteed to produce JSON. Downstream users must inspect stderr and empty outputs rather than treating exit zero as inference success.
+The runners log inference failures to stderr and attempt a six-key fallback JSON. If duration cannot be read, the fallback has zero duration and no highlights, so it cannot satisfy the student guide. A killed process, missing interpreter, absent output argument, or unwritable destination can prevent fallback output. Check stderr and batch reports for failures.
 
 Exact PowerShell run commands, from the repository root:
 

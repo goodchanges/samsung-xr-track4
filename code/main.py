@@ -106,8 +106,9 @@ def main():
         parser.exit(1, f"Track 4: {exc}\n")
     if args.demo:
         try:
-            render(source, reel, [dict(start=h["segment"][0], end=h["segment"][1]) for h in result["highlights"]], audio)
-            build_demo(page, source, reel, dict(video_id=source.stem, label=inferred.label, actions=inferred.actions, highlights=inferred.highlights), duration)
+            selected_highlights = [dict(start=h["segment"][0], end=h["segment"][1]) for h in result["highlights"]]
+            render(source, reel, selected_highlights, audio)
+            build_demo(page, source, reel, dict(video_id=source.stem, label=inferred.label, actions=inferred.actions, highlights=selected_highlights), duration)
         except (OSError, ValueError, RuntimeError) as exc:
             log_event("demo_failed", reason=str(exc), inference_json_written=str(output))
     selected = sum(item["segment"][1] - item["segment"][0] for item in result["highlights"])

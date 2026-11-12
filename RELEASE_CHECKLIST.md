@@ -15,7 +15,7 @@
   - `python code/check_output.py INPUT_VIDEO.mp4 OUTPUT.json`
 
 - [ ] Run manifest batch and organizer validator (when kit is available)
-  - `python code/batch.py VIDEO_ROOT outputs --manifest KIT/manifest.csv --id-column video_id --path-column path --validator KIT/validate.py`
+  - `python code/batch.py VIDEO_ROOT outputs --manifest kit/manifest.csv --validator kit/validate.py`
 
 - [ ] Verify package readiness
   - `python code/package.py REGISTERED_IDENTIFIER PATH_TO_NEW_ZIP`
@@ -26,3 +26,8 @@
   - No empty fallback outputs for valid media
   - No output schema/budget violations
   - Organizer validator passes on the full manifest
+
+- [ ] Complete the organizer presentation template and demo
+- [ ] Review redistribution permissions for public release
+- [ ] Put all required code, resources, documents, demo, presentation, package, outputs, and README in a public GitHub repository
+- [ ] Submit the public repository link using the organizer form by 22 November 2026
