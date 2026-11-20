@@ -19,6 +19,17 @@ def example():
 
 
 class SubmissionChecks(unittest.TestCase):
+    def test_organizer_examples_when_kit_is_present(self):
+        kit = Path(__file__).resolve().parents[1] / 'kit'
+        if not (kit / 'P02_109.json').is_file() or not (kit / 'skiing_03.json').is_file():
+            self.skipTest('Organizer example files are supplied separately')
+        self.assertEqual(check_submission(read_json(kit / 'P02_109.json')), [])
+        skiing = read_json(kit / 'skiing_03.json')
+        with self.assertRaisesRegex(ValueError, 'unsupported class'):
+            check_submission(skiing)
+        skiing['label']['name'] = 'ski'
+        self.assertEqual(check_submission(skiing), [])
+
     def test_valid_and_invalid_fields(self):
         self.assertEqual(check_submission(example()), [])
         variants = [
