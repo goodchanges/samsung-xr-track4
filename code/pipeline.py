@@ -97,10 +97,23 @@ def infer_video(source, duration, raw, options: PipelineOptions, state: Pipeline
     import numpy as np
     label_score = 0.0
     if hasattr(state.scorer, "text"):
-        category_logits = (embeddings @ state.scorer.text.numpy().T)[:, 2 * len(state.scorer.actions) + 1:].mean(axis=0)
-        probabilities = np.exp(category_logits - category_logits.max())
-        probabilities /= probabilities.sum()
-        label_score = float(probabilities.argmax() == [x["label"] for x in state.scorer.categories].index(label)) * float(probabilities.max())
+        if hasattr(type(state.scorer), "category_probabilities"):
+            from scene_gate import confidence
+            is_kitchen = kitchen if options.temporal_model else confidence(state.scorer, embeddings)[0]
+            probabilities = state.scorer.category_probabilities(embeddings)
+            names = [item["label"] for item in state.scorer.categories]
+            if "cooking" in names:
+                cooking = names.index("cooking")
+                if is_kitchen:
+                    label = "cooking"
+                else:
+                    label = max((name for name in names if name != "cooking"),
+                                key=lambda name: probabilities[names.index(name)], default=label)
+                    actions = []
+            label_score = float(probabilities[names.index(label)])
+        else:
+            # Lightweight model doubles in regression tests only expose the selected class.
+            label_score = 0.0
         pair_indices = {(a["verb"], a["noun"]): i for i, a in enumerate(state.scorer.actions)}
         for action in actions:
             index = pair_indices.get((action["verb"], action["noun"]))

@@ -23,7 +23,7 @@ class ReleaseProfileChecks(unittest.TestCase):
             args=options()
             apply_profile(args,root)
             self.assertEqual((args.selector,args.kitchen_routing,args.temporal_context),('preserved','scene',4))
-            self.assertEqual(args.temporal_decoder,root/'weights/temporal_decoder.npz')
+            self.assertIsNone(args.temporal_decoder)
             args=options('clip')
             apply_profile(args,root)
             self.assertIsNone(args.temporal_model)

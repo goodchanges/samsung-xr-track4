@@ -47,16 +47,15 @@ def main():
     assert document["label"]["name"] in json.loads((root / "code/supported_classes.json").read_text())["labels"]
     assert "Track 4 failure:" not in run.stderr
     assert document["highlights"], "Expected a nonempty summary of valid media"
-    check(document, video.stem, 120.)
+    check(document, output.stem, 120.)
     assert sum(h["segment"][1] - h["segment"][0] for h in document["highlights"]) <= 120 * .145 + 1e-8
     broken = folder / "corrupt.mp4"
     broken.write_bytes(b"invalid video")
-    failed = subprocess.run([*runner, str(broken), str(output)], capture_output=True, text=True)
-    assert failed.returncode == 0 and "Track 4 failure:" in failed.stderr
-    document = json.loads(output.read_text())
-    assert document["video_id"] == "corrupt" and document["duration_sec"] == 0
-    assert document["label"] == {"name": "other", "score": 0.0}
-    assert document["actions"] == [] and document["highlights"] == []
+    broken_output = folder / "corrupt-output.json"
+    broken_output.unlink(missing_ok=True)
+    failed = subprocess.run([*runner, str(broken), str(broken_output)], capture_output=True, text=True)
+    assert failed.returncode != 0 and "Track 4 failure:" in failed.stderr
+    assert not broken_output.exists()
     print("Offline runner and corrupt-input containment passed", flush=True)
 
 

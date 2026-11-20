@@ -14,5 +14,4 @@ def apply_profile(args, root):
         args.kitchen_routing = 'scene' if profile == 'improved' else 'category'
     if profile == 'improved':
         args.temporal_model = args.temporal_model or root / 'weights/temporal/tsm_rgb.ckpt'
-        args.temporal_decoder = args.temporal_decoder or root / 'weights/temporal_decoder.npz'
         args.temporal_context = args.temporal_context or 4

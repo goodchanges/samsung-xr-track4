@@ -161,6 +161,12 @@ class Scorer:
             vectors.append(self.model.get_image_features(**batch))
         return torch.nn.functional.normalize(torch.cat(vectors), dim=-1)
 
+    def category_probabilities(self, embeddings):
+        category_text = self.text.numpy()[2 * len(self.actions) + 1:]
+        logits = (embeddings @ category_text.T).mean(axis=0)
+        probabilities = np.exp(logits - logits.max())
+        return probabilities / probabilities.sum()
+
     def kitchen_confidence(self, embeddings):
         """Conservative, uncalibrated gate using the existing category prompts."""
         labels = [item["label"] for item in self.categories]

@@ -48,6 +48,8 @@ def main():
     if args.temporal_decoder and (not args.temporal_model or context != 4):
         parser.error("--temporal-decoder requires --temporal-model and --temporal-context 4.")
     source, output = args.video.resolve(), args.output.resolve()
+    if source == output:
+        parser.error("Output path would overwrite the video.")
     if args.threads < 1:
         parser.error("--threads must be positive.")
     if output.suffix.lower() != ".json":
@@ -94,7 +96,7 @@ def main():
             selector=args.selector,
             kitchen_routing=args.kitchen_routing,
         )
-        result = make_submission(source.stem, duration, inferred, supported[1])
+        result = make_submission(output.stem, duration, inferred, supported[1])
         output.parent.mkdir(parents=True, exist_ok=True)
         temp = output.with_name(f".{output.name}.{os.getpid()}.tmp")
         try:
