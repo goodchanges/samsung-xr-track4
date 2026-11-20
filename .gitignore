@@ -12,6 +12,13 @@ weights/*
 !weights/clip/
 weights/clip/*
 !weights/clip/pytorch_model.bin
+!weights/clip/config.json
+!weights/clip/merges.txt
+!weights/clip/preprocessor_config.json
+!weights/clip/special_tokens_map.json
+!weights/clip/tokenizer_config.json
+!weights/clip/tokenizer.json
+!weights/clip/vocab.json
 outputs/*
 !outputs/.gitkeep
 work/
