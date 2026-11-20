@@ -18,6 +18,6 @@ flowchart LR
 
 5. Track output. Show a real VIT JSON and its corresponding reel. Explain that scores are uncalibrated model signals.
 6. Differentiation. Selection rewards diverse predicted interactions and discounts similar clips. The scene gate avoids imposing kitchen actions on uncertain footage.
-7. Demo and setup. Show the two-argument runner and local checker. Report 41 of 185 eligible videos locally valid, 143 missing sources, one failed source and two excluded. Official validation remains unavailable.
+7. Demo and setup. Show the two-argument runner and local checker. Report 78 of 185 eligible videos locally valid, 102 missing sources, one failed source and two excluded. Official validation remains unavailable.
 8. Limitations. CLIP observes individual sampled frames and struggles with motion and exact verb–noun pairs. Historical temporal comparisons overlap the manifest. The four-second rule conflicts with the budget on three clips.
 9. Thank you.
