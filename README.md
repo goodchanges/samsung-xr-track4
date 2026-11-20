@@ -45,7 +45,7 @@ python code/check_output.py --dir outputs --manifest kit/manifest.csv --team-id 
 This local check requires exactly six fields, supported labels/verbs/nouns,
 finite numeric values, scores in [0, 1], valid two-decimal segment timestamps,
 at most 2,000 actions, and nonempty sorted nonoverlapping highlights of at
-least four seconds. It enforces the project's stricter 14.5% safety margin.
+least four seconds. It targets the project's 14.5% margin and permits a single four-second highlight within the official 15% when necessary.
 It also checks filenames, manifest durations within 0.5 seconds, team-ID
 consistency, missing and unexpected files, duplicate manifest IDs, and
 duplicate JSON keys. Touching highlight endpoints are allowed.
@@ -154,7 +154,7 @@ Create a prototype archive with the registered identifier:
 
 The archive includes CLIP weights and the available manifest outputs. Read docs/STATUS.md for coverage before submitting. Use a fresh archive filename after regenerating outputs.
 
-To package the improved profile for the required two-argument command, add `--profile improved` to the package command. That archive includes an internal preset and all temporal dependencies in its root `requirements.txt`; after installing dependencies, `./run.sh video.mp4 out.json` activates the measured profile. Its selector was chosen on development coverage. Use `--profile clip` to opt out. All packages remain provisional until organizer validation is available.
+To package the improved profile for the required two-argument command, add `--profile improved` to the package command. That archive includes an internal preset and all temporal dependencies in its root `requirements.txt`; after installing dependencies, `./run.sh video.mp4 out.json` activates the measured profile. The current profile uses the pretrained TSM checkpoint without the historically fitted joint decoder. Use `--profile clip` to opt out. All packages remain provisional until organizer validation is available.
 
 The jury-review revision passed 36 local tests and both offline Linux Docker configurations. A new Windows venv installed only the improved archive's requirements, then its bare runner processed a 173.81-second recording in 157.84 seconds with an empty application cache. Its outputs matched the measured profile. Detailed evidence and remaining limitations are in [the review](docs/jury-review.md).
 
@@ -199,7 +199,7 @@ With the venv active, install `python -m pip install -r requirements-temporal.tx
 python code/batch.py VIDEO_DIRECTORY OUTPUT_DIRECTORY --temporal-model weights/temporal/tsm_rgb.ckpt
 ```
 
-Omit the flag to retain plain CLIP. By default the optional model replaces action predictions only; CLIP still chooses highlights and the video-level label. Add `--selector temporal` to use the tested temporal highlight selector as well. The four JSON keys and 14.5% budget are unchanged. No training is needed, and inference makes no model downloads. The Docker image supports optional temporal dependencies with `--build-arg ENABLE_TEMPORAL=1`. Samsung model/data permissions and exact vocabulary remain pending.
+Omit the flag to retain plain CLIP. By default the optional model replaces action predictions only; CLIP still chooses highlights and the video-level label. Add `--selector temporal` to use the tested temporal highlight selector as well. The runner uses the current six-key JSON schema. No training is needed, and inference makes no model downloads. The Docker image supports optional temporal dependencies with `--build-arg ENABLE_TEMPORAL=1`. Samsung model/data permissions and exact vocabulary remain pending.
 
 ## Final verification round
 

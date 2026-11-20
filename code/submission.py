@@ -5,14 +5,6 @@ from structured_log import log_event
 TEAM_ID = "VIT"
 
 
-def failure_submission(video_id, duration=0.0):
-    highlights = []
-    if duration >= 4:
-        highlights = [dict(segment=[0.0, min(4.0, float(duration))])]
-    return dict(team_id=TEAM_ID, video_id=video_id, duration_sec=float(duration),
-                label=dict(name='other', score=0.0), actions=[], highlights=highlights)
-
-
 def check_submission(document, classes=None):
     """Check the supplied guide and our 14.5% safety margin; return unresolved warnings."""
     import json

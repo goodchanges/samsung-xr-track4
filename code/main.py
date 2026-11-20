@@ -66,8 +66,8 @@ def main():
     try:
         supported = load_supported_classes(args.supported_classes)
         duration, audio = probe(source)
-        if not 1 <= duration:
-            raise ValueError("This prototype requires a video duration of at least one second.")
+        if duration < 4:
+            raise ValueError("A video shorter than four seconds cannot contain a valid highlight.")
         adapter = args.adapter
         if adapter is None and args.adapter_strength > 0 and not args.no_adapter and args.vocabulary.resolve() == (ROOT / "code/vocabulary.json").resolve():
             adapter = ROOT / "weights/action_adapter.npz"

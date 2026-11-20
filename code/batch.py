@@ -175,8 +175,8 @@ def main():
             continue
         try:
             duration, _ = probe(video)
-            if not 1 <= duration:
-                raise ValueError(f"Unsupported duration for {video.name}")
+            if duration < 4:
+                raise ValueError(f"Video is shorter than the four-second highlight minimum: {video.name}")
             if video_id in durations and abs(duration - durations[video_id]) > 0.5 + 1e-8:
                 raise ValueError(f"Video duration {duration} differs from manifest {durations[video_id]} by more than 0.5 seconds")
             if state is None:
