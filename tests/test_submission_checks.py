@@ -107,7 +107,7 @@ class SubmissionChecks(unittest.TestCase):
             manifest = root / 'manifest.csv'
             manifest.write_text('video_id,duration_sec,dataset\nv,11.13,epic_kitchens_100\n')
             command = [sys.executable, str(Path(__file__).resolve().parents[1] / 'code/check_output.py'),
-                       '--dir', str(outputs), '--manifest', str(manifest)]
+                       '--dir', str(outputs), '--manifest', str(manifest), '--team-id', 'team']
             run = subprocess.run(command, capture_output=True, text=True)
             self.assertEqual(run.returncode, 2, run.stderr)
             self.assertEqual(json.loads(run.stdout)['status'], 'unresolved')

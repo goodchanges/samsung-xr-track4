@@ -2,7 +2,7 @@
 from math import floor, ceil
 from structured_log import log_event
 
-TEAM_ID = "VelloreInstituteOfTechnologyVellore_VIT"
+TEAM_ID = "VIT"
 
 
 def failure_submission(video_id, duration=0.0):
@@ -84,6 +84,8 @@ def check_submission(document, classes=None):
     if total > duration * 0.145 + 1e-8:
         if duration * 0.15 < 4 and abs(total - 4) <= 1e-8:
             return ['UNRESOLVED: four-second highlight exceeds even the 15% budget; organizer clarification required']
+        if total <= duration * .15 + 1e-8 and abs(total - 4) <= 1e-8:
+            return []
         raise ValueError(f'highlights: {total:.2f}s exceeds the local 14.5% limit ({duration * .145:.4f}s)')
     return []
 

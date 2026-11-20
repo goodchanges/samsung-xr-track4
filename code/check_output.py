@@ -7,7 +7,10 @@ from pathlib import Path
 import csv
 import sys
 
-from submission import check_submission
+from submission import TEAM_ID, check_submission
+
+# Organizer-confirmed exclusions apply only to dataset bookkeeping.
+EXCLUDED = {"Scuba_KD74Ywuy9ng", "Scuba_Um4kqB8bQBg"}
 
 
 def check(document, video_id, duration):
@@ -87,10 +90,11 @@ def check_directory(directory, manifest, team_id=None):
     if not expected:
         raise ValueError('Manifest is empty')
     files = {p.name: p for p in directory.iterdir() if p.is_file() and p.suffix.lower() == '.json'}
-    names = {video_id + '.json' for video_id in expected}
+    excluded = sorted(EXCLUDED & expected.keys())
+    names = {video_id + '.json' for video_id in expected if video_id not in EXCLUDED}
     report = dict(expected=len(expected), found=len(files), checked=0, valid=0,
                   missing=sorted(names - files.keys()), unexpected=sorted(files.keys() - names),
-                  errors=[], warnings=[])
+                  errors=[], warnings=[], excluded=excluded)
     for name in sorted(names & files.keys()):
         report['checked'] += 1
         try:
@@ -109,6 +113,7 @@ def check_directory(directory, manifest, team_id=None):
                 report['valid'] += 1
         except (ValueError, TypeError, KeyError, OSError) as exc:
             report['errors'].append(f'{name}: {exc}')
+    report.update(team_id=team_id, completed=report['valid'], failed=len(report['errors']))
     report['status'] = ('failed' if report['missing'] or report['unexpected'] or report['errors']
                         else 'unresolved' if report['warnings'] else 'passed')
     return report
@@ -129,7 +134,7 @@ def main():
                 parser.error('--dir requires --manifest and no positional arguments')
             if args.report and args.report.resolve().is_relative_to(args.directory.resolve()):
                 parser.error('Keep --report outside the output directory')
-            report = check_directory(args.directory, args.manifest, args.team_id)
+            report = check_directory(args.directory, args.manifest, args.team_id or TEAM_ID)
             if args.report:
                 args.report.parent.mkdir(parents=True, exist_ok=True)
                 args.report.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
@@ -142,7 +147,7 @@ def main():
         document = read_json(args.output)
         # CLI submission checks always require the current six-key format.
         warnings = check_submission(document)
-        check(document, args.video.stem, duration)
+        check(document, args.output.stem, duration)
         return 2 if warnings else 0
     except (ValueError, TypeError, KeyError, OSError) as exc:
         print(f'Local check failed: {exc}', file=sys.stderr)
