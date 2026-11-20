@@ -1,27 +1,28 @@
-# Demo script (2 min 45 s)
+# Demo recording script · 2 min 45 s
 
-**0:00–0:25.** Introduce VIT, Track 04, and the goal of shortening first-person recordings to useful moments.
+**Before recording.** Work from a clean repository checkout or the prepared local copy. Set the terminal to 18 pt or larger. Arrange the terminal beside the source/reel page and keep the JSON open in an editor. Record a short microphone test. This source and its reel have no audio track, so narrate over playback. Use footage cleared for your intended audience.
 
-**0:25–0:55.** From the repository root, show setup and the local checkpoint. The input path points to a separately sourced manifest video.
+**0:00–0:25 · Source.** Play a few seconds of P01_12. “VIT’s Track 04 system turns first-person recordings into short highlights. The input is 173.81 seconds. The goal is to find distinct moments of interaction while staying within the requested viewing budget.”
 
-```sh
-python -m pip install -r requirements.txt
-git lfs pull
-./run.sh work/fresh-comparison/P01_12.mp4 outputs/P01_12.json
-```
-
-**0:55–1:25.** Open the JSON and point out the team ID, predicted label, action segments, and highlight intervals. Show the local check.
+**0:25–0:55 · Inference.** Show the exact Git Bash command from the repo root.
 
 ```sh
-python code/check_output.py work/fresh-comparison/P01_12.mp4 outputs/P01_12.json
+./run.sh work/fresh-comparison/P01_12.mp4 work/final-2026/demo-recording/P01_12.json --demo work/final-2026/demo-recording
 ```
 
-**1:25–2:10.** Play the highlight reel from the original recording.
+“The runner uses local CLIP weights. It samples frames, scores categories and action proposals, and selects intervals. If the run is slow, say ‘Model loading takes time on CPU. Here is the verified output from this same command’ and open the prepared files.”
+
+**0:55–1:25 · JSON.** Open work/final-2026/demo-recording/P01_12.json. “The team ID is VIT. The predicted label is cooking. This file contains 67 proposed actions and six highlight segments. The action count is a model output, not a count of verified correct actions.”
+
+**1:25–1:55 · Reel.** Open work/final-2026/demo-recording/index.html. Play the reel or jump to two selected moments. “The selected intervals total 24 seconds, or 13.81% of the original. The exported reel measures 23.99 seconds.”
+
+**1:55–2:20 · Local validation.** Run the checker and show its exit status.
 
 ```sh
-./run.sh work/fresh-comparison/P01_12.mp4 work/demo/P01_12.json --demo work/demo
+python code/check_output.py work/fresh-comparison/P01_12.mp4 work/final-2026/demo-recording/P01_12.json
+echo $?
 ```
 
-Open work/demo/index.html and show two selected moments. Run inference before recording if needed for timing.
+“This checks the format and timing against the guide. It is not Samsung’s official validator.”
 
-**2:10–2:45.** Show the batch and validation reports. State measured coverage of the manifest, explain the three short-video conflicts, and distinguish local checks from Samsung validation. Use source footage cleared for the intended audience before publishing the recording.
+**2:20–2:45 · Architecture and repo.** “FFmpeg decodes and samples the MP4, CLIP supplies visual scores, and the selector writes the JSON and renders the reel. The repository contains the offline runner and instructions. Current coverage is 41 of 185 eligible videos, so there is no complete-manifest result or official score.”
