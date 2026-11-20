@@ -10,7 +10,7 @@
 | Primary member name, email, mobile | NEEDS ME | Enter registered details directly in the form. |
 | Members 2–4 names, emails, mobiles | KNOWN | Optional. Leave blank for the solo entry. |
 | GitHub Link | NEEDS ME | The form requires public access. The GitHub repository is already public. Verify the exact link and its artifacts while signed out; the reviewed docs are on submission-final. |
-| Submission package | NEEDS ME | Place the verified local VIT-41.zip in the public submission location. Only the older VIT.zip is in the unpublished draft. |
+| Submission package | NEEDS ME | Place the verified local VIT-78.zip in the public submission location. Only the older VIT.zip is in the unpublished draft. |
 | Source Code and README | KNOWN | Present on GitHub. Use the reviewed README from submission-final and verify it is discoverable from your submission link. |
 | Presentation | NEEDS ME | Fill the marked primary-member placeholder, then add the PPTX to the public submission location. |
 | Video | NEEDS ME | Record the demo and add its video or accessible link to the public submission location. |

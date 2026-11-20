@@ -5,15 +5,17 @@ action proposals and short highlights cut from the original footage.
 
 ## Submission status
 
-**41 of 185 eligible videos passed local validation** (9 EPIC-KITCHENS and
-32 FPVSum). Of the other eligible entries, 143 sources are missing and
-P07_18 failed: the previous copy was unreadable and the official downloader
-retry timed out before MD5 verification. The two organizer exclusions are
+**78 of 185 eligible videos passed local validation** (31 EPIC-KITCHENS and
+47 FPVSum). Of the other eligible entries, 102 lack usable media and one
+failed input checks. P07_18 could not be verified after a resumed transfer,
+P26_38 had no readable timed video stream. The two organizer exclusions are
 Scuba_KD74Ywuy9ng and Scuba_Um4kqB8bQBg. Validation checks format and timing.
-It does not measure prediction accuracy. There is no official competition score.
+EPIC inputs include official originals verified by MD5 and pinned 256p copies
+verified by the mirror's SHA-256 and manifest duration. Prediction accuracy
+requires the organizer's evaluation.
 
-The local updated archive is `work/final-2026/VIT-41.zip`. Its verified SHA-256 is
-`6589bddf64e07c3698111f09b423861a901b9393ad911e898934f0fb33639a3b`.
+The local updated archive is `work/final-2026/VIT-78.zip`. Earlier archives
+and their output bytes were preserved.
 The unpublished GitHub draft holds the older `VIT.zip`. Generated outputs,
 raw videos, and the updated ZIP are outside version control. See the
 [form checklist](docs/submission/FORM_CHECKLIST.md) for the current handoff.
