@@ -32,6 +32,16 @@ def setup():
         local_dir=CHECKPOINT,
         allow_patterns=["*.json", "merges.txt", "pytorch_model.bin"],
     )
+    verify_checkpoint(CHECKPOINT / "pytorch_model.bin")
+
+
+def verify_checkpoint(weight):
+    expected = "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f"
+    with weight.open("rb") as handle:
+        digest = hashlib.file_digest(handle, "sha256").hexdigest()
+    if weight.stat().st_size != 605247071 or digest != expected:
+        raise ValueError("Pinned CLIP weight failed the size or SHA-256 check.")
+    print(f"Verified CLIP checkpoint SHA-256: {digest}")
 
 
 class Scorer:

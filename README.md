@@ -234,3 +234,31 @@ A real 210-second non-kitchen recording has now been tested. Routing selected th
 Batch continues after per-video inference failures and writes a status report outside the submission folder. Inspect `work/batch-report.json` or pass `--report PATH`; a failed batch exits 1 after writing each video's result. Package preparation checks all required local CLIP assets and rejects LFS pointer files. Student-kit schema, vocabulary, official outputs and official validation remain pending.
 
 Both CPU images passed [Linux CI](https://github.com/goodchanges/samsung-xr-track4/actions/runs/42295192380) with inference networking disabled. The temporal image passed all 16 tests and directly executed the local TSM checkpoint; the default image passed 11 tests and skipped five optional tests. Both processed a 120-second synthetic video and a corrupt input. The end-to-end temporal-image fixture used the generic route.
+## Submission checkpoint recovery
+
+A fresh clone can contain a 134-byte LFS pointer if the weight transfer stalls.
+Try `git lfs pull` first. If it cannot fetch the checkpoint, set up the venv
+from requirements.txt and run one of these setup commands:
+
+```sh
+python code/setup_model.py
+python code/setup_model.py --archive /path/to/VIT.zip
+```
+
+The first command fetches the pinned Hugging Face revision. The second can
+recover the weight from a trusted VIT archive without a network connection.
+Both verify 605,247,071 bytes and SHA-256
+a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f.
+The runner needs neither an account nor an internet connection once the model
+files are present.
+
+If the organizers confirm a different JSON team ID, make and check a separate
+copy. Change the runner's configured team ID before regenerating published
+outputs so a judge rerun agrees with them.
+
+```sh
+python code/copy_team_id.py outputs work/relabelled REGISTERED_ID
+python code/check_output.py --dir work/relabelled --manifest kit/manifest.csv --team-id REGISTERED_ID
+```
+
+The checker still exits nonzero when the manifest is incomplete.
