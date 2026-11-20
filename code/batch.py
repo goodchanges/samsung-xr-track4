@@ -7,14 +7,14 @@ import os
 from time import perf_counter
 from pathlib import Path
 
-from check_output import check
+from check_output import EXCLUDED, check, read_json
 from media import frames, probe
 from model import ROOT, Scorer, load_supported_classes
 from pipeline import PipelineOptions, PipelineState, infer_video
 from selection import FRAME_SECONDS
 from structured_log import log_event
 from runtime_profile import apply_profile
-from submission import make_submission, failure_submission, check_submission
+from submission import TEAM_ID, make_submission, check_submission
 
 
 def manifest_entries(manifest, root, id_column="video_id", path_column="path", available_only=False):
@@ -33,7 +33,7 @@ def manifest_entries(manifest, root, id_column="video_id", path_column="path", a
                 raise ValueError(f"Duplicate manifest video ID: {video_id}")
             seen.add(video_id.casefold())
             video = (root / (row[path_column] if path_column in row else video_id + ".mp4")).resolve()
-            if video.suffix.lower() != ".mp4" or (not video.is_file() and not available_only):
+            if video_id not in EXCLUDED and (video.suffix.lower() != ".mp4" or (not video.is_file() and not available_only)):
                 raise ValueError(f"Missing MP4 for manifest entry {video_id}: {video}")
             entries.append((video_id, video))
     if not entries:
@@ -74,6 +74,7 @@ def main():
     parser.add_argument("--temporal-decoder", type=Path, help="Optional measured joint decoder profile; requires four-second TSM contexts.")
     parser.add_argument("--kitchen-routing", choices=("category", "scene"), help="Experimental scene-based kitchen gate, or existing category gate.")
     parser.add_argument("--manifest", type=Path)
+    parser.add_argument("--resume", action="store_true", help="Reuse previously verified outputs from this saved batch report.")
     parser.add_argument("--available-only", action="store_true", help="Process available manifest paths and report missing files without generating placeholder outputs for them.")
     parser.add_argument("--id-column", default="video_id")
     parser.add_argument("--path-column", default="path")
@@ -98,8 +99,8 @@ def main():
         parser.error("Supply an existing video directory.")
     if args.threads < 1:
         parser.error("--threads must be positive.")
-    if args.available_only and not args.manifest:
-        parser.error("--available-only requires --manifest.")
+    if (args.available_only or args.resume) and not args.manifest:
+        parser.error("--available-only and --resume require --manifest.")
     if args.validator and (not args.manifest or not args.validator.is_file()):
         parser.error("Official validation requires an existing validator and an explicit manifest.")
     if args.report.resolve().is_relative_to(args.outputs.resolve()):
@@ -117,7 +118,7 @@ def main():
         parser.error("No MP4 videos found.")
     if len({video_id.casefold() for video_id, _ in entries}) != len(videos):
         parser.error("Duplicate video IDs.")
-    expected = {video_id + ".json" for video_id, _ in entries}
+    expected = {video_id + ".json" for video_id, _ in entries if not args.manifest or video_id not in EXCLUDED}
     unexpected = {p.name for p in args.outputs.glob("*.json")} - expected
     if unexpected and args.manifest:
         parser.error(f"Output folder contains JSONs outside the manifest: {sorted(unexpected)}")
@@ -144,11 +145,29 @@ def main():
         kitchen_routing=args.kitchen_routing,
     )
     args.outputs.mkdir(parents=True, exist_ok=True)
+    previous = {r["video_id"]: r for r in read_json(args.report)} if args.resume and args.report.is_file() else {}
     report = []
     for video_id, video in entries:
         started = perf_counter()
         duration = 0.0
-        record = dict(video_id=video_id, source=str(video), profile=args.profile)
+        record = dict(team_id=TEAM_ID, video_id=video_id, source=str(video), profile=args.profile)
+        target = args.outputs / (video_id + ".json")
+        if args.manifest and video_id in EXCLUDED:
+            record.update(status='excluded', reason='Organizer-confirmed exclusion', elapsed_seconds=0.0)
+            report.append(record)
+            write_json(args.report, report)
+            continue
+        prior = previous.get(video_id, {})
+        if prior.get('status') == 'ok' and all(prior.get(k) == v for k, v in record.items()):
+            try:
+                existing = read_json(target)
+                warnings = check_submission(existing)
+                if (not warnings and existing['team_id'] == TEAM_ID and existing['video_id'] == video_id
+                    and abs(existing['duration_sec'] - durations[video_id]) <= .5):
+                    report.append(prior)
+                    continue
+            except (OSError, ValueError, KeyError):
+                pass
         if not video.is_file() and args.available_only:
             record.update(status='missing', reason='Source MP4 is unavailable', elapsed_seconds=0.0)
             report.append(record)
@@ -177,12 +196,12 @@ def main():
             reason = f"{type(exc).__name__}: {exc}"
             print(f"Batch failure [{video_id}]: {reason}", file=sys.stderr)
             log_event("batch_video_failed", video_id=video_id, reason=reason)
-            result = failure_submission(video_id, duration)
+            result = None
             record.update(status='failed', reason=reason)
-        target = args.outputs / (video_id + ".json")
         try:
-            write_json(target, result)
-            record['output'] = str(target)
+            if result is not None:
+                write_json(target, result)
+                record['output'] = str(target)
         except OSError as exc:
             record.update(status='failed', reason=f"Output write failed: {exc}")
             print(f"Batch failure [{video_id}]: {record['reason']}", file=sys.stderr)
@@ -190,7 +209,8 @@ def main():
         report.append(record)
         write_json(args.report, report)
     counts = {status: sum(row['status'] == status for row in report)
-              for status in ('ok', 'failed', 'missing', 'unresolved')}
+              for status in ('ok', 'failed', 'missing', 'unresolved', 'excluded')}
+    write_json(args.report, report)
     print(json.dumps(dict(total=len(report), **counts, report=str(args.report))))
     if counts['failed'] or counts['missing'] or counts['unresolved']:
         parser.exit(1, f"Batch incomplete; see {args.report}.\n")

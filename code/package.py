@@ -18,9 +18,8 @@ def check_assets(root, profile='clip'):
     if (clip / "pytorch_model.bin").stat().st_size < 100_000_000:
         raise ValueError("CLIP checkpoint is too small; retrieve the full weights, not an LFS pointer.")
     temporal = root / "weights/temporal"
-    if profile == 'improved' and (not (temporal/'tsm_rgb.ckpt').is_file()
-                                or not (root/'weights/temporal_decoder.npz').is_file()):
-        raise ValueError('Improved profile requires the local TSM checkpoint and joint decoder.')
+    if profile == 'improved' and not (temporal/'tsm_rgb.ckpt').is_file():
+        raise ValueError('Improved profile requires the local TSM checkpoint.')
     if temporal.exists() and any(temporal.iterdir()):
         if not (temporal / "classes.json").is_file() or not (temporal / "tsm_rgb.ckpt").is_file():
             raise ValueError("Incomplete optional temporal assets; run code/setup_temporal.py first.")
@@ -46,8 +45,11 @@ def main():
     for directory in ("code", "weights", "outputs", "tests", "docs"):
         paths.extend(p for p in (ROOT / directory).rglob("*") if p.is_file()
                      and not any(part.startswith(".") or part == "__pycache__" for part in p.relative_to(ROOT).parts)
-                     and p.suffix.lower() not in (".pyc", ".tmp", ".part", ".partial", ".mp4", ".webm", ".mov", ".avi"))
-    paths = [p for p in paths if p != ROOT/'code/inference_profile.txt']
+                     and "annotations" not in p.relative_to(ROOT).parts
+                     and p.suffix.lower() not in (".pptx", ".pyc", ".tmp", ".part", ".partial", ".mp4", ".webm", ".mov", ".avi"))
+    paths = [p for p in paths if p != ROOT/'code/inference_profile.txt'
+             and p.name not in ('action_adapter.npz', 'temporal_decoder.npz')
+             and (args.profile == 'improved' or not p.is_relative_to(ROOT/'weights/temporal'))]
     if args.profile == 'improved':
         paths = [p for p in paths if p != ROOT/'requirements.txt']
     args.destination.parent.mkdir(parents=True, exist_ok=True)

@@ -82,7 +82,7 @@ class RecognitionChecks(unittest.TestCase):
                 with self.assertRaises(SystemExit) as failure:
                     batch.main()
             self.assertEqual(failure.exception.code, 1)
-            self.assertEqual(json.loads((root / "outputs/a-corrupt.json").read_text())["label"]["name"], "other")
+            self.assertFalse((root / "outputs/a-corrupt.json").exists())
             self.assertEqual(json.loads((root / "outputs/b-valid.json").read_text())["label"]["name"], "cooking")
             self.assertEqual([r["status"] for r in json.loads((root / "report.json").read_text())], ["failed", "ok"])
 

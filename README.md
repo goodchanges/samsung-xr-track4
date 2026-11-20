@@ -1,3 +1,17 @@
+# Samsung PRISM XR Hackathon 2026 | Track 04 | VIT
+
+The submission uses pretrained CLIP frame embeddings to score 16 video labels,
+detect supported action candidates, and select diverse highlights from original
+footage. A CLIP scene confidence gate allows cooking predictions for kitchen
+footage and suppresses kitchen action guesses on other footage. The optional
+pretrained TSM profile runs only when the kitchen gate accepts the video.
+The historically calibrated joint decoder is excluded from the submission profile.
+
+See [release status](docs/STATUS.md) and [submission materials](docs/submission/deck_outline.md).
+Timing and accuracy experiments elsewhere in this README are historical local
+measurements, including earlier development recordings later found in the kit.
+They do not measure this release's accuracy or establish a Samsung score.
+
 ## Student kit integration status
 
 The supplied kit uses six output keys and 16 labels, 98 verbs, and 301 nouns.
@@ -25,7 +39,7 @@ runner continues to use CLIP.
 Check all available outputs against the complete manifest:
 
 ```sh
-python code/check_output.py --dir outputs --manifest kit/manifest.csv --team-id VelloreInstituteOfTechnologyVellore_VIT --report work/local-submission-check.json
+python code/check_output.py --dir outputs --manifest kit/manifest.csv --team-id VIT --report work/local-submission-check.json
 ```
 
 This local check requires exactly six fields, supported labels/verbs/nouns,
@@ -48,7 +62,7 @@ or replace Samsung's validator.
 To process available manifest videos while recording unavailable entries:
 
 ```sh
-python code/batch.py VIDEO_ROOT outputs --manifest kit/manifest.csv --available-only --profile clip --report work/manifest-run/report.json
+python code/batch.py VIDEO_ROOT outputs --manifest kit/manifest.csv --available-only --resume --profile clip --report work/manifest-run/report.json
 ```
 
 The batch expects VIDEO_ROOT/<video_id>.mp4, or accepts a manifest copy with
@@ -56,7 +70,7 @@ an explicit path column. It checks source duration against the manifest before
 inference, shares the loaded model, and records elapsed seconds, source path,
 profile, result status and failure reasons. The report is updated atomically
 after each entry. Missing inputs produce report entries without placeholder
-JSONs. Inference failures produce failure JSONs and remain marked failed.
+JSONs. Inference failures are recorded without generating a new JSON.
 Output-write errors are recorded and later videos continue. Any missing,
 failed or unresolved entry makes the batch exit 1 and skips official validation.
 The strict default still rejects missing files before processing.
@@ -67,14 +81,14 @@ Solo prototype for action-aware video summarization. The runner reads a first-pe
 
 ## Run on this Windows laptop
 
-For the measured scene/joint profile, install `requirements-temporal.txt`, prepare the temporal weights with `python code/setup_temporal.py`, then run `./run.sh input.mp4 output.json --profile improved` (or `run.cmd` on Windows). Plain CLIP remains the source checkout default. The [strict mock jury review](docs/jury-review.md) records current weaknesses, error counts and the selector comparison.
+For the optional pretrained temporal profile, install `requirements-temporal.txt`, prepare the temporal weights with `python code/setup_temporal.py`, then run `./run.sh input.mp4 output.json --profile improved` (or `run.cmd` on Windows). Plain CLIP remains the source checkout default. The [strict mock jury review](docs/jury-review.md) records current weaknesses, error counts and the selector comparison.
 
 Open PowerShell in this folder.
 
     .\run.cmd "path\to\recording.mp4" "outputs\recording.json" --demo "work\recording-demo"
     .\.venv\Scripts\python.exe code/check_output.py "path\to\recording.mp4" "outputs\recording.json"
 
-Open work/recording-demo/index.html in your browser. Keep the source and demo files in place so the page can find both videos. Omit the demo flag and its value for JSON only. The video ID comes from the filename without the extension.
+Open work/recording-demo/index.html in your browser. Keep the source and demo files in place so the page can find both videos. Omit the demo flag and its value for JSON only. The JSON video ID comes from the output filename without the extension.
 
 ## Set up a fresh checkout
 
@@ -89,9 +103,9 @@ On Linux, substitute .venv/bin/python for the Windows Python path, then run:
 
 ## Weights
 
-From a fresh clone, run `python code/setup_model.py` with the project venv active to download the pinned CLIP checkpoint and its processor and tokenizer files into `weights/clip/`. The download is approximately 605 MB.
+From a fresh clone, run `git lfs pull` to retrieve the approximately 605 MB CLIP checkpoint. The pinned processor and tokenizer files are committed alongside the LFS path. If LFS is unavailable, run `python code/setup_model.py` with the project venv active.
 
-The checkpoint `weights/clip/pytorch_model.bin` is tracked with Git LFS. Once the LFS object is available on the clone's remote, `git lfs pull` can retrieve the checkpoint. Use the setup command to populate the full CLIP directory. Inference reads the local files and runs offline.
+The checkpoint `weights/clip/pytorch_model.bin` is tracked with Git LFS. Once the LFS object is available on the clone's remote, `git lfs pull` can retrieve the checkpoint. Inference reads the local files. The package includes the weight file and all CLIP metadata.
 
 ## Method and limits
 
@@ -136,9 +150,9 @@ Local evaluation and process-memory measurement instructions are in docs/verific
 
 Create a prototype archive with the registered identifier:
 
-    python code/package.py VelloreInstituteOfTechnologyVellore_VIT PATH_TO_NEW_ZIP
+    python code/package.py VIT PATH_TO_NEW_ZIP
 
-The archive includes local weights. Keep outputs/ reserved for official per-video outputs once the manifest arrives. Local fixture results belong under work/verification/.
+The archive includes CLIP weights and the available manifest outputs. Read docs/STATUS.md for coverage before submitting. Use a fresh archive filename after regenerating outputs.
 
 To package the improved profile for the required two-argument command, add `--profile improved` to the package command. That archive includes an internal preset and all temporal dependencies in its root `requirements.txt`; after installing dependencies, `./run.sh video.mp4 out.json` activates the measured profile. Its selector was chosen on development coverage. Use `--profile clip` to opt out. All packages remain provisional until organizer validation is available.
 

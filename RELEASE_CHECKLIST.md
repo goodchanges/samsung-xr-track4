@@ -13,7 +13,7 @@
 
 - [ ] Validate schema and bounds locally
   - `python code/check_output.py INPUT_VIDEO.mp4 OUTPUT.json`
-  - `python code/check_output.py --dir outputs --manifest kit/manifest.csv --team-id VelloreInstituteOfTechnologyVellore_VIT --report work/local-submission-check.json`
+  - `python code/check_output.py --dir outputs --manifest kit/manifest.csv --team-id VIT --report work/local-submission-check.json`
   - Require exit 0 and resolve all missing files, invalid outputs, and short-video warnings
 
 - [ ] Run manifest batch and organizer validator (when kit is available)
