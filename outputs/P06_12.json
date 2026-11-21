@@ -1,0 +1,883 @@
+{
+  "team_id": "VIT",
+  "video_id": "P06_12",
+  "duration_sec": 193.94,
+  "label": {
+    "name": "cooking",
+    "score": 0.06639554351568222
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        1.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6579086780548096
+    },
+    {
+      "segment": [
+        1.0,
+        2.0
+      ],
+      "verb": "close",
+      "noun": "cupboard",
+      "score": 0.6588782668113708
+    },
+    {
+      "segment": [
+        2.0,
+        6.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6569731831550598
+    },
+    {
+      "segment": [
+        6.0,
+        8.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6398715972900391
+    },
+    {
+      "segment": [
+        8.0,
+        9.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6403618454933167
+    },
+    {
+      "segment": [
+        9.0,
+        12.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6513663530349731
+    },
+    {
+      "segment": [
+        12.0,
+        14.0
+      ],
+      "verb": "move",
+      "noun": "plate",
+      "score": 0.6524345874786377
+    },
+    {
+      "segment": [
+        14.0,
+        16.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6488231420516968
+    },
+    {
+      "segment": [
+        16.0,
+        20.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6529181599617004
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.653237521648407
+    },
+    {
+      "segment": [
+        21.0,
+        23.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6593633890151978
+    },
+    {
+      "segment": [
+        23.0,
+        24.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6654868721961975
+    },
+    {
+      "segment": [
+        24.0,
+        26.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6560582518577576
+    },
+    {
+      "segment": [
+        26.0,
+        36.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6640897989273071
+    },
+    {
+      "segment": [
+        36.0,
+        38.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.663693368434906
+    },
+    {
+      "segment": [
+        38.0,
+        39.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6682686805725098
+    },
+    {
+      "segment": [
+        39.0,
+        40.0
+      ],
+      "verb": "wash",
+      "noun": "vegetable",
+      "score": 0.6580156683921814
+    },
+    {
+      "segment": [
+        40.0,
+        44.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6558935642242432
+    },
+    {
+      "segment": [
+        44.0,
+        45.0
+      ],
+      "verb": "move",
+      "noun": "jar",
+      "score": 0.6326515674591064
+    },
+    {
+      "segment": [
+        46.0,
+        47.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.651833713054657
+    },
+    {
+      "segment": [
+        47.0,
+        49.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6608132123947144
+    },
+    {
+      "segment": [
+        49.0,
+        50.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6521952748298645
+    },
+    {
+      "segment": [
+        50.0,
+        53.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.651890754699707
+    },
+    {
+      "segment": [
+        53.0,
+        55.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6397891640663147
+    },
+    {
+      "segment": [
+        55.0,
+        56.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6521414518356323
+    },
+    {
+      "segment": [
+        56.0,
+        57.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6578259468078613
+    },
+    {
+      "segment": [
+        57.0,
+        58.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6639331579208374
+    },
+    {
+      "segment": [
+        58.0,
+        59.0
+      ],
+      "verb": "wash",
+      "noun": "hob",
+      "score": 0.6599446535110474
+    },
+    {
+      "segment": [
+        59.0,
+        61.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6638927459716797
+    },
+    {
+      "segment": [
+        61.0,
+        62.0
+      ],
+      "verb": "mix",
+      "noun": "coffee",
+      "score": 0.6495978236198425
+    },
+    {
+      "segment": [
+        62.0,
+        63.0
+      ],
+      "verb": "turn-off",
+      "noun": "blender",
+      "score": 0.6556603312492371
+    },
+    {
+      "segment": [
+        63.0,
+        64.0
+      ],
+      "verb": "turn-off",
+      "noun": "tap",
+      "score": 0.6570699214935303
+    },
+    {
+      "segment": [
+        64.0,
+        66.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6606585383415222
+    },
+    {
+      "segment": [
+        66.0,
+        67.0
+      ],
+      "verb": "insert",
+      "noun": "board:chopping",
+      "score": 0.6553491353988647
+    },
+    {
+      "segment": [
+        67.0,
+        68.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6655430197715759
+    },
+    {
+      "segment": [
+        68.0,
+        72.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6708305478096008
+    },
+    {
+      "segment": [
+        72.0,
+        74.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6638391017913818
+    },
+    {
+      "segment": [
+        74.0,
+        75.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6644448637962341
+    },
+    {
+      "segment": [
+        75.0,
+        76.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6636436581611633
+    },
+    {
+      "segment": [
+        76.0,
+        77.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6640608310699463
+    },
+    {
+      "segment": [
+        77.0,
+        79.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.664762020111084
+    },
+    {
+      "segment": [
+        79.0,
+        80.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6687133312225342
+    },
+    {
+      "segment": [
+        80.0,
+        81.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6602885723114014
+    },
+    {
+      "segment": [
+        81.0,
+        82.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6600036025047302
+    },
+    {
+      "segment": [
+        82.0,
+        83.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.660311222076416
+    },
+    {
+      "segment": [
+        83.0,
+        84.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6591488122940063
+    },
+    {
+      "segment": [
+        84.0,
+        86.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6486579775810242
+    },
+    {
+      "segment": [
+        86.0,
+        88.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6596797704696655
+    },
+    {
+      "segment": [
+        88.0,
+        89.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.663774847984314
+    },
+    {
+      "segment": [
+        89.0,
+        90.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.6563698053359985
+    },
+    {
+      "segment": [
+        90.0,
+        91.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6586447954177856
+    },
+    {
+      "segment": [
+        91.0,
+        92.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6592229604721069
+    },
+    {
+      "segment": [
+        92.0,
+        93.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6584603786468506
+    },
+    {
+      "segment": [
+        93.0,
+        98.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6591150164604187
+    },
+    {
+      "segment": [
+        98.0,
+        105.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6584338545799255
+    },
+    {
+      "segment": [
+        105.0,
+        110.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.658250093460083
+    },
+    {
+      "segment": [
+        110.0,
+        114.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6572380661964417
+    },
+    {
+      "segment": [
+        114.0,
+        118.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6579949855804443
+    },
+    {
+      "segment": [
+        118.0,
+        119.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6560356020927429
+    },
+    {
+      "segment": [
+        119.0,
+        123.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6585525870323181
+    },
+    {
+      "segment": [
+        124.0,
+        125.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6570765376091003
+    },
+    {
+      "segment": [
+        125.0,
+        128.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.660576343536377
+    },
+    {
+      "segment": [
+        128.0,
+        132.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6608141660690308
+    },
+    {
+      "segment": [
+        133.0,
+        136.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6589539051055908
+    },
+    {
+      "segment": [
+        136.0,
+        137.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6523932218551636
+    },
+    {
+      "segment": [
+        137.0,
+        139.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6552076935768127
+    },
+    {
+      "segment": [
+        139.0,
+        140.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.657271146774292
+    },
+    {
+      "segment": [
+        140.0,
+        142.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6525537967681885
+    },
+    {
+      "segment": [
+        142.0,
+        143.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.653346061706543
+    },
+    {
+      "segment": [
+        146.0,
+        148.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6547116041183472
+    },
+    {
+      "segment": [
+        148.0,
+        149.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6512239575386047
+    },
+    {
+      "segment": [
+        150.0,
+        153.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6528533697128296
+    },
+    {
+      "segment": [
+        153.0,
+        158.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6622040271759033
+    },
+    {
+      "segment": [
+        158.0,
+        159.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6621048450469971
+    },
+    {
+      "segment": [
+        159.0,
+        160.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6657166481018066
+    },
+    {
+      "segment": [
+        160.0,
+        164.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6547791957855225
+    },
+    {
+      "segment": [
+        165.0,
+        167.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6551108956336975
+    },
+    {
+      "segment": [
+        167.0,
+        168.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6517921090126038
+    },
+    {
+      "segment": [
+        168.0,
+        169.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6510864496231079
+    },
+    {
+      "segment": [
+        171.0,
+        172.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6514660120010376
+    },
+    {
+      "segment": [
+        175.0,
+        177.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.650776743888855
+    },
+    {
+      "segment": [
+        180.0,
+        181.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6477615833282471
+    },
+    {
+      "segment": [
+        181.0,
+        182.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6622883081436157
+    },
+    {
+      "segment": [
+        182.0,
+        183.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6636531352996826
+    },
+    {
+      "segment": [
+        183.0,
+        184.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6606918573379517
+    },
+    {
+      "segment": [
+        184.0,
+        185.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6529281735420227
+    },
+    {
+      "segment": [
+        185.0,
+        186.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6503896713256836
+    },
+    {
+      "segment": [
+        186.0,
+        189.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6513096690177917
+    },
+    {
+      "segment": [
+        189.0,
+        191.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6638548374176025
+    },
+    {
+      "segment": [
+        191.0,
+        192.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6622022986412048
+    },
+    {
+      "segment": [
+        192.0,
+        193.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6592025756835938
+    },
+    {
+      "segment": [
+        193.0,
+        193.94
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6371273398399353
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        1.0,
+        5.0
+      ]
+    },
+    {
+      "segment": [
+        34.0,
+        38.0
+      ]
+    },
+    {
+      "segment": [
+        38.0,
+        42.0
+      ]
+    },
+    {
+      "segment": [
+        47.0,
+        51.0
+      ]
+    },
+    {
+      "segment": [
+        55.0,
+        59.0
+      ]
+    },
+    {
+      "segment": [
+        73.0,
+        77.0
+      ]
+    },
+    {
+      "segment": [
+        78.0,
+        82.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "team_id": "VIT",
+  "video_id": "Motor_1vq82J1BUY8",
+  "duration_sec": 129.61,
+  "label": {
+    "name": "bike",
+    "score": 0.06484964489936829
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        3.0,
+        7.0
+      ]
+    },
+    {
+      "segment": [
+        9.0,
+        13.0
+      ]
+    },
+    {
+      "segment": [
+        111.0,
+        115.0
+      ]
+    },
+    {
+      "segment": [
+        117.0,
+        121.0
+      ]
+    }
+  ]
+}

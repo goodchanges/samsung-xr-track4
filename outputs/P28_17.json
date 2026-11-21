@@ -1,0 +1,367 @@
+{
+  "team_id": "VIT",
+  "video_id": "P28_17",
+  "duration_sec": 62.45,
+  "label": {
+    "name": "cooking",
+    "score": 0.06513411551713943
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        2.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.648349404335022
+    },
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "close",
+      "noun": "cupboard",
+      "score": 0.6536829471588135
+    },
+    {
+      "segment": [
+        3.0,
+        4.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6496778130531311
+    },
+    {
+      "segment": [
+        4.0,
+        6.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6510895490646362
+    },
+    {
+      "segment": [
+        6.0,
+        8.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6484462022781372
+    },
+    {
+      "segment": [
+        8.0,
+        9.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6450536847114563
+    },
+    {
+      "segment": [
+        9.0,
+        11.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6449133157730103
+    },
+    {
+      "segment": [
+        11.0,
+        14.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6500565409660339
+    },
+    {
+      "segment": [
+        14.0,
+        15.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6557728052139282
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6401134729385376
+    },
+    {
+      "segment": [
+        16.0,
+        17.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6517679691314697
+    },
+    {
+      "segment": [
+        17.0,
+        18.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.656039297580719
+    },
+    {
+      "segment": [
+        18.0,
+        20.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6430808305740356
+    },
+    {
+      "segment": [
+        21.0,
+        22.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6356689929962158
+    },
+    {
+      "segment": [
+        22.0,
+        23.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6575226783752441
+    },
+    {
+      "segment": [
+        23.0,
+        25.0
+      ],
+      "verb": "open",
+      "noun": "freezer",
+      "score": 0.6529343128204346
+    },
+    {
+      "segment": [
+        25.0,
+        27.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6595977544784546
+    },
+    {
+      "segment": [
+        27.0,
+        29.0
+      ],
+      "verb": "open",
+      "noun": "freezer",
+      "score": 0.6529598236083984
+    },
+    {
+      "segment": [
+        29.0,
+        30.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6680704951286316
+    },
+    {
+      "segment": [
+        30.0,
+        31.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.643416166305542
+    },
+    {
+      "segment": [
+        31.0,
+        33.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.645949125289917
+    },
+    {
+      "segment": [
+        33.0,
+        35.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6476483941078186
+    },
+    {
+      "segment": [
+        35.0,
+        36.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6270773410797119
+    },
+    {
+      "segment": [
+        36.0,
+        37.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6517363786697388
+    },
+    {
+      "segment": [
+        37.0,
+        39.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6466108560562134
+    },
+    {
+      "segment": [
+        39.0,
+        40.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6567292809486389
+    },
+    {
+      "segment": [
+        40.0,
+        42.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6458677649497986
+    },
+    {
+      "segment": [
+        42.0,
+        45.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6549432277679443
+    },
+    {
+      "segment": [
+        45.0,
+        47.0
+      ],
+      "verb": "close",
+      "noun": "cupboard",
+      "score": 0.6596165895462036
+    },
+    {
+      "segment": [
+        47.0,
+        49.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6581750512123108
+    },
+    {
+      "segment": [
+        49.0,
+        53.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6529690027236938
+    },
+    {
+      "segment": [
+        53.0,
+        56.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6576765775680542
+    },
+    {
+      "segment": [
+        56.0,
+        57.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6608917713165283
+    },
+    {
+      "segment": [
+        57.0,
+        58.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6610092520713806
+    },
+    {
+      "segment": [
+        58.0,
+        59.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.639655351638794
+    },
+    {
+      "segment": [
+        59.0,
+        60.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6600164771080017
+    },
+    {
+      "segment": [
+        60.0,
+        61.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6568275094032288
+    },
+    {
+      "segment": [
+        61.0,
+        62.45
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6519984602928162
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        5.0,
+        9.0
+      ]
+    },
+    {
+      "segment": [
+        22.0,
+        26.0
+      ]
+    }
+  ]
+}

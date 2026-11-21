@@ -1,0 +1,54 @@
+{
+  "team_id": "VIT",
+  "video_id": "Surfing_G7lPf1gF-W4",
+  "duration_sec": 204.08,
+  "label": {
+    "name": "surfing",
+    "score": 0.0659262090921402
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        1.0,
+        5.0
+      ]
+    },
+    {
+      "segment": [
+        67.0,
+        71.0
+      ]
+    },
+    {
+      "segment": [
+        112.0,
+        116.0
+      ]
+    },
+    {
+      "segment": [
+        125.0,
+        129.0
+      ]
+    },
+    {
+      "segment": [
+        141.0,
+        145.0
+      ]
+    },
+    {
+      "segment": [
+        168.0,
+        172.0
+      ]
+    },
+    {
+      "segment": [
+        195.0,
+        199.0
+      ]
+    }
+  ]
+}

@@ -21,6 +21,7 @@ weights/clip/*
 !weights/clip/vocab.json
 outputs/*
 !outputs/.gitkeep
+!outputs/*.json
 work/
 *.[mM][pP]4
 *.zip

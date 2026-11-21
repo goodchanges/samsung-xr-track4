@@ -1,0 +1,30 @@
+{
+  "team_id": "VIT",
+  "video_id": "Bike_Q_maV87d1I8",
+  "duration_sec": 97.06,
+  "label": {
+    "name": "bike",
+    "score": 0.06511973589658737
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        0.0,
+        4.0
+      ]
+    },
+    {
+      "segment": [
+        24.0,
+        28.0
+      ]
+    },
+    {
+      "segment": [
+        51.0,
+        55.0
+      ]
+    }
+  ]
+}

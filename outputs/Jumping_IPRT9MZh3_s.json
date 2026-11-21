@@ -1,0 +1,48 @@
+{
+  "team_id": "VIT",
+  "video_id": "Jumping_IPRT9MZh3_s",
+  "duration_sec": 175.75,
+  "label": {
+    "name": "jumping",
+    "score": 0.06406750530004501
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        45.0,
+        49.0
+      ]
+    },
+    {
+      "segment": [
+        102.0,
+        106.0
+      ]
+    },
+    {
+      "segment": [
+        111.0,
+        115.0
+      ]
+    },
+    {
+      "segment": [
+        120.0,
+        124.0
+      ]
+    },
+    {
+      "segment": [
+        126.0,
+        130.0
+      ]
+    },
+    {
+      "segment": [
+        132.0,
+        136.0
+      ]
+    }
+  ]
+}

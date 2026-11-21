@@ -1,0 +1,181 @@
+{
+  "team_id": "VIT",
+  "video_id": "P11_21",
+  "duration_sec": 30.61,
+  "label": {
+    "name": "cooking",
+    "score": 0.0659942775964737
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        1.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6489607095718384
+    },
+    {
+      "segment": [
+        1.0,
+        2.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6596155166625977
+    },
+    {
+      "segment": [
+        2.0,
+        5.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6635984182357788
+    },
+    {
+      "segment": [
+        5.0,
+        6.0
+      ],
+      "verb": "mix",
+      "noun": "courgette",
+      "score": 0.6435102820396423
+    },
+    {
+      "segment": [
+        6.0,
+        9.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.6505016088485718
+    },
+    {
+      "segment": [
+        9.0,
+        11.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6587309241294861
+    },
+    {
+      "segment": [
+        11.0,
+        12.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6538918018341064
+    },
+    {
+      "segment": [
+        12.0,
+        13.0
+      ],
+      "verb": "shake",
+      "noun": "pot",
+      "score": 0.6543055176734924
+    },
+    {
+      "segment": [
+        13.0,
+        14.0
+      ],
+      "verb": "spray",
+      "noun": "liquid:washing",
+      "score": 0.6405879855155945
+    },
+    {
+      "segment": [
+        16.0,
+        17.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6591137647628784
+    },
+    {
+      "segment": [
+        17.0,
+        18.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6465233564376831
+    },
+    {
+      "segment": [
+        18.0,
+        19.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6555452346801758
+    },
+    {
+      "segment": [
+        19.0,
+        21.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6488620042800903
+    },
+    {
+      "segment": [
+        21.0,
+        25.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6590316295623779
+    },
+    {
+      "segment": [
+        25.0,
+        27.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6569876074790955
+    },
+    {
+      "segment": [
+        27.0,
+        29.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6522596478462219
+    },
+    {
+      "segment": [
+        29.0,
+        30.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6609817147254944
+    },
+    {
+      "segment": [
+        30.0,
+        30.61
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6293395757675171
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        2.0,
+        6.0
+      ]
+    }
+  ]
+}

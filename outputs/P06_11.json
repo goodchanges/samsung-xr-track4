@@ -1,0 +1,313 @@
+{
+  "team_id": "VIT",
+  "video_id": "P06_11",
+  "duration_sec": 76.97,
+  "label": {
+    "name": "cooking",
+    "score": 0.06624528020620346
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        3.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6464881896972656
+    },
+    {
+      "segment": [
+        4.0,
+        12.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6622247099876404
+    },
+    {
+      "segment": [
+        12.0,
+        13.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6593146920204163
+    },
+    {
+      "segment": [
+        13.0,
+        15.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6636724472045898
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6544514894485474
+    },
+    {
+      "segment": [
+        16.0,
+        18.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6617330312728882
+    },
+    {
+      "segment": [
+        18.0,
+        19.0
+      ],
+      "verb": "wash",
+      "noun": "board:chopping",
+      "score": 0.6656866073608398
+    },
+    {
+      "segment": [
+        19.0,
+        20.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6693346500396729
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6633683443069458
+    },
+    {
+      "segment": [
+        21.0,
+        22.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6573392152786255
+    },
+    {
+      "segment": [
+        22.0,
+        25.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6652911901473999
+    },
+    {
+      "segment": [
+        25.0,
+        26.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6641553640365601
+    },
+    {
+      "segment": [
+        26.0,
+        27.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.6689263582229614
+    },
+    {
+      "segment": [
+        27.0,
+        28.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6724299192428589
+    },
+    {
+      "segment": [
+        28.0,
+        29.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.66180419921875
+    },
+    {
+      "segment": [
+        29.0,
+        31.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6617170572280884
+    },
+    {
+      "segment": [
+        31.0,
+        42.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6609625816345215
+    },
+    {
+      "segment": [
+        42.0,
+        44.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.660940408706665
+    },
+    {
+      "segment": [
+        44.0,
+        53.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6611595153808594
+    },
+    {
+      "segment": [
+        53.0,
+        54.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6587823033332825
+    },
+    {
+      "segment": [
+        54.0,
+        56.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.657217800617218
+    },
+    {
+      "segment": [
+        56.0,
+        57.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6498197913169861
+    },
+    {
+      "segment": [
+        57.0,
+        59.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6528145670890808
+    },
+    {
+      "segment": [
+        59.0,
+        63.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6631494164466858
+    },
+    {
+      "segment": [
+        63.0,
+        65.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6459966897964478
+    },
+    {
+      "segment": [
+        65.0,
+        70.0
+      ],
+      "verb": "open",
+      "noun": "package",
+      "score": 0.6515407562255859
+    },
+    {
+      "segment": [
+        70.0,
+        71.0
+      ],
+      "verb": "take",
+      "noun": "towel:kitchen",
+      "score": 0.6481336355209351
+    },
+    {
+      "segment": [
+        71.0,
+        72.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6488910913467407
+    },
+    {
+      "segment": [
+        72.0,
+        73.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.665530800819397
+    },
+    {
+      "segment": [
+        73.0,
+        75.0
+      ],
+      "verb": "put",
+      "noun": "towel:kitchen",
+      "score": 0.6483141183853149
+    },
+    {
+      "segment": [
+        75.0,
+        76.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.641494870185852
+    },
+    {
+      "segment": [
+        76.0,
+        76.97
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6546040177345276
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        24.0,
+        28.0
+      ]
+    },
+    {
+      "segment": [
+        61.0,
+        65.0
+      ]
+    }
+  ]
+}

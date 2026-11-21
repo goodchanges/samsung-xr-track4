@@ -1,0 +1,313 @@
+{
+  "team_id": "VIT",
+  "video_id": "P14_06",
+  "duration_sec": 64.55,
+  "label": {
+    "name": "cooking",
+    "score": 0.0646464005112648
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        1.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6447075605392456
+    },
+    {
+      "segment": [
+        1.0,
+        4.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6433936953544617
+    },
+    {
+      "segment": [
+        4.0,
+        6.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6550554633140564
+    },
+    {
+      "segment": [
+        6.0,
+        7.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6462599635124207
+    },
+    {
+      "segment": [
+        8.0,
+        9.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6461765766143799
+    },
+    {
+      "segment": [
+        9.0,
+        10.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6425118446350098
+    },
+    {
+      "segment": [
+        10.0,
+        12.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6447051763534546
+    },
+    {
+      "segment": [
+        12.0,
+        13.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.656511664390564
+    },
+    {
+      "segment": [
+        13.0,
+        14.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6442123651504517
+    },
+    {
+      "segment": [
+        14.0,
+        15.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6416124105453491
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6367613673210144
+    },
+    {
+      "segment": [
+        17.0,
+        18.0
+      ],
+      "verb": "open",
+      "noun": "maker:coffee",
+      "score": 0.6401073336601257
+    },
+    {
+      "segment": [
+        18.0,
+        19.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6519798636436462
+    },
+    {
+      "segment": [
+        19.0,
+        21.0
+      ],
+      "verb": "empty",
+      "noun": "sink",
+      "score": 0.6488387584686279
+    },
+    {
+      "segment": [
+        21.0,
+        23.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.643072247505188
+    },
+    {
+      "segment": [
+        23.0,
+        24.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.642960786819458
+    },
+    {
+      "segment": [
+        24.0,
+        25.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6549698710441589
+    },
+    {
+      "segment": [
+        25.0,
+        32.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6527749300003052
+    },
+    {
+      "segment": [
+        32.0,
+        35.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6464517116546631
+    },
+    {
+      "segment": [
+        35.0,
+        37.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6465312242507935
+    },
+    {
+      "segment": [
+        37.0,
+        42.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6557977199554443
+    },
+    {
+      "segment": [
+        42.0,
+        44.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6433768272399902
+    },
+    {
+      "segment": [
+        44.0,
+        45.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6487737894058228
+    },
+    {
+      "segment": [
+        45.0,
+        47.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6432490348815918
+    },
+    {
+      "segment": [
+        47.0,
+        48.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6560789346694946
+    },
+    {
+      "segment": [
+        48.0,
+        49.0
+      ],
+      "verb": "close",
+      "noun": "cupboard",
+      "score": 0.6426053047180176
+    },
+    {
+      "segment": [
+        49.0,
+        53.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.645749568939209
+    },
+    {
+      "segment": [
+        53.0,
+        56.0
+      ],
+      "verb": "open",
+      "noun": "maker:coffee",
+      "score": 0.6430416703224182
+    },
+    {
+      "segment": [
+        57.0,
+        58.0
+      ],
+      "verb": "open",
+      "noun": "maker:coffee",
+      "score": 0.6502320766448975
+    },
+    {
+      "segment": [
+        58.0,
+        62.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6545339822769165
+    },
+    {
+      "segment": [
+        62.0,
+        63.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6448193788528442
+    },
+    {
+      "segment": [
+        63.0,
+        64.55
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6401270627975464
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        41.0,
+        45.0
+      ]
+    },
+    {
+      "segment": [
+        59.0,
+        63.0
+      ]
+    }
+  ]
+}

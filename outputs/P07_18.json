@@ -1,0 +1,163 @@
+{
+  "team_id": "VIT",
+  "video_id": "P07_18",
+  "duration_sec": 40.58,
+  "label": {
+    "name": "cooking",
+    "score": 0.06424731016159058
+  },
+  "actions": [
+    {
+      "segment": [
+        6.0,
+        8.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6459441184997559
+    },
+    {
+      "segment": [
+        8.0,
+        9.0
+      ],
+      "verb": "cut",
+      "noun": "package",
+      "score": 0.6459517478942871
+    },
+    {
+      "segment": [
+        10.0,
+        11.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6374015212059021
+    },
+    {
+      "segment": [
+        11.0,
+        12.0
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6519119143486023
+    },
+    {
+      "segment": [
+        12.0,
+        15.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6489689350128174
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6447822451591492
+    },
+    {
+      "segment": [
+        16.0,
+        17.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6476123332977295
+    },
+    {
+      "segment": [
+        17.0,
+        18.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6445661187171936
+    },
+    {
+      "segment": [
+        19.0,
+        20.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6467572450637817
+    },
+    {
+      "segment": [
+        24.0,
+        25.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6405777931213379
+    },
+    {
+      "segment": [
+        25.0,
+        26.0
+      ],
+      "verb": "shake",
+      "noun": "bottle",
+      "score": 0.6394656896591187
+    },
+    {
+      "segment": [
+        26.0,
+        28.0
+      ],
+      "verb": "close",
+      "noun": "bottle",
+      "score": 0.6408033967018127
+    },
+    {
+      "segment": [
+        28.0,
+        29.0
+      ],
+      "verb": "shake",
+      "noun": "bottle",
+      "score": 0.6413419842720032
+    },
+    {
+      "segment": [
+        32.0,
+        33.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.638529896736145
+    },
+    {
+      "segment": [
+        37.0,
+        39.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6461498737335205
+    },
+    {
+      "segment": [
+        39.0,
+        40.58
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6463448405265808
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        7.0,
+        11.0
+      ]
+    }
+  ]
+}

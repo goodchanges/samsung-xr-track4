@@ -1,0 +1,313 @@
+{
+  "team_id": "VIT",
+  "video_id": "P11_23",
+  "duration_sec": 62.83,
+  "label": {
+    "name": "cooking",
+    "score": 0.0641656443476677
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        1.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6449217200279236
+    },
+    {
+      "segment": [
+        1.0,
+        2.0
+      ],
+      "verb": "sharpen",
+      "noun": "knife",
+      "score": 0.6416297554969788
+    },
+    {
+      "segment": [
+        2.0,
+        4.0
+      ],
+      "verb": "cut",
+      "noun": "package",
+      "score": 0.646461546421051
+    },
+    {
+      "segment": [
+        5.0,
+        6.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6389937400817871
+    },
+    {
+      "segment": [
+        6.0,
+        9.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6522559523582458
+    },
+    {
+      "segment": [
+        9.0,
+        10.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.636993944644928
+    },
+    {
+      "segment": [
+        10.0,
+        14.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6415011882781982
+    },
+    {
+      "segment": [
+        14.0,
+        20.0
+      ],
+      "verb": "cut",
+      "noun": "package",
+      "score": 0.6456122994422913
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "roll",
+      "noun": "dough",
+      "score": 0.6460164785385132
+    },
+    {
+      "segment": [
+        21.0,
+        23.0
+      ],
+      "verb": "mix",
+      "noun": "mixture",
+      "score": 0.6456490159034729
+    },
+    {
+      "segment": [
+        23.0,
+        24.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6330382823944092
+    },
+    {
+      "segment": [
+        24.0,
+        25.0
+      ],
+      "verb": "mix",
+      "noun": "pan",
+      "score": 0.6491518020629883
+    },
+    {
+      "segment": [
+        25.0,
+        26.0
+      ],
+      "verb": "close",
+      "noun": "cupboard",
+      "score": 0.6255202293395996
+    },
+    {
+      "segment": [
+        26.0,
+        27.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6429963111877441
+    },
+    {
+      "segment": [
+        27.0,
+        29.0
+      ],
+      "verb": "cut",
+      "noun": "paper",
+      "score": 0.6350241303443909
+    },
+    {
+      "segment": [
+        29.0,
+        32.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6420057415962219
+    },
+    {
+      "segment": [
+        32.0,
+        35.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6418887972831726
+    },
+    {
+      "segment": [
+        36.0,
+        37.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6348040699958801
+    },
+    {
+      "segment": [
+        39.0,
+        40.0
+      ],
+      "verb": "open",
+      "noun": "cupboard",
+      "score": 0.6440258026123047
+    },
+    {
+      "segment": [
+        40.0,
+        41.0
+      ],
+      "verb": "close",
+      "noun": "cupboard",
+      "score": 0.6475869417190552
+    },
+    {
+      "segment": [
+        41.0,
+        43.0
+      ],
+      "verb": "cut",
+      "noun": "package",
+      "score": 0.6392213106155396
+    },
+    {
+      "segment": [
+        44.0,
+        45.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.647968053817749
+    },
+    {
+      "segment": [
+        45.0,
+        46.0
+      ],
+      "verb": "open",
+      "noun": "maker:coffee",
+      "score": 0.6445006132125854
+    },
+    {
+      "segment": [
+        46.0,
+        49.0
+      ],
+      "verb": "mix",
+      "noun": "coffee",
+      "score": 0.6538721919059753
+    },
+    {
+      "segment": [
+        49.0,
+        50.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6523065567016602
+    },
+    {
+      "segment": [
+        50.0,
+        53.0
+      ],
+      "verb": "close",
+      "noun": "maker:coffee",
+      "score": 0.6588807702064514
+    },
+    {
+      "segment": [
+        53.0,
+        55.0
+      ],
+      "verb": "cut",
+      "noun": "package",
+      "score": 0.646067202091217
+    },
+    {
+      "segment": [
+        55.0,
+        56.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6491873860359192
+    },
+    {
+      "segment": [
+        56.0,
+        57.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6532275676727295
+    },
+    {
+      "segment": [
+        57.0,
+        61.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.64427649974823
+    },
+    {
+      "segment": [
+        61.0,
+        62.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6420136094093323
+    },
+    {
+      "segment": [
+        62.0,
+        62.83
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6449640989303589
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        39.0,
+        43.0
+      ]
+    },
+    {
+      "segment": [
+        58.0,
+        62.0
+      ]
+    }
+  ]
+}

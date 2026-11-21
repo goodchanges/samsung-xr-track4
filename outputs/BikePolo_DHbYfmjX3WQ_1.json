@@ -1,0 +1,48 @@
+{
+  "team_id": "VIT",
+  "video_id": "BikePolo_DHbYfmjX3WQ_1",
+  "duration_sec": 171.69,
+  "label": {
+    "name": "bikepolo",
+    "score": 0.06512351334095001
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        12.0,
+        16.0
+      ]
+    },
+    {
+      "segment": [
+        81.0,
+        85.0
+      ]
+    },
+    {
+      "segment": [
+        96.0,
+        100.0
+      ]
+    },
+    {
+      "segment": [
+        123.0,
+        127.0
+      ]
+    },
+    {
+      "segment": [
+        135.0,
+        139.0
+      ]
+    },
+    {
+      "segment": [
+        162.0,
+        166.0
+      ]
+    }
+  ]
+}

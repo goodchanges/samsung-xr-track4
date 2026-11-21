@@ -16,11 +16,12 @@ EPIC inputs include official originals verified by MD5 and pinned 256p copies
 verified by the mirror's SHA-256 and manifest duration. Prediction accuracy
 requires the organizer's evaluation.
 
-The local final-review archive is `work/final-2026/VIT-82-complete.zip`. Earlier
-archives, including `VIT-82.zip` and `VIT-82-final.zip`, and their output bytes
-were preserved.
-The unpublished GitHub draft holds the older `VIT.zip`. Generated outputs,
-raw videos, and the updated ZIP are outside version control. See the
+The local final-review archive is `work/final-2026/VIT-82-public.zip`. Earlier
+archives, including `VIT-82.zip`, `VIT-82-final.zip` and
+`VIT-82-complete.zip`, and their output bytes were preserved.
+The unpublished GitHub draft holds the older `VIT.zip`. The 82 locally valid
+output JSONs are tracked under `outputs/`; raw videos and ZIPs remain outside
+version control. See the
 [form checklist](docs/submission/FORM_CHECKLIST.md) for the current handoff.
 
 ## Install and recover the checkpoint

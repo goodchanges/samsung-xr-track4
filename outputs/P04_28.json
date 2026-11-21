@@ -1,0 +1,790 @@
+{
+  "team_id": "VIT",
+  "video_id": "P04_28",
+  "duration_sec": 158.49,
+  "label": {
+    "name": "cooking",
+    "score": 0.06699053198099136
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        1.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6560166478157043
+    },
+    {
+      "segment": [
+        1.0,
+        2.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6606353521347046
+    },
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6437104344367981
+    },
+    {
+      "segment": [
+        3.0,
+        7.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6609576344490051
+    },
+    {
+      "segment": [
+        7.0,
+        8.0
+      ],
+      "verb": "mix",
+      "noun": "pan",
+      "score": 0.6420828700065613
+    },
+    {
+      "segment": [
+        8.0,
+        10.0
+      ],
+      "verb": "mix",
+      "noun": "mixture",
+      "score": 0.6426517963409424
+    },
+    {
+      "segment": [
+        10.0,
+        11.0
+      ],
+      "verb": "mix",
+      "noun": "egg",
+      "score": 0.6562752723693848
+    },
+    {
+      "segment": [
+        11.0,
+        12.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6657208204269409
+    },
+    {
+      "segment": [
+        12.0,
+        14.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6576606631278992
+    },
+    {
+      "segment": [
+        14.0,
+        16.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6526529788970947
+    },
+    {
+      "segment": [
+        16.0,
+        19.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6532704830169678
+    },
+    {
+      "segment": [
+        19.0,
+        24.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6540039777755737
+    },
+    {
+      "segment": [
+        24.0,
+        26.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6479212045669556
+    },
+    {
+      "segment": [
+        26.0,
+        30.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6532033681869507
+    },
+    {
+      "segment": [
+        30.0,
+        32.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6441053748130798
+    },
+    {
+      "segment": [
+        32.0,
+        33.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6553236246109009
+    },
+    {
+      "segment": [
+        33.0,
+        34.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6520214080810547
+    },
+    {
+      "segment": [
+        34.0,
+        35.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6550918817520142
+    },
+    {
+      "segment": [
+        35.0,
+        37.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6614988446235657
+    },
+    {
+      "segment": [
+        37.0,
+        38.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6576446294784546
+    },
+    {
+      "segment": [
+        38.0,
+        39.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6571202278137207
+    },
+    {
+      "segment": [
+        39.0,
+        41.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6450064778327942
+    },
+    {
+      "segment": [
+        41.0,
+        42.0
+      ],
+      "verb": "scrub",
+      "noun": "plate",
+      "score": 0.642436146736145
+    },
+    {
+      "segment": [
+        42.0,
+        43.0
+      ],
+      "verb": "mix",
+      "noun": "mixture",
+      "score": 0.6399583220481873
+    },
+    {
+      "segment": [
+        43.0,
+        45.0
+      ],
+      "verb": "wash",
+      "noun": "juicer",
+      "score": 0.6386011242866516
+    },
+    {
+      "segment": [
+        45.0,
+        46.0
+      ],
+      "verb": "wash",
+      "noun": "board:chopping",
+      "score": 0.6456289291381836
+    },
+    {
+      "segment": [
+        46.0,
+        47.0
+      ],
+      "verb": "insert",
+      "noun": "board:chopping",
+      "score": 0.6451206803321838
+    },
+    {
+      "segment": [
+        47.0,
+        48.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.650151252746582
+    },
+    {
+      "segment": [
+        48.0,
+        49.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.6408176422119141
+    },
+    {
+      "segment": [
+        49.0,
+        50.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.634901225566864
+    },
+    {
+      "segment": [
+        50.0,
+        51.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6386439800262451
+    },
+    {
+      "segment": [
+        51.0,
+        52.0
+      ],
+      "verb": "mix",
+      "noun": "courgette",
+      "score": 0.644595742225647
+    },
+    {
+      "segment": [
+        52.0,
+        53.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.651464581489563
+    },
+    {
+      "segment": [
+        53.0,
+        55.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6443862915039062
+    },
+    {
+      "segment": [
+        55.0,
+        56.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.6463688611984253
+    },
+    {
+      "segment": [
+        56.0,
+        57.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6488549709320068
+    },
+    {
+      "segment": [
+        57.0,
+        59.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.6451593637466431
+    },
+    {
+      "segment": [
+        59.0,
+        62.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6439246535301208
+    },
+    {
+      "segment": [
+        62.0,
+        66.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.6426182985305786
+    },
+    {
+      "segment": [
+        66.0,
+        67.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.6434656381607056
+    },
+    {
+      "segment": [
+        67.0,
+        70.0
+      ],
+      "verb": "mix",
+      "noun": "mixture",
+      "score": 0.6415778398513794
+    },
+    {
+      "segment": [
+        70.0,
+        73.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6495181322097778
+    },
+    {
+      "segment": [
+        73.0,
+        75.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.643329381942749
+    },
+    {
+      "segment": [
+        75.0,
+        78.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6462953686714172
+    },
+    {
+      "segment": [
+        78.0,
+        79.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.658043622970581
+    },
+    {
+      "segment": [
+        79.0,
+        82.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.654225766658783
+    },
+    {
+      "segment": [
+        82.0,
+        83.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6505181789398193
+    },
+    {
+      "segment": [
+        83.0,
+        85.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.652127742767334
+    },
+    {
+      "segment": [
+        85.0,
+        87.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.653518795967102
+    },
+    {
+      "segment": [
+        87.0,
+        89.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6572023630142212
+    },
+    {
+      "segment": [
+        89.0,
+        95.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6561155319213867
+    },
+    {
+      "segment": [
+        95.0,
+        97.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.649164080619812
+    },
+    {
+      "segment": [
+        97.0,
+        98.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.644230842590332
+    },
+    {
+      "segment": [
+        98.0,
+        99.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6508703827857971
+    },
+    {
+      "segment": [
+        99.0,
+        102.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6501666307449341
+    },
+    {
+      "segment": [
+        102.0,
+        104.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6506469249725342
+    },
+    {
+      "segment": [
+        104.0,
+        105.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6529737710952759
+    },
+    {
+      "segment": [
+        105.0,
+        107.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.642252504825592
+    },
+    {
+      "segment": [
+        108.0,
+        111.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6471008062362671
+    },
+    {
+      "segment": [
+        111.0,
+        112.0
+      ],
+      "verb": "mix",
+      "noun": "vegetable",
+      "score": 0.6559639573097229
+    },
+    {
+      "segment": [
+        112.0,
+        113.0
+      ],
+      "verb": "wash",
+      "noun": "vegetable",
+      "score": 0.6554834246635437
+    },
+    {
+      "segment": [
+        113.0,
+        118.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6512994766235352
+    },
+    {
+      "segment": [
+        118.0,
+        120.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6504738330841064
+    },
+    {
+      "segment": [
+        120.0,
+        121.0
+      ],
+      "verb": "cut",
+      "noun": "lettuce",
+      "score": 0.652174711227417
+    },
+    {
+      "segment": [
+        121.0,
+        122.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6594787240028381
+    },
+    {
+      "segment": [
+        122.0,
+        124.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6509848833084106
+    },
+    {
+      "segment": [
+        124.0,
+        125.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6459497213363647
+    },
+    {
+      "segment": [
+        125.0,
+        129.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6530324220657349
+    },
+    {
+      "segment": [
+        129.0,
+        130.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6556171178817749
+    },
+    {
+      "segment": [
+        130.0,
+        132.0
+      ],
+      "verb": "mix",
+      "noun": "courgette",
+      "score": 0.6571798920631409
+    },
+    {
+      "segment": [
+        132.0,
+        137.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6538072824478149
+    },
+    {
+      "segment": [
+        137.0,
+        138.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6509878635406494
+    },
+    {
+      "segment": [
+        138.0,
+        140.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6400746703147888
+    },
+    {
+      "segment": [
+        140.0,
+        146.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6540666818618774
+    },
+    {
+      "segment": [
+        146.0,
+        147.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6603039503097534
+    },
+    {
+      "segment": [
+        147.0,
+        148.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.656377911567688
+    },
+    {
+      "segment": [
+        148.0,
+        149.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.6546369791030884
+    },
+    {
+      "segment": [
+        149.0,
+        150.0
+      ],
+      "verb": "close",
+      "noun": "jar",
+      "score": 0.6542569398880005
+    },
+    {
+      "segment": [
+        150.0,
+        151.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6581296324729919
+    },
+    {
+      "segment": [
+        151.0,
+        153.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6576589941978455
+    },
+    {
+      "segment": [
+        153.0,
+        155.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.6496668457984924
+    },
+    {
+      "segment": [
+        155.0,
+        156.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6603559255599976
+    },
+    {
+      "segment": [
+        156.0,
+        158.49
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.666746199131012
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        10.0,
+        14.0
+      ]
+    },
+    {
+      "segment": [
+        26.0,
+        30.0
+      ]
+    },
+    {
+      "segment": [
+        100.0,
+        104.0
+      ]
+    },
+    {
+      "segment": [
+        112.0,
+        116.0
+      ]
+    },
+    {
+      "segment": [
+        142.0,
+        146.0
+      ]
+    }
+  ]
+}

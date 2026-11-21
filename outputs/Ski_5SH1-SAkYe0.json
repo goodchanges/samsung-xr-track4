@@ -1,0 +1,30 @@
+{
+  "team_id": "VIT",
+  "video_id": "Ski_5SH1-SAkYe0",
+  "duration_sec": 119.58,
+  "label": {
+    "name": "ski",
+    "score": 0.0656784325838089
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        3.0,
+        7.0
+      ]
+    },
+    {
+      "segment": [
+        9.0,
+        13.0
+      ]
+    },
+    {
+      "segment": [
+        99.0,
+        103.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "team_id": "VIT",
+  "video_id": "Parkour_LTwzB3VUApA",
+  "duration_sec": 110.69,
+  "label": {
+    "name": "parkour",
+    "score": 0.06391505151987076
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        3.0,
+        7.0
+      ]
+    },
+    {
+      "segment": [
+        30.0,
+        34.0
+      ]
+    },
+    {
+      "segment": [
+        76.0,
+        80.0
+      ]
+    },
+    {
+      "segment": [
+        99.0,
+        103.0
+      ]
+    }
+  ]
+}

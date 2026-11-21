@@ -1,0 +1,54 @@
+{
+  "team_id": "VIT",
+  "video_id": "Boxing_gCsPzyhBxDY",
+  "duration_sec": 196.81,
+  "label": {
+    "name": "boxing",
+    "score": 0.0655837133526802
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        36.0,
+        40.0
+      ]
+    },
+    {
+      "segment": [
+        63.0,
+        67.0
+      ]
+    },
+    {
+      "segment": [
+        97.0,
+        101.0
+      ]
+    },
+    {
+      "segment": [
+        128.0,
+        132.0
+      ]
+    },
+    {
+      "segment": [
+        132.0,
+        136.0
+      ]
+    },
+    {
+      "segment": [
+        150.0,
+        154.0
+      ]
+    },
+    {
+      "segment": [
+        181.0,
+        185.0
+      ]
+    }
+  ]
+}

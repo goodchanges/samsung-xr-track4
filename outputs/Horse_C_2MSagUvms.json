@@ -1,0 +1,42 @@
+{
+  "team_id": "VIT",
+  "video_id": "Horse_C_2MSagUvms",
+  "duration_sec": 165.3,
+  "label": {
+    "name": "horse",
+    "score": 0.06477653235197067
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        6.0,
+        10.0
+      ]
+    },
+    {
+      "segment": [
+        99.0,
+        103.0
+      ]
+    },
+    {
+      "segment": [
+        108.0,
+        112.0
+      ]
+    },
+    {
+      "segment": [
+        126.0,
+        130.0
+      ]
+    },
+    {
+      "segment": [
+        132.0,
+        136.0
+      ]
+    }
+  ]
+}

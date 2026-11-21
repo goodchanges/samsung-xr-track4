@@ -1,0 +1,30 @@
+{
+  "team_id": "VIT",
+  "video_id": "Plane_Yz4CYVdRvvU",
+  "duration_sec": 111.36,
+  "label": {
+    "name": "plane",
+    "score": 0.0644979327917099
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        3.0,
+        7.0
+      ]
+    },
+    {
+      "segment": [
+        57.0,
+        61.0
+      ]
+    },
+    {
+      "segment": [
+        90.0,
+        94.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "team_id": "VIT",
+  "video_id": "RockClimbing_oVnAVcbMoSM",
+  "duration_sec": 83.52,
+  "label": {
+    "name": "rockclimbing",
+    "score": 0.06594762951135635
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        3.0,
+        7.0
+      ]
+    },
+    {
+      "segment": [
+        15.0,
+        19.0
+      ]
+    },
+    {
+      "segment": [
+        26.0,
+        30.0
+      ]
+    }
+  ]
+}

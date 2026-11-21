@@ -1,0 +1,232 @@
+{
+  "team_id": "VIT",
+  "video_id": "P26_40",
+  "duration_sec": 69.7,
+  "label": {
+    "name": "cooking",
+    "score": 0.06731434166431427
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        6.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6510646939277649
+    },
+    {
+      "segment": [
+        6.0,
+        9.0
+      ],
+      "verb": "mix",
+      "noun": "coffee",
+      "score": 0.6613189578056335
+    },
+    {
+      "segment": [
+        9.0,
+        19.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6579643487930298
+    },
+    {
+      "segment": [
+        19.0,
+        20.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6566380262374878
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "close",
+      "noun": "kettle",
+      "score": 0.6639267802238464
+    },
+    {
+      "segment": [
+        21.0,
+        32.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6596962213516235
+    },
+    {
+      "segment": [
+        32.0,
+        33.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6575063467025757
+    },
+    {
+      "segment": [
+        33.0,
+        34.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6573967933654785
+    },
+    {
+      "segment": [
+        34.0,
+        36.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6619147062301636
+    },
+    {
+      "segment": [
+        36.0,
+        42.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6580502390861511
+    },
+    {
+      "segment": [
+        42.0,
+        46.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.65388423204422
+    },
+    {
+      "segment": [
+        46.0,
+        47.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.6553285717964172
+    },
+    {
+      "segment": [
+        47.0,
+        52.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6630297899246216
+    },
+    {
+      "segment": [
+        52.0,
+        53.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6442301273345947
+    },
+    {
+      "segment": [
+        53.0,
+        54.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6414893269538879
+    },
+    {
+      "segment": [
+        54.0,
+        55.0
+      ],
+      "verb": "scoop",
+      "noun": "food",
+      "score": 0.6479979753494263
+    },
+    {
+      "segment": [
+        55.0,
+        57.0
+      ],
+      "verb": "take",
+      "noun": "pin:rolling",
+      "score": 0.6458873748779297
+    },
+    {
+      "segment": [
+        57.0,
+        58.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6383267045021057
+    },
+    {
+      "segment": [
+        58.0,
+        59.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6346592307090759
+    },
+    {
+      "segment": [
+        61.0,
+        62.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.652006983757019
+    },
+    {
+      "segment": [
+        62.0,
+        63.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6413905024528503
+    },
+    {
+      "segment": [
+        64.0,
+        65.0
+      ],
+      "verb": "wash",
+      "noun": "maker:coffee",
+      "score": 0.6489369869232178
+    },
+    {
+      "segment": [
+        65.0,
+        69.7
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6509627103805542
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        39.0,
+        43.0
+      ]
+    },
+    {
+      "segment": [
+        58.0,
+        62.0
+      ]
+    }
+  ]
+}

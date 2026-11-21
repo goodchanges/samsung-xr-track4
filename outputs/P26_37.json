@@ -1,0 +1,187 @@
+{
+  "team_id": "VIT",
+  "video_id": "P26_37",
+  "duration_sec": 63.03,
+  "label": {
+    "name": "cooking",
+    "score": 0.06747152656316757
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        2.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6567054390907288
+    },
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6389766931533813
+    },
+    {
+      "segment": [
+        3.0,
+        4.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6356995701789856
+    },
+    {
+      "segment": [
+        4.0,
+        5.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6477067470550537
+    },
+    {
+      "segment": [
+        5.0,
+        6.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6460790634155273
+    },
+    {
+      "segment": [
+        6.0,
+        7.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.651665210723877
+    },
+    {
+      "segment": [
+        7.0,
+        9.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6535367369651794
+    },
+    {
+      "segment": [
+        9.0,
+        13.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.659261167049408
+    },
+    {
+      "segment": [
+        13.0,
+        14.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6495341062545776
+    },
+    {
+      "segment": [
+        14.0,
+        15.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6461660861968994
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6487441658973694
+    },
+    {
+      "segment": [
+        16.0,
+        33.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6618903875350952
+    },
+    {
+      "segment": [
+        33.0,
+        34.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6558786630630493
+    },
+    {
+      "segment": [
+        34.0,
+        35.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.6454496383666992
+    },
+    {
+      "segment": [
+        35.0,
+        36.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6474956274032593
+    },
+    {
+      "segment": [
+        36.0,
+        55.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6607164144515991
+    },
+    {
+      "segment": [
+        55.0,
+        56.0
+      ],
+      "verb": "wash",
+      "noun": "maker:coffee",
+      "score": 0.6517161726951599
+    },
+    {
+      "segment": [
+        56.0,
+        63.03
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6566801071166992
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        11.0,
+        15.0
+      ]
+    },
+    {
+      "segment": [
+        15.0,
+        19.0
+      ]
+    }
+  ]
+}

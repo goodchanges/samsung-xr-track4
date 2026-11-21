@@ -1,0 +1,42 @@
+{
+  "team_id": "VIT",
+  "video_id": "Parkour_Oykjn35X3EY",
+  "duration_sec": 156.87,
+  "label": {
+    "name": "jumping",
+    "score": 0.06367551535367966
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        0.0,
+        4.0
+      ]
+    },
+    {
+      "segment": [
+        28.0,
+        32.0
+      ]
+    },
+    {
+      "segment": [
+        111.0,
+        115.0
+      ]
+    },
+    {
+      "segment": [
+        127.0,
+        131.0
+      ]
+    },
+    {
+      "segment": [
+        143.0,
+        147.0
+      ]
+    }
+  ]
+}

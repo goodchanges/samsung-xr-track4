@@ -1,0 +1,36 @@
+{
+  "team_id": "VIT",
+  "video_id": "Surfing_8mG4YzFZ9xU",
+  "duration_sec": 123.97,
+  "label": {
+    "name": "surfing",
+    "score": 0.06493567675352097
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        36.0,
+        40.0
+      ]
+    },
+    {
+      "segment": [
+        40.0,
+        44.0
+      ]
+    },
+    {
+      "segment": [
+        44.0,
+        48.0
+      ]
+    },
+    {
+      "segment": [
+        116.0,
+        120.0
+      ]
+    }
+  ]
+}

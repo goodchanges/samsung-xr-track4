@@ -1,0 +1,730 @@
+{
+  "team_id": "VIT",
+  "video_id": "P07_17",
+  "duration_sec": 132.93,
+  "label": {
+    "name": "cooking",
+    "score": 0.06522517651319504
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        2.0
+      ],
+      "verb": "close",
+      "noun": "cupboard",
+      "score": 0.6422123908996582
+    },
+    {
+      "segment": [
+        2.0,
+        5.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6529231071472168
+    },
+    {
+      "segment": [
+        5.0,
+        7.0
+      ],
+      "verb": "wash",
+      "noun": "sink",
+      "score": 0.6565471291542053
+    },
+    {
+      "segment": [
+        7.0,
+        8.0
+      ],
+      "verb": "empty",
+      "noun": "sink",
+      "score": 0.6574966311454773
+    },
+    {
+      "segment": [
+        8.0,
+        10.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6482487916946411
+    },
+    {
+      "segment": [
+        10.0,
+        11.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6469516754150391
+    },
+    {
+      "segment": [
+        11.0,
+        14.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6507778167724609
+    },
+    {
+      "segment": [
+        14.0,
+        15.0
+      ],
+      "verb": "mix",
+      "noun": "pan",
+      "score": 0.6518827676773071
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "wash",
+      "noun": "ladle",
+      "score": 0.6574276685714722
+    },
+    {
+      "segment": [
+        16.0,
+        18.0
+      ],
+      "verb": "wash",
+      "noun": "spatula",
+      "score": 0.6523445844650269
+    },
+    {
+      "segment": [
+        18.0,
+        19.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6477633714675903
+    },
+    {
+      "segment": [
+        19.0,
+        20.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6395077705383301
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.647233247756958
+    },
+    {
+      "segment": [
+        21.0,
+        22.0
+      ],
+      "verb": "dry",
+      "noun": "knife",
+      "score": 0.6483583450317383
+    },
+    {
+      "segment": [
+        22.0,
+        23.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6376733779907227
+    },
+    {
+      "segment": [
+        24.0,
+        25.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6341978311538696
+    },
+    {
+      "segment": [
+        25.0,
+        28.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6448465585708618
+    },
+    {
+      "segment": [
+        28.0,
+        30.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6531640291213989
+    },
+    {
+      "segment": [
+        30.0,
+        32.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6473456621170044
+    },
+    {
+      "segment": [
+        32.0,
+        33.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6550374627113342
+    },
+    {
+      "segment": [
+        33.0,
+        38.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6552088260650635
+    },
+    {
+      "segment": [
+        38.0,
+        39.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6520424485206604
+    },
+    {
+      "segment": [
+        39.0,
+        40.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6493105888366699
+    },
+    {
+      "segment": [
+        40.0,
+        41.0
+      ],
+      "verb": "empty",
+      "noun": "sink",
+      "score": 0.6454200148582458
+    },
+    {
+      "segment": [
+        41.0,
+        43.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6372894048690796
+    },
+    {
+      "segment": [
+        43.0,
+        44.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6472592949867249
+    },
+    {
+      "segment": [
+        44.0,
+        45.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6567045450210571
+    },
+    {
+      "segment": [
+        45.0,
+        46.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.644875168800354
+    },
+    {
+      "segment": [
+        46.0,
+        47.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6556880474090576
+    },
+    {
+      "segment": [
+        47.0,
+        49.0
+      ],
+      "verb": "mix",
+      "noun": "rice",
+      "score": 0.6565622091293335
+    },
+    {
+      "segment": [
+        49.0,
+        50.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6575322151184082
+    },
+    {
+      "segment": [
+        50.0,
+        51.0
+      ],
+      "verb": "mix",
+      "noun": "rice",
+      "score": 0.6582446098327637
+    },
+    {
+      "segment": [
+        51.0,
+        52.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6534911394119263
+    },
+    {
+      "segment": [
+        52.0,
+        56.0
+      ],
+      "verb": "scrub",
+      "noun": "plate",
+      "score": 0.6483427286148071
+    },
+    {
+      "segment": [
+        56.0,
+        67.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6533838510513306
+    },
+    {
+      "segment": [
+        67.0,
+        68.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6475293636322021
+    },
+    {
+      "segment": [
+        68.0,
+        69.0
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6418328285217285
+    },
+    {
+      "segment": [
+        69.0,
+        71.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6531798839569092
+    },
+    {
+      "segment": [
+        71.0,
+        72.0
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6560817956924438
+    },
+    {
+      "segment": [
+        72.0,
+        73.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6524549126625061
+    },
+    {
+      "segment": [
+        73.0,
+        74.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6595323085784912
+    },
+    {
+      "segment": [
+        74.0,
+        75.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6480919122695923
+    },
+    {
+      "segment": [
+        75.0,
+        77.0
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6468678712844849
+    },
+    {
+      "segment": [
+        77.0,
+        79.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6485152244567871
+    },
+    {
+      "segment": [
+        79.0,
+        82.0
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6495983600616455
+    },
+    {
+      "segment": [
+        82.0,
+        83.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6492253541946411
+    },
+    {
+      "segment": [
+        83.0,
+        84.0
+      ],
+      "verb": "take",
+      "noun": "cereal",
+      "score": 0.6413527727127075
+    },
+    {
+      "segment": [
+        84.0,
+        86.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.652814507484436
+    },
+    {
+      "segment": [
+        86.0,
+        87.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6606593132019043
+    },
+    {
+      "segment": [
+        87.0,
+        88.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6499015092849731
+    },
+    {
+      "segment": [
+        88.0,
+        89.0
+      ],
+      "verb": "mix",
+      "noun": "rice",
+      "score": 0.6671954393386841
+    },
+    {
+      "segment": [
+        89.0,
+        91.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6535341143608093
+    },
+    {
+      "segment": [
+        91.0,
+        92.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6479425430297852
+    },
+    {
+      "segment": [
+        92.0,
+        94.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6556081771850586
+    },
+    {
+      "segment": [
+        94.0,
+        95.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6450628042221069
+    },
+    {
+      "segment": [
+        95.0,
+        97.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6438379287719727
+    },
+    {
+      "segment": [
+        98.0,
+        100.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6470374464988708
+    },
+    {
+      "segment": [
+        100.0,
+        101.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6547368168830872
+    },
+    {
+      "segment": [
+        101.0,
+        102.0
+      ],
+      "verb": "wash",
+      "noun": "sink",
+      "score": 0.6481141448020935
+    },
+    {
+      "segment": [
+        104.0,
+        106.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.654155969619751
+    },
+    {
+      "segment": [
+        106.0,
+        107.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6567637920379639
+    },
+    {
+      "segment": [
+        107.0,
+        108.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6474927663803101
+    },
+    {
+      "segment": [
+        108.0,
+        109.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6421003937721252
+    },
+    {
+      "segment": [
+        109.0,
+        112.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6498873829841614
+    },
+    {
+      "segment": [
+        112.0,
+        114.0
+      ],
+      "verb": "mix",
+      "noun": "rice",
+      "score": 0.656919538974762
+    },
+    {
+      "segment": [
+        114.0,
+        115.0
+      ],
+      "verb": "wash",
+      "noun": "spatula",
+      "score": 0.6503071784973145
+    },
+    {
+      "segment": [
+        115.0,
+        116.0
+      ],
+      "verb": "press",
+      "noun": "spatula",
+      "score": 0.6554990410804749
+    },
+    {
+      "segment": [
+        116.0,
+        117.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6535676121711731
+    },
+    {
+      "segment": [
+        117.0,
+        118.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6383113861083984
+    },
+    {
+      "segment": [
+        118.0,
+        125.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6520775556564331
+    },
+    {
+      "segment": [
+        125.0,
+        126.0
+      ],
+      "verb": "put",
+      "noun": "juicer",
+      "score": 0.6492366790771484
+    },
+    {
+      "segment": [
+        126.0,
+        127.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6592839956283569
+    },
+    {
+      "segment": [
+        127.0,
+        128.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.6535477638244629
+    },
+    {
+      "segment": [
+        128.0,
+        129.0
+      ],
+      "verb": "wash",
+      "noun": "juicer",
+      "score": 0.6565523147583008
+    },
+    {
+      "segment": [
+        129.0,
+        130.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6522389054298401
+    },
+    {
+      "segment": [
+        130.0,
+        132.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6556721925735474
+    },
+    {
+      "segment": [
+        132.0,
+        132.93
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6476516723632812
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        5.0,
+        9.0
+      ]
+    },
+    {
+      "segment": [
+        10.0,
+        14.0
+      ]
+    },
+    {
+      "segment": [
+        45.0,
+        49.0
+      ]
+    },
+    {
+      "segment": [
+        122.0,
+        126.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "team_id": "VIT",
+  "video_id": "Horse_2otBDeLWCow",
+  "duration_sec": 248.2,
+  "label": {
+    "name": "horse",
+    "score": 0.06542058289051056
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        11.0,
+        15.0
+      ]
+    },
+    {
+      "segment": [
+        81.0,
+        85.0
+      ]
+    },
+    {
+      "segment": [
+        159.0,
+        163.0
+      ]
+    },
+    {
+      "segment": [
+        167.0,
+        171.0
+      ]
+    },
+    {
+      "segment": [
+        172.0,
+        176.0
+      ]
+    },
+    {
+      "segment": [
+        176.0,
+        180.0
+      ]
+    },
+    {
+      "segment": [
+        180.0,
+        184.0
+      ]
+    },
+    {
+      "segment": [
+        207.0,
+        211.0
+      ]
+    }
+  ]
+}

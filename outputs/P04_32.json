@@ -1,0 +1,289 @@
+{
+  "team_id": "VIT",
+  "video_id": "P04_32",
+  "duration_sec": 53.55,
+  "label": {
+    "name": "cooking",
+    "score": 0.0679817646741867
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        1.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6469113826751709
+    },
+    {
+      "segment": [
+        1.0,
+        2.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6367044448852539
+    },
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6432595252990723
+    },
+    {
+      "segment": [
+        3.0,
+        4.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6474526524543762
+    },
+    {
+      "segment": [
+        4.0,
+        5.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6608062386512756
+    },
+    {
+      "segment": [
+        5.0,
+        7.0
+      ],
+      "verb": "mix",
+      "noun": "courgette",
+      "score": 0.6599114537239075
+    },
+    {
+      "segment": [
+        7.0,
+        8.0
+      ],
+      "verb": "mix",
+      "noun": "vegetable",
+      "score": 0.6605919599533081
+    },
+    {
+      "segment": [
+        8.0,
+        10.0
+      ],
+      "verb": "mix",
+      "noun": "courgette",
+      "score": 0.6603042483329773
+    },
+    {
+      "segment": [
+        10.0,
+        11.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.6565945148468018
+    },
+    {
+      "segment": [
+        11.0,
+        12.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6604481935501099
+    },
+    {
+      "segment": [
+        12.0,
+        13.0
+      ],
+      "verb": "mix",
+      "noun": "vegetable",
+      "score": 0.6620157957077026
+    },
+    {
+      "segment": [
+        13.0,
+        15.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6600220203399658
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.647627592086792
+    },
+    {
+      "segment": [
+        16.0,
+        19.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6594656705856323
+    },
+    {
+      "segment": [
+        19.0,
+        20.0
+      ],
+      "verb": "mix",
+      "noun": "pan",
+      "score": 0.6613020896911621
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6533414125442505
+    },
+    {
+      "segment": [
+        21.0,
+        24.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6562037467956543
+    },
+    {
+      "segment": [
+        24.0,
+        25.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6558899879455566
+    },
+    {
+      "segment": [
+        25.0,
+        27.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6574928760528564
+    },
+    {
+      "segment": [
+        27.0,
+        31.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6523804664611816
+    },
+    {
+      "segment": [
+        31.0,
+        32.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6607803106307983
+    },
+    {
+      "segment": [
+        32.0,
+        33.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6531029343605042
+    },
+    {
+      "segment": [
+        33.0,
+        35.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6585198044776917
+    },
+    {
+      "segment": [
+        35.0,
+        37.0
+      ],
+      "verb": "mix",
+      "noun": "salad",
+      "score": 0.6555302143096924
+    },
+    {
+      "segment": [
+        37.0,
+        40.0
+      ],
+      "verb": "mix",
+      "noun": "rice",
+      "score": 0.6538697481155396
+    },
+    {
+      "segment": [
+        40.0,
+        42.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6579725742340088
+    },
+    {
+      "segment": [
+        42.0,
+        43.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.6519814133644104
+    },
+    {
+      "segment": [
+        43.0,
+        45.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6573934555053711
+    },
+    {
+      "segment": [
+        45.0,
+        52.0
+      ],
+      "verb": "mix",
+      "noun": "rice",
+      "score": 0.6525545120239258
+    },
+    {
+      "segment": [
+        52.0,
+        53.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6448152661323547
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        44.0,
+        48.0
+      ]
+    }
+  ]
+}

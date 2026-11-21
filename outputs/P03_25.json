@@ -1,0 +1,208 @@
+{
+  "team_id": "VIT",
+  "video_id": "P03_25",
+  "duration_sec": 37.19,
+  "label": {
+    "name": "cooking",
+    "score": 0.06593891233205795
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        3.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6460671424865723
+    },
+    {
+      "segment": [
+        3.0,
+        4.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6584294438362122
+    },
+    {
+      "segment": [
+        4.0,
+        5.0
+      ],
+      "verb": "wash",
+      "noun": "oven",
+      "score": 0.6520837545394897
+    },
+    {
+      "segment": [
+        5.0,
+        9.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6528468132019043
+    },
+    {
+      "segment": [
+        9.0,
+        10.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6476798057556152
+    },
+    {
+      "segment": [
+        10.0,
+        11.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6541138887405396
+    },
+    {
+      "segment": [
+        11.0,
+        12.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6444613337516785
+    },
+    {
+      "segment": [
+        12.0,
+        13.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6353554725646973
+    },
+    {
+      "segment": [
+        13.0,
+        14.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6663782596588135
+    },
+    {
+      "segment": [
+        14.0,
+        15.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6435404419898987
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6573862433433533
+    },
+    {
+      "segment": [
+        16.0,
+        17.0
+      ],
+      "verb": "turn-on",
+      "noun": "hob",
+      "score": 0.6453392505645752
+    },
+    {
+      "segment": [
+        17.0,
+        19.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.653639554977417
+    },
+    {
+      "segment": [
+        19.0,
+        21.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6513559818267822
+    },
+    {
+      "segment": [
+        21.0,
+        23.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6571571826934814
+    },
+    {
+      "segment": [
+        23.0,
+        24.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6406615972518921
+    },
+    {
+      "segment": [
+        24.0,
+        25.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6519168615341187
+    },
+    {
+      "segment": [
+        25.0,
+        26.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6596986055374146
+    },
+    {
+      "segment": [
+        26.0,
+        32.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6581029295921326
+    },
+    {
+      "segment": [
+        32.0,
+        35.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.654553234577179
+    },
+    {
+      "segment": [
+        35.0,
+        37.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6352747678756714
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        25.0,
+        29.0
+      ]
+    }
+  ]
+}

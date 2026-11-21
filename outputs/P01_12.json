@@ -1,0 +1,652 @@
+{
+  "team_id": "VIT",
+  "video_id": "P01_12",
+  "duration_sec": 173.81,
+  "label": {
+    "name": "cooking",
+    "score": 0.06399859488010406
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        1.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6308849453926086
+    },
+    {
+      "segment": [
+        1.0,
+        2.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6475716829299927
+    },
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6455121040344238
+    },
+    {
+      "segment": [
+        5.0,
+        6.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6515051126480103
+    },
+    {
+      "segment": [
+        6.0,
+        7.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6544176936149597
+    },
+    {
+      "segment": [
+        7.0,
+        8.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6581818461418152
+    },
+    {
+      "segment": [
+        8.0,
+        10.0
+      ],
+      "verb": "wash",
+      "noun": "juicer",
+      "score": 0.650266170501709
+    },
+    {
+      "segment": [
+        10.0,
+        16.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.65643709897995
+    },
+    {
+      "segment": [
+        16.0,
+        17.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6594099998474121
+    },
+    {
+      "segment": [
+        17.0,
+        19.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6511746644973755
+    },
+    {
+      "segment": [
+        19.0,
+        20.0
+      ],
+      "verb": "press",
+      "noun": "spatula",
+      "score": 0.6466920375823975
+    },
+    {
+      "segment": [
+        21.0,
+        24.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6482731699943542
+    },
+    {
+      "segment": [
+        25.0,
+        26.0
+      ],
+      "verb": "move",
+      "noun": "box",
+      "score": 0.638056755065918
+    },
+    {
+      "segment": [
+        26.0,
+        28.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6543483138084412
+    },
+    {
+      "segment": [
+        28.0,
+        30.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6478626132011414
+    },
+    {
+      "segment": [
+        30.0,
+        32.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6580396890640259
+    },
+    {
+      "segment": [
+        34.0,
+        37.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6490350365638733
+    },
+    {
+      "segment": [
+        38.0,
+        39.0
+      ],
+      "verb": "open",
+      "noun": "dishwasher",
+      "score": 0.6553291082382202
+    },
+    {
+      "segment": [
+        39.0,
+        42.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6621202230453491
+    },
+    {
+      "segment": [
+        44.0,
+        47.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6486826539039612
+    },
+    {
+      "segment": [
+        47.0,
+        51.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6509613990783691
+    },
+    {
+      "segment": [
+        51.0,
+        54.0
+      ],
+      "verb": "shake",
+      "noun": "pan",
+      "score": 0.6591401100158691
+    },
+    {
+      "segment": [
+        59.0,
+        60.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6555320620536804
+    },
+    {
+      "segment": [
+        60.0,
+        62.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6586471199989319
+    },
+    {
+      "segment": [
+        62.0,
+        64.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6551942229270935
+    },
+    {
+      "segment": [
+        64.0,
+        68.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6512565612792969
+    },
+    {
+      "segment": [
+        70.0,
+        71.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6555839776992798
+    },
+    {
+      "segment": [
+        71.0,
+        73.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6537009477615356
+    },
+    {
+      "segment": [
+        73.0,
+        76.0
+      ],
+      "verb": "empty",
+      "noun": "sink",
+      "score": 0.6507811546325684
+    },
+    {
+      "segment": [
+        76.0,
+        77.0
+      ],
+      "verb": "put",
+      "noun": "towel:kitchen",
+      "score": 0.6500431299209595
+    },
+    {
+      "segment": [
+        77.0,
+        78.0
+      ],
+      "verb": "cut",
+      "noun": "paper",
+      "score": 0.6545578241348267
+    },
+    {
+      "segment": [
+        78.0,
+        80.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6606780886650085
+    },
+    {
+      "segment": [
+        80.0,
+        82.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6563450694084167
+    },
+    {
+      "segment": [
+        82.0,
+        84.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6581188440322876
+    },
+    {
+      "segment": [
+        84.0,
+        88.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6480646729469299
+    },
+    {
+      "segment": [
+        88.0,
+        89.0
+      ],
+      "verb": "open",
+      "noun": "maker:coffee",
+      "score": 0.6480810046195984
+    },
+    {
+      "segment": [
+        89.0,
+        91.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6410965919494629
+    },
+    {
+      "segment": [
+        92.0,
+        93.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6499590873718262
+    },
+    {
+      "segment": [
+        93.0,
+        94.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6597920656204224
+    },
+    {
+      "segment": [
+        94.0,
+        95.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6481020450592041
+    },
+    {
+      "segment": [
+        95.0,
+        96.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6543288826942444
+    },
+    {
+      "segment": [
+        96.0,
+        97.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6458458304405212
+    },
+    {
+      "segment": [
+        98.0,
+        104.0
+      ],
+      "verb": "close",
+      "noun": "drawer",
+      "score": 0.6570085287094116
+    },
+    {
+      "segment": [
+        104.0,
+        106.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6477382183074951
+    },
+    {
+      "segment": [
+        106.0,
+        108.0
+      ],
+      "verb": "insert",
+      "noun": "box",
+      "score": 0.6532048583030701
+    },
+    {
+      "segment": [
+        108.0,
+        109.0
+      ],
+      "verb": "move",
+      "noun": "box",
+      "score": 0.6657112836837769
+    },
+    {
+      "segment": [
+        110.0,
+        112.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6355150938034058
+    },
+    {
+      "segment": [
+        113.0,
+        118.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6600440740585327
+    },
+    {
+      "segment": [
+        118.0,
+        119.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.650192379951477
+    },
+    {
+      "segment": [
+        119.0,
+        122.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6467978954315186
+    },
+    {
+      "segment": [
+        122.0,
+        132.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.662033200263977
+    },
+    {
+      "segment": [
+        132.0,
+        134.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6508551239967346
+    },
+    {
+      "segment": [
+        135.0,
+        140.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.649928629398346
+    },
+    {
+      "segment": [
+        140.0,
+        141.0
+      ],
+      "verb": "open",
+      "noun": "package",
+      "score": 0.6537339091300964
+    },
+    {
+      "segment": [
+        141.0,
+        146.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.656835675239563
+    },
+    {
+      "segment": [
+        149.0,
+        150.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6397539377212524
+    },
+    {
+      "segment": [
+        151.0,
+        152.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6396297216415405
+    },
+    {
+      "segment": [
+        152.0,
+        154.0
+      ],
+      "verb": "brush",
+      "noun": "floor",
+      "score": 0.6346442103385925
+    },
+    {
+      "segment": [
+        155.0,
+        156.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6584649085998535
+    },
+    {
+      "segment": [
+        156.0,
+        157.0
+      ],
+      "verb": "insert",
+      "noun": "box",
+      "score": 0.6533030867576599
+    },
+    {
+      "segment": [
+        157.0,
+        159.0
+      ],
+      "verb": "cut",
+      "noun": "package",
+      "score": 0.657236635684967
+    },
+    {
+      "segment": [
+        159.0,
+        160.0
+      ],
+      "verb": "unroll",
+      "noun": "dough",
+      "score": 0.6583279371261597
+    },
+    {
+      "segment": [
+        160.0,
+        163.0
+      ],
+      "verb": "roll",
+      "noun": "dough",
+      "score": 0.6640134453773499
+    },
+    {
+      "segment": [
+        163.0,
+        165.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.655556857585907
+    },
+    {
+      "segment": [
+        165.0,
+        169.0
+      ],
+      "verb": "roll",
+      "noun": "dough",
+      "score": 0.6638141870498657
+    },
+    {
+      "segment": [
+        169.0,
+        170.0
+      ],
+      "verb": "unroll",
+      "noun": "dough",
+      "score": 0.663079023361206
+    },
+    {
+      "segment": [
+        170.0,
+        172.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6532775163650513
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        7.0,
+        11.0
+      ]
+    },
+    {
+      "segment": [
+        30.0,
+        34.0
+      ]
+    },
+    {
+      "segment": [
+        50.0,
+        54.0
+      ]
+    },
+    {
+      "segment": [
+        72.0,
+        76.0
+      ]
+    },
+    {
+      "segment": [
+        122.0,
+        126.0
+      ]
+    },
+    {
+      "segment": [
+        126.0,
+        130.0
+      ]
+    }
+  ]
+}

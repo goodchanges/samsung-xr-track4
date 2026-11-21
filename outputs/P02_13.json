@@ -1,0 +1,190 @@
+{
+  "team_id": "VIT",
+  "video_id": "P02_13",
+  "duration_sec": 29.51,
+  "label": {
+    "name": "cooking",
+    "score": 0.06562387943267822
+  },
+  "actions": [
+    {
+      "segment": [
+        1.0,
+        2.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6506869196891785
+    },
+    {
+      "segment": [
+        2.0,
+        4.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.6497257947921753
+    },
+    {
+      "segment": [
+        4.0,
+        5.0
+      ],
+      "verb": "open",
+      "noun": "oven",
+      "score": 0.6316269636154175
+    },
+    {
+      "segment": [
+        5.0,
+        6.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6509373188018799
+    },
+    {
+      "segment": [
+        6.0,
+        8.0
+      ],
+      "verb": "open",
+      "noun": "oven",
+      "score": 0.6379686594009399
+    },
+    {
+      "segment": [
+        8.0,
+        10.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.6627511978149414
+    },
+    {
+      "segment": [
+        10.0,
+        11.0
+      ],
+      "verb": "open",
+      "noun": "maker:coffee",
+      "score": 0.6458454132080078
+    },
+    {
+      "segment": [
+        11.0,
+        12.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.6451928615570068
+    },
+    {
+      "segment": [
+        12.0,
+        14.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6613693833351135
+    },
+    {
+      "segment": [
+        14.0,
+        16.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6435788869857788
+    },
+    {
+      "segment": [
+        17.0,
+        18.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6438212990760803
+    },
+    {
+      "segment": [
+        18.0,
+        20.0
+      ],
+      "verb": "flip",
+      "noun": "dough",
+      "score": 0.6548211574554443
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "open",
+      "noun": "oven",
+      "score": 0.6465024948120117
+    },
+    {
+      "segment": [
+        21.0,
+        22.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.64772629737854
+    },
+    {
+      "segment": [
+        22.0,
+        23.0
+      ],
+      "verb": "open",
+      "noun": "microwave",
+      "score": 0.669617772102356
+    },
+    {
+      "segment": [
+        23.0,
+        25.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.658983588218689
+    },
+    {
+      "segment": [
+        25.0,
+        27.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6444714069366455
+    },
+    {
+      "segment": [
+        27.0,
+        28.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6573358178138733
+    },
+    {
+      "segment": [
+        28.0,
+        29.51
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6521984338760376
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        20.0,
+        24.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "team_id": "VIT",
+  "video_id": "Plane_QsL_gCDHWHA",
+  "duration_sec": 205.47,
+  "label": {
+    "name": "other",
+    "score": 0.06404027342796326
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        60.0,
+        64.0
+      ]
+    },
+    {
+      "segment": [
+        78.0,
+        82.0
+      ]
+    },
+    {
+      "segment": [
+        93.0,
+        97.0
+      ]
+    },
+    {
+      "segment": [
+        132.0,
+        136.0
+      ]
+    },
+    {
+      "segment": [
+        165.0,
+        169.0
+      ]
+    },
+    {
+      "segment": [
+        171.0,
+        175.0
+      ]
+    },
+    {
+      "segment": [
+        198.0,
+        202.0
+      ]
+    }
+  ]
+}

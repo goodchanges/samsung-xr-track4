@@ -1,0 +1,90 @@
+{
+  "team_id": "VIT",
+  "video_id": "RockClimbing_EaKtFLoXTCI",
+  "duration_sec": 373.96,
+  "label": {
+    "name": "rockclimbing",
+    "score": 0.06455469876527786
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        49.0,
+        53.0
+      ]
+    },
+    {
+      "segment": [
+        53.0,
+        57.0
+      ]
+    },
+    {
+      "segment": [
+        91.0,
+        95.0
+      ]
+    },
+    {
+      "segment": [
+        106.0,
+        110.0
+      ]
+    },
+    {
+      "segment": [
+        169.0,
+        173.0
+      ]
+    },
+    {
+      "segment": [
+        193.0,
+        197.0
+      ]
+    },
+    {
+      "segment": [
+        255.0,
+        259.0
+      ]
+    },
+    {
+      "segment": [
+        266.0,
+        270.0
+      ]
+    },
+    {
+      "segment": [
+        275.0,
+        279.0
+      ]
+    },
+    {
+      "segment": [
+        289.0,
+        293.0
+      ]
+    },
+    {
+      "segment": [
+        308.0,
+        312.0
+      ]
+    },
+    {
+      "segment": [
+        328.0,
+        332.0
+      ]
+    },
+    {
+      "segment": [
+        339.0,
+        343.0
+      ]
+    }
+  ]
+}

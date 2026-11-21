@@ -1,0 +1,322 @@
+{
+  "team_id": "VIT",
+  "video_id": "P28_21",
+  "duration_sec": 61.26,
+  "label": {
+    "name": "cooking",
+    "score": 0.06709364801645279
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        2.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6499173641204834
+    },
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6529344916343689
+    },
+    {
+      "segment": [
+        3.0,
+        4.0
+      ],
+      "verb": "put",
+      "noun": "cereal",
+      "score": 0.6471841335296631
+    },
+    {
+      "segment": [
+        4.0,
+        5.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6480802893638611
+    },
+    {
+      "segment": [
+        5.0,
+        7.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6529991626739502
+    },
+    {
+      "segment": [
+        7.0,
+        9.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6542671918869019
+    },
+    {
+      "segment": [
+        9.0,
+        11.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6560537219047546
+    },
+    {
+      "segment": [
+        11.0,
+        13.0
+      ],
+      "verb": "mix",
+      "noun": "vegetable",
+      "score": 0.656073808670044
+    },
+    {
+      "segment": [
+        13.0,
+        14.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6540464162826538
+    },
+    {
+      "segment": [
+        14.0,
+        16.0
+      ],
+      "verb": "mix",
+      "noun": "vegetable",
+      "score": 0.6545445322990417
+    },
+    {
+      "segment": [
+        16.0,
+        17.0
+      ],
+      "verb": "put",
+      "noun": "board:chopping",
+      "score": 0.6461999416351318
+    },
+    {
+      "segment": [
+        17.0,
+        21.0
+      ],
+      "verb": "insert",
+      "noun": "board:chopping",
+      "score": 0.6541423797607422
+    },
+    {
+      "segment": [
+        21.0,
+        22.0
+      ],
+      "verb": "cut",
+      "noun": "pizza",
+      "score": 0.652816653251648
+    },
+    {
+      "segment": [
+        22.0,
+        23.0
+      ],
+      "verb": "insert",
+      "noun": "board:chopping",
+      "score": 0.6465276479721069
+    },
+    {
+      "segment": [
+        23.0,
+        25.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6513918042182922
+    },
+    {
+      "segment": [
+        25.0,
+        26.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6486507654190063
+    },
+    {
+      "segment": [
+        26.0,
+        27.0
+      ],
+      "verb": "take",
+      "noun": "board:chopping",
+      "score": 0.6397636532783508
+    },
+    {
+      "segment": [
+        27.0,
+        28.0
+      ],
+      "verb": "cut",
+      "noun": "pizza",
+      "score": 0.6488322019577026
+    },
+    {
+      "segment": [
+        28.0,
+        29.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6501843929290771
+    },
+    {
+      "segment": [
+        29.0,
+        30.0
+      ],
+      "verb": "wash",
+      "noun": "board:chopping",
+      "score": 0.653477668762207
+    },
+    {
+      "segment": [
+        30.0,
+        31.0
+      ],
+      "verb": "put",
+      "noun": "blender",
+      "score": 0.6524326205253601
+    },
+    {
+      "segment": [
+        31.0,
+        33.0
+      ],
+      "verb": "move",
+      "noun": "board:chopping",
+      "score": 0.6516026258468628
+    },
+    {
+      "segment": [
+        33.0,
+        36.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6629647016525269
+    },
+    {
+      "segment": [
+        36.0,
+        37.0
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.6611431837081909
+    },
+    {
+      "segment": [
+        37.0,
+        38.0
+      ],
+      "verb": "cut",
+      "noun": "chilli",
+      "score": 0.6539239287376404
+    },
+    {
+      "segment": [
+        38.0,
+        39.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6529452800750732
+    },
+    {
+      "segment": [
+        39.0,
+        40.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6589348316192627
+    },
+    {
+      "segment": [
+        40.0,
+        41.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.651348352432251
+    },
+    {
+      "segment": [
+        41.0,
+        43.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6594246625900269
+    },
+    {
+      "segment": [
+        43.0,
+        45.0
+      ],
+      "verb": "mix",
+      "noun": "vegetable",
+      "score": 0.6590127944946289
+    },
+    {
+      "segment": [
+        45.0,
+        56.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6553329825401306
+    },
+    {
+      "segment": [
+        56.0,
+        57.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6412241458892822
+    },
+    {
+      "segment": [
+        57.0,
+        61.26
+      ],
+      "verb": "turn-off",
+      "noun": "hob",
+      "score": 0.654609203338623
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        37.0,
+        41.0
+      ]
+    },
+    {
+      "segment": [
+        46.0,
+        50.0
+      ]
+    }
+  ]
+}

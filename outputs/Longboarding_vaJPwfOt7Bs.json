@@ -1,0 +1,54 @@
+{
+  "team_id": "VIT",
+  "video_id": "Longboarding_vaJPwfOt7Bs",
+  "duration_sec": 202.64,
+  "label": {
+    "name": "bike",
+    "score": 0.06542262434959412
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        12.0,
+        16.0
+      ]
+    },
+    {
+      "segment": [
+        36.0,
+        40.0
+      ]
+    },
+    {
+      "segment": [
+        72.0,
+        76.0
+      ]
+    },
+    {
+      "segment": [
+        105.0,
+        109.0
+      ]
+    },
+    {
+      "segment": [
+        126.0,
+        130.0
+      ]
+    },
+    {
+      "segment": [
+        165.0,
+        169.0
+      ]
+    },
+    {
+      "segment": [
+        192.0,
+        196.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "team_id": "VIT",
+  "video_id": "P04_26",
+  "duration_sec": 36.91,
+  "label": {
+    "name": "cooking",
+    "score": 0.06731726229190826
+  },
+  "actions": [
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.640387773513794
+    },
+    {
+      "segment": [
+        3.0,
+        4.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6516222357749939
+    },
+    {
+      "segment": [
+        4.0,
+        7.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6472777724266052
+    },
+    {
+      "segment": [
+        7.0,
+        8.0
+      ],
+      "verb": "wash",
+      "noun": "board:chopping",
+      "score": 0.6608259677886963
+    },
+    {
+      "segment": [
+        8.0,
+        12.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6535165309906006
+    },
+    {
+      "segment": [
+        12.0,
+        13.0
+      ],
+      "verb": "insert",
+      "noun": "board:chopping",
+      "score": 0.6571273803710938
+    },
+    {
+      "segment": [
+        13.0,
+        15.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6416640877723694
+    },
+    {
+      "segment": [
+        15.0,
+        18.0
+      ],
+      "verb": "cut",
+      "noun": "pizza",
+      "score": 0.6493270993232727
+    },
+    {
+      "segment": [
+        18.0,
+        19.0
+      ],
+      "verb": "flip",
+      "noun": "tofu",
+      "score": 0.6540751457214355
+    },
+    {
+      "segment": [
+        19.0,
+        20.0
+      ],
+      "verb": "wash",
+      "noun": "board:chopping",
+      "score": 0.6495043635368347
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6442136764526367
+    },
+    {
+      "segment": [
+        21.0,
+        22.0
+      ],
+      "verb": "cut",
+      "noun": "vegetable",
+      "score": 0.650276780128479
+    },
+    {
+      "segment": [
+        22.0,
+        23.0
+      ],
+      "verb": "insert",
+      "noun": "board:chopping",
+      "score": 0.6503058075904846
+    },
+    {
+      "segment": [
+        23.0,
+        27.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.656265377998352
+    },
+    {
+      "segment": [
+        27.0,
+        28.0
+      ],
+      "verb": "mix",
+      "noun": "food",
+      "score": 0.6503965854644775
+    },
+    {
+      "segment": [
+        28.0,
+        29.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6383653879165649
+    },
+    {
+      "segment": [
+        31.0,
+        32.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6450757384300232
+    },
+    {
+      "segment": [
+        32.0,
+        34.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6553055047988892
+    },
+    {
+      "segment": [
+        34.0,
+        36.0
+      ],
+      "verb": "insert",
+      "noun": "board:chopping",
+      "score": 0.6531673669815063
+    },
+    {
+      "segment": [
+        36.0,
+        36.9
+      ],
+      "verb": "pull",
+      "noun": "dishwasher",
+      "score": 0.6536475419998169
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        6.0,
+        10.0
+      ]
+    }
+  ]
+}

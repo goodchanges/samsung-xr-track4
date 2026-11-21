@@ -1,0 +1,172 @@
+{
+  "team_id": "VIT",
+  "video_id": "P03_21",
+  "duration_sec": 31.9,
+  "label": {
+    "name": "cooking",
+    "score": 0.064982108771801
+  },
+  "actions": [
+    {
+      "segment": [
+        0.0,
+        2.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6426824927330017
+    },
+    {
+      "segment": [
+        2.0,
+        3.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6404227018356323
+    },
+    {
+      "segment": [
+        4.0,
+        5.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6490973234176636
+    },
+    {
+      "segment": [
+        5.0,
+        7.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6523489952087402
+    },
+    {
+      "segment": [
+        7.0,
+        8.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6474420428276062
+    },
+    {
+      "segment": [
+        8.0,
+        12.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6522992849349976
+    },
+    {
+      "segment": [
+        12.0,
+        13.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6421034336090088
+    },
+    {
+      "segment": [
+        13.0,
+        14.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6473875045776367
+    },
+    {
+      "segment": [
+        14.0,
+        15.0
+      ],
+      "verb": "put",
+      "noun": "hob",
+      "score": 0.6475100517272949
+    },
+    {
+      "segment": [
+        15.0,
+        16.0
+      ],
+      "verb": "insert",
+      "noun": "dishwasher",
+      "score": 0.6519182920455933
+    },
+    {
+      "segment": [
+        16.0,
+        17.0
+      ],
+      "verb": "wash",
+      "noun": "board:chopping",
+      "score": 0.6549785733222961
+    },
+    {
+      "segment": [
+        17.0,
+        23.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6546717286109924
+    },
+    {
+      "segment": [
+        23.0,
+        25.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6366958022117615
+    },
+    {
+      "segment": [
+        25.0,
+        26.0
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6329442858695984
+    },
+    {
+      "segment": [
+        26.0,
+        28.0
+      ],
+      "verb": "close",
+      "noun": "freezer",
+      "score": 0.6567752957344055
+    },
+    {
+      "segment": [
+        28.0,
+        31.0
+      ],
+      "verb": "close",
+      "noun": "fridge",
+      "score": 0.6388063430786133
+    },
+    {
+      "segment": [
+        31.0,
+        31.9
+      ],
+      "verb": "open",
+      "noun": "fridge",
+      "score": 0.6462694406509399
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        10.0,
+        14.0
+      ]
+    }
+  ]
+}

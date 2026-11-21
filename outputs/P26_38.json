@@ -1,0 +1,142 @@
+{
+  "team_id": "VIT",
+  "video_id": "P26_38",
+  "duration_sec": 58.13,
+  "label": {
+    "name": "cooking",
+    "score": 0.06782014667987823
+  },
+  "actions": [
+    {
+      "segment": [
+        1.0,
+        6.0
+      ],
+      "verb": "mix",
+      "noun": "curry",
+      "score": 0.6557080745697021
+    },
+    {
+      "segment": [
+        6.0,
+        7.0
+      ],
+      "verb": "mix",
+      "noun": "pasta",
+      "score": 0.6549012660980225
+    },
+    {
+      "segment": [
+        7.0,
+        20.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6582701206207275
+    },
+    {
+      "segment": [
+        20.0,
+        21.0
+      ],
+      "verb": "wash",
+      "noun": "maker:coffee",
+      "score": 0.6592469215393066
+    },
+    {
+      "segment": [
+        21.0,
+        22.0
+      ],
+      "verb": "mix",
+      "noun": "coffee",
+      "score": 0.6650164127349854
+    },
+    {
+      "segment": [
+        22.0,
+        24.0
+      ],
+      "verb": "mix",
+      "noun": "sauce",
+      "score": 0.6564391851425171
+    },
+    {
+      "segment": [
+        24.0,
+        43.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6535825729370117
+    },
+    {
+      "segment": [
+        43.0,
+        44.0
+      ],
+      "verb": "scrub",
+      "noun": "pan",
+      "score": 0.6504665017127991
+    },
+    {
+      "segment": [
+        44.0,
+        51.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6653810739517212
+    },
+    {
+      "segment": [
+        51.0,
+        52.0
+      ],
+      "verb": "close",
+      "noun": "microwave",
+      "score": 0.6621915102005005
+    },
+    {
+      "segment": [
+        52.0,
+        54.0
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6577544212341309
+    },
+    {
+      "segment": [
+        54.0,
+        56.0
+      ],
+      "verb": "close",
+      "noun": "oven",
+      "score": 0.6607937216758728
+    },
+    {
+      "segment": [
+        56.0,
+        58.13
+      ],
+      "verb": "adjust",
+      "noun": "hob",
+      "score": 0.6547909379005432
+    }
+  ],
+  "highlights": [
+    {
+      "segment": [
+        11.0,
+        15.0
+      ]
+    },
+    {
+      "segment": [
+        52.0,
+        56.0
+      ]
+    }
+  ]
+}

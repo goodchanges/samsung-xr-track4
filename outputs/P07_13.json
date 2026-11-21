@@ -1,0 +1,24 @@
+{
+  "team_id": "VIT",
+  "video_id": "P07_13",
+  "duration_sec": 60.66,
+  "label": {
+    "name": "other",
+    "score": 0.06357881426811218
+  },
+  "actions": [],
+  "highlights": [
+    {
+      "segment": [
+        17.0,
+        21.0
+      ]
+    },
+    {
+      "segment": [
+        43.0,
+        47.0
+      ]
+    }
+  ]
+}
