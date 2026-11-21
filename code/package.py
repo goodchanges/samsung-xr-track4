@@ -46,7 +46,8 @@ def main():
         paths.extend(p for p in (ROOT / directory).rglob("*") if p.is_file()
                      and not any(part.startswith(".") or part == "__pycache__" for part in p.relative_to(ROOT).parts)
                      and "annotations" not in p.relative_to(ROOT).parts
-                     and p.suffix.lower() not in (".pptx", ".pyc", ".tmp", ".part", ".partial", ".mp4", ".webm", ".mov", ".avi"))
+                     and p.suffix.lower() not in (".pyc", ".tmp", ".part", ".partial", ".mp4", ".webm", ".mov", ".avi")
+                     and (p.suffix.lower() != ".pptx" or p.is_relative_to(ROOT / "docs/submission")))
     paths = [p for p in paths if p != ROOT/'code/inference_profile.txt'
              and p.name not in ('action_adapter.npz', 'temporal_decoder.npz')
              and (args.profile == 'improved' or not p.is_relative_to(ROOT/'weights/temporal'))]

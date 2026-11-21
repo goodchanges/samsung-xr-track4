@@ -1,6 +1,6 @@
 # Repository access for judges
 
-[The GitHub repository](https://github.com/goodchanges/samsung-xr-track4) was verified public on 21 November 2026. The unpublished draft at that check held only the older VIT.zip (411,863,918 bytes). VIT-78.zip is local. Signed-out judges cannot access the draft.
+[The GitHub repository](https://github.com/goodchanges/samsung-xr-track4) was verified public on 21 November 2026. The unpublished draft at that check held only the older VIT.zip (411,863,918 bytes). VIT-82-complete.zip is local. Signed-out judges cannot access the draft.
 
 The final form requires a public link. Check access while signed out, including the reviewed submission-final branch if you share it, and verify every required artifact separately.
 
@@ -15,7 +15,7 @@ The final form requires a public link. Check access while signed out, including 
 
 ## Artifact access still needed
 
-- Publish the cleared VIT-78.zip as a publicly accessible asset. The earlier attempt to upload a newer package failed with a DNS error.
+- Make the cleared VIT-82-complete.zip publicly accessible. The earlier attempt to upload a newer package failed with a DNS error. The corrected PPTX/PDF are in `docs/submission/`, but the PPTX still needs the registered member details.
 - Add the completed presentation and recorded demo. The project has a local reel and script, but the reel is not the narrated submission video.
 - Make the reviewed README and AI disclosure easy to find from the link you give Samsung. The submission-final branch contains the review corrections.
 - If a clone leaves the 134-byte Git LFS pointer, use the tested, hash-checked Hugging Face or ZIP recovery in the [README](../../README.md).

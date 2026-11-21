@@ -1,5 +1,7 @@
 # Available manifest run
 
+> Historical nine-video integration record using the former team identifier. Do not run the old command below as final submission validation. The current team ID is VIT and the live local check is documented in [README](../README.md).
+
 Executed with the shipped CLIP profile. The nine source videos were found under work/fresh-comparison and work/temporal; their durations matched the official manifest within 0.5 seconds. Existing features were cached. These timings include per-video processing and output writing; the first includes shared-model initialization. They exclude Python import startup and do not establish cold runtime.
 
 ```sh

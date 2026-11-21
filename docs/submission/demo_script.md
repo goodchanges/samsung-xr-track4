@@ -25,4 +25,4 @@ echo $?
 
 “This checks the format and timing against the guide. It is not Samsung’s official validator.”
 
-**2:20–2:45 · Architecture and repo.** “FFmpeg decodes and samples the MP4. CLIP supplies visual scores, and the selector determines which intervals go into the JSON and reel. The repository contains the offline runner and instructions. The local checker passed 78 of 185 eligible videos. Samsung has yet to score this submission.”
+**2:20–2:45 · Architecture and repo.** “FFmpeg decodes and samples the MP4. CLIP supplies visual scores, and the selector determines which intervals go into the JSON and reel. The repository contains the offline runner and instructions. The local checker found 82 valid outputs among 185 eligible videos; 103 are still absent. Samsung has yet to score this submission.”
