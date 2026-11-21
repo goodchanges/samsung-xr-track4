@@ -1,5 +1,7 @@
 # Strict mock Track 4 review
 
+> Historical pre-kit mock review. Its rating, four-field/pending-kit notes and improved-profile archive do not describe the current default submission. Use [README](../README.md) and [technical defense](submission/TECHNICAL_DEFENSE.md) for current status; Samsung has issued no official score.
+
 This is an independent technical assessment, not Samsung's opinion or an official score. Subjective prototype rating: **5/10**. Engineering is credible; the evidence does not yet support a finalist-quality action-understanding claim. Official challenge points cannot be estimated from the local metrics.
 
 ## Findings and improvement scope

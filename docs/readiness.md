@@ -1,5 +1,7 @@
 # Kit-independent readiness checks
 
+> Historical pre-kit development record. Its provisional four-field behavior and failure contract do not describe the current VIT runner. For the current six-field contract, 82/185 local coverage, and nonzero exit on unreadable input, use [README](../README.md) and [technical defense](submission/TECHNICAL_DEFENSE.md).
+
 These checks cover execution, portability and packaging. They do not provide official Samsung scores. No new model tuning or category changes were made.
 
 ## Real non-kitchen smoke test

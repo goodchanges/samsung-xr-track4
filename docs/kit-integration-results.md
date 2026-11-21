@@ -1,5 +1,7 @@
 # Stage 1 integration evidence
 
+> Historical integration log. The distributed kit did not include `validate.py`; the command below was an earlier attempted check, not an official passing validator result. Current format and manifest status are in [README](../README.md) and [technical defense](submission/TECHNICAL_DEFENSE.md).
+
 The runner now serializes the six fields from the supplied guide and loads
 the official class lists from code/supported_classes.json. Nine unsupported
 entries were removed from the 528 CLIP action candidates at load time.

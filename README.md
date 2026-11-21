@@ -5,17 +5,19 @@ action proposals and short highlights cut from the original footage.
 
 ## Submission status
 
-**78 of 185 eligible videos passed local validation** (31 EPIC-KITCHENS and
-47 FPVSum). Of the other eligible entries, 102 lack usable media and one
-failed input checks. P07_18 could not be verified after a resumed transfer,
-P26_38 had no readable timed video stream. The two organizer exclusions are
+**82 of 185 eligible videos passed local validation** (35 EPIC-KITCHENS and
+47 FPVSum). The other 103 eligible entries have no output; 102 have no
+completed local source and P19_05 has an unfinished, resumable transfer.
+P07_18 and P26_38 were recovered from earlier failed attempts and passed
+source verification, full decode, inference and the local output check.
+The two organizer exclusions are
 Scuba_KD74Ywuy9ng and Scuba_Um4kqB8bQBg. Validation checks format and timing.
 EPIC inputs include official originals verified by MD5 and pinned 256p copies
 verified by the mirror's SHA-256 and manifest duration. Prediction accuracy
 requires the organizer's evaluation.
 
-The local updated archive is `work/final-2026/VIT-78.zip`. Earlier archives
-and their output bytes were preserved.
+The local final-review archive is `work/final-2026/VIT-82-final.zip`. Earlier
+archives, including `VIT-82.zip`, and their output bytes were preserved.
 The unpublished GitHub draft holds the older `VIT.zip`. Generated outputs,
 raw videos, and the updated ZIP are outside version control. See the
 [form checklist](docs/submission/FORM_CHECKLIST.md) for the current handoff.
@@ -107,8 +109,12 @@ data redistribution notes are in the [repository access guide](docs/submission/R
 The verified local demo uses the genuine P01_12 source under
 `work/fresh-comparison/`. The source is not distributed with the repo.
 The exact command appears in the [2:45 recording script](docs/submission/demo_script.md).
+The corrected [nine-slide PPTX](docs/submission/VIT_Submission_82.pptx) and
+[matching PDF](docs/submission/VIT_Submission_82.pdf) still need the registered
+member details filled in before submission.
 The JSON selects 24.00 seconds from a 173.81-second source, and FFmpeg exports
 a 23.99-second reel. These are measurements from one clip.
 
 See the [AI disclosure](docs/submission/AI_DISCLOSURE.md),
-[deck outline](docs/submission/deck_outline.md), and [release status](docs/STATUS.md).
+[deck outline](docs/submission/deck_outline.md), [technical defense](docs/submission/TECHNICAL_DEFENSE.md),
+and [release status](docs/STATUS.md).
